@@ -5,6 +5,7 @@
  */
 package proyecto.compiladores;
 
+import AnalizadorLexico.Lexemas;
 import AnalizadorLexico.MyToken;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -20,7 +21,7 @@ public class ProyectoCompiladores {
      */
     public static void main(String[] args) {
         try {
-            String archivoAnalizado = args[0];
+            String archivoAnalizado = "/home/axel/NetBeansProjects/proyecto-compiladores/test.txt";
             BufferedReader buffered = new BufferedReader(new FileReader(archivoAnalizado));
             Lexemas analizadorFlex = new Lexemas(buffered);
             while (true) {

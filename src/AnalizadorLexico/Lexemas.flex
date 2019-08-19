@@ -1,7 +1,7 @@
-import Parser.sym;
+package AnalizadorLexico;
 %%
 %public
-%class lexemas
+%class Lexemas
 %{
     private boolean _existenTokens = false;
 
@@ -26,27 +26,27 @@ espacios = [\t\r\n ]
 %%
 
 {int} {
-    MyToken token = new MyToken("entero", yytext(), yyline(), yycolumn() - yylength(), yycolumn());
+    MyToken token = new MyToken("entero", yytext(), yyline, yycolumn, yycolumn);
     this._existenTokens = true;
     return token;
 }
 {identificador} {
-    MyToken token = new MyToken("identificador", yytext(), yyline(), yycolumn() - yylength(), yycolumn());
+    MyToken token = new MyToken("identificador", yytext(), yyline, yycolumn, yycolumn);
     this._existenTokens = true;
     return token;
 }
 {float} {
-    MyToken token = new MyToken("float", yytext(), yyline(), yycolumn() - yylength(), yycolumn());
+    MyToken token = new MyToken("float", yytext(), yyline, yycolumn, yycolumn);
     this._existenTokens = true;
     return token;
 }
 {bit} {
-    MyToken token = new MyToken("booleano", yytext(), yyline(), yycolumn() - yylength(), yycolumn());
+    MyToken token = new MyToken("booleano", yytext(), yyline, yycolumn, yycolumn);
     this._existenTokens = true;
     return token;
 }
 {string} {
-    MyToken token = new MyToken("cadena", yytext(), yyline(), yycolumn() - yylength(), yycolumn());
+    MyToken token = new MyToken("cadena", yytext(), yyline, yycolumn, yycolumn);
     this._existenTokens = true;
     return token;
 }
