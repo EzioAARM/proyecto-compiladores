@@ -5,6 +5,10 @@
  */
 package proyecto.compiladores;
 
+import AnalizadorLexico.MyToken;
+import java.io.BufferedReader;
+import java.io.FileReader;
+
 /**
  *
  * @author axel
@@ -15,7 +19,18 @@ public class ProyectoCompiladores {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        try {
+            String archivoAnalizado = args[0];
+            BufferedReader buffered = new BufferedReader(new FileReader(archivoAnalizado));
+            Lexemas analizadorFlex = new Lexemas(buffered);
+            while (true) {
+                MyToken token = analizadorFlex.yylex();
+                if (!analizadorFlex.existenTokens()) break;
+                System.out.println(token.toString());
+            }
+        } catch (Exception e) {
+            System.out.print(e.getMessage());
+        }
     }
     
 }
