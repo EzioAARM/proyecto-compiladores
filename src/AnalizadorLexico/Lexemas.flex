@@ -18,13 +18,13 @@ package AnalizadorLexico;
 %eof{
     this._existenTokens = false;
 %eof}
-int = (\+|\-)?[0-9]
+int = (\+|\-)?[0-9]+
 identificador = (([a-zA-Z]+[a-zA-Z_0-9]*))
 float = (\+|\-)?([\d])+[.](([\d])*)?
 floatExp = (\+|\-)?([\d])+([.])?([\d])*((E|e)(\+|\-)?([\d])+(([.])?([\d])*)?)
-bit = (0|1|NULL)+
+bit = (0|1|NULL)?
 string = ['][^'\n]*[']|[´][^´\n]*[´]
-stringError = ['].*[^']
+stringError = ['].*[^']$|[´].*[^´]$
 espacios = [\t\r\n ]
 comentarioSimple = (--([^]*?)*)
 comentarioMultilinea = [\/\*]([^]|\n)*[\*\/]
