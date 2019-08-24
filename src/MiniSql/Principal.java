@@ -103,14 +103,10 @@ public class Principal extends javax.swing.JFrame {
                 MyToken token = null;
                 int lexemaActual = 0;
                 while (true) {
-                    try {
-                        token = analizadorFlex.yylex();
-                        if (!analizadorFlex.existenTokens()) break;
-                        escritor.println(token.toString());
-                        lexemaActual++;
-                    } catch (Exception ex) {
-                        System.out.println(lexemaActual + " | " + token.get_lexema());
-                    }
+                    lexemaActual++;
+                    token = analizadorFlex.yylex();
+                    if (!analizadorFlex.existenTokens()) break;
+                    escritor.println(token.toString());
                 }
                 escritor.close();
                 JOptionPane.showMessageDialog(this, "Archivo " + nombre + ".out generado");

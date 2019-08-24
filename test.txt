@@ -19,7 +19,6 @@ CREATE TABLE Tienda(
 CREATE TABLE EmpleadoTienda(
     dpi_empleado NVARCHAR(13) NOT NULL REFERENCES Empleado(dpi)
     ON UPDATE CASCADE
-    'hola como estas
     ON DELETE CASCADE,
     codigo_tienda INT NOT NULL REFERENCES Tienda(codigo)
     ON UPDATE CASCADE
