@@ -18,11 +18,13 @@ package AnalizadorLexico;
 %eof{
     this._existenTokens = false;
 %eof}
-int = [0-9]
+int = (\+|\-)?[0-9]
 identificador = (([a-zA-Z]+[a-zA-Z_0-9]*))
-float = [\d]+[.][\d]*((E|e)+([+]|-)*(\d)+[.]*[\d]*)*
-bit = (0|1)+
+float = (\+|\-)?([\d])+[.](([\d])*)?
+floatExp = (\+|\-)?([\d])+([.])?([\d])*((E|e)(\+|\-)?([\d])+(([.])?([\d])*)?)
+bit = (0|1|NULL)+
 string = ['][^'\n]*[']|[´][^´\n]*[´]
+stringError = ['].*[^']
 espacios = [\t\r\n ]
 comentarioSimple = (--([^]*?)*)
 comentarioMultilinea = [\/\*]([^]|\n)*[\*\/]
@@ -45,6 +47,11 @@ reservadas = (ADD|ALL|ALTER|AND|ANY|AS|ASC|AUTHORIZATION|BACKUP|BEGIN|BETWEEN|BR
     this._existenTokens = true;
     return token;
 }
+{floatExp} {
+    MyToken token = new MyToken("DatoFloat", yytext(), yyline, yylength(), yycolumn);
+    this._existenTokens = true;
+    return token;
+}
 {bit} {
     MyToken token = new MyToken("DatoBit", yytext(), yyline, yylength(), yycolumn);
     this._existenTokens = true;
@@ -52,6 +59,11 @@ reservadas = (ADD|ALL|ALTER|AND|ANY|AS|ASC|AUTHORIZATION|BACKUP|BEGIN|BETWEEN|BR
 }
 {string} {
     MyToken token = new MyToken("DatoString", yytext(), yyline, yylength(), yycolumn);
+    this._existenTokens = true;
+    return token;
+}
+{stringError} {
+    MyToken token = new MyToken("ErrorString", yytext(), yyline, yylength(), yycolumn);
     this._existenTokens = true;
     return token;
 }

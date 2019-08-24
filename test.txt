@@ -1,3 +1,21 @@
+
+'test'
+25e-3
+'error
+25.3
+22
+0.25
+23.
+0.5E+3
+3E+3
+-3
+-5
++3
++23.2
++0.5E3
++0.5e-23
+-0.5E-3
+
 CREATE DATABASE Botanik;
 GO
 USE Botanik;
@@ -7,7 +25,7 @@ CREATE TABLE Empleado(
     telefono NVARCHAR(14) NOT NULL,
     activo BIT NOT NULL DEFAULT 1
 );
-
+'prueba de string sin cerrar
 CREATE TABLE Tienda(
     codigo INT NOT NULL PRIMARY KEY IDENTITY,
     telefono NVARCHAR(14) NOT NULL,
@@ -41,7 +59,6 @@ CREATE TABLE Proveedores(
     nombre NVARCHAR(50) NOT NULL,
     activo BIT NOT NULL DEFAULT 1
 );
-
 CREATE TABLE HistorialResponsable(
     codigo_tienda INT NOT NULL REFERENCES Tienda(codigo)
     ON UPDATE CASCADE
