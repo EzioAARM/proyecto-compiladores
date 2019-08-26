@@ -101,9 +101,7 @@ public class Principal extends javax.swing.JFrame {
                 BufferedReader buffered = new BufferedReader(new FileReader(archivoSeleccionado));
                 Lexemas analizadorFlex = new Lexemas(buffered);
                 MyToken token = null;
-                int lexemaActual = 0;
                 while (true) {
-                    lexemaActual++;
                     token = analizadorFlex.yylex();
                     if (!analizadorFlex.existenTokens()) break;
                     escritor.println(token.toString());
