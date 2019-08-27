@@ -33,6 +33,7 @@
 ;
 ,
 .
+esteesunidentificadortruncadoerroraverquepedo
 { } [ ] [] () ( )
 {} @hola # ##
 
@@ -125,7 +126,7 @@ CREATE TABLE Producto(
     activo BIT NOT NULL DEFAULT 1
 );*/
 
-CREATE TABLE SemillasProveedor(
+/*CREATE TABLE SemillasProveedor(
     codigo_proveedor INT NOT NULL REFERENCES Proveedores(codigo)
     ON UPDATE CASCADE
     ON DELETE CASCADE,

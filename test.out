@@ -1,523 +1,1453 @@
-'test' | DatoString|Token | 1 | 6 | 1
-25e-3 | DatoFloat|Token | 2 | 5 | 1
-'error
- | StringNoCerrado|Token | 3 | 7 | 1
-25.3 | DatoFloat|Token | 4 | 4 | 1
-22 | DatoEntero|Token | 5 | 2 | 1
-0.25 | DatoFloat|Token | 6 | 4 | 1
-23. | DatoFloat|Token | 7 | 3 | 1
-0.5E+3 | DatoFloat|Token | 8 | 6 | 1
-3E+3 | DatoFloat|Token | 9 | 4 | 1
--3 | DatoEntero|Token | 10 | 2 | 1
--5 | DatoEntero|Token | 11 | 2 | 1
-+3521 | DatoEntero|Token | 12 | 5 | 1
-+23.2 | DatoFloat|Token | 13 | 5 | 1
-+0.5E3 | DatoFloat|Token | 14 | 6 | 1
-+0.5e-23 | DatoFloat|Token | 15 | 8 | 1
--0.5E-3 | DatoFloat|Token | 16 | 7 | 1
-= | Simbolo.Igual|Simbolo | 17 | 1 | 1
-== | Simbolo.IgualIgual|Simbolo | 18 | 2 | 1
-= | Simbolo.Igual|Simbolo | 19 | 1 | 1
-< | Simbolo.Menor|Simbolo | 20 | 1 | 1
-> | Simbolo.Mayor|Simbolo | 21 | 1 | 1
-<= | Simbolo.MenorIgual|Simbolo | 22 | 2 | 1
->= | Simbolo.MayorIgual|Simbolo | 23 | 2 | 1
-!= | Simbolo.Diferente|Simbolo | 24 | 2 | 1
-+ | Simbolo.Mas|Simbolo | 25 | 1 | 1
-- | Simbolo.Menos|Simbolo | 26 | 1 | 1
-* | Simbolo.Multiplicacion|Simbolo | 27 | 1 | 1
-/ | Simbolo.Division|Simbolo | 28 | 1 | 1
-% | Simbolo.Modulo|Simbolo | 29 | 1 | 1
-&& | Simbolo.And|Simbolo | 30 | 2 | 1
-|| | Simbolo.Or|Simbolo | 31 | 2 | 1
-! | Simbolo.Not|Simbolo | 32 | 1 | 1
-; | Simbolo.PuntoComa|Simbolo | 33 | 1 | 1
-, | Simbolo.Coma|Simbolo | 34 | 1 | 1
-. | Simbolo.Punto|Simbolo | 35 | 1 | 1
-{ | Simbolo.LlaveAbrir|Simbolo | 36 | 1 | 1
-} | Simbolo.LlaveCerrar|Simbolo | 36 | 1 | 3
-[ | Simbolo.CorcheteAbrir|Simbolo | 36 | 1 | 5
-] | Simbolo.CorcheteCerrar|Simbolo | 36 | 1 | 7
-[] | Simbolo.Corchetes|Simbolo | 36 | 2 | 9
-() | Simbolo.Parentesis|Simbolo | 36 | 2 | 12
-( | Simbolo.ParantesisAbrir|Simbolo | 36 | 1 | 15
-) | Simbolo.ParentesisCerrar|Simbolo | 36 | 1 | 17
-{} | Simbolo.Llaves|Simbolo | 37 | 2 | 1
-@ | Simbolo.Arroba|Simbolo | 37 | 1 | 4
-hola | Identificador|Token | 37 | 4 | 5
-# | Simbolo.Numeral|Simbolo | 37 | 1 | 10
-## | Simbolo.DobleNumeral|Simbolo | 37 | 2 | 12
-/* prueba comentario */ | Comentario|Token | 39 | 2 | 22
-CREATE | PalabraReservada|Token | 40 | 6 | 1
-DATABASE | PalabraReservada|Token | 40 | 8 | 8
-Botanik | Identificador|Token | 40 | 7 | 17
-; | Simbolo.PuntoComa|Simbolo | 40 | 1 | 24
-GO | PalabraReservada|Token | 41 | 2 | 1
-USE | PalabraReservada|Token | 42 | 3 | 1
-Botanik | Identificador|Token | 42 | 7 | 5
-; | Simbolo.PuntoComa|Simbolo | 42 | 1 | 12
-CREATE | PalabraReservada|Token | 43 | 6 | 1
-TABLE | PalabraReservada|Token | 43 | 5 | 8
-Empleado | Identificador|Token | 43 | 8 | 14
-( | Simbolo.ParantesisAbrir|Simbolo | 43 | 1 | 22
-dpi | Identificador|Token | 44 | 3 | 5
-NVARCHAR | Identificador|Token | 44 | 8 | 9
-( | Simbolo.ParantesisAbrir|Simbolo | 44 | 1 | 17
-13 | DatoEntero|Token | 44 | 2 | 18
-) | Simbolo.ParentesisCerrar|Simbolo | 44 | 1 | 20
-NOT | PalabraReservada|Token | 44 | 3 | 22
-NULL | PalabraReservada|Token | 44 | 4 | 26
-PRIMARY | PalabraReservada|Token | 44 | 7 | 31
-KEY | PalabraReservada|Token | 44 | 3 | 39
-, | Simbolo.Coma|Simbolo | 44 | 1 | 42
-nombre | Identificador|Token | 45 | 6 | 5
-NVARCHAR | Identificador|Token | 45 | 8 | 12
-( | Simbolo.ParantesisAbrir|Simbolo | 45 | 1 | 20
-50 | DatoEntero|Token | 45 | 2 | 21
-) | Simbolo.ParentesisCerrar|Simbolo | 45 | 1 | 23
-NOT | PalabraReservada|Token | 45 | 3 | 25
-NULL | PalabraReservada|Token | 45 | 4 | 29
-, | Simbolo.Coma|Simbolo | 45 | 1 | 33
-telefono | Identificador|Token | 46 | 8 | 5
-NVARCHAR | Identificador|Token | 46 | 8 | 14
-( | Simbolo.ParantesisAbrir|Simbolo | 46 | 1 | 22
-14 | DatoEntero|Token | 46 | 2 | 23
-) | Simbolo.ParentesisCerrar|Simbolo | 46 | 1 | 25
-NOT | PalabraReservada|Token | 46 | 3 | 27
-NULL | PalabraReservada|Token | 46 | 4 | 31
-, | Simbolo.Coma|Simbolo | 46 | 1 | 35
-activo | Identificador|Token | 47 | 6 | 5
-BIT | PalabraReservada|Token | 47 | 3 | 12
-NOT | PalabraReservada|Token | 47 | 3 | 16
-NULL | PalabraReservada|Token | 47 | 4 | 20
-DEFAULT | PalabraReservada|Token | 47 | 7 | 25
-1 | DatoEntero|Token | 47 | 1 | 33
-) | Simbolo.ParentesisCerrar|Simbolo | 48 | 1 | 1
-; | Simbolo.PuntoComa|Simbolo | 48 | 1 | 2
-'prueba de string sin cerrar
- | StringNoCerrado|Token | 49 | 29 | 1
-CREATE | PalabraReservada|Token | 50 | 6 | 1
-TABLE | PalabraReservada|Token | 50 | 5 | 8
-Tienda | Identificador|Token | 50 | 6 | 14
-( | Simbolo.ParantesisAbrir|Simbolo | 50 | 1 | 20
-codigo | Identificador|Token | 51 | 6 | 5
-INT | PalabraReservada|Token | 51 | 3 | 12
-NOT | PalabraReservada|Token | 51 | 3 | 16
-NULL | PalabraReservada|Token | 51 | 4 | 20
-PRIMARY | PalabraReservada|Token | 51 | 7 | 25
-KEY | PalabraReservada|Token | 51 | 3 | 33
-IDENTITY | PalabraReservada|Token | 51 | 8 | 37
-, | Simbolo.Coma|Simbolo | 51 | 1 | 45
-telefono | Identificador|Token | 52 | 8 | 5
-NVARCHAR | Identificador|Token | 52 | 8 | 14
-( | Simbolo.ParantesisAbrir|Simbolo | 52 | 1 | 22
-14 | DatoEntero|Token | 52 | 2 | 23
-) | Simbolo.ParentesisCerrar|Simbolo | 52 | 1 | 25
-NOT | PalabraReservada|Token | 52 | 3 | 27
-NULL | PalabraReservada|Token | 52 | 4 | 31
-, | Simbolo.Coma|Simbolo | 52 | 1 | 35
-direccion | Identificador|Token | 53 | 9 | 5
-NVARCHAR | Identificador|Token | 53 | 8 | 15
-( | Simbolo.ParantesisAbrir|Simbolo | 53 | 1 | 23
-MAX | PalabraReservada|Token | 53 | 3 | 24
-) | Simbolo.ParentesisCerrar|Simbolo | 53 | 1 | 27
-NOT | PalabraReservada|Token | 53 | 3 | 29
-NULL | PalabraReservada|Token | 53 | 4 | 33
-, | Simbolo.Coma|Simbolo | 53 | 1 | 37
-responsable | Identificador|Token | 54 | 11 | 5
-NVARCHAR | Identificador|Token | 54 | 8 | 17
-( | Simbolo.ParantesisAbrir|Simbolo | 54 | 1 | 25
-13 | DatoEntero|Token | 54 | 2 | 26
-) | Simbolo.ParentesisCerrar|Simbolo | 54 | 1 | 28
-NOT | PalabraReservada|Token | 54 | 3 | 30
-NULL | PalabraReservada|Token | 54 | 4 | 34
-REFERENCES | PalabraReservada|Token | 54 | 10 | 39
-Empleado | Identificador|Token | 54 | 8 | 50
-( | Simbolo.ParantesisAbrir|Simbolo | 54 | 1 | 58
-dpi | Identificador|Token | 54 | 3 | 59
-) | Simbolo.ParentesisCerrar|Simbolo | 54 | 1 | 62
-, | Simbolo.Coma|Simbolo | 54 | 1 | 63
-activo | Identificador|Token | 55 | 6 | 5
-BIT | PalabraReservada|Token | 55 | 3 | 12
-NOT | PalabraReservada|Token | 55 | 3 | 16
-NULL | PalabraReservada|Token | 55 | 4 | 20
-DEFAULT | PalabraReservada|Token | 55 | 7 | 25
-1 | DatoEntero|Token | 55 | 1 | 33
-) | Simbolo.ParentesisCerrar|Simbolo | 56 | 1 | 1
-; | Simbolo.PuntoComa|Simbolo | 56 | 1 | 2
-CREATE | PalabraReservada|Token | 58 | 6 | 1
-TABLE | PalabraReservada|Token | 58 | 5 | 8
-EmpleadoTienda | Identificador|Token | 58 | 14 | 14
-( | Simbolo.ParantesisAbrir|Simbolo | 58 | 1 | 28
-dpi_empleado | Identificador|Token | 59 | 12 | 5
-NVARCHAR | Identificador|Token | 59 | 8 | 18
-( | Simbolo.ParantesisAbrir|Simbolo | 59 | 1 | 26
-13 | DatoEntero|Token | 59 | 2 | 27
-) | Simbolo.ParentesisCerrar|Simbolo | 59 | 1 | 29
-NOT | PalabraReservada|Token | 59 | 3 | 31
-NULL | PalabraReservada|Token | 59 | 4 | 35
-REFERENCES | PalabraReservada|Token | 59 | 10 | 40
-Empleado | Identificador|Token | 59 | 8 | 51
-( | Simbolo.ParantesisAbrir|Simbolo | 59 | 1 | 59
-dpi | Identificador|Token | 59 | 3 | 60
-) | Simbolo.ParentesisCerrar|Simbolo | 59 | 1 | 63
-ON | PalabraReservada|Token | 60 | 2 | 5
-UPDATE | PalabraReservada|Token | 60 | 6 | 8
-CASCADE | PalabraReservada|Token | 60 | 7 | 15
-ON | PalabraReservada|Token | 61 | 2 | 5
-DELETE | PalabraReservada|Token | 61 | 6 | 8
-CASCADE | PalabraReservada|Token | 61 | 7 | 15
-, | Simbolo.Coma|Simbolo | 61 | 1 | 22
-codigo_tienda | Identificador|Token | 62 | 13 | 5
-INT | PalabraReservada|Token | 62 | 3 | 19
-NOT | PalabraReservada|Token | 62 | 3 | 23
-NULL | PalabraReservada|Token | 62 | 4 | 27
-REFERENCES | PalabraReservada|Token | 62 | 10 | 32
-Tienda | Identificador|Token | 62 | 6 | 43
-( | Simbolo.ParantesisAbrir|Simbolo | 62 | 1 | 49
-codigo | Identificador|Token | 62 | 6 | 50
-) | Simbolo.ParentesisCerrar|Simbolo | 62 | 1 | 56
-ON | PalabraReservada|Token | 63 | 2 | 5
-UPDATE | PalabraReservada|Token | 63 | 6 | 8
-CASCADE | PalabraReservada|Token | 63 | 7 | 15
-ON | PalabraReservada|Token | 64 | 2 | 5
-DELETE | PalabraReservada|Token | 64 | 6 | 8
-CASCADE | PalabraReservada|Token | 64 | 7 | 15
-, | Simbolo.Coma|Simbolo | 64 | 1 | 22
-fecha_asignacion | Identificador|Token | 65 | 16 | 5
-DATE | PalabraReservada|Token | 65 | 4 | 22
-NOT | PalabraReservada|Token | 65 | 3 | 27
-NULL | PalabraReservada|Token | 65 | 4 | 31
-, | Simbolo.Coma|Simbolo | 65 | 1 | 35
-CONSTRAINT | PalabraReservada|Token | 66 | 10 | 5
-[ | Simbolo.CorcheteAbrir|Simbolo | 66 | 1 | 16
-PK_EmpleadoTienda | Identificador|Token | 66 | 17 | 17
-] | Simbolo.CorcheteCerrar|Simbolo | 66 | 1 | 34
-PRIMARY | PalabraReservada|Token | 66 | 7 | 36
-KEY | PalabraReservada|Token | 66 | 3 | 44
-( | Simbolo.ParantesisAbrir|Simbolo | 66 | 1 | 48
-dpi_empleado | Identificador|Token | 66 | 12 | 49
-, | Simbolo.Coma|Simbolo | 66 | 1 | 61
-codigo_tienda | Identificador|Token | 66 | 13 | 63
-) | Simbolo.ParentesisCerrar|Simbolo | 66 | 1 | 76
-) | Simbolo.ParentesisCerrar|Simbolo | 67 | 1 | 1
-; | Simbolo.PuntoComa|Simbolo | 67 | 1 | 2
-CREATE | PalabraReservada|Token | 69 | 6 | 1
-TABLE | PalabraReservada|Token | 69 | 5 | 8
-HistorialEmpleado | Identificador|Token | 69 | 17 | 14
-( | Simbolo.ParantesisAbrir|Simbolo | 69 | 1 | 31
-dpi_empleado | Identificador|Token | 70 | 12 | 5
-NVARCHAR | Identificador|Token | 70 | 8 | 18
-( | Simbolo.ParantesisAbrir|Simbolo | 70 | 1 | 26
-13 | DatoEntero|Token | 70 | 2 | 27
-) | Simbolo.ParentesisCerrar|Simbolo | 70 | 1 | 29
-NOT | PalabraReservada|Token | 70 | 3 | 31
-NULL | PalabraReservada|Token | 70 | 4 | 35
-, | Simbolo.Coma|Simbolo | 70 | 1 | 39
-codigo_tienda | Identificador|Token | 71 | 13 | 5
-INT | PalabraReservada|Token | 71 | 3 | 19
-NOT | PalabraReservada|Token | 71 | 3 | 23
-NULL | PalabraReservada|Token | 71 | 4 | 27
-, | Simbolo.Coma|Simbolo | 71 | 1 | 31
-fecha_inicio | Identificador|Token | 72 | 12 | 5
-DATE | PalabraReservada|Token | 72 | 4 | 18
-NOT | PalabraReservada|Token | 72 | 3 | 23
-NULL | PalabraReservada|Token | 72 | 4 | 27
-, | Simbolo.Coma|Simbolo | 72 | 1 | 31
-fecha_fin | Identificador|Token | 73 | 9 | 5
-DATE | PalabraReservada|Token | 73 | 4 | 15
-NOT | PalabraReservada|Token | 73 | 3 | 20
-NULL | PalabraReservada|Token | 73 | 4 | 24
-, | Simbolo.Coma|Simbolo | 73 | 1 | 28
-FOREIGN | PalabraReservada|Token | 74 | 7 | 5
-KEY | PalabraReservada|Token | 74 | 3 | 13
-( | Simbolo.ParantesisAbrir|Simbolo | 74 | 1 | 17
-dpi_empleado | Identificador|Token | 74 | 12 | 18
-, | Simbolo.Coma|Simbolo | 74 | 1 | 30
-codigo_tienda | Identificador|Token | 74 | 13 | 32
-) | Simbolo.ParentesisCerrar|Simbolo | 74 | 1 | 45
-REFERENCES | PalabraReservada|Token | 74 | 10 | 47
-EmpleadoTienda | Identificador|Token | 74 | 14 | 58
-( | Simbolo.ParantesisAbrir|Simbolo | 74 | 1 | 72
-dpi_empleado | Identificador|Token | 74 | 12 | 73
-, | Simbolo.Coma|Simbolo | 74 | 1 | 85
-codigo_tienda | Identificador|Token | 74 | 13 | 87
-) | Simbolo.ParentesisCerrar|Simbolo | 74 | 1 | 100
-, | Simbolo.Coma|Simbolo | 74 | 1 | 101
-CONSTRAINT | PalabraReservada|Token | 75 | 10 | 5
-[ | Simbolo.CorcheteAbrir|Simbolo | 75 | 1 | 16
-PK_HistorialEmpleado | Identificador|Token | 75 | 20 | 17
-] | Simbolo.CorcheteCerrar|Simbolo | 75 | 1 | 37
-PRIMARY | PalabraReservada|Token | 75 | 7 | 39
-KEY | PalabraReservada|Token | 75 | 3 | 47
-( | Simbolo.ParantesisAbrir|Simbolo | 75 | 1 | 51
-dpi_empleado | Identificador|Token | 75 | 12 | 52
-, | Simbolo.Coma|Simbolo | 75 | 1 | 64
-codigo_tienda | Identificador|Token | 75 | 13 | 66
-) | Simbolo.ParentesisCerrar|Simbolo | 75 | 1 | 79
-) | Simbolo.ParentesisCerrar|Simbolo | 76 | 1 | 1
-; | Simbolo.PuntoComa|Simbolo | 76 | 1 | 2
-CREATE | PalabraReservada|Token | 78 | 6 | 1
-TABLE | PalabraReservada|Token | 78 | 5 | 8
-Proveedores | Identificador|Token | 78 | 11 | 14
-( | Simbolo.ParantesisAbrir|Simbolo | 78 | 1 | 25
-codigo | Identificador|Token | 79 | 6 | 5
-INT | PalabraReservada|Token | 79 | 3 | 12
-NOT | PalabraReservada|Token | 79 | 3 | 16
-NULL | PalabraReservada|Token | 79 | 4 | 20
-PRIMARY | PalabraReservada|Token | 79 | 7 | 25
-KEY | PalabraReservada|Token | 79 | 3 | 33
-IDENTITY | PalabraReservada|Token | 79 | 8 | 37
-, | Simbolo.Coma|Simbolo | 79 | 1 | 45
-nombre | Identificador|Token | 80 | 6 | 5
-NVARCHAR | Identificador|Token | 80 | 8 | 12
-( | Simbolo.ParantesisAbrir|Simbolo | 80 | 1 | 20
-50 | DatoEntero|Token | 80 | 2 | 21
-) | Simbolo.ParentesisCerrar|Simbolo | 80 | 1 | 23
-NOT | PalabraReservada|Token | 80 | 3 | 25
-NULL | PalabraReservada|Token | 80 | 4 | 29
-, | Simbolo.Coma|Simbolo | 80 | 1 | 33
-activo | Identificador|Token | 81 | 6 | 5
-BIT | PalabraReservada|Token | 81 | 3 | 12
-NOT | PalabraReservada|Token | 81 | 3 | 16
-NULL | PalabraReservada|Token | 81 | 4 | 20
-DEFAULT | PalabraReservada|Token | 81 | 7 | 25
-1 | DatoEntero|Token | 81 | 1 | 33
-) | Simbolo.ParentesisCerrar|Simbolo | 82 | 1 | 1
-; | Simbolo.PuntoComa|Simbolo | 82 | 1 | 2
-CREATE | PalabraReservada|Token | 83 | 6 | 1
-TABLE | PalabraReservada|Token | 83 | 5 | 8
-HistorialResponsable | Identificador|Token | 83 | 20 | 14
-( | Simbolo.ParantesisAbrir|Simbolo | 83 | 1 | 34
-codigo_tienda | Identificador|Token | 84 | 13 | 5
-INT | PalabraReservada|Token | 84 | 3 | 19
-NOT | PalabraReservada|Token | 84 | 3 | 23
-NULL | PalabraReservada|Token | 84 | 4 | 27
-REFERENCES | PalabraReservada|Token | 84 | 10 | 32
-Tienda | Identificador|Token | 84 | 6 | 43
-( | Simbolo.ParantesisAbrir|Simbolo | 84 | 1 | 49
-codigo | Identificador|Token | 84 | 6 | 50
-) | Simbolo.ParentesisCerrar|Simbolo | 84 | 1 | 56
-ON | PalabraReservada|Token | 85 | 2 | 5
-UPDATE | PalabraReservada|Token | 85 | 6 | 8
-CASCADE | PalabraReservada|Token | 85 | 7 | 15
-ON | PalabraReservada|Token | 86 | 2 | 5
-DELETE | PalabraReservada|Token | 86 | 6 | 8
-CASCADE | PalabraReservada|Token | 86 | 7 | 15
-, | Simbolo.Coma|Simbolo | 86 | 1 | 22
-dpi_empleado | Identificador|Token | 87 | 12 | 5
-NVARCHAR | Identificador|Token | 87 | 8 | 18
-( | Simbolo.ParantesisAbrir|Simbolo | 87 | 1 | 26
-13 | DatoEntero|Token | 87 | 2 | 27
-) | Simbolo.ParentesisCerrar|Simbolo | 87 | 1 | 29
-NOT | PalabraReservada|Token | 87 | 3 | 31
-NULL | PalabraReservada|Token | 87 | 4 | 35
-REFERENCES | PalabraReservada|Token | 87 | 10 | 40
-Empleado | Identificador|Token | 87 | 8 | 51
-( | Simbolo.ParantesisAbrir|Simbolo | 87 | 1 | 59
-dpi | Identificador|Token | 87 | 3 | 60
-) | Simbolo.ParentesisCerrar|Simbolo | 87 | 1 | 63
-ON | PalabraReservada|Token | 88 | 2 | 5
-UPDATE | PalabraReservada|Token | 88 | 6 | 8
-CASCADE | PalabraReservada|Token | 88 | 7 | 15
-ON | PalabraReservada|Token | 89 | 2 | 5
-DELETE | PalabraReservada|Token | 89 | 6 | 8
-CASCADE | PalabraReservada|Token | 89 | 7 | 15
-, | Simbolo.Coma|Simbolo | 89 | 1 | 22
-fecha_inicio | Identificador|Token | 90 | 12 | 5
-DATETIME | Identificador|Token | 90 | 8 | 18
-NOT | PalabraReservada|Token | 90 | 3 | 27
-NULL | PalabraReservada|Token | 90 | 4 | 31
-, | Simbolo.Coma|Simbolo | 90 | 1 | 35
-fecha_fin | Identificador|Token | 91 | 9 | 5
-DATETIME | Identificador|Token | 91 | 8 | 15
-NOT | PalabraReservada|Token | 91 | 3 | 24
-NULL | PalabraReservada|Token | 91 | 4 | 28
-, | Simbolo.Coma|Simbolo | 91 | 1 | 32
-activo | Identificador|Token | 92 | 6 | 5
-BIT | PalabraReservada|Token | 92 | 3 | 12
-NOT | PalabraReservada|Token | 92 | 3 | 16
-NULL | PalabraReservada|Token | 92 | 4 | 20
-DEFAULT | PalabraReservada|Token | 92 | 7 | 25
-1 | DatoEntero|Token | 92 | 1 | 33
-, | Simbolo.Coma|Simbolo | 92 | 1 | 34
-CONSTRAINT | PalabraReservada|Token | 93 | 10 | 5
-[ | Simbolo.CorcheteAbrir|Simbolo | 93 | 1 | 16
-PK_HistorialResponsable | Identificador|Token | 93 | 23 | 17
-] | Simbolo.CorcheteCerrar|Simbolo | 93 | 1 | 40
-PRIMARY | PalabraReservada|Token | 93 | 7 | 42
-KEY | PalabraReservada|Token | 93 | 3 | 50
-( | Simbolo.ParantesisAbrir|Simbolo | 93 | 1 | 54
-codigo_tienda | Identificador|Token | 94 | 13 | 9
-, | Simbolo.Coma|Simbolo | 94 | 1 | 22
-dpi_empleado | Identificador|Token | 94 | 12 | 24
-, | Simbolo.Coma|Simbolo | 94 | 1 | 36
-fecha_inicio | Identificador|Token | 94 | 12 | 38
-, | Simbolo.Coma|Simbolo | 94 | 1 | 50
-fecha_fin | Identificador|Token | 94 | 9 | 52
-) | Simbolo.ParentesisCerrar|Simbolo | 95 | 1 | 5
-) | Simbolo.ParentesisCerrar|Simbolo | 96 | 1 | 1
-; | Simbolo.PuntoComa|Simbolo | 96 | 1 | 2
-CREATE | PalabraReservada|Token | 98 | 6 | 1
-TABLE | PalabraReservada|Token | 98 | 5 | 8
-Zonas | Identificador|Token | 98 | 5 | 14
-( | Simbolo.ParantesisAbrir|Simbolo | 98 | 1 | 19
-codigo_tienda | Identificador|Token | 99 | 13 | 5
-INT | PalabraReservada|Token | 99 | 3 | 19
-NOT | PalabraReservada|Token | 99 | 3 | 23
-NULL | PalabraReservada|Token | 99 | 4 | 27
-REFERENCES | PalabraReservada|Token | 99 | 10 | 32
-Tienda | Identificador|Token | 99 | 6 | 43
-( | Simbolo.ParantesisAbrir|Simbolo | 99 | 1 | 49
-codigo | Identificador|Token | 99 | 6 | 50
-) | Simbolo.ParentesisCerrar|Simbolo | 99 | 1 | 56
-ON | PalabraReservada|Token | 100 | 2 | 5
-UPDATE | PalabraReservada|Token | 100 | 6 | 8
-CASCADE | PalabraReservada|Token | 100 | 7 | 15
-ON | PalabraReservada|Token | 101 | 2 | 5
-DELETE | PalabraReservada|Token | 101 | 6 | 8
-CASCADE | PalabraReservada|Token | 101 | 7 | 15
-, | Simbolo.Coma|Simbolo | 101 | 1 | 22
-nombre | Identificador|Token | 102 | 6 | 5
-NVARCHAR | Identificador|Token | 102 | 8 | 12
-( | Simbolo.ParantesisAbrir|Simbolo | 102 | 1 | 20
-50 | DatoEntero|Token | 102 | 2 | 21
-) | Simbolo.ParentesisCerrar|Simbolo | 102 | 1 | 23
-NOT | PalabraReservada|Token | 102 | 3 | 25
-NULL | PalabraReservada|Token | 102 | 4 | 29
-, | Simbolo.Coma|Simbolo | 102 | 1 | 33
-temperatura | Identificador|Token | 103 | 11 | 5
-NVARCHAR | Identificador|Token | 103 | 8 | 17
-( | Simbolo.ParantesisAbrir|Simbolo | 103 | 1 | 25
-50 | DatoEntero|Token | 103 | 2 | 26
-) | Simbolo.ParentesisCerrar|Simbolo | 103 | 1 | 28
-NOT | PalabraReservada|Token | 103 | 3 | 30
-NULL | PalabraReservada|Token | 103 | 4 | 34
-, | Simbolo.Coma|Simbolo | 103 | 1 | 38
-humedad | Identificador|Token | 104 | 7 | 5
-NVARCHAR | Identificador|Token | 104 | 8 | 13
-( | Simbolo.ParantesisAbrir|Simbolo | 104 | 1 | 21
-50 | DatoEntero|Token | 104 | 2 | 22
-) | Simbolo.ParentesisCerrar|Simbolo | 104 | 1 | 24
-NOT | PalabraReservada|Token | 104 | 3 | 26
-NULL | PalabraReservada|Token | 104 | 4 | 30
-, | Simbolo.Coma|Simbolo | 104 | 1 | 34
-hora | Identificador|Token | 105 | 4 | 5
-DATETIME | Identificador|Token | 105 | 8 | 10
-NOT | PalabraReservada|Token | 105 | 3 | 19
-NULL | PalabraReservada|Token | 105 | 4 | 23
-, | Simbolo.Coma|Simbolo | 105 | 1 | 27
-activo | Identificador|Token | 106 | 6 | 5
-BIT | PalabraReservada|Token | 106 | 3 | 12
-NOT | PalabraReservada|Token | 106 | 3 | 16
-NULL | PalabraReservada|Token | 106 | 4 | 20
-DEFAULT | PalabraReservada|Token | 106 | 7 | 25
-1 | DatoEntero|Token | 106 | 1 | 33
-, | Simbolo.Coma|Simbolo | 106 | 1 | 34
-CONSTRAINT | PalabraReservada|Token | 107 | 10 | 5
-[ | Simbolo.CorcheteAbrir|Simbolo | 107 | 1 | 16
-PK_Zonas | Identificador|Token | 107 | 8 | 17
-] | Simbolo.CorcheteCerrar|Simbolo | 107 | 1 | 25
-PRIMARY | PalabraReservada|Token | 107 | 7 | 27
-KEY | PalabraReservada|Token | 107 | 3 | 35
-( | Simbolo.ParantesisAbrir|Simbolo | 107 | 1 | 39
-codigo_tienda | Identificador|Token | 108 | 13 | 9
-, | Simbolo.Coma|Simbolo | 108 | 1 | 22
-nombre | Identificador|Token | 108 | 6 | 24
-) | Simbolo.ParentesisCerrar|Simbolo | 109 | 1 | 5
-) | Simbolo.ParentesisCerrar|Simbolo | 110 | 1 | 1
-; | Simbolo.PuntoComa|Simbolo | 110 | 1 | 2
-CREATE | PalabraReservada|Token | 112 | 6 | 1
-TABLE | PalabraReservada|Token | 112 | 5 | 8
-Producto | Identificador|Token | 112 | 8 | 14
-( | Simbolo.ParantesisAbrir|Simbolo | 112 | 1 | 22
-codigo | Identificador|Token | 113 | 6 | 5
-NVARCHAR | Identificador|Token | 113 | 8 | 12
-( | Simbolo.ParantesisAbrir|Simbolo | 113 | 1 | 20
-50 | DatoEntero|Token | 113 | 2 | 21
-) | Simbolo.ParentesisCerrar|Simbolo | 113 | 1 | 23
-NOT | PalabraReservada|Token | 113 | 3 | 25
-NULL | PalabraReservada|Token | 113 | 4 | 29
-PRIMARY | PalabraReservada|Token | 113 | 7 | 34
-KEY | PalabraReservada|Token | 113 | 3 | 42
-, | Simbolo.Coma|Simbolo | 113 | 1 | 45
-nombre | Identificador|Token | 114 | 6 | 5
-NVARCHAR | Identificador|Token | 114 | 8 | 12
-( | Simbolo.ParantesisAbrir|Simbolo | 114 | 1 | 20
-50 | DatoEntero|Token | 114 | 2 | 21
-) | Simbolo.ParentesisCerrar|Simbolo | 114 | 1 | 23
-NOT | PalabraReservada|Token | 114 | 3 | 25
-NULL | PalabraReservada|Token | 114 | 4 | 29
-, | Simbolo.Coma|Simbolo | 114 | 1 | 33
-precio | Identificador|Token | 115 | 6 | 5
-NUMERIC | PalabraReservada|Token | 115 | 7 | 12
-( | Simbolo.ParantesisAbrir|Simbolo | 115 | 1 | 19
-10 | DatoEntero|Token | 115 | 2 | 20
-, | Simbolo.Coma|Simbolo | 115 | 1 | 22
-2 | DatoEntero|Token | 115 | 1 | 23
-) | Simbolo.ParentesisCerrar|Simbolo | 115 | 1 | 24
-NOT | PalabraReservada|Token | 115 | 3 | 26
-NULL | PalabraReservada|Token | 115 | 4 | 30
-, | Simbolo.Coma|Simbolo | 115 | 1 | 34
-descripcion | Identificador|Token | 116 | 11 | 5
-NVARCHAR | Identificador|Token | 116 | 8 | 17
-( | Simbolo.ParantesisAbrir|Simbolo | 116 | 1 | 25
-MAX | PalabraReservada|Token | 116 | 3 | 26
-) | Simbolo.ParentesisCerrar|Simbolo | 116 | 1 | 29
-, | Simbolo.Coma|Simbolo | 116 | 1 | 30
-activo | Identificador|Token | 117 | 6 | 5
-BIT | PalabraReservada|Token | 117 | 3 | 12
-NOT | PalabraReservada|Token | 117 | 3 | 16
-NULL | PalabraReservada|Token | 117 | 4 | 20
-DEFAULT | PalabraReservada|Token | 117 | 7 | 25
-1 | DatoEntero|Token | 117 | 1 | 33
-) | Simbolo.ParentesisCerrar|Simbolo | 118 | 1 | 1
-; | Simbolo.PuntoComa|Simbolo | 118 | 1 | 2
-/*CREATE TABLE Semillas(
+Linea: 1, columnas: 1-7
+El lexema: 'test' pertenece al token: DatoString
+
+Linea: 2, columnas: 1-6
+El lexema: 25e-3 pertenece al token: DatoFloat
+
+Linea: 3, columnas: 1-8
+El lexema: 'error
+ pertenece al token: StringNoCerrado
+
+Linea: 4, columnas: 1-5
+El lexema: 25.3 pertenece al token: DatoFloat
+
+Linea: 5, columnas: 1-3
+El lexema: 22 pertenece al token: DatoEntero
+
+Linea: 6, columnas: 1-5
+El lexema: 0.25 pertenece al token: DatoFloat
+
+Linea: 7, columnas: 1-4
+El lexema: 23. pertenece al token: DatoFloat
+
+Linea: 8, columnas: 1-7
+El lexema: 0.5E+3 pertenece al token: DatoFloat
+
+Linea: 9, columnas: 1-5
+El lexema: 3E+3 pertenece al token: DatoFloat
+
+Linea: 10, columnas: 1-3
+El lexema: -3 pertenece al token: DatoEntero
+
+Linea: 11, columnas: 1-3
+El lexema: -5 pertenece al token: DatoEntero
+
+Linea: 12, columnas: 1-6
+El lexema: +3521 pertenece al token: DatoEntero
+
+Linea: 13, columnas: 1-6
+El lexema: +23.2 pertenece al token: DatoFloat
+
+Linea: 14, columnas: 1-7
+El lexema: +0.5E3 pertenece al token: DatoFloat
+
+Linea: 15, columnas: 1-9
+El lexema: +0.5e-23 pertenece al token: DatoFloat
+
+Linea: 16, columnas: 1-8
+El lexema: -0.5E-3 pertenece al token: DatoFloat
+
+Linea: 17, columnas: 1-2
+El lexema: = pertenece al token: Simbolo.Igual
+
+Linea: 18, columnas: 1-3
+El lexema: == pertenece al token: Simbolo.IgualIgual
+
+Linea: 19, columnas: 1-2
+El lexema: = pertenece al token: Simbolo.Igual
+
+Linea: 20, columnas: 1-2
+El lexema: < pertenece al token: Simbolo.Menor
+
+Linea: 21, columnas: 1-2
+El lexema: > pertenece al token: Simbolo.Mayor
+
+Linea: 22, columnas: 1-3
+El lexema: <= pertenece al token: Simbolo.MenorIgual
+
+Linea: 23, columnas: 1-3
+El lexema: >= pertenece al token: Simbolo.MayorIgual
+
+Linea: 24, columnas: 1-3
+El lexema: != pertenece al token: Simbolo.Diferente
+
+Linea: 25, columnas: 1-2
+El lexema: + pertenece al token: Simbolo.Mas
+
+Linea: 26, columnas: 1-2
+El lexema: - pertenece al token: Simbolo.Menos
+
+Linea: 27, columnas: 1-2
+El lexema: * pertenece al token: Simbolo.Multiplicacion
+
+Linea: 28, columnas: 1-2
+El lexema: / pertenece al token: Simbolo.Division
+
+Linea: 29, columnas: 1-2
+El lexema: % pertenece al token: Simbolo.Modulo
+
+Linea: 30, columnas: 1-3
+El lexema: && pertenece al token: Simbolo.And
+
+Linea: 31, columnas: 1-3
+El lexema: || pertenece al token: Simbolo.Or
+
+Linea: 32, columnas: 1-2
+El lexema: ! pertenece al token: Simbolo.Not
+
+Linea: 33, columnas: 1-2
+El lexema: ; pertenece al token: Simbolo.PuntoComa
+
+Linea: 34, columnas: 1-2
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 35, columnas: 1-2
+El lexema: . pertenece al token: Simbolo.Punto
+
+*Advertencia* en la linea: 36, columna: 1
+El lexema: esteesunidentificadortruncadoer pertenece a la advertencia tipo: IdentificadorTruncado
+
+Linea: 37, columnas: 1-2
+El lexema: { pertenece al token: Simbolo.LlaveAbrir
+
+Linea: 37, columnas: 3-4
+El lexema: } pertenece al token: Simbolo.LlaveCerrar
+
+Linea: 37, columnas: 5-6
+El lexema: [ pertenece al token: Simbolo.CorcheteAbrir
+
+Linea: 37, columnas: 7-8
+El lexema: ] pertenece al token: Simbolo.CorcheteCerrar
+
+Linea: 37, columnas: 9-11
+El lexema: [] pertenece al token: Simbolo.Corchetes
+
+Linea: 37, columnas: 12-14
+El lexema: () pertenece al token: Simbolo.Parentesis
+
+Linea: 37, columnas: 15-16
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 37, columnas: 17-18
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 38, columnas: 1-3
+El lexema: {} pertenece al token: Simbolo.Llaves
+
+Linea: 38, columnas: 4-5
+El lexema: @ pertenece al token: Simbolo.Arroba
+
+Linea: 38, columnas: 5-9
+El lexema: hola pertenece al token: Identificador
+
+Linea: 38, columnas: 10-11
+El lexema: # pertenece al token: Simbolo.Numeral
+
+Linea: 38, columnas: 12-14
+El lexema: ## pertenece al token: Simbolo.DobleNumeral
+
+Linea: 40, columnas: 22-24
+El lexema: /* prueba comentario */ pertenece al token: Comentario
+
+Linea: 41, columnas: 1-7
+El lexema: CREATE pertenece al token: PalabraReservada
+
+Linea: 41, columnas: 8-16
+El lexema: DATABASE pertenece al token: PalabraReservada
+
+Linea: 41, columnas: 17-24
+El lexema: Botanik pertenece al token: Identificador
+
+Linea: 41, columnas: 24-25
+El lexema: ; pertenece al token: Simbolo.PuntoComa
+
+Linea: 42, columnas: 1-3
+El lexema: GO pertenece al token: PalabraReservada
+
+Linea: 43, columnas: 1-4
+El lexema: USE pertenece al token: PalabraReservada
+
+Linea: 43, columnas: 5-12
+El lexema: Botanik pertenece al token: Identificador
+
+Linea: 43, columnas: 12-13
+El lexema: ; pertenece al token: Simbolo.PuntoComa
+
+Linea: 44, columnas: 1-7
+El lexema: CREATE pertenece al token: PalabraReservada
+
+Linea: 44, columnas: 8-13
+El lexema: TABLE pertenece al token: PalabraReservada
+
+Linea: 44, columnas: 14-22
+El lexema: Empleado pertenece al token: Identificador
+
+Linea: 44, columnas: 22-23
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 45, columnas: 5-8
+El lexema: dpi pertenece al token: Identificador
+
+Linea: 45, columnas: 9-17
+El lexema: NVARCHAR pertenece al token: Identificador
+
+Linea: 45, columnas: 17-18
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 45, columnas: 18-20
+El lexema: 13 pertenece al token: DatoEntero
+
+Linea: 45, columnas: 20-21
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 45, columnas: 22-25
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 45, columnas: 26-30
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 45, columnas: 31-38
+El lexema: PRIMARY pertenece al token: PalabraReservada
+
+Linea: 45, columnas: 39-42
+El lexema: KEY pertenece al token: PalabraReservada
+
+Linea: 45, columnas: 42-43
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 46, columnas: 5-11
+El lexema: nombre pertenece al token: Identificador
+
+Linea: 46, columnas: 12-20
+El lexema: NVARCHAR pertenece al token: Identificador
+
+Linea: 46, columnas: 20-21
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 46, columnas: 21-23
+El lexema: 50 pertenece al token: DatoEntero
+
+Linea: 46, columnas: 23-24
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 46, columnas: 25-28
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 46, columnas: 29-33
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 46, columnas: 33-34
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 47, columnas: 5-13
+El lexema: telefono pertenece al token: Identificador
+
+Linea: 47, columnas: 14-22
+El lexema: NVARCHAR pertenece al token: Identificador
+
+Linea: 47, columnas: 22-23
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 47, columnas: 23-25
+El lexema: 14 pertenece al token: DatoEntero
+
+Linea: 47, columnas: 25-26
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 47, columnas: 27-30
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 47, columnas: 31-35
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 47, columnas: 35-36
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 48, columnas: 5-11
+El lexema: activo pertenece al token: Identificador
+
+Linea: 48, columnas: 12-15
+El lexema: BIT pertenece al token: PalabraReservada
+
+Linea: 48, columnas: 16-19
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 48, columnas: 20-24
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 48, columnas: 25-32
+El lexema: DEFAULT pertenece al token: PalabraReservada
+
+Linea: 48, columnas: 33-34
+El lexema: 1 pertenece al token: DatoEntero
+
+Linea: 49, columnas: 1-2
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 49, columnas: 2-3
+El lexema: ; pertenece al token: Simbolo.PuntoComa
+
+Linea: 50, columnas: 1-30
+El lexema: 'prueba de string sin cerrar
+ pertenece al token: StringNoCerrado
+
+Linea: 51, columnas: 1-7
+El lexema: CREATE pertenece al token: PalabraReservada
+
+Linea: 51, columnas: 8-13
+El lexema: TABLE pertenece al token: PalabraReservada
+
+Linea: 51, columnas: 14-20
+El lexema: Tienda pertenece al token: Identificador
+
+Linea: 51, columnas: 20-21
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 52, columnas: 5-11
+El lexema: codigo pertenece al token: Identificador
+
+Linea: 52, columnas: 12-15
+El lexema: INT pertenece al token: PalabraReservada
+
+Linea: 52, columnas: 16-19
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 52, columnas: 20-24
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 52, columnas: 25-32
+El lexema: PRIMARY pertenece al token: PalabraReservada
+
+Linea: 52, columnas: 33-36
+El lexema: KEY pertenece al token: PalabraReservada
+
+Linea: 52, columnas: 37-45
+El lexema: IDENTITY pertenece al token: PalabraReservada
+
+Linea: 52, columnas: 45-46
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 53, columnas: 5-13
+El lexema: telefono pertenece al token: Identificador
+
+Linea: 53, columnas: 14-22
+El lexema: NVARCHAR pertenece al token: Identificador
+
+Linea: 53, columnas: 22-23
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 53, columnas: 23-25
+El lexema: 14 pertenece al token: DatoEntero
+
+Linea: 53, columnas: 25-26
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 53, columnas: 27-30
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 53, columnas: 31-35
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 53, columnas: 35-36
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 54, columnas: 5-14
+El lexema: direccion pertenece al token: Identificador
+
+Linea: 54, columnas: 15-23
+El lexema: NVARCHAR pertenece al token: Identificador
+
+Linea: 54, columnas: 23-24
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 54, columnas: 24-27
+El lexema: MAX pertenece al token: PalabraReservada
+
+Linea: 54, columnas: 27-28
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 54, columnas: 29-32
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 54, columnas: 33-37
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 54, columnas: 37-38
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 55, columnas: 5-16
+El lexema: responsable pertenece al token: Identificador
+
+Linea: 55, columnas: 17-25
+El lexema: NVARCHAR pertenece al token: Identificador
+
+Linea: 55, columnas: 25-26
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 55, columnas: 26-28
+El lexema: 13 pertenece al token: DatoEntero
+
+Linea: 55, columnas: 28-29
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 55, columnas: 30-33
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 55, columnas: 34-38
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 55, columnas: 39-49
+El lexema: REFERENCES pertenece al token: PalabraReservada
+
+Linea: 55, columnas: 50-58
+El lexema: Empleado pertenece al token: Identificador
+
+Linea: 55, columnas: 58-59
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 55, columnas: 59-62
+El lexema: dpi pertenece al token: Identificador
+
+Linea: 55, columnas: 62-63
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 55, columnas: 63-64
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 56, columnas: 5-11
+El lexema: activo pertenece al token: Identificador
+
+Linea: 56, columnas: 12-15
+El lexema: BIT pertenece al token: PalabraReservada
+
+Linea: 56, columnas: 16-19
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 56, columnas: 20-24
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 56, columnas: 25-32
+El lexema: DEFAULT pertenece al token: PalabraReservada
+
+Linea: 56, columnas: 33-34
+El lexema: 1 pertenece al token: DatoEntero
+
+Linea: 57, columnas: 1-2
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 57, columnas: 2-3
+El lexema: ; pertenece al token: Simbolo.PuntoComa
+
+Linea: 59, columnas: 1-7
+El lexema: CREATE pertenece al token: PalabraReservada
+
+Linea: 59, columnas: 8-13
+El lexema: TABLE pertenece al token: PalabraReservada
+
+Linea: 59, columnas: 14-28
+El lexema: EmpleadoTienda pertenece al token: Identificador
+
+Linea: 59, columnas: 28-29
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 60, columnas: 5-17
+El lexema: dpi_empleado pertenece al token: Identificador
+
+Linea: 60, columnas: 18-26
+El lexema: NVARCHAR pertenece al token: Identificador
+
+Linea: 60, columnas: 26-27
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 60, columnas: 27-29
+El lexema: 13 pertenece al token: DatoEntero
+
+Linea: 60, columnas: 29-30
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 60, columnas: 31-34
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 60, columnas: 35-39
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 60, columnas: 40-50
+El lexema: REFERENCES pertenece al token: PalabraReservada
+
+Linea: 60, columnas: 51-59
+El lexema: Empleado pertenece al token: Identificador
+
+Linea: 60, columnas: 59-60
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 60, columnas: 60-63
+El lexema: dpi pertenece al token: Identificador
+
+Linea: 60, columnas: 63-64
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 61, columnas: 5-7
+El lexema: ON pertenece al token: PalabraReservada
+
+Linea: 61, columnas: 8-14
+El lexema: UPDATE pertenece al token: PalabraReservada
+
+Linea: 61, columnas: 15-22
+El lexema: CASCADE pertenece al token: PalabraReservada
+
+Linea: 62, columnas: 5-7
+El lexema: ON pertenece al token: PalabraReservada
+
+Linea: 62, columnas: 8-14
+El lexema: DELETE pertenece al token: PalabraReservada
+
+Linea: 62, columnas: 15-22
+El lexema: CASCADE pertenece al token: PalabraReservada
+
+Linea: 62, columnas: 22-23
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 63, columnas: 5-18
+El lexema: codigo_tienda pertenece al token: Identificador
+
+Linea: 63, columnas: 19-22
+El lexema: INT pertenece al token: PalabraReservada
+
+Linea: 63, columnas: 23-26
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 63, columnas: 27-31
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 63, columnas: 32-42
+El lexema: REFERENCES pertenece al token: PalabraReservada
+
+Linea: 63, columnas: 43-49
+El lexema: Tienda pertenece al token: Identificador
+
+Linea: 63, columnas: 49-50
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 63, columnas: 50-56
+El lexema: codigo pertenece al token: Identificador
+
+Linea: 63, columnas: 56-57
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 64, columnas: 5-7
+El lexema: ON pertenece al token: PalabraReservada
+
+Linea: 64, columnas: 8-14
+El lexema: UPDATE pertenece al token: PalabraReservada
+
+Linea: 64, columnas: 15-22
+El lexema: CASCADE pertenece al token: PalabraReservada
+
+Linea: 65, columnas: 5-7
+El lexema: ON pertenece al token: PalabraReservada
+
+Linea: 65, columnas: 8-14
+El lexema: DELETE pertenece al token: PalabraReservada
+
+Linea: 65, columnas: 15-22
+El lexema: CASCADE pertenece al token: PalabraReservada
+
+Linea: 65, columnas: 22-23
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 66, columnas: 5-21
+El lexema: fecha_asignacion pertenece al token: Identificador
+
+Linea: 66, columnas: 22-26
+El lexema: DATE pertenece al token: PalabraReservada
+
+Linea: 66, columnas: 27-30
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 66, columnas: 31-35
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 66, columnas: 35-36
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 67, columnas: 5-15
+El lexema: CONSTRAINT pertenece al token: PalabraReservada
+
+Linea: 67, columnas: 16-17
+El lexema: [ pertenece al token: Simbolo.CorcheteAbrir
+
+Linea: 67, columnas: 17-34
+El lexema: PK_EmpleadoTienda pertenece al token: Identificador
+
+Linea: 67, columnas: 34-35
+El lexema: ] pertenece al token: Simbolo.CorcheteCerrar
+
+Linea: 67, columnas: 36-43
+El lexema: PRIMARY pertenece al token: PalabraReservada
+
+Linea: 67, columnas: 44-47
+El lexema: KEY pertenece al token: PalabraReservada
+
+Linea: 67, columnas: 48-49
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 67, columnas: 49-61
+El lexema: dpi_empleado pertenece al token: Identificador
+
+Linea: 67, columnas: 61-62
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 67, columnas: 63-76
+El lexema: codigo_tienda pertenece al token: Identificador
+
+Linea: 67, columnas: 76-77
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 68, columnas: 1-2
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 68, columnas: 2-3
+El lexema: ; pertenece al token: Simbolo.PuntoComa
+
+Linea: 70, columnas: 1-7
+El lexema: CREATE pertenece al token: PalabraReservada
+
+Linea: 70, columnas: 8-13
+El lexema: TABLE pertenece al token: PalabraReservada
+
+Linea: 70, columnas: 14-31
+El lexema: HistorialEmpleado pertenece al token: Identificador
+
+Linea: 70, columnas: 31-32
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 71, columnas: 5-17
+El lexema: dpi_empleado pertenece al token: Identificador
+
+Linea: 71, columnas: 18-26
+El lexema: NVARCHAR pertenece al token: Identificador
+
+Linea: 71, columnas: 26-27
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 71, columnas: 27-29
+El lexema: 13 pertenece al token: DatoEntero
+
+Linea: 71, columnas: 29-30
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 71, columnas: 31-34
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 71, columnas: 35-39
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 71, columnas: 39-40
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 72, columnas: 5-18
+El lexema: codigo_tienda pertenece al token: Identificador
+
+Linea: 72, columnas: 19-22
+El lexema: INT pertenece al token: PalabraReservada
+
+Linea: 72, columnas: 23-26
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 72, columnas: 27-31
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 72, columnas: 31-32
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 73, columnas: 5-17
+El lexema: fecha_inicio pertenece al token: Identificador
+
+Linea: 73, columnas: 18-22
+El lexema: DATE pertenece al token: PalabraReservada
+
+Linea: 73, columnas: 23-26
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 73, columnas: 27-31
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 73, columnas: 31-32
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 74, columnas: 5-14
+El lexema: fecha_fin pertenece al token: Identificador
+
+Linea: 74, columnas: 15-19
+El lexema: DATE pertenece al token: PalabraReservada
+
+Linea: 74, columnas: 20-23
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 74, columnas: 24-28
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 74, columnas: 28-29
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 75, columnas: 5-12
+El lexema: FOREIGN pertenece al token: PalabraReservada
+
+Linea: 75, columnas: 13-16
+El lexema: KEY pertenece al token: PalabraReservada
+
+Linea: 75, columnas: 17-18
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 75, columnas: 18-30
+El lexema: dpi_empleado pertenece al token: Identificador
+
+Linea: 75, columnas: 30-31
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 75, columnas: 32-45
+El lexema: codigo_tienda pertenece al token: Identificador
+
+Linea: 75, columnas: 45-46
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 75, columnas: 47-57
+El lexema: REFERENCES pertenece al token: PalabraReservada
+
+Linea: 75, columnas: 58-72
+El lexema: EmpleadoTienda pertenece al token: Identificador
+
+Linea: 75, columnas: 72-73
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 75, columnas: 73-85
+El lexema: dpi_empleado pertenece al token: Identificador
+
+Linea: 75, columnas: 85-86
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 75, columnas: 87-100
+El lexema: codigo_tienda pertenece al token: Identificador
+
+Linea: 75, columnas: 100-101
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 75, columnas: 101-102
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 76, columnas: 5-15
+El lexema: CONSTRAINT pertenece al token: PalabraReservada
+
+Linea: 76, columnas: 16-17
+El lexema: [ pertenece al token: Simbolo.CorcheteAbrir
+
+Linea: 76, columnas: 17-37
+El lexema: PK_HistorialEmpleado pertenece al token: Identificador
+
+Linea: 76, columnas: 37-38
+El lexema: ] pertenece al token: Simbolo.CorcheteCerrar
+
+Linea: 76, columnas: 39-46
+El lexema: PRIMARY pertenece al token: PalabraReservada
+
+Linea: 76, columnas: 47-50
+El lexema: KEY pertenece al token: PalabraReservada
+
+Linea: 76, columnas: 51-52
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 76, columnas: 52-64
+El lexema: dpi_empleado pertenece al token: Identificador
+
+Linea: 76, columnas: 64-65
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 76, columnas: 66-79
+El lexema: codigo_tienda pertenece al token: Identificador
+
+Linea: 76, columnas: 79-80
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 77, columnas: 1-2
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 77, columnas: 2-3
+El lexema: ; pertenece al token: Simbolo.PuntoComa
+
+Linea: 79, columnas: 1-7
+El lexema: CREATE pertenece al token: PalabraReservada
+
+Linea: 79, columnas: 8-13
+El lexema: TABLE pertenece al token: PalabraReservada
+
+Linea: 79, columnas: 14-25
+El lexema: Proveedores pertenece al token: Identificador
+
+Linea: 79, columnas: 25-26
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 80, columnas: 5-11
+El lexema: codigo pertenece al token: Identificador
+
+Linea: 80, columnas: 12-15
+El lexema: INT pertenece al token: PalabraReservada
+
+Linea: 80, columnas: 16-19
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 80, columnas: 20-24
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 80, columnas: 25-32
+El lexema: PRIMARY pertenece al token: PalabraReservada
+
+Linea: 80, columnas: 33-36
+El lexema: KEY pertenece al token: PalabraReservada
+
+Linea: 80, columnas: 37-45
+El lexema: IDENTITY pertenece al token: PalabraReservada
+
+Linea: 80, columnas: 45-46
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 81, columnas: 5-11
+El lexema: nombre pertenece al token: Identificador
+
+Linea: 81, columnas: 12-20
+El lexema: NVARCHAR pertenece al token: Identificador
+
+Linea: 81, columnas: 20-21
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 81, columnas: 21-23
+El lexema: 50 pertenece al token: DatoEntero
+
+Linea: 81, columnas: 23-24
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 81, columnas: 25-28
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 81, columnas: 29-33
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 81, columnas: 33-34
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 82, columnas: 5-11
+El lexema: activo pertenece al token: Identificador
+
+Linea: 82, columnas: 12-15
+El lexema: BIT pertenece al token: PalabraReservada
+
+Linea: 82, columnas: 16-19
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 82, columnas: 20-24
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 82, columnas: 25-32
+El lexema: DEFAULT pertenece al token: PalabraReservada
+
+Linea: 82, columnas: 33-34
+El lexema: 1 pertenece al token: DatoEntero
+
+Linea: 83, columnas: 1-2
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 83, columnas: 2-3
+El lexema: ; pertenece al token: Simbolo.PuntoComa
+
+Linea: 84, columnas: 1-7
+El lexema: CREATE pertenece al token: PalabraReservada
+
+Linea: 84, columnas: 8-13
+El lexema: TABLE pertenece al token: PalabraReservada
+
+Linea: 84, columnas: 14-34
+El lexema: HistorialResponsable pertenece al token: Identificador
+
+Linea: 84, columnas: 34-35
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 85, columnas: 5-18
+El lexema: codigo_tienda pertenece al token: Identificador
+
+Linea: 85, columnas: 19-22
+El lexema: INT pertenece al token: PalabraReservada
+
+Linea: 85, columnas: 23-26
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 85, columnas: 27-31
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 85, columnas: 32-42
+El lexema: REFERENCES pertenece al token: PalabraReservada
+
+Linea: 85, columnas: 43-49
+El lexema: Tienda pertenece al token: Identificador
+
+Linea: 85, columnas: 49-50
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 85, columnas: 50-56
+El lexema: codigo pertenece al token: Identificador
+
+Linea: 85, columnas: 56-57
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 86, columnas: 5-7
+El lexema: ON pertenece al token: PalabraReservada
+
+Linea: 86, columnas: 8-14
+El lexema: UPDATE pertenece al token: PalabraReservada
+
+Linea: 86, columnas: 15-22
+El lexema: CASCADE pertenece al token: PalabraReservada
+
+Linea: 87, columnas: 5-7
+El lexema: ON pertenece al token: PalabraReservada
+
+Linea: 87, columnas: 8-14
+El lexema: DELETE pertenece al token: PalabraReservada
+
+Linea: 87, columnas: 15-22
+El lexema: CASCADE pertenece al token: PalabraReservada
+
+Linea: 87, columnas: 22-23
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 88, columnas: 5-17
+El lexema: dpi_empleado pertenece al token: Identificador
+
+Linea: 88, columnas: 18-26
+El lexema: NVARCHAR pertenece al token: Identificador
+
+Linea: 88, columnas: 26-27
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 88, columnas: 27-29
+El lexema: 13 pertenece al token: DatoEntero
+
+Linea: 88, columnas: 29-30
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 88, columnas: 31-34
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 88, columnas: 35-39
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 88, columnas: 40-50
+El lexema: REFERENCES pertenece al token: PalabraReservada
+
+Linea: 88, columnas: 51-59
+El lexema: Empleado pertenece al token: Identificador
+
+Linea: 88, columnas: 59-60
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 88, columnas: 60-63
+El lexema: dpi pertenece al token: Identificador
+
+Linea: 88, columnas: 63-64
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 89, columnas: 5-7
+El lexema: ON pertenece al token: PalabraReservada
+
+Linea: 89, columnas: 8-14
+El lexema: UPDATE pertenece al token: PalabraReservada
+
+Linea: 89, columnas: 15-22
+El lexema: CASCADE pertenece al token: PalabraReservada
+
+Linea: 90, columnas: 5-7
+El lexema: ON pertenece al token: PalabraReservada
+
+Linea: 90, columnas: 8-14
+El lexema: DELETE pertenece al token: PalabraReservada
+
+Linea: 90, columnas: 15-22
+El lexema: CASCADE pertenece al token: PalabraReservada
+
+Linea: 90, columnas: 22-23
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 91, columnas: 5-17
+El lexema: fecha_inicio pertenece al token: Identificador
+
+Linea: 91, columnas: 18-26
+El lexema: DATETIME pertenece al token: Identificador
+
+Linea: 91, columnas: 27-30
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 91, columnas: 31-35
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 91, columnas: 35-36
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 92, columnas: 5-14
+El lexema: fecha_fin pertenece al token: Identificador
+
+Linea: 92, columnas: 15-23
+El lexema: DATETIME pertenece al token: Identificador
+
+Linea: 92, columnas: 24-27
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 92, columnas: 28-32
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 92, columnas: 32-33
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 93, columnas: 5-11
+El lexema: activo pertenece al token: Identificador
+
+Linea: 93, columnas: 12-15
+El lexema: BIT pertenece al token: PalabraReservada
+
+Linea: 93, columnas: 16-19
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 93, columnas: 20-24
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 93, columnas: 25-32
+El lexema: DEFAULT pertenece al token: PalabraReservada
+
+Linea: 93, columnas: 33-34
+El lexema: 1 pertenece al token: DatoEntero
+
+Linea: 93, columnas: 34-35
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 94, columnas: 5-15
+El lexema: CONSTRAINT pertenece al token: PalabraReservada
+
+Linea: 94, columnas: 16-17
+El lexema: [ pertenece al token: Simbolo.CorcheteAbrir
+
+Linea: 94, columnas: 17-40
+El lexema: PK_HistorialResponsable pertenece al token: Identificador
+
+Linea: 94, columnas: 40-41
+El lexema: ] pertenece al token: Simbolo.CorcheteCerrar
+
+Linea: 94, columnas: 42-49
+El lexema: PRIMARY pertenece al token: PalabraReservada
+
+Linea: 94, columnas: 50-53
+El lexema: KEY pertenece al token: PalabraReservada
+
+Linea: 94, columnas: 54-55
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 95, columnas: 9-22
+El lexema: codigo_tienda pertenece al token: Identificador
+
+Linea: 95, columnas: 22-23
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 95, columnas: 24-36
+El lexema: dpi_empleado pertenece al token: Identificador
+
+Linea: 95, columnas: 36-37
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 95, columnas: 38-50
+El lexema: fecha_inicio pertenece al token: Identificador
+
+Linea: 95, columnas: 50-51
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 95, columnas: 52-61
+El lexema: fecha_fin pertenece al token: Identificador
+
+Linea: 96, columnas: 5-6
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 97, columnas: 1-2
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 97, columnas: 2-3
+El lexema: ; pertenece al token: Simbolo.PuntoComa
+
+Linea: 99, columnas: 1-7
+El lexema: CREATE pertenece al token: PalabraReservada
+
+Linea: 99, columnas: 8-13
+El lexema: TABLE pertenece al token: PalabraReservada
+
+Linea: 99, columnas: 14-19
+El lexema: Zonas pertenece al token: Identificador
+
+Linea: 99, columnas: 19-20
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 100, columnas: 5-18
+El lexema: codigo_tienda pertenece al token: Identificador
+
+Linea: 100, columnas: 19-22
+El lexema: INT pertenece al token: PalabraReservada
+
+Linea: 100, columnas: 23-26
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 100, columnas: 27-31
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 100, columnas: 32-42
+El lexema: REFERENCES pertenece al token: PalabraReservada
+
+Linea: 100, columnas: 43-49
+El lexema: Tienda pertenece al token: Identificador
+
+Linea: 100, columnas: 49-50
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 100, columnas: 50-56
+El lexema: codigo pertenece al token: Identificador
+
+Linea: 100, columnas: 56-57
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 101, columnas: 5-7
+El lexema: ON pertenece al token: PalabraReservada
+
+Linea: 101, columnas: 8-14
+El lexema: UPDATE pertenece al token: PalabraReservada
+
+Linea: 101, columnas: 15-22
+El lexema: CASCADE pertenece al token: PalabraReservada
+
+Linea: 102, columnas: 5-7
+El lexema: ON pertenece al token: PalabraReservada
+
+Linea: 102, columnas: 8-14
+El lexema: DELETE pertenece al token: PalabraReservada
+
+Linea: 102, columnas: 15-22
+El lexema: CASCADE pertenece al token: PalabraReservada
+
+Linea: 102, columnas: 22-23
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 103, columnas: 5-11
+El lexema: nombre pertenece al token: Identificador
+
+Linea: 103, columnas: 12-20
+El lexema: NVARCHAR pertenece al token: Identificador
+
+Linea: 103, columnas: 20-21
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 103, columnas: 21-23
+El lexema: 50 pertenece al token: DatoEntero
+
+Linea: 103, columnas: 23-24
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 103, columnas: 25-28
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 103, columnas: 29-33
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 103, columnas: 33-34
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 104, columnas: 5-16
+El lexema: temperatura pertenece al token: Identificador
+
+Linea: 104, columnas: 17-25
+El lexema: NVARCHAR pertenece al token: Identificador
+
+Linea: 104, columnas: 25-26
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 104, columnas: 26-28
+El lexema: 50 pertenece al token: DatoEntero
+
+Linea: 104, columnas: 28-29
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 104, columnas: 30-33
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 104, columnas: 34-38
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 104, columnas: 38-39
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 105, columnas: 5-12
+El lexema: humedad pertenece al token: Identificador
+
+Linea: 105, columnas: 13-21
+El lexema: NVARCHAR pertenece al token: Identificador
+
+Linea: 105, columnas: 21-22
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 105, columnas: 22-24
+El lexema: 50 pertenece al token: DatoEntero
+
+Linea: 105, columnas: 24-25
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 105, columnas: 26-29
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 105, columnas: 30-34
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 105, columnas: 34-35
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 106, columnas: 5-9
+El lexema: hora pertenece al token: Identificador
+
+Linea: 106, columnas: 10-18
+El lexema: DATETIME pertenece al token: Identificador
+
+Linea: 106, columnas: 19-22
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 106, columnas: 23-27
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 106, columnas: 27-28
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 107, columnas: 5-11
+El lexema: activo pertenece al token: Identificador
+
+Linea: 107, columnas: 12-15
+El lexema: BIT pertenece al token: PalabraReservada
+
+Linea: 107, columnas: 16-19
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 107, columnas: 20-24
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 107, columnas: 25-32
+El lexema: DEFAULT pertenece al token: PalabraReservada
+
+Linea: 107, columnas: 33-34
+El lexema: 1 pertenece al token: DatoEntero
+
+Linea: 107, columnas: 34-35
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 108, columnas: 5-15
+El lexema: CONSTRAINT pertenece al token: PalabraReservada
+
+Linea: 108, columnas: 16-17
+El lexema: [ pertenece al token: Simbolo.CorcheteAbrir
+
+Linea: 108, columnas: 17-25
+El lexema: PK_Zonas pertenece al token: Identificador
+
+Linea: 108, columnas: 25-26
+El lexema: ] pertenece al token: Simbolo.CorcheteCerrar
+
+Linea: 108, columnas: 27-34
+El lexema: PRIMARY pertenece al token: PalabraReservada
+
+Linea: 108, columnas: 35-38
+El lexema: KEY pertenece al token: PalabraReservada
+
+Linea: 108, columnas: 39-40
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 109, columnas: 9-22
+El lexema: codigo_tienda pertenece al token: Identificador
+
+Linea: 109, columnas: 22-23
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 109, columnas: 24-30
+El lexema: nombre pertenece al token: Identificador
+
+Linea: 110, columnas: 5-6
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 111, columnas: 1-2
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 111, columnas: 2-3
+El lexema: ; pertenece al token: Simbolo.PuntoComa
+
+Linea: 113, columnas: 1-7
+El lexema: CREATE pertenece al token: PalabraReservada
+
+Linea: 113, columnas: 8-13
+El lexema: TABLE pertenece al token: PalabraReservada
+
+Linea: 113, columnas: 14-22
+El lexema: Producto pertenece al token: Identificador
+
+Linea: 113, columnas: 22-23
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 114, columnas: 5-11
+El lexema: codigo pertenece al token: Identificador
+
+Linea: 114, columnas: 12-20
+El lexema: NVARCHAR pertenece al token: Identificador
+
+Linea: 114, columnas: 20-21
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 114, columnas: 21-23
+El lexema: 50 pertenece al token: DatoEntero
+
+Linea: 114, columnas: 23-24
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 114, columnas: 25-28
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 114, columnas: 29-33
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 114, columnas: 34-41
+El lexema: PRIMARY pertenece al token: PalabraReservada
+
+Linea: 114, columnas: 42-45
+El lexema: KEY pertenece al token: PalabraReservada
+
+Linea: 114, columnas: 45-46
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 115, columnas: 5-11
+El lexema: nombre pertenece al token: Identificador
+
+Linea: 115, columnas: 12-20
+El lexema: NVARCHAR pertenece al token: Identificador
+
+Linea: 115, columnas: 20-21
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 115, columnas: 21-23
+El lexema: 50 pertenece al token: DatoEntero
+
+Linea: 115, columnas: 23-24
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 115, columnas: 25-28
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 115, columnas: 29-33
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 115, columnas: 33-34
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 116, columnas: 5-11
+El lexema: precio pertenece al token: Identificador
+
+Linea: 116, columnas: 12-19
+El lexema: NUMERIC pertenece al token: PalabraReservada
+
+Linea: 116, columnas: 19-20
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 116, columnas: 20-22
+El lexema: 10 pertenece al token: DatoEntero
+
+Linea: 116, columnas: 22-23
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 116, columnas: 23-24
+El lexema: 2 pertenece al token: DatoEntero
+
+Linea: 116, columnas: 24-25
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 116, columnas: 26-29
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 116, columnas: 30-34
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 116, columnas: 34-35
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 117, columnas: 5-16
+El lexema: descripcion pertenece al token: Identificador
+
+Linea: 117, columnas: 17-25
+El lexema: NVARCHAR pertenece al token: Identificador
+
+Linea: 117, columnas: 25-26
+El lexema: ( pertenece al token: Simbolo.ParantesisAbrir
+
+Linea: 117, columnas: 26-29
+El lexema: MAX pertenece al token: PalabraReservada
+
+Linea: 117, columnas: 29-30
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 117, columnas: 30-31
+El lexema: , pertenece al token: Simbolo.Coma
+
+Linea: 118, columnas: 5-11
+El lexema: activo pertenece al token: Identificador
+
+Linea: 118, columnas: 12-15
+El lexema: BIT pertenece al token: PalabraReservada
+
+Linea: 118, columnas: 16-19
+El lexema: NOT pertenece al token: PalabraReservada
+
+Linea: 118, columnas: 20-24
+El lexema: NULL pertenece al token: PalabraReservada
+
+Linea: 118, columnas: 25-32
+El lexema: DEFAULT pertenece al token: PalabraReservada
+
+Linea: 118, columnas: 33-34
+El lexema: 1 pertenece al token: DatoEntero
+
+Linea: 119, columnas: 1-2
+El lexema: ) pertenece al token: Simbolo.ParentesisCerrar
+
+Linea: 119, columnas: 2-3
+El lexema: ; pertenece al token: Simbolo.PuntoComa
+
+Linea: 127, columnas: 3-5
+El lexema: /*CREATE TABLE Semillas(
     codigo_producto NVARCHAR(50) NOT NULL PRIMARY KEY REFERENCES Producto(codigo)
     ON UPDATE CASCADE
     ON DELETE CASCADE,
     cuidados NVARCHAR(MAX) NOT NULL,
     activo BIT NOT NULL DEFAULT 1
-);*/ | Comentario|Token | 126 | 2 | 3
-CREATE | PalabraReservada|Token | 128 | 6 | 1
-TABLE | PalabraReservada|Token | 128 | 5 | 8
-SemillasProveedor | Identificador|Token | 128 | 17 | 14
-( | Simbolo.ParantesisAbrir|Simbolo | 128 | 1 | 31
-codigo_proveedor | Identificador|Token | 129 | 16 | 5
-INT | PalabraReservada|Token | 129 | 3 | 22
-NOT | PalabraReservada|Token | 129 | 3 | 26
-NULL | PalabraReservada|Token | 129 | 4 | 30
-REFERENCES | PalabraReservada|Token | 129 | 10 | 35
-Proveedores | Identificador|Token | 129 | 11 | 46
-( | Simbolo.ParantesisAbrir|Simbolo | 129 | 1 | 57
-codigo | Identificador|Token | 129 | 6 | 58
-) | Simbolo.ParentesisCerrar|Simbolo | 129 | 1 | 64
-ON | PalabraReservada|Token | 130 | 2 | 5
-UPDATE | PalabraReservada|Token | 130 | 6 | 8
-CASCADE | PalabraReservada|Token | 130 | 7 | 15
-ON | PalabraReservada|Token | 131 | 2 | 5
-DELETE | PalabraReservada|Token | 131 | 6 | 8
-CASCADE | PalabraReservada|Token | 131 | 7 | 15
-, | Simbolo.Coma|Simbolo | 131 | 1 | 22
-codigo_semilla | Identificador|Token | 132 | 14 | 5
-NVARCHAR | Identificador|Token | 132 | 8 | 20
-( | Simbolo.ParantesisAbrir|Simbolo | 132 | 1 | 28
-50 | DatoEntero|Token | 132 | 2 | 29
-) | Simbolo.ParentesisCerrar|Simbolo | 132 | 1 | 31
-NOT | PalabraReservada|Token | 132 | 3 | 33
-NULL | PalabraReservada|Token | 132 | 4 | 37
-REFERENCES | PalabraReservada|Token | 132 | 10 | 42
-Semillas | Identificador|Token | 132 | 8 | 53
-( | Simbolo.ParantesisAbrir|Simbolo | 132 | 1 | 61
-codigo_producto | Identificador|Token | 132 | 15 | 62
-) | Simbolo.ParentesisCerrar|Simbolo | 132 | 1 | 77
-ON | PalabraReservada|Token | 133 | 2 | 5
-UPDATE | PalabraReservada|Token | 133 | 6 | 8
-CASCADE | PalabraReservada|Token | 133 | 7 | 15
-/*ON DELETE CASCADE,
+);*/ pertenece al token: Comentario
+
+Linea: 135, columnas: 5-6
+El lexema: / pertenece al token: Simbolo.Division
+
+Linea: 135, columnas: 6-7
+El lexema: * pertenece al token: Simbolo.Multiplicacion
+
+*Error* en la linea: 140, columna: 3
+El lexema: /*CREATE TABLE SemillasProveedor(
+    codigo_proveedor INT NOT NULL REFERENCES Proveedores(codigo)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE,
+    codigo_semilla NVARCHAR(50) NOT NULL REFERENCES Semillas(codigo_producto)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE,
     activo BIT NOT NULL DEFAULT 1,
     CONSTRAINT [PK_SemillasProveedor] PRIMARY KEY (
         codigo_proveedor, codigo_semilla
     )
-); | ComentarioNoCerrado|Error | 139 | 0 | 3
+); pertenece al error tipo: ComentarioNoCerrado
+

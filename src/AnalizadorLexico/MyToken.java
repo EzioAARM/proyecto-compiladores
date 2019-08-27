@@ -17,12 +17,12 @@ public class MyToken {
     int _columnaInicial;
     int _columnaFinal;
 
-    MyToken (String token, String lexema, String type, int fila, int columnaInicial, int columnaFinal) {
+    MyToken (String token, String lexema, String type, int fila, int tamCadena, int columnaInicial) {
         _token = token;
         _lexema = lexema;
         _fila = fila;
         _columnaInicial = columnaInicial;
-        _columnaFinal = columnaFinal;
+        _columnaFinal = columnaInicial + tamCadena;
         _type = type;
     }
 
@@ -70,6 +70,13 @@ public class MyToken {
 
     @Override
     public String toString() {
-        return get_lexema() + " | " + get_token() + " | " + get_type() + " | " + getFila() + " | " + get_columnaInicial() + " | " + get_columnaFinal();
+        switch (this.get_type()) {
+            case "Error":
+                return "*Error* en la linea: " + this.getFila() + ", columna: " + this.get_columnaInicial() + "\nEl lexema: " + this.get_lexema() + " pertenece al error tipo: " + this.get_token() + "\n";
+            case "Advertencia":
+                return "*Advertencia* en la linea: " + this.getFila() + ", columna: " + this.get_columnaInicial() + "\nEl lexema: " + this.get_lexema() + " pertenece a la advertencia tipo: " + this.get_token() + "\n";
+            default:
+                return "Linea: " + this.getFila() + ", columnas: " + this.get_columnaInicial() + "-" + this.get_columnaFinal() + "\nEl lexema: " + this.get_lexema() + " pertenece al token: " + this.get_token() + "\n";
+        }
     }
 }

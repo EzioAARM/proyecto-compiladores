@@ -1,0 +1,17 @@
+'Total income is' | DatoString | Token | 1 | 17 | 1
+, | Simbolo.Coma | Simbolo | 1 | 1 | 19
+( | Simbolo.ParantesisAbrir | Simbolo | 1 | 1 | 21
+( | Simbolo.ParantesisAbrir | Simbolo | 1 | 1 | 22
+OrderQty | Identificador | Token | 1 | 8 | 23
+* | Simbolo.Multiplicacion | Simbolo | 1 | 1 | 32
+UnitPrice | Identificador | Token | 1 | 9 | 34
+) | Simbolo.ParentesisCerrar | Simbolo | 1 | 1 | 43
+* | Simbolo.Multiplicacion | Simbolo | 1 | 1 | 45
+( | Simbolo.ParantesisAbrir | Simbolo | 1 | 1 | 47
+1.0 | DatoFloat | Token | 1 | 3 | 48
+- | Simbolo.Menos | Simbolo | 1 | 1 | 52
+UnitPriceDiscount | Identificador | Token | 1 | 17 | 54
+) | Simbolo.ParentesisCerrar | Simbolo | 1 | 1 | 71
+) | Simbolo.ParentesisCerrar | Simbolo | 1 | 1 | 72
+, | Simbolo.Coma | Simbolo | 1 | 1 | 73
+' for ' | DatoString | Token | 1 | 7 | 75

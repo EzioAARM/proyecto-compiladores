@@ -1,0 +1,1 @@
+'Total income is' , ((OrderQty * UnitPrice) * (1.0 - UnitPriceDiscount)), ' for '

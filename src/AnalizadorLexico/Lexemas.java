@@ -1439,7 +1439,7 @@ public class Lexemas {
             { if (yytext().length() <= 31) {
         Tokens.add(new MyToken("Identificador", yytext(), "Token", yyline + 1, yylength(), yycolumn + 1));
     } else {
-        Tokens.add(new MyToken("IdentificadorTruncado", yytext(), "Error", yyline + 1, yylength(), yycolumn + 1));
+        Tokens.add(new MyToken("IdentificadorTruncado", yytext().substring(0, 31), "Advertencia", yyline + 1, 31, yycolumn + 1));
     }
             } 
             // fall through
