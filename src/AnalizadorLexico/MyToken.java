@@ -17,7 +17,7 @@ public class MyToken {
     int _columnaInicial;
     int _columnaFinal;
 
-    MyToken (String token, String type, String lexema, int fila, int columnaInicial, int columnaFinal) {
+    MyToken (String token, String lexema, String type, int fila, int columnaInicial, int columnaFinal) {
         _token = token;
         _lexema = lexema;
         _fila = fila;
