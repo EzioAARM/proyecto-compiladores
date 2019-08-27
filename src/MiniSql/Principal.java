@@ -6,6 +6,7 @@
 package MiniSql;
 
 import AnalizadorLexico.*;
+import java.util.List;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -13,6 +14,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
@@ -100,11 +102,9 @@ public class Principal extends javax.swing.JFrame {
                 PrintWriter escritor = new PrintWriter(archivoEscribir);
                 BufferedReader buffered = new BufferedReader(new FileReader(archivoSeleccionado));
                 Lexemas analizadorFlex = new Lexemas(buffered);
-                MyToken token = null;
-                while (true) {
-                    token = analizadorFlex.yylex();
-                    if (!analizadorFlex.existenTokens()) break;
-                    escritor.println(token.toString());
+                List<MyToken> datos = analizadorFlex.yylex();
+                for (int i = 0; i < datos.size(); i++) {
+                    escritor.println(datos.get(i).toString());
                 }
                 escritor.close();
                 JOptionPane.showMessageDialog(this, "Archivo " + nombre + ".out generado");

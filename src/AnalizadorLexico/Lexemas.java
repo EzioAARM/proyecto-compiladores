@@ -1393,6 +1393,7 @@ public class Lexemas {
             switch (zzLexicalState) {
             case COMENTARIOMULTI: {
               Tokens.add(new MyToken("ComentarioNoCerrado", _cadenaComentario.toString(), "Error", yyline + 1, yylength(), yycolumn + 1));
+        return Tokens;
             }  // fall though
             case 673: break;
             default:

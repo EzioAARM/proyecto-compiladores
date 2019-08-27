@@ -118,6 +118,7 @@ reservadas = (ADD|ALL|ALTER|AND|ANY|AS|ASC|AUTHORIZATION|BACKUP|BEGIN|BETWEEN|BR
     }
     <<EOF>> {
         Tokens.add(new MyToken("ComentarioNoCerrado", _cadenaComentario.toString(), "Error", yyline + 1, yylength(), yycolumn + 1));
+        return Tokens;
     }
     [^"*/"] {
         _cadenaComentario.append(yytext());

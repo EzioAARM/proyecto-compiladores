@@ -101,7 +101,7 @@ CREATE TABLE Producto(
     ON DELETE CASCADE,
     cuidados NVARCHAR(MAX) NOT NULL,
     activo BIT NOT NULL DEFAULT 1
-);
+);*/
 
 CREATE TABLE SemillasProveedor(
     codigo_proveedor INT NOT NULL REFERENCES Proveedores(codigo)
@@ -109,7 +109,7 @@ CREATE TABLE SemillasProveedor(
     ON DELETE CASCADE,
     codigo_semilla NVARCHAR(50) NOT NULL REFERENCES Semillas(codigo_producto)
     ON UPDATE CASCADE
-    ON DELETE CASCADE,
+    /*ON DELETE CASCADE,
     activo BIT NOT NULL DEFAULT 1,
     CONSTRAINT [PK_SemillasProveedor] PRIMARY KEY (
         codigo_proveedor, codigo_semilla
