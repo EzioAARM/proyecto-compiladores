@@ -14,7 +14,7 @@
 +0.5E3
 +0.5e-23
 -0.5E-3
-
+/* prueba comentario */
 CREATE DATABASE Botanik;
 GO
 USE Botanik;
@@ -95,7 +95,7 @@ CREATE TABLE Producto(
     activo BIT NOT NULL DEFAULT 1
 );
 
-CREATE TABLE Semillas(
+/*CREATE TABLE Semillas(
     codigo_producto NVARCHAR(50) NOT NULL PRIMARY KEY REFERENCES Producto(codigo)
     ON UPDATE CASCADE
     ON DELETE CASCADE,
