@@ -70,6 +70,6 @@ public class MyToken {
 
     @Override
     public String toString() {
-        return get_lexema() + " | " + get_token() + "|" + get_type() + " | " + getFila() + " | " + get_columnaInicial() + " | " + get_columnaFinal();
+        return get_lexema() + " | " + get_token() + " | " + get_type() + " | " + getFila() + " | " + get_columnaInicial() + " | " + get_columnaFinal();
     }
 }
