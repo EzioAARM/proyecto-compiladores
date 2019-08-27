@@ -12,18 +12,27 @@ package AnalizadorLexico;
 public class MyToken {
     String _token;
     String _lexema;
+    String _type;
     int _fila;
     int _columnaInicial;
     int _columnaFinal;
 
-    MyToken (String token, String lexema, int fila, int columnaInicial, int columnaFinal) {
+    MyToken (String token, String type, String lexema, int fila, int columnaInicial, int columnaFinal) {
         _token = token;
         _lexema = lexema;
         _fila = fila;
         _columnaInicial = columnaInicial;
         _columnaFinal = columnaFinal;
+        _type = type;
     }
 
+    /**
+     * @return the _type
+     */
+    public String get_type() {
+        return _type;
+    }
+    
     /**
      * @return the _columnaFinal
      */
@@ -61,6 +70,6 @@ public class MyToken {
 
     @Override
     public String toString() {
-        return get_lexema() + " | " + get_token() + " | " + getFila() + " | " + get_columnaInicial() + " | " + get_columnaFinal();
+        return get_lexema() + " | " + get_token() + "|" + get_type() + " | " + getFila() + " | " + get_columnaInicial() + " | " + get_columnaFinal();
     }
 }

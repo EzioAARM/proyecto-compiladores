@@ -1,18 +1,21 @@
 package AnalizadorLexico;
+import java.util.List;
+import java.util.ArrayList;
 %%
 %public
 %class Lexemas
 %{
-    private boolean _existenTokens = false;
+    private List<MyToken> Tokens = new ArrayList();
+
     StringBuffer _cadenaComentario = new StringBuffer();
     private boolean _comentarioActivo = false;
 
-    public boolean comentarioActivo() {
-        return this._comentarioActivo;
+    public List<MyToken> getTokens() {
+        return Tokens;
     }
 
-    public boolean existenTokens() {
-        return this._existenTokens;
+    public boolean comentarioActivo() {
+        return this._comentarioActivo;
     }
 %}
 %line
@@ -21,13 +24,13 @@ package AnalizadorLexico;
 %state COMENTARIOMULTI
 %full
 %eofclose
-%type MyToken
+%type List<MyToken>
+%eofval{
+    return Tokens;
+%eofval}
 %init{
 
 %init}
-%eof{
-    this._existenTokens = false;
-%eof}
 int = (\+|\-)?[0-9]+
 identificador = (([a-zA-Z]+[a-zA-Z_0-9]*))
 float = (\+|\-)?([\d])+[.](([\d])*)?
@@ -35,7 +38,7 @@ floatExp = (\+|\-)?([\d])+([.])?([\d])*((E|e)(\+|\-)?([\d])+(([.])?([\d])*)?)
 bit = (0|1|NULL)?
 string = ['][^'\n]*[']|[´][^´\n]*[´]
 stringError = ((['][^'\n]*)[^'])|(([´][^´\n]*)[^´])
-espacios = [\t\r\n ]
+espacios = [\t\r\n\r ]
 comentarioSimple = (--([^]*?)*)
 suma = [\+]
 resta = [\-]
@@ -76,228 +79,143 @@ reservadas = (ADD|ALL|ALTER|AND|ANY|AS|ASC|AUTHORIZATION|BACKUP|BEGIN|BETWEEN|BR
     yybegin(COMENTARIOMULTI);
 }
 <YYINITIAL> {reservadas} {
-    MyToken token = new MyToken("PalabraReservada", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("PalabraReservada", yytext(), "Token", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {int} {
-    MyToken token = new MyToken("DatoEntero", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("DatoEntero", yytext(), "Token", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {float} {
-    MyToken token = new MyToken("DatoFloat", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("DatoFloat", yytext(), "Token", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {floatExp} {
-    MyToken token = new MyToken("DatoFloat", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("DatoFloat", yytext(), "Token", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {bit} {
-    MyToken token = new MyToken("DatoBit", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("DatoBit", yytext(), "Token", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {string} {
-    MyToken token = new MyToken("DatoString", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("DatoString", yytext(), "Token", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {stringError} {
-    MyToken token = new MyToken("StringNoCerrado", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("StringNoCerrado", yytext(), "Token", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {identificador} {
     if (yytext().length() <= 31) {
-        MyToken token = new MyToken("Identificador", yytext(), yyline + 1, yylength(), yycolumn + 1);
-        this._existenTokens = true;
-        return token;
+        Tokens.add(new MyToken("Identificador", yytext(), "Token", yyline + 1, yylength(), yycolumn + 1));
     } else {
-        MyToken token = new MyToken("IdentificadorTruncado", yytext(), yyline + 1, yylength(), yycolumn + 1);
-        this._existenTokens = true;
-        return token;
+        Tokens.add(new MyToken("IdentificadorTruncado", yytext(), "Error", yyline + 1, yylength(), yycolumn + 1));
     }
 }
 <YYINITIAL> {comentarioSimple} {
-    MyToken token = new MyToken("Comentario", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Comentario", yytext(), "Token", yyline + 1, yylength(), yycolumn + 1));
 }
 <COMENTARIOMULTI> {
     "*/" {
         _cadenaComentario.append(yytext());
         _comentarioActivo = false;
         yybegin(YYINITIAL);
-        MyToken token = new MyToken("ComentarioMultiLinea", _cadenaComentario.toString(), yyline + 1, yylength(), yycolumn + 1);
-        this._existenTokens = true;
-        return token;
+        Tokens.add(new MyToken("ComentarioMultiLinea", _cadenaComentario.toString(), "Token", yyline + 1, yylength(), yycolumn + 1));
     }
     <<EOF>> {
-        MyToken token = new MyToken("ComentarioNoCerrado", _cadenaComentario.toString(), yyline + 1, yylength(), yycolumn + 1);
-        return token;
+        Tokens.add(new MyToken("ComentarioNoCerrado", _cadenaComentario.toString(), "Error", yyline + 1, yylength(), yycolumn + 1));
     }
     [^"*/"] {
         _cadenaComentario.append(yytext());
     }
 }
 {suma} {
-    MyToken token = new MyToken("Simbolo.Mas", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.Mas", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {resta} {
-    MyToken token = new MyToken("Simbolo.Menos", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.Menos", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {multi} {
-    MyToken token = new MyToken("Simbolo.Multiplicacion", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.Multiplicacion", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {division} {
-    MyToken token = new MyToken("Simbolo.Division", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.Division", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {mod} {
-    MyToken token = new MyToken("Simbolo.Modulo", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.Modulo", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {meIg} {
-    MyToken token = new MyToken("Simbolo.MenorIgual", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.MenorIgual", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {doubCorch} {
-    MyToken token = new MyToken("Simbolo.Corchetes", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.Corchetes", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {doubLlave} {
-    MyToken token = new MyToken("Simbolo.Llaves", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.Llaves", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {doubParen} {
-    MyToken token = new MyToken("Simbolo.Parentesis", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.Parentesis", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {maIg} {
-    MyToken token = new MyToken("Simbolo.MayorIgual", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.MayorIgual", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {asignacion} {
-    MyToken token = new MyToken("Simbolo.Igual", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.Igual", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {mayor} {
-    MyToken token = new MyToken("Simbolo.Mayor", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.Mayor", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {menor} {
-    MyToken token = new MyToken("Simbolo.Menor", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.Menor", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {igualComp} {
-    MyToken token = new MyToken("Simbolo.IgualIgual", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.IgualIgual", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {diferente} {
-    MyToken token = new MyToken("Simbolo.Diferente", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.Diferente", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {and} {
-    MyToken token = new MyToken("Simbolo.And", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.And", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {or} {
-    MyToken token = new MyToken("Simbolo.Or", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.Or", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {not} {
-    MyToken token = new MyToken("Simbolo.Not", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.Not", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {endLine} {
-    MyToken token = new MyToken("Simbolo.PuntoComa", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.PuntoComa", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {coma} {
-    MyToken token = new MyToken("Simbolo.Coma", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.Coma", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {punto} {
-    MyToken token = new MyToken("Simbolo.Punto", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.Punto", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {corcheteAbrir} {
-    MyToken token = new MyToken("Simbolo.CorcheteAbrir", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.CorcheteAbrir", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {corcheteCerrar} {
-    MyToken token = new MyToken("Simbolo.CorcheteCerrar", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.CorcheteCerrar", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {parenAbrir} {
-    MyToken token = new MyToken("Simbolo.ParantesisAbrir", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.ParantesisAbrir", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {parenCerrar} {
-    MyToken token = new MyToken("Simbolo.ParentesisCerrar", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.ParentesisCerrar", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {llaveAbrir} {
-    MyToken token = new MyToken("Simbolo.LlaveAbrir", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.LlaveAbrir", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {llaveCerrar} {
-    MyToken token = new MyToken("Simbolo.LlaveCerrar", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.LlaveCerrar", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {arroba} {
-    MyToken token = new MyToken("Simbolo.Arroba", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.Arroba", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {dobHasht} {
-    MyToken token = new MyToken("Simbolo.DobleNumeral", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.DobleNumeral", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {hast} {
-    MyToken token = new MyToken("Simbolo.Numeral", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Simbolo.Numeral", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {espacios} {
     // No hacer nada
 }
 [^] {
-    MyToken token = new MyToken("Error", yytext(), yyline + 1, yylength(), yycolumn + 1);
-    this._existenTokens = true;
-    return token;
+    Tokens.add(new MyToken("Error", yytext(), "Error", yyline + 1, yylength(), yycolumn + 1));
 }
