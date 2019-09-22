@@ -1,0 +1,93 @@
+<common_table_expression>
+    tbexp ::= IDENTIFICADOR tbexp2
+    tbexp2 ::= "(" IDENTIFICADOR tbexp3
+                | tbexp4
+    tbexp3 ::= "," IDENTIFICADOR tbexp3
+                | ")" tbexp4
+    tbexp4 ::= "AS" "(" SELECT ")"
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<scalar_expression>
+    SEXP ::= SEXP3 SEXP2
+    SEXP2 ::= "+" SEXP3 SEXP2
+                | "-" SEXP3 SEXP2
+                | "-" SEXP3 SEXP2
+                | VACIO
+    SEXP3 ::= SEXP4 SEXP3
+                | "*" SEXP4 SEXP3
+                | "/" SEXP4 SEXP3
+                | VACIO
+    SEXP4 ::= "(" SEXP ")"
+                | INTEGER
+                | FLOAT
+                | "@" IDENTIFICADOR
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<dml_select_list>
+    DML ::= DML2 DML3
+    DML2 ::= COLNAME
+                | SEXP
+    DML3 ::= "AS" IDENTIFICADOR DML4
+                | VACIO
+    DML4 ::= "," DML1
+                | VACIO
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+COLNAME ::= IDENTIFICADOR "." COLNAME1
+COLNAME1 ::= "*"
+                | IDENTIFICADOR
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<output_clause>
+    OUTCL ::= "OUTPUT" DML1 OUTCL1
+                | VACIO
+    OUTCL1 ::= "INTO" OUTCL2
+                | VACIO
+    OUTCL2 ::= "@" IDENTIFICADOR OUTCL3
+                | IDENTIFICADOR OUTCL3
+    OUTCL3 ::= COLST
+                | VACIO
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<column_list>
+    COLST ::= "(" COLST1
+    COLST1 ::= IDENTIFICADOR COLST2
+    COLST2 ::= "," COLST1
+                | ")"<
+                
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<expression>
+    EXPR_INSERT ::= SEXP
+                    | STRING
+                    | BIT
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<insert>
+    INSERT ::= "INSERT" INSERT1
+    INSERT1 ::= "TOP" "(" SEXP ")" INSERT2
+                    | INSERT3
+    INSERT2 ::= "PERCENT" INSERT3
+                    | INSERT3
+    INSERT3 ::= "INTO" INSERT4
+                    | INSERT4
+    INSERT4 ::= OBJECT INSERT5
+    INSERT5 ::= COLST INSERT6
+                    | INSERT6
+    INSERT6 ::= OUTCL INSERT7   
+                    | INSERT 7
+    INSERT7 ::= "VALUES" "(" INSERT8
+                    | SELECT ";"
+                    | "DEFAULT" "VALUES" ";"
+    INSERT8 ::= INSERT9 INSERT10
+    INSERT9 ::= "DEFAULT"
+                    | "NULL"
+                    | EXPR_INSERT
+    INSERT10 ::= "," INSERT8
+                    | ")" ";"

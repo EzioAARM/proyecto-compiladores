@@ -1,0 +1,20 @@
+<delete>
+    DELETE1 ::= "DELETE" DEL2
+    DEL2 ::= "TOP" "(" SEXP ")" DEL3
+                | DEL4
+    DEL3 ::= "PERCENT" DEL4
+                | DEL4
+    DEL4 ::= "FROM" DEL5
+                | DEL5
+    DEL5 ::= OBJECT DEL6
+                | "@" IDENTIFICADOR DEL6
+    DEL6 ::= OUTCL DEL7
+                | DEL7
+    DEL7 ::= "FROM" IDENTIFICADOR DEL8
+                | DEL9
+    DEL8 ::= "," IDENTIFICADOR DEL8
+                | DEL9
+    DEL9 ::= "WHERE" SearchC DEL10
+                | DEL10
+    DEL10 ::= ";"
+    

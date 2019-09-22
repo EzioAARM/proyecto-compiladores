@@ -1,0 +1,31 @@
+<select_list>
+    SELIST ::= "*"
+                | IDENTIFICADOR SELIST1
+                | SEXP
+                | "AS" SELIST3
+    SELIST1 ::= IDENTIFICADOR
+                | "." SELIST2
+                | "::" IDENTIFICADOR SELIST4
+                | "=" SELIST7
+    SELIST2 ::= "*"
+                | IDENTIFICADOR SELIST4
+    SELIST4 ::= "(" SELIST5
+                | VACIO
+    SELIST5 ::= EXPR_INSERT SELIST6
+    SELIST6 ::= "," SELIST5
+                | ")"
+    SELIST3 ::= IDENTIFICADOR
+    SELIST7 ::= EXPR_INSERT
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<select>
+    SELECT1 ::= "SELECT" SELECT2
+    SELECT2 ::= SELECT3 SELECT4
+    SELECT3 ::= "ALL"
+                | "DISTINC"
+                | VACIO
+    SELECT4 ::= "TOP" SELECT5
+                | SELECT6
+    SELECT5 ::= "(" SEXP ")" "PERCENT" SELECT6
+    SELECT6 ::= 

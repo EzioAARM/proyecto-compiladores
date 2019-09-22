@@ -1,0 +1,35 @@
+<search_condition>
+    SearchC ::= SearchCWMatch SearchC2
+    SearchC2 ::= "AND" SearchC SearchC2
+                | VACIO
+    SearchCWMatch ::= "NOT" PREDICADO SCWM2
+                | PREDICADO SCWM2
+                | "(" SearchCWMatch ")" SCWM2
+    SCWM2 ::= "AND" SCWM3
+                | "OR" SCWM3
+                | SCWM5
+    SCWM3 ::= "NOT" SCWM4
+                | SCWM4
+    SCWM4 ::= PREDICADO SCWM5
+                | "(" SearchCWMatch ")" SCWM5
+    SCWM5 ::= "," SearchCWMatch
+                | VACIO
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<predicado>
+    PREDICADO ::= EXPPIZADA PRED1
+                | STRING "NOT" "LIKE" STRING
+                | "CONTAINS" "(" FT1 "," CSC1 ")"
+                | "FREETEXT" "(" FT1 "," STRING ")"
+    PRED1 ::= COMPARADORES EXPPIZADA
+                | "IS" "NOT" "NULL"
+                | NOT1
+    NOT1 ::= "NOT"
+                | VACIO
+    FT1 ::= IDENTIFICADOR 
+                | "*"
+    PRED2 ::= "," EXPPIZADA PRED2
+                | VACIO
+    PRED3 ::= EXPPIZADA "BETWEEN" EXPPIZADE
+                | "IN" "(" EXPPIZADA PRED2 ")"

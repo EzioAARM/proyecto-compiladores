@@ -6,6 +6,7 @@
 package AnalizadorSintactico;
 
 import AnalizadorLexico.MyToken;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,9 +16,17 @@ import java.util.List;
 public class AnalizadorSintactico {
     
     private int posicionToken;
+    private List<MyToken> Tokens;
     
     public AnalizadorSintactico(List<MyToken> tokens) {
         posicionToken = 0;
+        Tokens = new ArrayList();
+        for (int i = 0; i < tokens.size(); i++) {
+            if (!tokens.get(i).get_type().equals("Error") || !tokens.get(i).get_type().equals("Separador") 
+                    || !tokens.get(i).get_type().equals("Comentario") || !tokens.get(i).get_type().equals("Advertencia")) {
+                Tokens.add(tokens.get(i));
+            }
+        }
     }
     
 }
