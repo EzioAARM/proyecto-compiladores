@@ -11,4 +11,6 @@ package AnalizadorSintactico.Utilidades;
  */
 public class ScalarExpression {
     
+    
+    
 }
