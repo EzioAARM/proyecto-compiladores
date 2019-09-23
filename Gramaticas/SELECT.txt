@@ -1,21 +1,35 @@
 <select_list>
     SELIST ::= "*"
-                | IDENTIFICADOR SELIST1
-                | SEXP
-                | "AS" SELIST3
+                | SELIST8 SELIST9
+    SELIST8 ::= IDENTIFICADOR SELIST1
+                | EXPR_INSERT
     SELIST1 ::= IDENTIFICADOR
                 | "." SELIST2
                 | "::" IDENTIFICADOR SELIST4
                 | "=" SELIST7
     SELIST2 ::= "*"
-                | IDENTIFICADOR SELIST4
+                | IDENTIFICADOR SELIST4 -- modificar IDENTIFICADOR para las funciones
     SELIST4 ::= "(" SELIST5
                 | VACIO
     SELIST5 ::= EXPR_INSERT SELIST6
     SELIST6 ::= "," SELIST5
                 | ")"
+    SELIST9 ::= "AS" SELIST3
+                | VACIO
     SELIST3 ::= IDENTIFICADOR
-    SELIST7 ::= EXPR_INSERT
+    SELIST7 ::= EXPR_INSERT 
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<select_expression>
+    SEL_EXP ::= SEXP
+                | IDENTIFICADOR SEL_EXP1
+    SEL_EXP1 ::= "." IDENTIFICADOR SEL_EXP2
+    SEL_EXP2 ::= "(" SEL_EXP3
+                | VACIO
+    SEL_EXP3 ::= SEXP SEL_EXP4
+    SEL_EXP4 ::= "," SEL_EXP3
+                | ")"
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
