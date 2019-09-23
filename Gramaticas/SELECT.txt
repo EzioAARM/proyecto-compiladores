@@ -114,7 +114,57 @@
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <expression>
-    EXPRESSION ::=
+    EXPRESSION ::= SEXP
+                | STRING
+                | IDENTIFICADOR EXPRESSION1
+                | "(" EXPRESSION ")"
+                | EXPRESSION2
+                | EXPRESSION EXPRESSION4
+    EXPRESSION1 ::= "." IDENTIFICADOR
+                | VACIO
+    EXPRESSION2 ::= EXPRESSION3 EXPRESSION
+    EXPRESSION3 ::= "+"
+                | "-"
+    EXPRESSION4 ::= BIN_OPR EXPRESSION
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<binary_operators>
+    BIN_OPR ::= AR_OPR
+                | ASIG_OPR
+                | BIT_OPR
+                | COMPARE_OPR
+                | LOGIC_OPR
+
+    AR_OPR ::= "+"
+                | "-"
+                | "*"
+                | "/"
+                | "%"
+    
+    ASIG_OPR ::= "="
+
+    BIT_OPR ::= "AND"
+                | "OR"
+                | "NOT"
+    
+    COMPARE_OPR ::= ">"
+                | "<"
+                | ">="
+                | "<="
+                | "<>"
+                | "!="
+
+    LOGIC_OPR ::= "ALL"
+                | "AND"
+                | "ANY"
+                | "BETWEEN"
+                | "EXISTS"
+                | "IN"
+                | "LIKE"
+                | "NOT"
+                | "OR"
+                | "SOME"
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
