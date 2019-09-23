@@ -21,17 +21,66 @@
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<select_expression>
-    SEL_EXP ::= SEXP
-                | IDENTIFICADOR SEL_EXP1
-                | SEL_EXP5
-    SEL_EXP1 ::= "." IDENTIFICADOR SEL_EXP2
-    SEL_EXP2 ::= "(" SEL_EXP3
+<conversion_functions>
+    CONV ::= "CAST" "(" CONV1 
+                | "CONVERT" "(" CONV2
+    CONV1 ::= EXPRESSION "AS" DATA_TYPE CONV3 ")"
+    CONV2 ::= DATA_TYPE CONV3 CONV4
+    CONV3 ::= "(" INTEGER ")"
                 | VACIO
-    SEL_EXP3 ::= SEXP SEL_EXP4
-    SEL_EXP4 ::= "," SEL_EXP3
+    CONV4 ::= EXPRESSION CONV5
+    CONV5 ::= "," SEXP
                 | ")"
-    SEL_EXP5 ::= "AVG" "(" SEL_AVG ")"
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<datetime_functions>
+    DT_FN ::= "CURRENT_TIMESTAMP"
+                | "GETDATE" "(" ")"
+                | "DAY" "(" DT_FN1 ")"
+                | "MONTH" "(" DT_FN1 ")"
+                | "YEAR" "(" DT_FN1 ")"
+                | "SET" "LANGUAGE" DT_FN2
+    DT_FN1 ::= STRING
+                | "@" IDENTIFICADOR
+    DT_FN2 ::= "@" IDENTIFICADOR
+                | IDENTIFICADOR
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<string_functions>
+    STR_FN ::= "LOWER" "(" STR_FN1 ")"
+                | "TRANSLATE" "(" STR_FN1 "," STR_FN1 "," STR_FN1 ")"
+                | "UPPER" "(" STR_FN1 ")"
+                | "CHAR" "(" SEXP ")"
+                | "LEFT" "(" STR_FN1 "," SEXP ")"
+                | "TRIM" "(" STR_FN2 STR_FN1 ")"
+                | "NCHAR" "(" SEXP ")"
+                | "RIGHT" "(" STR_FN1 "," SEXP ")"
+                | "SPACE" "(" SEXP ")" 
+                | "SUBSTRING" "(" STR_FN1 "," SEXP "," SEXP ")"
+    STR_FN1 ::= "@" IDENTIFICADOR
+                | STRING
+                | IDENTIFICADOR
+    STR_FN2 ::= STR_FN1 "FROM"
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<other_functions>
+    OTH_FN ::= "NEXT" "VALUE" "FOR" IDENTIFICADOR OTH_FN1
+                | "SYSTEM_USER"
+                | "SESSION_USER"
+                | "NULLIF" "(" EXPRESSION "," EXPRESSION ")"
+    OTH_FN1 ::=  "." IDENTIFICADOR OTH_FN2
+                | OTH_FN2
+    OTH_FN2 ::= " "." IDENTIFICADOR OTH_FN3
+                | OTH_FN3
+    OTH_FN3 ::= "OVER" "ORDER" "BY" ORDER
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<aggregate_functions>
+    AGG_FN ::= "AVG" "(" SEL_AVG ")"
                 | "COUNT" "(" SEL_COUNT ")"
                 | "MAX" "(" SEL_AGR ")"
                 | "MIN" "(" SEL_AGR ")"
@@ -61,6 +110,16 @@
                 | SEXP 
     SEL_AGR3 ::= "." IDENTIFICADOR
                 | VACIO
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<expression>
+    EXPRESSION ::=
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<case_when>
+    CASEW ::= "CASE" 
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
