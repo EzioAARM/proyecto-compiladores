@@ -64,6 +64,119 @@
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<rowset_function>
+    ROWSET ::= "OPENDATASOURCE" "(" STRING, STRING ")"
+                | "OPENQUERY" "(" IDENTIFICADOR, STRING ")"
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<table_hint>
+    TB_HINT ::= "INDEX" TB_HINT1
+                | HOLDLOCK
+    TB_HINT1 ::= "=" "(" TB_HINT4 ")" 
+                | "(" TB_HINT3
+    TB_HINT3 ::= TB_HINT4 TB_HINT5
+    TB_HINT4 ::= INTEGER
+                | IDENTIFICADOR
+    TB_HINT5 ::= "," TB_HINT3
+                | ")"
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<tablesample_clause>
+    SAM_CL ::= "TABLESAMPLE" "(" SAM_CL1 ")"
+    SAM_CL1 ::= SEXP SAM_CL2
+    SAM_CL2 ::= "PERCENT"
+                | ROWS
+                | VACIO
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<user_defined_function>
+    US_DF_FN ::= IDENTIFICADOR "." IDENTIFICADOR "(" US_DF_FN1
+    US_DF_FN1 ::= US_DF_FN2 
+    US_DF_FN2 ::= EXPR_INSERT US_DF_FN3
+                | IDENTIFICADOR US_DF_FN3
+                | ")"
+    US_DF_FN3 ::= "," US_DF_FN1
+                | ")"
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<table_or_view_name>
+    TB_VNAME ::= IDENTIFICADOR TB_VNAME1
+    TB_VNAME1 ::= "." IDENTIFICADOR
+                | VACIO
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<join_type>
+    JOIN_TYPE ::= JOIN_TYPE1 "JOIN"
+    JOIN_TYPE1 ::= "INNER"
+                |JOIN_TYPE2 
+                | VACIO
+    JOIN_TYPE2 ::= "LEFT" JOIN_TYPE3
+                | "RIGHT" JOIN_TYPE3
+                | "FULL" JOIN_TYPE3
+                | VACIO
+    JOIN_TYPE3 ::= "OUTER"
+                | VACIO
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<joined_table>
+    JOIN_TB ::= JOIN_TB1
+                | JOIN_TB2
+                | JOIN_TB3
+    JOIN_TB1 ::= TB_SOURCE JOIN_TYPE TB_SOURCE "ON" SearchC
+    JOIN_TB2 ::= TB_SOURCE "CROSS" "JOIN" TB_SOURCE
+    JOIN_TB3 ::= "(" JOIN_TB ")"
+                | JOIN_TB
+                | VACIO
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<table_source>
+    TB_SOURCE ::= TB_VNAME TB_SOURCE1
+                | ROWSET TB_SOURCE6
+                | US_DF_FN
+                | "@" IDENTIFICADOR TB_SOURCE8
+    TB_SOURCE1 ::= "AS" TB_SOURCE2
+                | TB_SOURCE2
+    TB_SOURCE2 ::= SAM_CL TB_SOURCE3
+                | TB_SOURCE3
+    TB_SOURCE3 ::= "WITH" TB_SOURCE4
+                | VACIO
+    TB_SOURCE4 ::= TB_HINT TB_SOURCE5
+    TB_SOURCE5 ::= "," TB_SOURCE4
+                | ")" 
+    TB_SOURCE6 ::= "AS" TB_SOURCE7
+                | TB_SOURCE7
+    TB_SOURCE7 ::= IDENTIFICADOR
+                | VACIO
+    TB_SOURCE8 ::= "AS" IDENTIFICADOR
+                | "." IDENTIFICADOR "(" TB_SOURCE9
+                | VACIO
+    TB_SOURCE9 ::= EXPR_INSERT TB_SOURCE10
+    TB_SOURCE10 ::= "," TB_SOURCE9
+                | ")" TB_SOURCE11
+    TB_SOURCE11 ::= "AS" IDENTIFICADOR
+                | VACIO
+    
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<order_by>
+    ORDER ::= SEL_EXP ORDER1
+    ORDER1 ::= ORDER2
+                | "," ORDER
+    ORDER2 ::= "COLLATE" ORDER3
+                | ORDER4
+    ORDER3 ::= IDENTIFICADOR ORDER4
+    ORDER4 ::= "ASC"
+                | "DESC"
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <select>
     SELECT1 ::= "SELECT" SELECT2
     SELECT2 ::= SELECT3 SELECT4
@@ -71,6 +184,25 @@
                 | "DISTINC"
                 | VACIO
     SELECT4 ::= "TOP" SELECT5
-                | SELECT6
-    SELECT5 ::= "(" SEXP ")" "PERCENT" SELECT6
-    SELECT6 ::= 
+                | SELECT7
+    SELECT5 ::= "(" SEXP ")" SELECT6
+    SELECT6 ::= "PERCENT"
+                | VACIO
+    SELECT7 ::= SELIST SELECT8
+    SELECT8 ::= "INTO" SELECT9
+                | SELECT11
+    SELECT9 ::= IDENTIFICADOR SELECT10
+    SELECT10 ::= "." IDENTIFICADOR
+                | VACIO
+    SELECT11 ::= "FROM" TB_SOURCE
+                | SELECT12
+    SELECT12 ::= "WHERE" SearchC SELECT13
+                | SELECT13
+    SELECT13 ::= "GROUP" "BY" GROUP_CL SELECT14
+                | SELECT14
+    SELECT14 ::= "HAVING" SearchC SELECT15
+                | SELECT15
+    SELECT15 ::= "ORDER" "BY" ORDER SELECT16
+                | SELECT16
+    SELECT16 ::= "OPTION" OPTION
+                | VACIO
