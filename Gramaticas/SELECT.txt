@@ -8,7 +8,7 @@
                 | "::" IDENTIFICADOR SELIST4
                 | "=" SELIST7
     SELIST2 ::= "*"
-                | IDENTIFICADOR SELIST4 -- modificar IDENTIFICADOR para las funciones
+                | SEL_EXP SELIST4
     SELIST4 ::= "(" SELIST5
                 | VACIO
     SELIST5 ::= EXPR_INSERT SELIST6
@@ -17,19 +17,50 @@
     SELIST9 ::= "AS" SELIST3
                 | VACIO
     SELIST3 ::= IDENTIFICADOR
-    SELIST7 ::= EXPR_INSERT 
+    SELIST7 ::= SEL_EXP 
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <select_expression>
     SEL_EXP ::= SEXP
                 | IDENTIFICADOR SEL_EXP1
+                | SEL_EXP5
     SEL_EXP1 ::= "." IDENTIFICADOR SEL_EXP2
     SEL_EXP2 ::= "(" SEL_EXP3
                 | VACIO
     SEL_EXP3 ::= SEXP SEL_EXP4
     SEL_EXP4 ::= "," SEL_EXP3
                 | ")"
+    SEL_EXP5 ::= "AVG" "(" SEL_AVG ")"
+                | "COUNT" "(" SEL_COUNT ")"
+                | "MAX" "(" SEL_AGR ")"
+                | "MIN" "(" SEL_AGR ")"
+                | "SUM" "(" SEL_AGR ")"
+    SEL_AVG ::= SEL_AVG1 SEL_AVG2
+    SEL_AVG1 ::= "ALL"
+                | "DISTINC"
+                | VACIO
+    SEL_AVG2 ::= SEXP
+                | IDENTIFICADOR SEL_AVG3
+    SEL_AVG3 ::= "." IDENTIFICADOR
+                | VACIO
+    SEL_COUNT ::= SEL_COUNT1 SEL_COUNT2
+    SEL_COUNT1 ::= "ALL"
+                | "DISTINC"
+                | VACIO
+    SEL_COUNT2 ::= "*"
+                | IDENTIFICADOR SEL_COUNT3
+                | SEXP 
+    SEL_COUNT3 ::= "." IDENTIFICADOR
+                | VACIO
+    SEL_AGR ::= SEL_AGR1 SEL_AGR2
+    SEL_AGR1 ::= "ALL"
+                | "DISTINC"
+                | VACIO
+    SEL_AGR2 ::= IDENTIFICADOR SEL_AGR3
+                | SEXP 
+    SEL_AGR3 ::= "." IDENTIFICADOR
+                | VACIO
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
