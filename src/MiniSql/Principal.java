@@ -122,21 +122,13 @@ public class Principal extends javax.swing.JFrame {
             if (chooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
                 
                 // Obtiene el archivo seleccionado
+                txtCodigo.setText("");
+                txtMensajes.setText("");
                 File archivoSeleccionado = chooser.getSelectedFile();
                 txtPrueba.setText(archivoSeleccionado.getAbsolutePath());
                 String ubicacion = archivoSeleccionado.getParent();
-                
-                // Genera un archivo de salida con el mismo nombre del archivo de entrada
-                String nombre = archivoSeleccionado.getName().split("\\.")[0];
-                File archivoSalida = new File(ubicacion + "//" + nombre + ".out");
-                FileWriter archivoEscribir = new FileWriter(archivoSalida);
-                PrintWriter escritor = new PrintWriter(archivoEscribir);
                 BufferedReader buffered = new BufferedReader(new FileReader(archivoSeleccionado));
-                
-                // Inicia el analisis lexico
                 Lexemas analizadorFlex = new Lexemas(buffered);
-                
-                // Lista con los tokens analizados
                 String erroresLexicos = "";
                 List<MyToken> datos = analizadorFlex.yylex();
                 boolean existeError = false;

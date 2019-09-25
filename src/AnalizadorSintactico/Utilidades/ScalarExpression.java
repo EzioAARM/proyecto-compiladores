@@ -5,7 +5,6 @@
  */
 package AnalizadorSintactico.Utilidades;
 
-import AnalizadorLexico.MyToken;
 import MiniSql.Errores;
 import static AnalizadorSintactico.AnalizadorSintactico.TokenActual;
 import static AnalizadorSintactico.AnalizadorSintactico.moverToken;
@@ -21,9 +20,7 @@ public class ScalarExpression {
 
     
     public boolean Analizar() {
-        if (!getHasError())
-            return SEXP();
-        return false;
+        return SEXP();
     }
     
     public boolean SEXP() {
@@ -37,7 +34,7 @@ public class ScalarExpression {
                 Errores.SyntaxError(TokenActual(), "un número entero o float o una variable o un parentesis de apertura");
             }
         }
-        return getHasError();
+        return !getHasError();
     }
     
     public void SEXP2() {

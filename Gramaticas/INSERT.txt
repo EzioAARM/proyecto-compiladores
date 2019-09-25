@@ -9,24 +9,19 @@
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <scalar_expression>
-    SEXP=SEXP3,SEXP2
-    SEXP2="+",SEXP3,SEXP2
-                | "-",SEXP3,SEXP2
+    SEXP ::= SEXP3 SEXP2
+    SEXP2 ::= "+" SEXP3 SEXP2
+                | "-" SEXP3 SEXP2
                 | VACIO
-    SEXP3=SEXP4,SEXP3
-                | "*",SEXP4,SEXP3
-                | "/",SEXP4,SEXP3
+    SEXP3 ::= SEXP5 SEXP4
+    SEXP4 ::= "*" SEXP5 SEXP4
+                | "/" SEXP5 SEXP4
                 | VACIO
-    SEXP4="(",SEXP,")"
+    SEXP5 ::= "(" SEXP ")"
                 | INTEGER
                 | FLOAT
-                | "@",IDENTIFICADOR
+                | "@" IDENTIFICADOR
                 | AGG_FN
-
-    SEXP --> SEXP3 ::= "(", INTEGER, FLOAT, "@", AGG_FN, "*", "/"
-    SEXP --> SEXP2 ::= "+", "-"
-    SEXP2 --> 
-    SEXP3 --> SEXP4 ::= "(", INTEGER, FLOAT, "@", AGG_FN
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

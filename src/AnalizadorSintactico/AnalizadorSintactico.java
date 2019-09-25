@@ -41,6 +41,11 @@ public class AnalizadorSintactico {
         esObjeto = true;
         ScalarExpression test = new ScalarExpression();
         test.Analizar();
+        if (hasError) {
+            Errores.DevelopErrors("Hubo un error analizando");
+        } else {
+            Errores.DevelopErrors("Se analizó con éxito");
+        }
     }
     
     public static void moverToken() {
