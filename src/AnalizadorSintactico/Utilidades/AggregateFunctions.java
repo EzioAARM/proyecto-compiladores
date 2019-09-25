@@ -93,43 +93,55 @@ public class AggregateFunctions {
     
     public void SELAVG() {
         if (!getHasError()) {
-            if (TokenActual().get_token().equals("ALL") || TokenActual().get_token().equals("DISTINCT") || TokenActual().get_token().equals("Identificador")) {
+            if (TokenActual().get_token().equals("ALL") || TokenActual().get_token().equals("DISTINCT") || TokenActual().get_token().equals("Identificador")
+                    || TokenActual().get_token().equals("ParentesisAbrir") || TokenActual().get_token().equals("DatoEntero") 
+                    || TokenActual().get_token().equals("DatoFloat") || TokenActual().get_token().equals("Arroba")) {
                 SELAVG1();
                 SELAVG2();
             } else {
-                if (TokenActual().get_token().equals("ParentesisAbrir") || TokenActual().get_token().equals("DatoEntero") 
-                    || TokenActual().get_token().equals("DatoFloat") || TokenActual().get_token().equals("Arroba")) {
-                    ScalarExpression sexp = new ScalarExpression();
-                    if (sexp.Analizar()) {
-                        SELAVG1();
-                        SELAVG2();
-                    } else {
-                        setHasError(true);
-                        Errores.SyntaxError(TokenActual(), "scalar expression");
-                    }
-                } else {
-                    setHasError(true);
-                    Errores.SyntaxError(TokenActual(), "'ALL', 'DISTINCT', nombre de columna o scalar expression");
-                }
+                setHasError(true);
+                Errores.SyntaxError(TokenActual(), "'ALL', 'DISTINCT', nombre de columna o scalar expression");
             }
         }
     }
     
     public void SELAVG1() {
         if (!getHasError()) {
-            
+            if (TokenActual().get_token().equals("ALL") || TokenActual().get_token().equals("DISTINCT")) {
+                moverToken();
+            }      
         }
     }
     
     public void SELAVG2() {
         if (!getHasError()) {
-            
+            if (TokenActual().get_token().equals("Identificador")) {
+                moverToken();
+                SELAVG3();
+            } else {
+                ScalarExpression sexp = new ScalarExpression();
+                if (sexp.Analizar()) {
+                    SELAVG1();
+                    SELAVG2();
+                } else {
+                    setHasError(true);
+                    Errores.SyntaxError(TokenActual(), "scalar expression");
+                }
+            }
         }
     }
     
     public void SELAVG3() {
         if (!getHasError()) {
-            
+            if (TokenActual().get_token().equals("Punto")) {
+                moverToken();
+                if (TokenActual().get_token().equals("Identificador")) {
+                    moverToken();
+                } else {
+                    setHasError(true);
+                    Errores.SyntaxError(TokenActual(), "identificador");
+                }
+            }
         }
     }
     
