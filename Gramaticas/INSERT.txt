@@ -59,7 +59,7 @@ COLNAME1 ::= "*"
     COLST ::= "(" COLST1
     COLST1 ::= IDENTIFICADOR COLST2
     COLST2 ::= "," COLST1
-                | ")"<
+                | ")"
                 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -77,18 +77,22 @@ COLNAME1 ::= "*"
     INSERT2 ::= "PERCENT" INSERT3
                     | INSERT3
     INSERT3 ::= "INTO" INSERT4
-                    | INSERT4
+                    | INSERT5
     INSERT4 ::= OBJECT INSERT5
     INSERT5 ::= COLST INSERT6
                     | INSERT6
     INSERT6 ::= OUTCL INSERT7   
                     | INSERT 7
     INSERT7 ::= "VALUES" "(" INSERT8
-                    | SELECT ";"
-                    | "DEFAULT" "VALUES" ";"
-    INSERT8 ::= INSERT9 INSERT10
-    INSERT9 ::= "DEFAULT"
+                    | SELECT1 INSERT9
+                    | "DEFAULT" "VALUES" INSERT9
+    INSERT8 ::= INSERT10 INSERT11
+    INSERT10 ::= "DEFAULT"
                     | "NULL"
-                    | EXPR_INSERT
-    INSERT10 ::= "," INSERT8
-                    | ")" ";"
+                    | EXPRESSION
+    INSERT11 ::= "," INSERT10
+                    | ")" INSERT12
+    INSERT12 ::= "," "VALUES" "(" INSERT8
+                    | INSERT9
+    INSERT9 ::= ";"
+                    | "GO"
