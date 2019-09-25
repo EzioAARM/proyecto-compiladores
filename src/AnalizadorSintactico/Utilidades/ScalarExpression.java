@@ -5,6 +5,7 @@
  */
 package AnalizadorSintactico.Utilidades;
 
+import AnalizadorLexico.MyToken;
 import MiniSql.Errores;
 import static AnalizadorSintactico.AnalizadorSintactico.TokenActual;
 import static AnalizadorSintactico.AnalizadorSintactico.moverToken;
@@ -26,8 +27,16 @@ public class ScalarExpression {
     }
     
     public boolean SEXP() {
-        SEXP3();
-        SEXP2();
+        if (!getHasError()) {
+            if (TokenActual().get_token().equals("ParentesisAbrir") || TokenActual().get_token().equals("DatoEntero") 
+                    || TokenActual().get_token().equals("DatoFloat") || TokenActual().get_token().equals("Arroba")) {
+                SEXP3();
+                SEXP2();
+            } else {
+                setHasError(true);
+                Errores.SyntaxError(TokenActual(), "un número entero o float o una variable o un parentesis de apertura");
+            }
+        }
         return getHasError();
     }
     
@@ -43,23 +52,28 @@ public class ScalarExpression {
     
     public void SEXP3() {
         if (!getHasError()) {
-            if (TokenActual().get_token().equals("Multiplicacion") || TokenActual().get_token().equals("Division")) {
-                moverToken();
+            if (TokenActual().get_token().equals("ParentesisAbrir") || TokenActual().get_token().equals("DatoEntero") 
+                    || TokenActual().get_token().equals("DatoFloat") || TokenActual().get_token().equals("Arroba")) {
+                SEXP5();
                 SEXP4();
-                SEXP3();
             } else {
-                if (TokenActual().get_token().equals("ParentesisAbrir") || TokenActual().get_token().equals("DatoEntero") 
-                        || TokenActual().get_token().equals("DatoFloat") || TokenActual().get_token().equals("Arroba"))
-                    SEXP4();
-                if (TokenActual().get_token().equals("Multiplicacion") || TokenActual().get_token().equals("Division")) {
-                    moverToken();
-                    SEXP3();
-                }
+                setHasError(true);
+                Errores.SyntaxError(TokenActual(), "un número entero o float o una variable o un parentesis de apertura");
             }
         }
     }
     
     public void SEXP4() {
+        if (!getHasError()) {
+            if (TokenActual().get_token().equals("Multiplicacion") || TokenActual().get_token().equals("Division")) {
+                moverToken();
+                SEXP5();
+                SEXP4();
+            }
+        }
+    }
+    
+    public void SEXP5() {
         if (!getHasError()) {
             if (TokenActual().get_token().equals("ParentesisAbrir")) {
                 moverToken();
@@ -67,6 +81,8 @@ public class ScalarExpression {
                 if (!TokenActual().get_token().equals("ParentesisCerrar")) {
                     setHasError(true);
                     Errores.SyntaxError(TokenActual(), "parentesis de cierre");
+                } else {
+                    moverToken();
                 }
             } else if (TokenActual().get_token().equals("DatoEntero") || TokenActual().get_token().equals("DatoFloat")) {
                 moverToken();
@@ -78,6 +94,9 @@ public class ScalarExpression {
                     setHasError(true);
                     Errores.SyntaxError(TokenActual(), "nombre de variable");
                 }
+            } else if (TokenActual().get_token().equals("FINDELARCHIVO")) {
+                setHasError(true);
+                Errores.EOF("ScalarExpression.java");
             } else {
                 setHasError(true);
                 Errores.SyntaxError(TokenActual(), "un número entero o float o una variable o un parentesis de cierre");

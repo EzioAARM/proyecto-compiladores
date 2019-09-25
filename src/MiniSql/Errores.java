@@ -25,4 +25,8 @@ public class Errores {
                 + "\n" + "Se encontró " + tokenError.get_token() + " y se esperaba " + esperado);
     }
     
+    public static void EOF(String claseAnalisis) {
+        Errores.append("\n" + "se encontró el fin del archivo, el analisis estaba en: " + claseAnalisis);
+    }
+    
 }

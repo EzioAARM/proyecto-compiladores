@@ -2004,7 +2004,8 @@ public class Lexemas {
             }  // fall though
             case 1412: break;
             default:
-          {     return Tokens;
+          {     Tokens.add(new MyToken("FINDELARCHIVO", yytext(), "Final", yyline + 1, yylength(), yycolumn + 1));
+    return Tokens;
  }
         }
       }

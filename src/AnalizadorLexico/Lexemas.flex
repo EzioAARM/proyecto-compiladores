@@ -28,6 +28,7 @@ import java.util.ArrayList;
 %eofclose
 %type List<MyToken>
 %eofval{
+    Tokens.add(new MyToken("FINDELARCHIVO", yytext(), "Final", yyline + 1, yylength(), yycolumn + 1));
     return Tokens;
 %eofval}
 %init{
