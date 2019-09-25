@@ -5,73 +5,84 @@
  */
 package AnalizadorSintactico.Utilidades;
 
+import MiniSql.Errores;
+import static AnalizadorSintactico.AnalizadorSintactico.TokenActual;
+import static AnalizadorSintactico.AnalizadorSintactico.moverToken;
+import static AnalizadorSintactico.AnalizadorSintactico.getHasError;
+import static AnalizadorSintactico.AnalizadorSintactico.setHasError;
+
+
 /**
  *
  * @author axel
  */
 public class ScalarExpression {
-    
+
     
     public boolean Analizar() {
-        return SEXP();
+        if (!getHasError())
+            return SEXP();
+        return false;
     }
     
     public boolean SEXP() {
-        switch (AnalizadorSintactico.AnalizadorSintactico.TokenActual().get_token()) {
-            case "Simbolo.ParentesisAbrir":
-                AnalizadorSintactico.AnalizadorSintactico.moverToken();
-                return SEXP3();
-            case "DatoEntero":
-                AnalizadorSintactico.AnalizadorSintactico.moverToken();
-                return SEXP3();
-            case "DatoFloat":
-                AnalizadorSintactico.AnalizadorSintactico.moverToken();
-                return SEXP3();
-            case "Simbolo.Arroba":
-                AnalizadorSintactico.AnalizadorSintactico.moverToken();
-                return SEXP3();
-            case "Simbolo.Mas":
-                AnalizadorSintactico.AnalizadorSintactico.moverToken();
-                return SEXP2();
-            case "Simbolo.Menos":
-                AnalizadorSintactico.AnalizadorSintactico.moverToken();
-                return SEXP2();
-            default:
-                // Agregar funciones de agregación
-                return false;
+        SEXP3();
+        SEXP2();
+        return getHasError();
+    }
+    
+    public void SEXP2() {
+        if (!getHasError()) {
+            if (TokenActual().get_token().equals("Mas") || TokenActual().get_token().equals("Menos")) {
+                moverToken();
+                SEXP3();
+                SEXP2();
+            }
         }
     }
     
-    public boolean SEXP2() {
-        switch (AnalizadorSintactico.AnalizadorSintactico.TokenActual().get_token()) {
-            case "Simbolo.Mas":
-                return SEXP2();
-            case "Simbolo.Menos":
-                return SEXP2();
-            default:
-                return SEXP3();
+    public void SEXP3() {
+        if (!getHasError()) {
+            if (TokenActual().get_token().equals("Multiplicacion") || TokenActual().get_token().equals("Division")) {
+                moverToken();
+                SEXP4();
+                SEXP3();
+            } else {
+                if (TokenActual().get_token().equals("ParentesisAbrir") || TokenActual().get_token().equals("DatoEntero") 
+                        || TokenActual().get_token().equals("DatoFloat") || TokenActual().get_token().equals("Arroba"))
+                    SEXP4();
+                if (TokenActual().get_token().equals("Multiplicacion") || TokenActual().get_token().equals("Division")) {
+                    moverToken();
+                    SEXP3();
+                }
+            }
         }
     }
     
-    public boolean SEXP3() {
-        switch (AnalizadorSintactico.AnalizadorSintactico.TokenActual().get_token()) {
-            case "Simbolo.ParentesisAbrir":
-                return SEXP3();
-            case "DatoEntero":
-                return SEXP3();
-            case "DatoFloat":
-                return SEXP3();
-            case "Simbolo.Arroba":
-                return SEXP3();
-            case "Simbolo.Multiplicacion":
-                return SEXP3();
-            case "Simbolo.Division":
-                return SEXP3();
+    public void SEXP4() {
+        if (!getHasError()) {
+            if (TokenActual().get_token().equals("ParentesisAbrir")) {
+                moverToken();
+                SEXP();
+                if (!TokenActual().get_token().equals("ParentesisCerrar")) {
+                    setHasError(true);
+                    Errores.SyntaxError(TokenActual(), "parentesis de cierre");
+                }
+            } else if (TokenActual().get_token().equals("DatoEntero") || TokenActual().get_token().equals("DatoFloat")) {
+                moverToken();
+            } else if (TokenActual().get_token().equals("Arroba")) {
+                moverToken();
+                if (TokenActual().get_token().equals("Identificador")){
+                    moverToken();
+                } else {
+                    setHasError(true);
+                    Errores.SyntaxError(TokenActual(), "nombre de variable");
+                }
+            } else {
+                setHasError(true);
+                Errores.SyntaxError(TokenActual(), "un número entero o float o una variable o un parentesis de cierre");
+            }
         }
-    }
-    
-    public boolean SEXP4() {
-        
     }
     
 }

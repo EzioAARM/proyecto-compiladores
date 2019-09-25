@@ -14,13 +14,15 @@ import javax.swing.JOptionPane;
  */
 public class Errores {
     
+    public static StringBuilder Errores = new StringBuilder();
+    
     public static void DevelopErrors(String errorName) {
-        JOptionPane.showMessageDialog(null, errorName, "Error de programador", 0);
+        Errores.append("\n" + errorName + "\n");
     }
     
-    public static void DevelopErrors(MyToken tokenError, String esperado) {
-        JOptionPane.showMessageDialog(null, "Error en la linea " + tokenError.getFila() + " columna " + tokenError.get_columnaInicial() 
-                + ", se encontró " + tokenError.get_lexema() + " y se esperaba" + esperado, "Error sintactico", 0);
+    public static void SyntaxError(MyToken tokenError, String esperado) {
+        Errores.append("\n" + "Error en la linea " + tokenError.getFila() + " columna " + tokenError.get_columnaInicial() 
+                + "\n" + "Se encontró " + tokenError.get_token() + " y se esperaba " + esperado);
     }
     
 }

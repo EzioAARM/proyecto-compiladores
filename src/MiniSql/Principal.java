@@ -183,8 +183,8 @@ public class Principal extends javax.swing.JFrame {
                     }
                     doc.insertString(txtCodigo.getText().length(), datos.get(i).get_lexema(), estiloUsado);
                 }
-                if (!existeError)
-                    analizadorSin = new AnalizadorSintactico(datos);
+                analizadorSin = new AnalizadorSintactico(datos);
+                txtMensajes.setText(txtMensajes.getText() + "\n" + "\n" + Errores.Errores.toString());
                 
             }
         } catch (IOException ex) {

@@ -10,7 +10,7 @@ package MiniSql;
  * @author axel
  */
 public class MiniSql {
-
+    
     /**
      * @param args the command line arguments
      */
