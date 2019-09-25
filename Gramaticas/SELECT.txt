@@ -3,6 +3,10 @@
     SELIST1 ::= "*"
                 | IDENTIFICADOR SELIST2
                 | EXPRESSION
+                | AGG_FN
+                | STR_FN
+                | DT_FN
+                | CONV
     SELIST2 ::= "." SELIST3
                 | "::" SELIST4
                 | "=" SELIST6
@@ -203,17 +207,6 @@
                 | ROWS
                 | VACIO
 
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<user_defined_function>
-    US_DF_FN ::= IDENTIFICADOR "." IDENTIFICADOR "(" US_DF_FN1
-    US_DF_FN1 ::= US_DF_FN2 
-    US_DF_FN2 ::= EXPR_INSERT US_DF_FN3
-                | IDENTIFICADOR US_DF_FN3
-                | ")"
-    US_DF_FN3 ::= "," US_DF_FN1
-                | ")"
-
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <table_or_view_name>
     TB_VNAME ::= IDENTIFICADOR TB_VNAME1
@@ -251,28 +244,18 @@
 <table_source>
     TB_SOURCE ::= TB_VNAME TB_SOURCE1
                 | ROWSET TB_SOURCE6
-                | US_DF_FN
+                | JOIN_TB
                 | "@" IDENTIFICADOR TB_SOURCE8
-    TB_SOURCE1 ::= "AS" TB_SOURCE2
+    TB_SOURCE1 ::= "AS" IDENTIFICADOR TB_SOURCE2
+                | IDENTIFICADOR TB_SOURCE2
                 | TB_SOURCE2
-    TB_SOURCE2 ::= SAM_CL TB_SOURCE3
-                | TB_SOURCE3
-    TB_SOURCE3 ::= "WITH" TB_SOURCE4
+    TB_SOURCE2 ::= SAM_CL 
                 | VACIO
-    TB_SOURCE4 ::= TB_HINT TB_SOURCE5
-    TB_SOURCE5 ::= "," TB_SOURCE4
-                | ")" 
     TB_SOURCE6 ::= "AS" TB_SOURCE7
                 | TB_SOURCE7
     TB_SOURCE7 ::= IDENTIFICADOR
                 | VACIO
     TB_SOURCE8 ::= "AS" IDENTIFICADOR
-                | "." IDENTIFICADOR "(" TB_SOURCE9
-                | VACIO
-    TB_SOURCE9 ::= EXPR_INSERT TB_SOURCE10
-    TB_SOURCE10 ::= "," TB_SOURCE9
-                | ")" TB_SOURCE11
-    TB_SOURCE11 ::= "AS" IDENTIFICADOR
                 | VACIO
     
 

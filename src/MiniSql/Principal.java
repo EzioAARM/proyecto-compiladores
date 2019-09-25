@@ -161,6 +161,9 @@ public class Principal extends javax.swing.JFrame {
                 final Style defaultStyle = sc.addStyle("BLACK", null);
                 defaultStyle.addAttribute(StyleConstants.Foreground, Color.black);
                 
+                final Style greenStyle = sc.addStyle("GREEN", null);
+                greenStyle.addAttribute(StyleConstants.Foreground, Color.green);
+                
                 txtCodigo.setStyledDocument(doc);
                 Style estiloUsado = null;
                 for (int i = 0; i < datos.size(); i++) {
@@ -170,6 +173,9 @@ public class Principal extends javax.swing.JFrame {
                             break;
                         case "Reservada":
                             estiloUsado = blueStyle;
+                            break;
+                        case "Comentario":
+                            estiloUsado = greenStyle;
                             break;
                         default:
                             estiloUsado = defaultStyle;

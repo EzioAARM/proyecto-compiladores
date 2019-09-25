@@ -10,11 +10,12 @@
                 | "@" IDENTIFICADOR DEL6
     DEL6 ::= OUTCL DEL7
                 | DEL7
-    DEL7 ::= "FROM" IDENTIFICADOR DEL8
+    DEL7 ::= "FROM" TB_SOURCE DEL8
                 | DEL9
-    DEL8 ::= "," IDENTIFICADOR DEL8
+    DEL8 ::= "," TB_SOURCE DEL8
                 | DEL9
     DEL9 ::= "WHERE" SearchC DEL10
                 | DEL10
     DEL10 ::= ";"
+                | "GO"
     
