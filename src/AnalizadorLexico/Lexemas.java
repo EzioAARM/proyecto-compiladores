@@ -2016,12 +2016,12 @@ public class Lexemas {
             // fall through
           case 356: break;
           case 2: 
-            { Tokens.add(new MyToken("Simbolo.Mas", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("Mas", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 357: break;
           case 3: 
-            { Tokens.add(new MyToken("Simbolo.Menos", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("Menos", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 358: break;
@@ -2040,112 +2040,112 @@ public class Lexemas {
             // fall through
           case 360: break;
           case 6: 
-            { Tokens.add(new MyToken("Simbolo.Punto", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("Punto", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 361: break;
           case 7: 
-            { Tokens.add(new MyToken("Simbolo.Salto", yytext(), "Separador", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("Salto", yytext(), "Separador", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 362: break;
           case 8: 
-            { Tokens.add(new MyToken("Simbolo.Tabulacion", yytext(), "Separador", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("Tabulacion", yytext(), "Separador", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 363: break;
           case 9: 
-            { Tokens.add(new MyToken("Simbolo.Carrete", yytext(), "Separador", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("Carrete", yytext(), "Separador", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 364: break;
           case 10: 
-            { Tokens.add(new MyToken("Simbolo.Espacio", yytext(), "Separador", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("Espacio", yytext(), "Separador", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 365: break;
           case 11: 
-            { Tokens.add(new MyToken("Simbolo.Multiplicacion", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("Multiplicacion", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 366: break;
           case 12: 
-            { Tokens.add(new MyToken("Simbolo.Division", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("Division", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 367: break;
           case 13: 
-            { Tokens.add(new MyToken("Simbolo.Modulo", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("Modulo", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 368: break;
           case 14: 
-            { Tokens.add(new MyToken("Simbolo.Menor", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("Menor", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 369: break;
           case 15: 
-            { Tokens.add(new MyToken("Simbolo.Igual", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("Igual", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 370: break;
           case 16: 
-            { Tokens.add(new MyToken("Simbolo.Mayor", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("Mayor", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 371: break;
           case 17: 
-            { Tokens.add(new MyToken("Simbolo.Not", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("Not", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 372: break;
           case 18: 
-            { Tokens.add(new MyToken("Simbolo.PuntoComa", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("PuntoComa", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 373: break;
           case 19: 
-            { Tokens.add(new MyToken("Simbolo.Coma", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("Coma", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 374: break;
           case 20: 
-            { Tokens.add(new MyToken("Simbolo.CorcheteAbrir", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CorcheteAbrir", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 375: break;
           case 21: 
-            { Tokens.add(new MyToken("Simbolo.CorcheteCerrar", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CorcheteCerrar", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 376: break;
           case 22: 
-            { Tokens.add(new MyToken("Simbolo.ParantesisAbrir", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("ParentesisAbrir", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 377: break;
           case 23: 
-            { Tokens.add(new MyToken("Simbolo.ParentesisCerrar", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("ParentesisCerrar", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 378: break;
           case 24: 
-            { Tokens.add(new MyToken("Simbolo.LlaveAbrir", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("LlaveAbrir", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 379: break;
           case 25: 
-            { Tokens.add(new MyToken("Simbolo.LlaveCerrar", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("LlaveCerrar", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 380: break;
           case 26: 
-            { Tokens.add(new MyToken("Simbolo.Arroba", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("Arroba", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 381: break;
           case 27: 
-            { Tokens.add(new MyToken("Simbolo.Numeral", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("Numeral", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 382: break;
@@ -2165,7 +2165,7 @@ public class Lexemas {
             // fall through
           case 385: break;
           case 31: 
-            { Tokens.add(new MyToken("reservada.NO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("NO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 386: break;
@@ -2180,107 +2180,107 @@ public class Lexemas {
             // fall through
           case 388: break;
           case 34: 
-            { Tokens.add(new MyToken("Simbolo.MenorIgual", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("MenorIgual", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 389: break;
           case 35: 
-            { Tokens.add(new MyToken("Simbolo.IgualIgual", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("IgualIgual", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 390: break;
           case 36: 
-            { Tokens.add(new MyToken("Simbolo.MayorIgual", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("MayorIgual", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 391: break;
           case 37: 
-            { Tokens.add(new MyToken("Simbolo.Diferente", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("Diferente", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 392: break;
           case 38: 
-            { Tokens.add(new MyToken("Simbolo.And", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("And", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 393: break;
           case 39: 
-            { Tokens.add(new MyToken("Simbolo.Or", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("Or", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 394: break;
           case 40: 
-            { Tokens.add(new MyToken("Simbolo.Corchetes", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("Corchetes", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 395: break;
           case 41: 
-            { Tokens.add(new MyToken("Simbolo.Parentesis", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("Parentesis", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 396: break;
           case 42: 
-            { Tokens.add(new MyToken("Simbolo.Llaves", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("Llaves", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 397: break;
           case 43: 
-            { Tokens.add(new MyToken("Simbolo.DobleNumeral", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("DobleNumeral", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 398: break;
           case 44: 
-            { Tokens.add(new MyToken("reservada.AT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("AT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 399: break;
           case 45: 
-            { Tokens.add(new MyToken("reservada.AS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("AS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 400: break;
           case 46: 
-            { Tokens.add(new MyToken("reservada.TO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("TO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 401: break;
           case 47: 
-            { Tokens.add(new MyToken("reservada.ON", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("ON", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 402: break;
           case 48: 
-            { Tokens.add(new MyToken("reservada.OR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("OR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 403: break;
           case 49: 
-            { Tokens.add(new MyToken("reservada.OF", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("OF", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 404: break;
           case 50: 
-            { Tokens.add(new MyToken("reservada.IN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("IN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 405: break;
           case 51: 
-            { Tokens.add(new MyToken("reservada.IS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("IS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 406: break;
           case 52: 
-            { Tokens.add(new MyToken("reservada.IF", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("IF", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 407: break;
           case 53: 
-            { Tokens.add(new MyToken("reservada.BY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("BY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 408: break;
           case 54: 
-            { Tokens.add(new MyToken("reservada.GO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("GO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 409: break;
@@ -2294,17 +2294,17 @@ public class Lexemas {
             // fall through
           case 410: break;
           case 56: 
-            { Tokens.add(new MyToken("reservada.END", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("END", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 411: break;
           case 57: 
-            { Tokens.add(new MyToken("reservada.NOT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("NOT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 412: break;
           case 58: 
-            { Tokens.add(new MyToken("reservada.USE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("USE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 413: break;
@@ -2316,1482 +2316,1482 @@ public class Lexemas {
             // fall through
           case 414: break;
           case 60: 
-            { Tokens.add(new MyToken("reservada.AND", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("AND", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 415: break;
           case 61: 
-            { Tokens.add(new MyToken("reservada.ANY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("ANY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 416: break;
           case 62: 
-            { Tokens.add(new MyToken("reservada.ALL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("ALL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 417: break;
           case 63: 
-            { Tokens.add(new MyToken("reservada.ADA", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("ADA", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 418: break;
           case 64: 
-            { Tokens.add(new MyToken("reservada.ADD", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("ADD", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 419: break;
           case 65: 
-            { Tokens.add(new MyToken("reservada.ARE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("ARE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 420: break;
           case 66: 
-            { Tokens.add(new MyToken("reservada.ASC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("ASC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 421: break;
           case 67: 
-            { Tokens.add(new MyToken("reservada.AVG", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("AVG", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 422: break;
           case 68: 
-            { Tokens.add(new MyToken("reservada.DEC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("DEC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 423: break;
           case 69: 
-            { Tokens.add(new MyToken("reservada.DAY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("DAY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 424: break;
           case 70: 
-            { Tokens.add(new MyToken("reservada.TOP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("TOP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 425: break;
           case 71: 
-            { Tokens.add(new MyToken("reservada.SET", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SET", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 426: break;
           case 72: 
-            { Tokens.add(new MyToken("reservada.SUM", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SUM", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 427: break;
           case 73: 
-            { Tokens.add(new MyToken("reservada.SQL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SQL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 428: break;
           case 74: 
-            { Tokens.add(new MyToken("reservada.OFF", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("OFF", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 429: break;
           case 75: 
-            { Tokens.add(new MyToken("reservada.INT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("INT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 430: break;
           case 76: 
-            { Tokens.add(new MyToken("reservada.BIT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("BIT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 431: break;
           case 77: 
-            { Tokens.add(new MyToken("reservada.KEY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("KEY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 432: break;
           case 78: 
-            { Tokens.add(new MyToken("reservada.PAD", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("PAD", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 433: break;
           case 79: 
-            { Tokens.add(new MyToken("reservada.GET", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("GET", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 434: break;
           case 80: 
-            { Tokens.add(new MyToken("reservada.MAX", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("MAX", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 435: break;
           case 81: 
-            { Tokens.add(new MyToken("reservada.MIN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("MIN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 436: break;
           case 82: 
-            { Tokens.add(new MyToken("reservada.FOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("FOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 437: break;
           case 83: 
-            { Tokens.add(new MyToken("reservada.ELSE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("ELSE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 438: break;
           case 84: 
-            { Tokens.add(new MyToken("reservada.EXEC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("EXEC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 439: break;
           case 85: 
-            { Tokens.add(new MyToken("reservada.EXIT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("EXIT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 440: break;
           case 86: 
-            { Tokens.add(new MyToken("reservada.NEXT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("NEXT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 441: break;
           case 87: 
-            { Tokens.add(new MyToken("reservada.NULL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("NULL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 442: break;
           case 88: 
-            { Tokens.add(new MyToken("reservada.NONE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("NONE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 443: break;
           case 89: 
-            { Tokens.add(new MyToken("reservada.USER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("USER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 444: break;
           case 90: 
-            { Tokens.add(new MyToken("reservada.LEFT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("LEFT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 445: break;
           case 91: 
-            { Tokens.add(new MyToken("reservada.LAST", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("LAST", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 446: break;
           case 92: 
-            { Tokens.add(new MyToken("reservada.LOAD", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("LOAD", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 447: break;
           case 93: 
-            { Tokens.add(new MyToken("reservada.LIKE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("LIKE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 448: break;
           case 94: 
-            { Tokens.add(new MyToken("reservada.DENY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("DENY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 449: break;
           case 95: 
-            { Tokens.add(new MyToken("reservada.DESC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("DESC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 450: break;
           case 96: 
-            { Tokens.add(new MyToken("reservada.DUMP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("DUMP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 451: break;
           case 97: 
-            { Tokens.add(new MyToken("reservada.DATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("DATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 452: break;
           case 98: 
-            { Tokens.add(new MyToken("reservada.DROP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("DROP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 453: break;
           case 99: 
-            { Tokens.add(new MyToken("reservada.DISK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("DISK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 454: break;
           case 100: 
-            { Tokens.add(new MyToken("reservada.DBCC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("DBCC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 455: break;
           case 101: 
-            { Tokens.add(new MyToken("reservada.TRAN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("TRAN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 456: break;
           case 102: 
-            { Tokens.add(new MyToken("reservada.TRIM", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("TRIM", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 457: break;
           case 103: 
-            { Tokens.add(new MyToken("reservada.THEN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("THEN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 458: break;
           case 104: 
-            { Tokens.add(new MyToken("reservada.TIME", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("TIME", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 459: break;
           case 105: 
-            { Tokens.add(new MyToken("reservada.REAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("REAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 460: break;
           case 106: 
-            { Tokens.add(new MyToken("reservada.READ", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("READ", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 461: break;
           case 107: 
-            { Tokens.add(new MyToken("reservada.RULE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("RULE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 462: break;
           case 108: 
-            { Tokens.add(new MyToken("reservada.ROWS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("ROWS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 463: break;
           case 109: 
-            { Tokens.add(new MyToken("reservada.YEAR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("YEAR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 464: break;
           case 110: 
-            { Tokens.add(new MyToken("reservada.SAVE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SAVE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 465: break;
           case 111: 
-            { Tokens.add(new MyToken("reservada.SOME", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SOME", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 466: break;
           case 112: 
-            { Tokens.add(new MyToken("reservada.SIZE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SIZE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 467: break;
           case 113: 
-            { Tokens.add(new MyToken("reservada.CASE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CASE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 468: break;
           case 114: 
-            { Tokens.add(new MyToken("reservada.CAST", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CAST", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 469: break;
           case 115: 
-            { Tokens.add(new MyToken("reservada.CHAR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CHAR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 470: break;
           case 116: 
-            { Tokens.add(new MyToken("reservada.HOUR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("HOUR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 471: break;
           case 117: 
-            { Tokens.add(new MyToken("reservada.ONLY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("ONLY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 472: break;
           case 118: 
-            { Tokens.add(new MyToken("reservada.OPEN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("OPEN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 473: break;
           case 119: 
-            { Tokens.add(new MyToken("reservada.OVER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("OVER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 474: break;
           case 120: 
-            { Tokens.add(new MyToken("reservada.INTO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("INTO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 475: break;
           case 121: 
-            { Tokens.add(new MyToken("reservada.ZONE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("ZONE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 476: break;
           case 122: 
-            { Tokens.add(new MyToken("reservada.BULK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("BULK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 477: break;
           case 123: 
-            { Tokens.add(new MyToken("reservada.BOTH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("BOTH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 478: break;
           case 124: 
-            { Tokens.add(new MyToken("reservada.KILL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("KILL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 479: break;
           case 125: 
-            { Tokens.add(new MyToken("reservada.PLAN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("PLAN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 480: break;
           case 126: 
-            { Tokens.add(new MyToken("reservada.PROC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("PROC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 481: break;
           case 127: 
-            { Tokens.add(new MyToken("reservada.GOTO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("GOTO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 482: break;
           case 128: 
-            { Tokens.add(new MyToken("reservada.WHEN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("WHEN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 483: break;
           case 129: 
-            { Tokens.add(new MyToken("reservada.WORK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("WORK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 484: break;
           case 130: 
-            { Tokens.add(new MyToken("reservada.WITH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("WITH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 485: break;
           case 131: 
-            { Tokens.add(new MyToken("reservada.VIEW", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("VIEW", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 486: break;
           case 132: 
-            { Tokens.add(new MyToken("reservada.FULL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("FULL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 487: break;
           case 133: 
-            { Tokens.add(new MyToken("reservada.FROM", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("FROM", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 488: break;
           case 134: 
-            { Tokens.add(new MyToken("reservada.FILE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("FILE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 489: break;
           case 135: 
-            { Tokens.add(new MyToken("reservada.JOIN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("JOIN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 490: break;
           case 136: 
-            { Tokens.add(new MyToken("reservada.NAMES", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("NAMES", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 491: break;
           case 137: 
-            { Tokens.add(new MyToken("reservada.NCHAR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("NCHAR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 492: break;
           case 138: 
-            { Tokens.add(new MyToken("reservada.UNION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("UNION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 493: break;
           case 139: 
-            { Tokens.add(new MyToken("reservada.USAGE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("USAGE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 494: break;
           case 140: 
-            { Tokens.add(new MyToken("reservada.USING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("USING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 495: break;
           case 141: 
-            { Tokens.add(new MyToken("reservada.UPPER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("UPPER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 496: break;
           case 142: 
-            { Tokens.add(new MyToken("reservada.LEVEL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("LEVEL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 497: break;
           case 143: 
-            { Tokens.add(new MyToken("reservada.LOCAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("LOCAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 498: break;
           case 144: 
-            { Tokens.add(new MyToken("reservada.LOWER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("LOWER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 499: break;
           case 145: 
-            { Tokens.add(new MyToken("reservada.ALTER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("ALTER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 500: break;
           case 146: 
-            { Tokens.add(new MyToken("reservada.TABLE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("TABLE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 501: break;
           case 147: 
-            { Tokens.add(new MyToken("reservada.RIGHT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("RIGHT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 502: break;
           case 148: 
-            { Tokens.add(new MyToken("reservada.SPACE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SPACE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 503: break;
           case 149: 
-            { Tokens.add(new MyToken("reservada.SQLCA", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SQLCA", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 504: break;
           case 150: 
-            { Tokens.add(new MyToken("reservada.CLOSE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CLOSE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 505: break;
           case 151: 
-            { Tokens.add(new MyToken("reservada.CROSS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CROSS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 506: break;
           case 152: 
-            { Tokens.add(new MyToken("reservada.CHECK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CHECK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 507: break;
           case 153: 
-            { Tokens.add(new MyToken("reservada.COUNT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("COUNT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 508: break;
           case 154: 
-            { Tokens.add(new MyToken("reservada.OUTER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("OUTER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 509: break;
           case 155: 
-            { Tokens.add(new MyToken("reservada.ORDER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("ORDER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 510: break;
           case 156: 
-            { Tokens.add(new MyToken("reservada.INNER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("INNER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 511: break;
           case 157: 
-            { Tokens.add(new MyToken("reservada.INDEX", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("INDEX", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 512: break;
           case 158: 
-            { Tokens.add(new MyToken("reservada.INPUT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("INPUT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 513: break;
           case 159: 
-            { Tokens.add(new MyToken("reservada.BEGIN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("BEGIN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 514: break;
           case 160: 
-            { Tokens.add(new MyToken("reservada.BREAK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("BREAK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 515: break;
           case 161: 
-            { Tokens.add(new MyToken("reservada.PRINT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("PRINT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 516: break;
           case 162: 
-            { Tokens.add(new MyToken("reservada.PRIOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("PRIOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 517: break;
           case 163: 
-            { Tokens.add(new MyToken("reservada.PIVOT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("PIVOT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 518: break;
           case 164: 
-            { Tokens.add(new MyToken("reservada.GRANT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("GRANT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 519: break;
           case 165: 
-            { Tokens.add(new MyToken("reservada.GROUP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("GROUP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 520: break;
           case 166: 
-            { Tokens.add(new MyToken("reservada.WRITE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("WRITE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 521: break;
           case 167: 
-            { Tokens.add(new MyToken("reservada.WHERE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("WHERE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 522: break;
           case 168: 
-            { Tokens.add(new MyToken("reservada.WHILE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("WHILE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 523: break;
           case 169: 
-            { Tokens.add(new MyToken("reservada.MERGE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("MERGE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 524: break;
           case 170: 
-            { Tokens.add(new MyToken("reservada.MATCH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("MATCH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 525: break;
           case 171: 
-            { Tokens.add(new MyToken("reservada.MONTH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("MONTH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 526: break;
           case 172: 
-            { Tokens.add(new MyToken("reservada.VALUE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("VALUE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 527: break;
           case 173: 
-            { Tokens.add(new MyToken("reservada.FETCH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("FETCH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 528: break;
           case 174: 
-            { Tokens.add(new MyToken("reservada.FLOAT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("FLOAT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 529: break;
           case 175: 
-            { Tokens.add(new MyToken("reservada.FALSO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("FALSO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 530: break;
           case 176: 
-            { Tokens.add(new MyToken("reservada.FOUND", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("FOUND", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 531: break;
           case 177: 
-            { Tokens.add(new MyToken("reservada.FIRST", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("FIRST", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 532: break;
           case 178: 
-            { Tokens.add(new MyToken("reservada.ERRLVL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("ERRLVL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 533: break;
           case 179: 
-            { Tokens.add(new MyToken("reservada.ESCAPE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("ESCAPE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 534: break;
           case 180: 
-            { Tokens.add(new MyToken("reservada.EXCEPT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("EXCEPT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 535: break;
           case 181: 
-            { Tokens.add(new MyToken("reservada.EXISTS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("EXISTS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 536: break;
           case 182: 
-            { Tokens.add(new MyToken("reservada.NULLIF", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("NULLIF", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 537: break;
           case 183: 
-            { Tokens.add(new MyToken("reservada.UNIQUE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("UNIQUE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 538: break;
           case 184: 
-            { Tokens.add(new MyToken("reservada.UPDATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("UPDATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 539: break;
           case 185: 
-            { Tokens.add(new MyToken("reservada.LINENO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("LINENO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 540: break;
           case 186: 
-            { Tokens.add(new MyToken("reservada.ACTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("ACTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 541: break;
           case 187: 
-            { Tokens.add(new MyToken("reservada.DELETE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("DELETE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 542: break;
           case 188: 
-            { Tokens.add(new MyToken("reservada.DOUBLE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("DOUBLE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 543: break;
           case 189: 
-            { Tokens.add(new MyToken("reservada.DOMAIN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("DOMAIN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 544: break;
           case 190: 
-            { Tokens.add(new MyToken("reservada.RETURN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("RETURN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 545: break;
           case 191: 
-            { Tokens.add(new MyToken("reservada.REVERT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("REVERT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 546: break;
           case 192: 
-            { Tokens.add(new MyToken("reservada.REVOKE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("REVOKE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 547: break;
           case 193: 
-            { Tokens.add(new MyToken("reservada.SELECT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SELECT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 548: break;
           case 194: 
-            { Tokens.add(new MyToken("reservada.SECOND", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SECOND", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 549: break;
           case 195: 
-            { Tokens.add(new MyToken("reservada.SCROLL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SCROLL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 550: break;
           case 196: 
-            { Tokens.add(new MyToken("reservada.SCHEMA", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SCHEMA", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 551: break;
           case 197: 
-            { Tokens.add(new MyToken("reservada.CURSOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CURSOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 552: break;
           case 198: 
-            { Tokens.add(new MyToken("reservada.CREATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CREATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 553: break;
           case 199: 
-            { Tokens.add(new MyToken("reservada.COLUMN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("COLUMN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 554: break;
           case 200: 
-            { Tokens.add(new MyToken("reservada.COMMIT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("COMMIT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 555: break;
           case 201: 
-            { Tokens.add(new MyToken("reservada.HAVING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("HAVING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 556: break;
           case 202: 
-            { Tokens.add(new MyToken("reservada.OUTPUT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("OUTPUT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 557: break;
           case 203: 
-            { Tokens.add(new MyToken("reservada.OPTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("OPTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 558: break;
           case 204: 
-            { Tokens.add(new MyToken("reservada.INSERT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("INSERT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 559: break;
           case 205: 
-            { Tokens.add(new MyToken("reservada.BACKUP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("BACKUP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 560: break;
           case 206: 
-            { Tokens.add(new MyToken("reservada.BROWSE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("BROWSE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 561: break;
           case 207: 
-            { Tokens.add(new MyToken("reservada.PUBLIC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("PUBLIC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 562: break;
           case 208: 
-            { Tokens.add(new MyToken("reservada.PASCAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("PASCAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 563: break;
           case 209: 
-            { Tokens.add(new MyToken("reservada.GLOBAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("GLOBAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 564: break;
           case 210: 
-            { Tokens.add(new MyToken("reservada.WITHIN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("WITHIN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 565: break;
           case 211: 
-            { Tokens.add(new MyToken("reservada.MODULE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("MODULE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 566: break;
           case 212: 
-            { Tokens.add(new MyToken("reservada.MINUTE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("MINUTE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 567: break;
           case 213: 
-            { Tokens.add(new MyToken("reservada.VALUES", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("VALUES", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 568: break;
           case 214: 
-            { Tokens.add(new MyToken("reservada.EXECUTE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("EXECUTE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 569: break;
           case 215: 
-            { Tokens.add(new MyToken("reservada.EXTRACT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("EXTRACT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 570: break;
           case 216: 
-            { Tokens.add(new MyToken("reservada.NUMERIC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("NUMERIC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 571: break;
           case 217: 
-            { Tokens.add(new MyToken("reservada.NATURAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("NATURAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 572: break;
           case 218: 
-            { Tokens.add(new MyToken("reservada.NOCHECK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("NOCHECK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 573: break;
           case 219: 
-            { Tokens.add(new MyToken("reservada.UNKNOWN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("UNKNOWN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 574: break;
           case 220: 
-            { Tokens.add(new MyToken("reservada.UNPIVOT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("UNPIVOT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 575: break;
           case 221: 
-            { Tokens.add(new MyToken("reservada.LEADING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("LEADING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 576: break;
           case 222: 
-            { Tokens.add(new MyToken("reservada.DECLARE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("DECLARE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 577: break;
           case 223: 
-            { Tokens.add(new MyToken("reservada.DECIMAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("DECIMAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 578: break;
           case 224: 
-            { Tokens.add(new MyToken("reservada.DEFAULT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("DEFAULT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 579: break;
           case 225: 
-            { Tokens.add(new MyToken("reservada.TRIGGER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("TRIGGER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 580: break;
           case 226: 
-            { Tokens.add(new MyToken("reservada.TSEQUAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("TSEQUAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 581: break;
           case 227: 
-            { Tokens.add(new MyToken("reservada.RESTORE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("RESTORE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 582: break;
           case 228: 
-            { Tokens.add(new MyToken("reservada.SETUSER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SETUSER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 583: break;
           case 229: 
-            { Tokens.add(new MyToken("reservada.SESSION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SESSION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 584: break;
           case 230: 
-            { Tokens.add(new MyToken("reservada.SECTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SECTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 585: break;
           case 231: 
-            { Tokens.add(new MyToken("reservada.SQLCODE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SQLCODE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 586: break;
           case 232: 
-            { Tokens.add(new MyToken("reservada.CURRENT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CURRENT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 587: break;
           case 233: 
-            { Tokens.add(new MyToken("reservada.CATALOG", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CATALOG", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 588: break;
           case 234: 
-            { Tokens.add(new MyToken("reservada.CASCADE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CASCADE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 589: break;
           case 235: 
-            { Tokens.add(new MyToken("reservada.CONNECT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CONNECT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 590: break;
           case 236: 
-            { Tokens.add(new MyToken("reservada.CONVERT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CONVERT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 591: break;
           case 237: 
-            { Tokens.add(new MyToken("reservada.COLLATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("COLLATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 592: break;
           case 238: 
-            { Tokens.add(new MyToken("reservada.COMPUTE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("COMPUTE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 593: break;
           case 239: 
-            { Tokens.add(new MyToken("reservada.OPENXML", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("OPENXML", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 594: break;
           case 240: 
-            { Tokens.add(new MyToken("reservada.OFFSETS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("OFFSETS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 595: break;
           case 241: 
-            { Tokens.add(new MyToken("reservada.INTEGER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("INTEGER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 596: break;
           case 242: 
-            { Tokens.add(new MyToken("reservada.INCLUDE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("INCLUDE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 597: break;
           case 243: 
-            { Tokens.add(new MyToken("reservada.BETWEEN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("BETWEEN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 598: break;
           case 244: 
-            { Tokens.add(new MyToken("reservada.PERCENT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("PERCENT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 599: break;
           case 245: 
-            { Tokens.add(new MyToken("reservada.PARTIAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("PARTIAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 600: break;
           case 246: 
-            { Tokens.add(new MyToken("reservada.PREPARE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("PREPARE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 601: break;
           case 247: 
-            { Tokens.add(new MyToken("reservada.PRIMARY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("PRIMARY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 602: break;
           case 248: 
-            { Tokens.add(new MyToken("reservada.WAITFOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("WAITFOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 603: break;
           case 249: 
-            { Tokens.add(new MyToken("reservada.VARYING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("VARYING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 604: break;
           case 250: 
-            { Tokens.add(new MyToken("reservada.VARCHAR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("VARCHAR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 605: break;
           case 251: 
-            { Tokens.add(new MyToken("reservada.FOREIGN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("FOREIGN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 606: break;
           case 252: 
-            { Tokens.add(new MyToken("reservada.FORTRAN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("FORTRAN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 607: break;
           case 253: 
-            { Tokens.add(new MyToken("reservada.ENDEXEC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("ENDEXEC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 608: break;
           case 254: 
-            { Tokens.add(new MyToken("reservada.EXTERNAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("EXTERNAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 609: break;
           case 255: 
-            { Tokens.add(new MyToken("reservada.NATIONAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("NATIONAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 610: break;
           case 256: 
-            { Tokens.add(new MyToken("reservada.LANGUAGE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("LANGUAGE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 611: break;
           case 257: 
-            { Tokens.add(new MyToken("reservada.ALLOCATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("ALLOCATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 612: break;
           case 258: 
-            { Tokens.add(new MyToken("reservada.ABSOLUTE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("ABSOLUTE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 613: break;
           case 259: 
-            { Tokens.add(new MyToken("reservada.DESCRIBE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("DESCRIBE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 614: break;
           case 260: 
-            { Tokens.add(new MyToken("reservada.DEFERRED", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("DEFERRED", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 615: break;
           case 261: 
-            { Tokens.add(new MyToken("reservada.DATABASE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("DATABASE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 616: break;
           case 262: 
-            { Tokens.add(new MyToken("reservada.DISTINCT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("DISTINCT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 617: break;
           case 263: 
-            { Tokens.add(new MyToken("reservada.TEXTSIZE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("TEXTSIZE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 618: break;
           case 264: 
-            { Tokens.add(new MyToken("reservada.TRUNCATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("TRUNCATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 619: break;
           case 265: 
-            { Tokens.add(new MyToken("reservada.TRAILING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("TRAILING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 620: break;
           case 266: 
-            { Tokens.add(new MyToken("reservada.RELATIVE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("RELATIVE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 621: break;
           case 267: 
-            { Tokens.add(new MyToken("reservada.READTEXT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("READTEXT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 622: break;
           case 268: 
-            { Tokens.add(new MyToken("reservada.RESTRICT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("RESTRICT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 623: break;
           case 269: 
-            { Tokens.add(new MyToken("reservada.ROLLBACK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("ROLLBACK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 624: break;
           case 270: 
-            { Tokens.add(new MyToken("reservada.ROWCOUNT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("ROWCOUNT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 625: break;
           case 271: 
-            { Tokens.add(new MyToken("reservada.SHUTDOWN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SHUTDOWN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 626: break;
           case 272: 
-            { Tokens.add(new MyToken("reservada.SMALLINT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SMALLINT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 627: break;
           case 273: 
-            { Tokens.add(new MyToken("reservada.SQLERROR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SQLERROR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 628: break;
           case 274: 
-            { Tokens.add(new MyToken("reservada.SQLSTATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SQLSTATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 629: break;
           case 275: 
-            { Tokens.add(new MyToken("reservada.CASCADED", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CASCADED", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 630: break;
           case 276: 
-            { Tokens.add(new MyToken("reservada.CONTAINS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CONTAINS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 631: break;
           case 277: 
-            { Tokens.add(new MyToken("reservada.CONTINUE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CONTINUE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 632: break;
           case 278: 
-            { Tokens.add(new MyToken("reservada.COALESCE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("COALESCE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 633: break;
           case 279: 
-            { Tokens.add(new MyToken("reservada.HOLDLOCK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("HOLDLOCK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 634: break;
           case 280: 
-            { Tokens.add(new MyToken("reservada.OVERLAPS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("OVERLAPS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 635: break;
           case 281: 
-            { Tokens.add(new MyToken("reservada.INTERVAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("INTERVAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 636: break;
           case 282: 
-            { Tokens.add(new MyToken("reservada.IDENTITY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("IDENTITY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 637: break;
           case 283: 
-            { Tokens.add(new MyToken("reservada.PRESERVE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("PRESERVE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 638: break;
           case 284: 
-            { Tokens.add(new MyToken("reservada.POSITION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("POSITION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 639: break;
           case 285: 
-            { Tokens.add(new MyToken("reservada.WHENEVER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("WHENEVER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 640: break;
           case 286: 
-            { Tokens.add(new MyToken("reservada.FUNCTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("FUNCTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 641: break;
           case 287: 
-            { Tokens.add(new MyToken("reservada.FREETEXT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("FREETEXT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 642: break;
           case 288: 
-            { Tokens.add(new MyToken("reservada.EXCEPTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("EXCEPTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 643: break;
           case 289: 
-            { Tokens.add(new MyToken("reservada.ASSERTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("ASSERTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 644: break;
           case 290: 
-            { Tokens.add(new MyToken("reservada.TEMPORARY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("TEMPORARY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 645: break;
           case 291: 
-            { Tokens.add(new MyToken("reservada.TRANSLATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("TRANSLATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 646: break;
           case 292: 
-            { Tokens.add(new MyToken("reservada.TIMESTAMP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("TIMESTAMP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 647: break;
           case 293: 
-            { Tokens.add(new MyToken("reservada.RAISERROR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("RAISERROR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 648: break;
           case 294: 
-            { Tokens.add(new MyToken("reservada.SUBSTRING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SUBSTRING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 649: break;
           case 295: 
-            { Tokens.add(new MyToken("reservada.CLUSTERED", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CLUSTERED", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 650: break;
           case 296: 
-            { Tokens.add(new MyToken("reservada.CHARACTER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CHARACTER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 651: break;
           case 297: 
-            { Tokens.add(new MyToken("reservada.COLLATION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("COLLATION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 652: break;
           case 298: 
-            { Tokens.add(new MyToken("reservada.OPENQUERY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("OPENQUERY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 653: break;
           case 299: 
-            { Tokens.add(new MyToken("reservada.INDICATOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("INDICATOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 654: break;
           case 300: 
-            { Tokens.add(new MyToken("reservada.INTERSECT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("INTERSECT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 655: break;
           case 301: 
-            { Tokens.add(new MyToken("reservada.INITIALLY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("INITIALLY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 656: break;
           case 302: 
-            { Tokens.add(new MyToken("reservada.ISOLATION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("ISOLATION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 657: break;
           case 303: 
-            { Tokens.add(new MyToken("reservada.IMMEDIATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("IMMEDIATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 658: break;
           case 304: 
-            { Tokens.add(new MyToken("reservada.PRECISION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("PRECISION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 659: break;
           case 305: 
-            { Tokens.add(new MyToken("reservada.PROCEDURE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("PROCEDURE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 660: break;
           case 306: 
-            { Tokens.add(new MyToken("reservada.WRITETEXT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("WRITETEXT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 661: break;
           case 307: 
-            { Tokens.add(new MyToken("reservada.VERDADERO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("VERDADERO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 662: break;
           case 308: 
-            { Tokens.add(new MyToken("reservada.UPDATETEXT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("UPDATETEXT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 663: break;
           case 309: 
-            { Tokens.add(new MyToken("reservada.DEALLOCATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("DEALLOCATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 664: break;
           case 310: 
-            { Tokens.add(new MyToken("reservada.DESCRIPTOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("DESCRIPTOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 665: break;
           case 311: 
-            { Tokens.add(new MyToken("reservada.DEFERRABLE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("DEFERRABLE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 666: break;
           case 312: 
-            { Tokens.add(new MyToken("reservada.DISCONNECT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("DISCONNECT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 667: break;
           case 313: 
-            { Tokens.add(new MyToken("reservada.REFERENCES", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("REFERENCES", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 668: break;
           case 314: 
-            { Tokens.add(new MyToken("reservada.ROWGUIDCOL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("ROWGUIDCOL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 669: break;
           case 315: 
-            { Tokens.add(new MyToken("reservada.STATISTICS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("STATISTICS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 670: break;
           case 316: 
-            { Tokens.add(new MyToken("reservada.SQLWARNING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SQLWARNING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 671: break;
           case 317: 
-            { Tokens.add(new MyToken("reservada.CHECKPOINT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CHECKPOINT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 672: break;
           case 318: 
-            { Tokens.add(new MyToken("reservada.CONNECTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CONNECTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 673: break;
           case 319: 
-            { Tokens.add(new MyToken("reservada.CONSTRAINT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CONSTRAINT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 674: break;
           case 320: 
-            { Tokens.add(new MyToken("reservada.BIT_LENGTH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("BIT_LENGTH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 675: break;
           case 321: 
-            { Tokens.add(new MyToken("reservada.PRIVILEGES", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("PRIVILEGES", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 676: break;
           case 322: 
-            { Tokens.add(new MyToken("reservada.FILLFACTOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("FILLFACTOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 677: break;
           case 323: 
-            { Tokens.add(new MyToken("reservada.NOCLUSTERED", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("NOCLUSTERED", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 678: break;
           case 324: 
-            { Tokens.add(new MyToken("reservada.DIAGNOSTICS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("DIAGNOSTICS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 679: break;
           case 325: 
-            { Tokens.add(new MyToken("reservada.DISTRIBUTED", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("DISTRIBUTED", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 680: break;
           case 326: 
-            { Tokens.add(new MyToken("reservada.TABLESAMPLE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("TABLESAMPLE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 681: break;
           case 327: 
-            { Tokens.add(new MyToken("reservada.TRANSLATION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("TRANSLATION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 682: break;
           case 328: 
-            { Tokens.add(new MyToken("reservada.TRANSACTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("TRANSACTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 683: break;
           case 329: 
-            { Tokens.add(new MyToken("reservada.TRY_CONVERT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("TRY_CONVERT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 684: break;
           case 330: 
-            { Tokens.add(new MyToken("reservada.RECONFIGURE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("RECONFIGURE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 685: break;
           case 331: 
-            { Tokens.add(new MyToken("reservada.REPLICATION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("REPLICATION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 686: break;
           case 332: 
-            { Tokens.add(new MyToken("reservada.SYSTEM_USER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SYSTEM_USER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 687: break;
           case 333: 
-            { Tokens.add(new MyToken("reservada.CHAR_LENGTH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CHAR_LENGTH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 688: break;
           case 334: 
-            { Tokens.add(new MyToken("reservada.CONSTRAINTS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CONSTRAINTS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 689: break;
           case 335: 
-            { Tokens.add(new MyToken("reservada.INSENSITIVE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("INSENSITIVE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 690: break;
           case 336: 
-            { Tokens.add(new MyToken("reservada.IDENTITYCOL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("IDENTITYCOL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 691: break;
           case 337: 
-            { Tokens.add(new MyToken("reservada.SESSION_USER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SESSION_USER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 692: break;
           case 338: 
-            { Tokens.add(new MyToken("reservada.CURRENT_USER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CURRENT_USER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 693: break;
           case 339: 
-            { Tokens.add(new MyToken("reservada.CURRENT_DATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CURRENT_DATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 694: break;
           case 340: 
-            { Tokens.add(new MyToken("reservada.CURRENT_TIME", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CURRENT_TIME", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 695: break;
           case 341: 
-            { Tokens.add(new MyToken("reservada.OCTET_LENGTH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("OCTET_LENGTH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 696: break;
           case 342: 
-            { Tokens.add(new MyToken("reservada.AUTHORIZATION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("AUTHORIZATION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 697: break;
           case 343: 
-            { Tokens.add(new MyToken("reservada.TIMEZONE_HOUR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("TIMEZONE_HOUR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 698: break;
           case 344: 
-            { Tokens.add(new MyToken("reservada.SECURITYAUDIT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SECURITYAUDIT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 699: break;
           case 345: 
-            { Tokens.add(new MyToken("reservada.CONTAINSTABLE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CONTAINSTABLE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 700: break;
           case 346: 
-            { Tokens.add(new MyToken("reservada.CORRESPONDING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CORRESPONDING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 701: break;
           case 347: 
-            { Tokens.add(new MyToken("reservada.FREETEXTTABLE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("FREETEXTTABLE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 702: break;
           case 348: 
-            { Tokens.add(new MyToken("reservada.OPENDATASOURCE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("OPENDATASOURCE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 703: break;
           case 349: 
-            { Tokens.add(new MyToken("reservada.TIMEZONE_MINUTE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("TIMEZONE_MINUTE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 704: break;
           case 350: 
-            { Tokens.add(new MyToken("reservada.IDENTITY_INSERT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("IDENTITY_INSERT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 705: break;
           case 351: 
-            { Tokens.add(new MyToken("reservada.CHARACTER_LENGTH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CHARACTER_LENGTH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 706: break;
           case 352: 
-            { Tokens.add(new MyToken("reservada.CURRENT_TIMESTAMP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("CURRENT_TIMESTAMP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 707: break;
           case 353: 
-            { Tokens.add(new MyToken("reservada.SEMANTICKEYPHRASETAB", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SEMANTICKEYPHRASETAB", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 708: break;
           case 354: 
-            { Tokens.add(new MyToken("reservada.SEMANTICSIMILARITYTA", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SEMANTICSIMILARITYTA", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 709: break;
           case 355: 
-            { Tokens.add(new MyToken("reservada.SEMANTICSIMILARITYDE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+            { Tokens.add(new MyToken("SEMANTICSIMILARITYDE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
             } 
             // fall through
           case 710: break;

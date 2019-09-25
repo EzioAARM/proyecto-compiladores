@@ -6,6 +6,7 @@
 package AnalizadorSintactico;
 
 import AnalizadorLexico.MyToken;
+import MiniSql.Errores;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,18 +16,38 @@ import java.util.List;
  */
 public class AnalizadorSintactico {
     
-    private int posicionToken;
-    private List<MyToken> Tokens;
+    // Tokens por analizar
+    private static List<MyToken> TokensAnalizar;
+    
+    // Tokens analizados
+    private static List<MyToken> TokensAnalizados;
+    
+    // Bandera de inicialización
+    private static boolean esObjeto = false;
     
     public AnalizadorSintactico(List<MyToken> tokens) {
-        posicionToken = 0;
-        Tokens = new ArrayList();
+        TokensAnalizados = new ArrayList();
+        TokensAnalizar = new ArrayList();
         for (int i = 0; i < tokens.size(); i++) {
             if (!tokens.get(i).get_type().equals("Error") || !tokens.get(i).get_type().equals("Separador") 
                     || !tokens.get(i).get_type().equals("Comentario") || !tokens.get(i).get_type().equals("Advertencia")) {
-                Tokens.add(tokens.get(i));
+                TokensAnalizar.add(tokens.get(i));
             }
         }
+        esObjeto = true;
+    }
+    
+    public static void moverToken() {
+        if (esObjeto) {
+            TokensAnalizados.add(TokensAnalizar.get(0));
+            TokensAnalizar.remove(0);
+        } else {
+            Errores.DevelopErrors("No se inicializó la clase \"AnalizadorSintactico\"");
+        }
+    }
+    
+    public static MyToken TokenActual() {
+        return TokensAnalizar.get(0);
     }
     
 }

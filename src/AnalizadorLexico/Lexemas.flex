@@ -393,937 +393,937 @@ reservadaEXCEPTION = (EXCEPTION)
     yybegin(COMENTARIOMULTI);
 }
 <YYINITIAL> {reservadaWITHIN} {
-    Tokens.add(new MyToken("reservada.WITHIN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("WITHIN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 } 
 <YYINITIAL> {reservadaADD} {
-    Tokens.add(new MyToken("reservada.ADD", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("ADD", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaALL} {
-    Tokens.add(new MyToken("reservada.ALL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("ALL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaALTER} {
-    Tokens.add(new MyToken("reservada.ALTER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("ALTER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaAND} {
-    Tokens.add(new MyToken("reservada.AND", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("AND", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaANY} {
-    Tokens.add(new MyToken("reservada.ANY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("ANY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaAS} {
-    Tokens.add(new MyToken("reservada.AS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("AS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaASC} {
-    Tokens.add(new MyToken("reservada.ASC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("ASC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaAUTHORIZATION} {
-    Tokens.add(new MyToken("reservada.AUTHORIZATION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("AUTHORIZATION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaBACKUP} {
-    Tokens.add(new MyToken("reservada.BACKUP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("BACKUP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaBEGIN} {
-    Tokens.add(new MyToken("reservada.BEGIN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("BEGIN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaBETWEEN} {
-    Tokens.add(new MyToken("reservada.BETWEEN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("BETWEEN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaBREAK} {
-    Tokens.add(new MyToken("reservada.BREAK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("BREAK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaBROWSE} {
-    Tokens.add(new MyToken("reservada.BROWSE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("BROWSE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaBULK} {
-    Tokens.add(new MyToken("reservada.BULK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("BULK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaBY} {
-    Tokens.add(new MyToken("reservada.BY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("BY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCASCADE} {
-    Tokens.add(new MyToken("reservada.CASCADE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CASCADE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCASE} {
-    Tokens.add(new MyToken("reservada.CASE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CASE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCHECK} {
-    Tokens.add(new MyToken("reservada.CHECK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CHECK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCHECKPOINT} {
-    Tokens.add(new MyToken("reservada.CHECKPOINT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CHECKPOINT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCLOSE} {
-    Tokens.add(new MyToken("reservada.CLOSE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CLOSE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCLUSTERED} {
-    Tokens.add(new MyToken("reservada.CLUSTERED", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CLUSTERED", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCOALESCE} {
-    Tokens.add(new MyToken("reservada.COALESCE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("COALESCE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCOLLATE} {
-    Tokens.add(new MyToken("reservada.COLLATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("COLLATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCOLUMN} {
-    Tokens.add(new MyToken("reservada.COLUMN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("COLUMN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCOMMIT} {
-    Tokens.add(new MyToken("reservada.COMMIT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("COMMIT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCOMPUTE} {
-    Tokens.add(new MyToken("reservada.COMPUTE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("COMPUTE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCONSTRAINT} {
-    Tokens.add(new MyToken("reservada.CONSTRAINT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CONSTRAINT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCONTAINS} {
-    Tokens.add(new MyToken("reservada.CONTAINS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CONTAINS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCONTAINSTABLE} {
-    Tokens.add(new MyToken("reservada.CONTAINSTABLE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CONTAINSTABLE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCONTINUE} {
-    Tokens.add(new MyToken("reservada.CONTINUE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CONTINUE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCONVERT} {
-    Tokens.add(new MyToken("reservada.CONVERT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CONVERT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCREATE} {
-    Tokens.add(new MyToken("reservada.CREATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CREATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCROSS} {
-    Tokens.add(new MyToken("reservada.CROSS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CROSS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCURRENT} {
-    Tokens.add(new MyToken("reservada.CURRENT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CURRENT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCURRENT_DATE} {
-    Tokens.add(new MyToken("reservada.CURRENT_DATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CURRENT_DATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCURRENT_TIME} {
-    Tokens.add(new MyToken("reservada.CURRENT_TIME", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CURRENT_TIME", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCURRENT_TIMESTAMP} {
-    Tokens.add(new MyToken("reservada.CURRENT_TIMESTAMP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CURRENT_TIMESTAMP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCURRENT_USER} {
-    Tokens.add(new MyToken("reservada.CURRENT_USER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CURRENT_USER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCURSOR} {
-    Tokens.add(new MyToken("reservada.CURSOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CURSOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaDATABASE} {
-    Tokens.add(new MyToken("reservada.DATABASE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("DATABASE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaDBCC} {
-    Tokens.add(new MyToken("reservada.DBCC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("DBCC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaDEALLOCATE} {
-    Tokens.add(new MyToken("reservada.DEALLOCATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("DEALLOCATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaDECLARE} {
-    Tokens.add(new MyToken("reservada.DECLARE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("DECLARE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaDEFAULT} {
-    Tokens.add(new MyToken("reservada.DEFAULT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("DEFAULT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaDELETE} {
-    Tokens.add(new MyToken("reservada.DELETE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("DELETE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaDENY} {
-    Tokens.add(new MyToken("reservada.DENY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("DENY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaDESC} {
-    Tokens.add(new MyToken("reservada.DESC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("DESC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaDISK} {
-    Tokens.add(new MyToken("reservada.DISK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("DISK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaDISTINCT} {
-    Tokens.add(new MyToken("reservada.DISTINCT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("DISTINCT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaDISTRIBUTED} {
-    Tokens.add(new MyToken("reservada.DISTRIBUTED", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("DISTRIBUTED", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaDOUBLE} {
-    Tokens.add(new MyToken("reservada.DOUBLE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("DOUBLE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaDROP} {
-    Tokens.add(new MyToken("reservada.DROP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("DROP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaDUMP} {
-    Tokens.add(new MyToken("reservada.DUMP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("DUMP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaELSE} {
-    Tokens.add(new MyToken("reservada.ELSE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("ELSE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaEND} {
-    Tokens.add(new MyToken("reservada.END", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("END", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaERRLVL} {
-    Tokens.add(new MyToken("reservada.ERRLVL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("ERRLVL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaESCAPE} {
-    Tokens.add(new MyToken("reservada.ESCAPE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("ESCAPE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaEXCEPT} {
-    Tokens.add(new MyToken("reservada.EXCEPT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("EXCEPT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaEXEC} {
-    Tokens.add(new MyToken("reservada.EXEC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("EXEC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaEXECUTE} {
-    Tokens.add(new MyToken("reservada.EXECUTE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("EXECUTE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaEXISTS} {
-    Tokens.add(new MyToken("reservada.EXISTS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("EXISTS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaEXIT} {
-    Tokens.add(new MyToken("reservada.EXIT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("EXIT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaEXTERNAL} {
-    Tokens.add(new MyToken("reservada.EXTERNAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("EXTERNAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaFETCH} {
-    Tokens.add(new MyToken("reservada.FETCH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("FETCH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaFILE} {
-    Tokens.add(new MyToken("reservada.FILE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("FILE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaFILLFACTOR} {
-    Tokens.add(new MyToken("reservada.FILLFACTOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("FILLFACTOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaFOR} {
-    Tokens.add(new MyToken("reservada.FOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("FOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaFOREIGN} {
-    Tokens.add(new MyToken("reservada.FOREIGN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("FOREIGN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaFREETEXT} {
-    Tokens.add(new MyToken("reservada.FREETEXT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("FREETEXT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaFREETEXTTABLE} {
-    Tokens.add(new MyToken("reservada.FREETEXTTABLE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("FREETEXTTABLE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaFROM} {
-    Tokens.add(new MyToken("reservada.FROM", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("FROM", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaFULL} {
-    Tokens.add(new MyToken("reservada.FULL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("FULL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaFUNCTION} {
-    Tokens.add(new MyToken("reservada.FUNCTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("FUNCTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaGOTO} {
-    Tokens.add(new MyToken("reservada.GOTO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("GOTO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaGRANT} {
-    Tokens.add(new MyToken("reservada.GRANT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("GRANT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaGROUP} {
-    Tokens.add(new MyToken("reservada.GROUP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("GROUP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaHAVING} {
-    Tokens.add(new MyToken("reservada.HAVING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("HAVING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaHOLDLOCK} {
-    Tokens.add(new MyToken("reservada.HOLDLOCK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("HOLDLOCK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaIDENTITY} {
-    Tokens.add(new MyToken("reservada.IDENTITY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("IDENTITY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaIDENTITY_INSERT} {
-    Tokens.add(new MyToken("reservada.IDENTITY_INSERT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("IDENTITY_INSERT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaIDENTITYCOL} {
-    Tokens.add(new MyToken("reservada.IDENTITYCOL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("IDENTITYCOL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaIF} {
-    Tokens.add(new MyToken("reservada.IF", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("IF", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaIN} {
-    Tokens.add(new MyToken("reservada.IN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("IN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaINDEX} {
-    Tokens.add(new MyToken("reservada.INDEX", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("INDEX", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaINNER} {
-    Tokens.add(new MyToken("reservada.INNER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("INNER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaINSERT} {
-    Tokens.add(new MyToken("reservada.INSERT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("INSERT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaINTERSECT} {
-    Tokens.add(new MyToken("reservada.INTERSECT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("INTERSECT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaINTO} {
-    Tokens.add(new MyToken("reservada.INTO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("INTO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaIS} {
-    Tokens.add(new MyToken("reservada.IS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("IS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaJOIN} {
-    Tokens.add(new MyToken("reservada.JOIN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("JOIN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaKEY} {
-    Tokens.add(new MyToken("reservada.KEY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("KEY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaKILL} {
-    Tokens.add(new MyToken("reservada.KILL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("KILL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaLEFT} {
-    Tokens.add(new MyToken("reservada.LEFT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("LEFT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaLIKE} {
-    Tokens.add(new MyToken("reservada.LIKE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("LIKE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaLINENO} {
-    Tokens.add(new MyToken("reservada.LINENO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("LINENO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaLOAD} {
-    Tokens.add(new MyToken("reservada.LOAD", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("LOAD", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaMERGE} {
-    Tokens.add(new MyToken("reservada.MERGE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("MERGE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaNATIONAL} {
-    Tokens.add(new MyToken("reservada.NATIONAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("NATIONAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaNOCHECK} {
-    Tokens.add(new MyToken("reservada.NOCHECK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("NOCHECK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaNOCLUSTERED} {
-    Tokens.add(new MyToken("reservada.NOCLUSTERED", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("NOCLUSTERED", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaNOT} {
-    Tokens.add(new MyToken("reservada.NOT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("NOT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaNULL} {
-    Tokens.add(new MyToken("reservada.NULL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("NULL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaNULLIF} {
-    Tokens.add(new MyToken("reservada.NULLIF", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("NULLIF", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaOF} {
-    Tokens.add(new MyToken("reservada.OF", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("OF", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaOFF} {
-    Tokens.add(new MyToken("reservada.OFF", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("OFF", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaOFFSETS} {
-    Tokens.add(new MyToken("reservada.OFFSETS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("OFFSETS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaON} {
-    Tokens.add(new MyToken("reservada.ON", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("ON", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaOPEN} {
-    Tokens.add(new MyToken("reservada.OPEN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("OPEN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaOPENDATASOURCE} {
-    Tokens.add(new MyToken("reservada.OPENDATASOURCE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("OPENDATASOURCE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaOPENQUERY} {
-    Tokens.add(new MyToken("reservada.OPENQUERY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("OPENQUERY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaOPENXML} {
-    Tokens.add(new MyToken("reservada.OPENXML", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("OPENXML", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaOPTION} {
-    Tokens.add(new MyToken("reservada.OPTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("OPTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaOR} {
-    Tokens.add(new MyToken("reservada.OR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("OR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaORDER} {
-    Tokens.add(new MyToken("reservada.ORDER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("ORDER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaOUTER} {
-    Tokens.add(new MyToken("reservada.OUTER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("OUTER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaOVER} {
-    Tokens.add(new MyToken("reservada.OVER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("OVER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaPERCENT} {
-    Tokens.add(new MyToken("reservada.PERCENT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("PERCENT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaPIVOT} {
-    Tokens.add(new MyToken("reservada.PIVOT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("PIVOT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaPLAN} {
-    Tokens.add(new MyToken("reservada.PLAN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("PLAN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaPRECISION} {
-    Tokens.add(new MyToken("reservada.PRECISION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("PRECISION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaPRIMARY} {
-    Tokens.add(new MyToken("reservada.PRIMARY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("PRIMARY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaPRINT} {
-    Tokens.add(new MyToken("reservada.PRINT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("PRINT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaPROC} {
-    Tokens.add(new MyToken("reservada.PROC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("PROC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaPROCEDURE} {
-    Tokens.add(new MyToken("reservada.PROCEDURE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("PROCEDURE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaPUBLIC} {
-    Tokens.add(new MyToken("reservada.PUBLIC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("PUBLIC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaRAISERROR} {
-    Tokens.add(new MyToken("reservada.RAISERROR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("RAISERROR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaREAD} {
-    Tokens.add(new MyToken("reservada.READ", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("READ", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaREADTEXT} {
-    Tokens.add(new MyToken("reservada.READTEXT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("READTEXT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaRECONFIGURE} {
-    Tokens.add(new MyToken("reservada.RECONFIGURE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("RECONFIGURE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaREFERENCES} {
-    Tokens.add(new MyToken("reservada.REFERENCES", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("REFERENCES", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaREPLICATION} {
-    Tokens.add(new MyToken("reservada.REPLICATION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("REPLICATION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaRESTORE} {
-    Tokens.add(new MyToken("reservada.RESTORE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("RESTORE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaRESTRICT} {
-    Tokens.add(new MyToken("reservada.RESTRICT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("RESTRICT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaRETURN} {
-    Tokens.add(new MyToken("reservada.RETURN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("RETURN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaREVERT} {
-    Tokens.add(new MyToken("reservada.REVERT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("REVERT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaREVOKE} {
-    Tokens.add(new MyToken("reservada.REVOKE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("REVOKE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaRIGHT} {
-    Tokens.add(new MyToken("reservada.RIGHT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("RIGHT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaROLLBACK} {
-    Tokens.add(new MyToken("reservada.ROLLBACK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("ROLLBACK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaROWCOUNT} {
-    Tokens.add(new MyToken("reservada.ROWCOUNT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("ROWCOUNT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaROWGUIDCOL} {
-    Tokens.add(new MyToken("reservada.ROWGUIDCOL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("ROWGUIDCOL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaRULE} {
-    Tokens.add(new MyToken("reservada.RULE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("RULE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSAVE} {
-    Tokens.add(new MyToken("reservada.SAVE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SAVE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSCHEMA} {
-    Tokens.add(new MyToken("reservada.SCHEMA", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SCHEMA", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSECURITYAUDIT} {
-    Tokens.add(new MyToken("reservada.SECURITYAUDIT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SECURITYAUDIT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSELECT} {
-    Tokens.add(new MyToken("reservada.SELECT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SELECT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSEMANTICKEYPHRASETABLE} {
-    Tokens.add(new MyToken("reservada.SEMANTICKEYPHRASETAB", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SEMANTICKEYPHRASETAB", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSEMANTICSIMILARITYDETAILSTABLE} {
-    Tokens.add(new MyToken("reservada.SEMANTICSIMILARITYDE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SEMANTICSIMILARITYDE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSEMANTICSIMILARITYTABLE} {
-    Tokens.add(new MyToken("reservada.SEMANTICSIMILARITYTA", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SEMANTICSIMILARITYTA", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSESSION_USER} {
-    Tokens.add(new MyToken("reservada.SESSION_USER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SESSION_USER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSET} {
-    Tokens.add(new MyToken("reservada.SET", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SET", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSETUSER} {
-    Tokens.add(new MyToken("reservada.SETUSER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SETUSER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSHUTDOWN} {
-    Tokens.add(new MyToken("reservada.SHUTDOWN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SHUTDOWN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSOME} {
-    Tokens.add(new MyToken("reservada.SOME", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SOME", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSTATISTICS} {
-    Tokens.add(new MyToken("reservada.STATISTICS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("STATISTICS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSYSTEM_USER} {
-    Tokens.add(new MyToken("reservada.SYSTEM_USER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SYSTEM_USER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaTABLE} {
-    Tokens.add(new MyToken("reservada.TABLE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("TABLE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaTABLESAMPLE} {
-    Tokens.add(new MyToken("reservada.TABLESAMPLE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("TABLESAMPLE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaTEXTSIZE} {
-    Tokens.add(new MyToken("reservada.TEXTSIZE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("TEXTSIZE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaTHEN} {
-    Tokens.add(new MyToken("reservada.THEN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("THEN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaTO} {
-    Tokens.add(new MyToken("reservada.TO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("TO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaTOP} {
-    Tokens.add(new MyToken("reservada.TOP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("TOP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaTRAN} {
-    Tokens.add(new MyToken("reservada.TRAN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("TRAN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaTRANSACTION} {
-    Tokens.add(new MyToken("reservada.TRANSACTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("TRANSACTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaTRIGGER} {
-    Tokens.add(new MyToken("reservada.TRIGGER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("TRIGGER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaTRUNCATE} {
-    Tokens.add(new MyToken("reservada.TRUNCATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("TRUNCATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaTRY_CONVERT} {
-    Tokens.add(new MyToken("reservada.TRY_CONVERT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("TRY_CONVERT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaTSEQUAL} {
-    Tokens.add(new MyToken("reservada.TSEQUAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("TSEQUAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaUNION} {
-    Tokens.add(new MyToken("reservada.UNION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("UNION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaUNIQUE} {
-    Tokens.add(new MyToken("reservada.UNIQUE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("UNIQUE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaUNPIVOT} {
-    Tokens.add(new MyToken("reservada.UNPIVOT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("UNPIVOT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaUPDATE} {
-    Tokens.add(new MyToken("reservada.UPDATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("UPDATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaUPDATETEXT} {
-    Tokens.add(new MyToken("reservada.UPDATETEXT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("UPDATETEXT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaUSE} {
-    Tokens.add(new MyToken("reservada.USE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("USE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaUSER} {
-    Tokens.add(new MyToken("reservada.USER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("USER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaVALUES} {
-    Tokens.add(new MyToken("reservada.VALUES", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("VALUES", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaVARYING} {
-    Tokens.add(new MyToken("reservada.VARYING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("VARYING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaVIEW} {
-    Tokens.add(new MyToken("reservada.VIEW", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("VIEW", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaWAITFOR} {
-    Tokens.add(new MyToken("reservada.WAITFOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("WAITFOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaWHEN} {
-    Tokens.add(new MyToken("reservada.WHEN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("WHEN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaWHERE} {
-    Tokens.add(new MyToken("reservada.WHERE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("WHERE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaWHILE} {
-    Tokens.add(new MyToken("reservada.WHILE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("WHILE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaWITH} {
-    Tokens.add(new MyToken("reservada.WITH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("WITH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaWRITETEXT} {
-    Tokens.add(new MyToken("reservada.WRITETEXT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("WRITETEXT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaABSOLUTE} {
-    Tokens.add(new MyToken("reservada.ABSOLUTE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("ABSOLUTE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaOVERLAPS} {
-    Tokens.add(new MyToken("reservada.OVERLAPS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("OVERLAPS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaACTION} {
-    Tokens.add(new MyToken("reservada.ACTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("ACTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaPAD} {
-    Tokens.add(new MyToken("reservada.PAD", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("PAD", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaADA} {
-    Tokens.add(new MyToken("reservada.ADA", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("ADA", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaPARTIAL} {
-    Tokens.add(new MyToken("reservada.PARTIAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("PARTIAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaPASCAL} {
-    Tokens.add(new MyToken("reservada.PASCAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("PASCAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaEXTRACT} {
-    Tokens.add(new MyToken("reservada.EXTRACT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("EXTRACT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaPOSITION} {
-    Tokens.add(new MyToken("reservada.POSITION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("POSITION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaALLOCATE} {
-    Tokens.add(new MyToken("reservada.ALLOCATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("ALLOCATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaFALSO} {
-    Tokens.add(new MyToken("reservada.FALSO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("FALSO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaPREPARE} {
-    Tokens.add(new MyToken("reservada.PREPARE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("PREPARE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaFIRST} {
-    Tokens.add(new MyToken("reservada.FIRST", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("FIRST", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaPRESERVE} {
-    Tokens.add(new MyToken("reservada.PRESERVE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("PRESERVE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaFLOAT} {
-    Tokens.add(new MyToken("reservada.FLOAT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("FLOAT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaARE} {
-    Tokens.add(new MyToken("reservada.ARE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("ARE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaPRIOR} {
-    Tokens.add(new MyToken("reservada.PRIOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("PRIOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaPRIVILEGES} {
-    Tokens.add(new MyToken("reservada.PRIVILEGES", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("PRIVILEGES", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaFORTRAN} {
-    Tokens.add(new MyToken("reservada.FORTRAN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("FORTRAN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaASSERTION} {
-    Tokens.add(new MyToken("reservada.ASSERTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("ASSERTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaFOUND} {
-    Tokens.add(new MyToken("reservada.FOUND", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("FOUND", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaAT} {
-    Tokens.add(new MyToken("reservada.AT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("AT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaREAL} {
-    Tokens.add(new MyToken("reservada.REAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("REAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaAVG} {
-    Tokens.add(new MyToken("reservada.AVG", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("AVG", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaGET} {
-    Tokens.add(new MyToken("reservada.GET", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("GET", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaGLOBAL} {
-    Tokens.add(new MyToken("reservada.GLOBAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("GLOBAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaRELATIVE} {
-    Tokens.add(new MyToken("reservada.RELATIVE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("RELATIVE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaGO} {
-    Tokens.add(new MyToken("reservada.GO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("GO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaBIT} {
-    Tokens.add(new MyToken("reservada.BIT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("BIT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaBIT_LENGTH} {
-    Tokens.add(new MyToken("reservada.BIT_LENGTH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("BIT_LENGTH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaBOTH} {
-    Tokens.add(new MyToken("reservada.BOTH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("BOTH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaROWS} {
-    Tokens.add(new MyToken("reservada.ROWS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("ROWS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaHOUR} {
-    Tokens.add(new MyToken("reservada.HOUR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("HOUR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCASCADED} {
-    Tokens.add(new MyToken("reservada.CASCADED", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CASCADED", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSCROLL} {
-    Tokens.add(new MyToken("reservada.SCROLL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SCROLL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaIMMEDIATE} {
-    Tokens.add(new MyToken("reservada.IMMEDIATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("IMMEDIATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSECOND} {
-    Tokens.add(new MyToken("reservada.SECOND", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SECOND", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCAST} {
-    Tokens.add(new MyToken("reservada.CAST", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CAST", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSECTION} {
-    Tokens.add(new MyToken("reservada.SECTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SECTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCATALOG} {
-    Tokens.add(new MyToken("reservada.CATALOG", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CATALOG", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaINCLUDE} {
-    Tokens.add(new MyToken("reservada.INCLUDE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("INCLUDE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCHAR} {
-    Tokens.add(new MyToken("reservada.CHAR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CHAR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSESSION} {
-    Tokens.add(new MyToken("reservada.SESSION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SESSION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCHAR_LENGTH} {
-    Tokens.add(new MyToken("reservada.CHAR_LENGTH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CHAR_LENGTH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaINDICATOR} {
-    Tokens.add(new MyToken("reservada.INDICATOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("INDICATOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCHARACTER} {
-    Tokens.add(new MyToken("reservada.CHARACTER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CHARACTER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaINITIALLY} {
-    Tokens.add(new MyToken("reservada.INITIALLY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("INITIALLY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCHARACTER_LENGTH} {
-    Tokens.add(new MyToken("reservada.CHARACTER_LENGTH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CHARACTER_LENGTH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSIZE} {
-    Tokens.add(new MyToken("reservada.SIZE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SIZE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaINPUT} {
-    Tokens.add(new MyToken("reservada.INPUT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("INPUT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSMALLINT} {
-    Tokens.add(new MyToken("reservada.SMALLINT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SMALLINT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaINSENSITIVE} {
-    Tokens.add(new MyToken("reservada.INSENSITIVE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("INSENSITIVE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSPACE} {
-    Tokens.add(new MyToken("reservada.SPACE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SPACE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaINT} {
-    Tokens.add(new MyToken("reservada.INT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("INT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSQL} {
-    Tokens.add(new MyToken("reservada.SQL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SQL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCOLLATION} {
-    Tokens.add(new MyToken("reservada.COLLATION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("COLLATION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaINTEGER} {
-    Tokens.add(new MyToken("reservada.INTEGER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("INTEGER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSQLCA} {
-    Tokens.add(new MyToken("reservada.SQLCA", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SQLCA", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSQLCODE} {
-    Tokens.add(new MyToken("reservada.SQLCODE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SQLCODE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaINTERVAL} {
-    Tokens.add(new MyToken("reservada.INTERVAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("INTERVAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSQLERROR} {
-    Tokens.add(new MyToken("reservada.SQLERROR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SQLERROR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCONNECT} {
-    Tokens.add(new MyToken("reservada.CONNECT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CONNECT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSQLSTATE} {
-    Tokens.add(new MyToken("reservada.SQLSTATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SQLSTATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCONNECTION} {
-    Tokens.add(new MyToken("reservada.CONNECTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CONNECTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSQLWARNING} {
-    Tokens.add(new MyToken("reservada.SQLWARNING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SQLWARNING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaISOLATION} {
-    Tokens.add(new MyToken("reservada.ISOLATION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("ISOLATION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSUBSTRING} {
-    Tokens.add(new MyToken("reservada.SUBSTRING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SUBSTRING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCONSTRAINTS} {
-    Tokens.add(new MyToken("reservada.CONSTRAINTS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CONSTRAINTS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaSUM} {
-    Tokens.add(new MyToken("reservada.SUM", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("SUM", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaLANGUAGE} {
-    Tokens.add(new MyToken("reservada.LANGUAGE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("LANGUAGE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCORRESPONDING} {
-    Tokens.add(new MyToken("reservada.CORRESPONDING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CORRESPONDING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaLAST} {
-    Tokens.add(new MyToken("reservada.LAST", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("LAST", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaTEMPORARY} {
-    Tokens.add(new MyToken("reservada.TEMPORARY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("TEMPORARY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaCOUNT} {
-    Tokens.add(new MyToken("reservada.COUNT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("COUNT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaLEADING} {
-    Tokens.add(new MyToken("reservada.LEADING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("LEADING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaTIME} {
-    Tokens.add(new MyToken("reservada.TIME", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("TIME", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaLEVEL} {
-    Tokens.add(new MyToken("reservada.LEVEL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("LEVEL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaTIMESTAMP} {
-    Tokens.add(new MyToken("reservada.TIMESTAMP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("TIMESTAMP", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaTIMEZONE_HOUR} {
-    Tokens.add(new MyToken("reservada.TIMEZONE_HOUR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("TIMEZONE_HOUR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaLOCAL} {
-    Tokens.add(new MyToken("reservada.LOCAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("LOCAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaTIMEZONE_MINUTE} {
-    Tokens.add(new MyToken("reservada.TIMEZONE_MINUTE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("TIMEZONE_MINUTE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaLOWER} {
-    Tokens.add(new MyToken("reservada.LOWER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("LOWER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaMATCH} {
-    Tokens.add(new MyToken("reservada.MATCH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("MATCH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaTRAILING} {
-    Tokens.add(new MyToken("reservada.TRAILING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("TRAILING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaMAX} {
-    Tokens.add(new MyToken("reservada.MAX", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("MAX", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaMIN} {
-    Tokens.add(new MyToken("reservada.MIN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("MIN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaTRANSLATE} {
-    Tokens.add(new MyToken("reservada.TRANSLATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("TRANSLATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaDATE} {
-    Tokens.add(new MyToken("reservada.DATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("DATE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaMINUTE} {
-    Tokens.add(new MyToken("reservada.MINUTE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("MINUTE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaTRANSLATION} {
-    Tokens.add(new MyToken("reservada.TRANSLATION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("TRANSLATION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaDAY} {
-    Tokens.add(new MyToken("reservada.DAY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("DAY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaMODULE} {
-    Tokens.add(new MyToken("reservada.MODULE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("MODULE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaTRIM} {
-    Tokens.add(new MyToken("reservada.TRIM", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("TRIM", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaMONTH} {
-    Tokens.add(new MyToken("reservada.MONTH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("MONTH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaVERDADERO} {
-    Tokens.add(new MyToken("reservada.VERDADERO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("VERDADERO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaDEC} {
-    Tokens.add(new MyToken("reservada.DEC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("DEC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaNAMES} {
-    Tokens.add(new MyToken("reservada.NAMES", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("NAMES", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaDECIMAL} {
-    Tokens.add(new MyToken("reservada.DECIMAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("DECIMAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaNATURAL} {
-    Tokens.add(new MyToken("reservada.NATURAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("NATURAL", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaUNKNOWN} {
-    Tokens.add(new MyToken("reservada.UNKNOWN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("UNKNOWN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaNCHAR} {
-    Tokens.add(new MyToken("reservada.NCHAR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("NCHAR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaDEFERRABLE} {
-    Tokens.add(new MyToken("reservada.DEFERRABLE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("DEFERRABLE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaNEXT} {
-    Tokens.add(new MyToken("reservada.NEXT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("NEXT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaUPPER} {
-    Tokens.add(new MyToken("reservada.UPPER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("UPPER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaDEFERRED} {
-    Tokens.add(new MyToken("reservada.DEFERRED", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("DEFERRED", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaNO} {
-    Tokens.add(new MyToken("reservada.NO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("NO", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaUSAGE} {
-    Tokens.add(new MyToken("reservada.USAGE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("USAGE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaNONE} {
-    Tokens.add(new MyToken("reservada.NONE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("NONE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaUSING} {
-    Tokens.add(new MyToken("reservada.USING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("USING", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaDESCRIBE} {
-    Tokens.add(new MyToken("reservada.DESCRIBE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("DESCRIBE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaVALUE} {
-    Tokens.add(new MyToken("reservada.VALUE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("VALUE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaDESCRIPTOR} {
-    Tokens.add(new MyToken("reservada.DESCRIPTOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("DESCRIPTOR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaDIAGNOSTICS} {
-    Tokens.add(new MyToken("reservada.DIAGNOSTICS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("DIAGNOSTICS", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaNUMERIC} {
-    Tokens.add(new MyToken("reservada.NUMERIC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("NUMERIC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaVARCHAR} {
-    Tokens.add(new MyToken("reservada.VARCHAR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("VARCHAR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaDISCONNECT} {
-    Tokens.add(new MyToken("reservada.DISCONNECT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("DISCONNECT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaOCTET_LENGTH} {
-    Tokens.add(new MyToken("reservada.OCTET_LENGTH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("OCTET_LENGTH", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaDOMAIN} {
-    Tokens.add(new MyToken("reservada.DOMAIN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("DOMAIN", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaONLY} {
-    Tokens.add(new MyToken("reservada.ONLY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("ONLY", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaWHENEVER} {
-    Tokens.add(new MyToken("reservada.WHENEVER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("WHENEVER", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaWORK} {
-    Tokens.add(new MyToken("reservada.WORK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("WORK", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaENDEXEC} {
-    Tokens.add(new MyToken("reservada.ENDEXEC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("ENDEXEC", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaWRITE} {
-    Tokens.add(new MyToken("reservada.WRITE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("WRITE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaYEAR} {
-    Tokens.add(new MyToken("reservada.YEAR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("YEAR", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaOUTPUT} {
-    Tokens.add(new MyToken("reservada.OUTPUT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("OUTPUT", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaZONE} {
-    Tokens.add(new MyToken("reservada.ZONE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("ZONE", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {reservadaEXCEPTION} {
-    Tokens.add(new MyToken("reservada.EXCEPTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("EXCEPTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {int} {
     Tokens.add(new MyToken("DatoEntero", yytext(), "Token", yyline + 1, yylength(), yycolumn + 1));
@@ -1373,106 +1373,106 @@ reservadaEXCEPTION = (EXCEPTION)
     }
 }
 {suma} {
-    Tokens.add(new MyToken("Simbolo.Mas", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("Mas", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {resta} {
-    Tokens.add(new MyToken("Simbolo.Menos", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("Menos", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {multi} {
-    Tokens.add(new MyToken("Simbolo.Multiplicacion", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("Multiplicacion", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {division} {
-    Tokens.add(new MyToken("Simbolo.Division", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("Division", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {mod} {
-    Tokens.add(new MyToken("Simbolo.Modulo", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("Modulo", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {meIg} {
-    Tokens.add(new MyToken("Simbolo.MenorIgual", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("MenorIgual", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {doubCorch} {
-    Tokens.add(new MyToken("Simbolo.Corchetes", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("Corchetes", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {doubLlave} {
-    Tokens.add(new MyToken("Simbolo.Llaves", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("Llaves", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {doubParen} {
-    Tokens.add(new MyToken("Simbolo.Parentesis", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("Parentesis", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {maIg} {
-    Tokens.add(new MyToken("Simbolo.MayorIgual", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("MayorIgual", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {asignacion} {
-    Tokens.add(new MyToken("Simbolo.Igual", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("Igual", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {mayor} {
-    Tokens.add(new MyToken("Simbolo.Mayor", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("Mayor", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {menor} {
-    Tokens.add(new MyToken("Simbolo.Menor", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("Menor", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {igualComp} {
-    Tokens.add(new MyToken("Simbolo.IgualIgual", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("IgualIgual", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {diferente} {
-    Tokens.add(new MyToken("Simbolo.Diferente", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("Diferente", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {and} {
-    Tokens.add(new MyToken("Simbolo.And", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("And", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {or} {
-    Tokens.add(new MyToken("Simbolo.Or", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("Or", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {not} {
-    Tokens.add(new MyToken("Simbolo.Not", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("Not", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {endLine} {
-    Tokens.add(new MyToken("Simbolo.PuntoComa", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("PuntoComa", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {coma} {
-    Tokens.add(new MyToken("Simbolo.Coma", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("Coma", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {punto} {
-    Tokens.add(new MyToken("Simbolo.Punto", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("Punto", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {corcheteAbrir} {
-    Tokens.add(new MyToken("Simbolo.CorcheteAbrir", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CorcheteAbrir", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {corcheteCerrar} {
-    Tokens.add(new MyToken("Simbolo.CorcheteCerrar", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("CorcheteCerrar", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {parenAbrir} {
-    Tokens.add(new MyToken("Simbolo.ParantesisAbrir", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("ParentesisAbrir", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {parenCerrar} {
-    Tokens.add(new MyToken("Simbolo.ParentesisCerrar", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("ParentesisCerrar", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {llaveAbrir} {
-    Tokens.add(new MyToken("Simbolo.LlaveAbrir", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("LlaveAbrir", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {llaveCerrar} {
-    Tokens.add(new MyToken("Simbolo.LlaveCerrar", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("LlaveCerrar", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {arroba} {
-    Tokens.add(new MyToken("Simbolo.Arroba", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("Arroba", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {dobHasht} {
-    Tokens.add(new MyToken("Simbolo.DobleNumeral", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("DobleNumeral", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 {hast} {
-    Tokens.add(new MyToken("Simbolo.Numeral", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("Numeral", yytext(), "Simbolo", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {tab} {
-    Tokens.add(new MyToken("Simbolo.Tabulacion", yytext(), "Separador", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("Tabulacion", yytext(), "Separador", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {carrete} {
-    Tokens.add(new MyToken("Simbolo.Carrete", yytext(), "Separador", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("Carrete", yytext(), "Separador", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {salto} {
-    Tokens.add(new MyToken("Simbolo.Salto", yytext(), "Separador", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("Salto", yytext(), "Separador", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {espacio} {
-    Tokens.add(new MyToken("Simbolo.Espacio", yytext(), "Separador", yyline + 1, yylength(), yycolumn + 1));
+    Tokens.add(new MyToken("Espacio", yytext(), "Separador", yyline + 1, yylength(), yycolumn + 1));
 }
 [^] {
     Tokens.add(new MyToken("Error", yytext(), "Error", yyline + 1, yylength(), yycolumn + 1));
