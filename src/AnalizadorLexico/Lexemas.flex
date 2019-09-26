@@ -7,7 +7,7 @@ import java.util.ArrayList;
 %{
     private int cadenaTest = 0;
 
-    private List<MyToken> Tokens = new ArrayList();
+    private List<MyToken> Tokens = new ArrayList(); 
 
     StringBuffer _cadenaComentario = new StringBuffer();
     private boolean _comentarioActivo = false;

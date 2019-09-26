@@ -10,6 +10,8 @@ import static AnalizadorSintactico.AnalizadorSintactico.TokenActual;
 import static AnalizadorSintactico.AnalizadorSintactico.moverToken;
 import static AnalizadorSintactico.AnalizadorSintactico.getHasError;
 import static AnalizadorSintactico.AnalizadorSintactico.setHasError;
+import static AnalizadorSintactico.Utilidades.Utilidades.regresarGramaticaAnterior;
+import java.util.List;
 
 
 /**
@@ -18,27 +20,35 @@ import static AnalizadorSintactico.AnalizadorSintactico.setHasError;
  */
 public class ScalarExpression {
 
+    private boolean CaracterFinal;
+    private boolean OmitirError;
+    private List<String> Continuacion;
     
-    public boolean Analizar() {
-        return SEXP();
+    public boolean Analizar(boolean omitirError, List<String> siguientes) {
+        OmitirError = omitirError;
+        Continuacion = siguientes;
+        CaracterFinal = false;
+        return SEXP() || CaracterFinal;
     }
     
     public boolean SEXP() {
-        if (!getHasError()) {
+        if (!getHasError() && OmitirError) {
             if (TokenActual().get_token().equals("ParentesisAbrir") || TokenActual().get_token().equals("DatoEntero") 
                     || TokenActual().get_token().equals("DatoFloat") || TokenActual().get_token().equals("Arroba")) {
                 SEXP3();
                 SEXP2();
             } else {
-                setHasError(true);
-                Errores.SyntaxError(TokenActual(), "un número entero o float o una variable o un parentesis de apertura");
+                if (!OmitirError) {
+                    setHasError(true);
+                    Errores.SyntaxError(TokenActual(), "un número entero o float o una variable o un parentesis de apertura");
+                }
             }
         }
         return !getHasError();
     }
     
     public void SEXP2() {
-        if (!getHasError()) {
+        if (!getHasError() && OmitirError) {
             if (TokenActual().get_token().equals("Mas") || TokenActual().get_token().equals("Menos")) {
                 moverToken();
                 SEXP3();
@@ -48,20 +58,22 @@ public class ScalarExpression {
     }
     
     public void SEXP3() {
-        if (!getHasError()) {
+        if (!getHasError() && OmitirError) {
             if (TokenActual().get_token().equals("ParentesisAbrir") || TokenActual().get_token().equals("DatoEntero") 
                     || TokenActual().get_token().equals("DatoFloat") || TokenActual().get_token().equals("Arroba")) {
                 SEXP5();
                 SEXP4();
             } else {
-                setHasError(true);
-                Errores.SyntaxError(TokenActual(), "un número entero o float o una variable o un parentesis de apertura");
+                if (!OmitirError) {
+                    setHasError(true);
+                    Errores.SyntaxError(TokenActual(), "un número entero o float o una variable o un parentesis de apertura");
+                }
             }
         }
     }
     
     public void SEXP4() {
-        if (!getHasError()) {
+        if (!getHasError() && OmitirError) {
             if (TokenActual().get_token().equals("Multiplicacion") || TokenActual().get_token().equals("Division")) {
                 moverToken();
                 SEXP5();
@@ -71,7 +83,7 @@ public class ScalarExpression {
     }
     
     public void SEXP5() {
-        if (!getHasError()) {
+        if (!getHasError() && OmitirError) {
             if (TokenActual().get_token().equals("ParentesisAbrir")) {
                 moverToken();
                 SEXP();
@@ -95,8 +107,11 @@ public class ScalarExpression {
                 setHasError(true);
                 Errores.EOF("ScalarExpression.java");
             } else {
-                setHasError(true);
-                Errores.SyntaxError(TokenActual(), "un número entero o float o una variable o un parentesis de cierre");
+                if (!OmitirError) {
+                    setHasError(true);
+                    Errores.SyntaxError(TokenActual(), "un número entero o float o una variable o un parentesis de cierre");
+                }
+                CaracterFinal = regresarGramaticaAnterior(TokenActual().get_token(), Continuacion);
             }
         }
     }

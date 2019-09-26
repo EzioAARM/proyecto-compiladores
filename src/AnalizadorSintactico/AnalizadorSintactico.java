@@ -6,6 +6,7 @@
 package AnalizadorSintactico;
 
 import AnalizadorLexico.MyToken;
+import AnalizadorSintactico.Utilidades.AggregateFunctions;
 import AnalizadorSintactico.Utilidades.ScalarExpression;
 import MiniSql.Errores;
 import java.util.ArrayList;
@@ -39,7 +40,7 @@ public class AnalizadorSintactico {
             }
         }
         esObjeto = true;
-        ScalarExpression test = new ScalarExpression();
+        AggregateFunctions test = new AggregateFunctions();
         test.Analizar();
         if (hasError) {
             Errores.DevelopErrors("Hubo un error analizando");
@@ -52,6 +53,15 @@ public class AnalizadorSintactico {
         if (esObjeto) {
             TokensAnalizados.add(TokensAnalizar.get(0));
             TokensAnalizar.remove(0);
+        } else {
+            Errores.DevelopErrors("No se inicializó la clase \"AnalizadorSintactico\"");
+        }
+    }
+    
+    public static void regresarToken() {
+        if (esObjeto) {
+            TokensAnalizar.add(0, TokensAnalizados.get(TokensAnalizados.size() - 1));
+            TokensAnalizados.remove(TokensAnalizados.size() - 1);
         } else {
             Errores.DevelopErrors("No se inicializó la clase \"AnalizadorSintactico\"");
         }

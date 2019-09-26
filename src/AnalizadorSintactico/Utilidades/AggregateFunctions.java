@@ -9,7 +9,10 @@ import MiniSql.Errores;
 import static AnalizadorSintactico.AnalizadorSintactico.TokenActual;
 import static AnalizadorSintactico.AnalizadorSintactico.moverToken;
 import static AnalizadorSintactico.AnalizadorSintactico.getHasError;
+import static AnalizadorSintactico.AnalizadorSintactico.regresarToken;
 import static AnalizadorSintactico.AnalizadorSintactico.setHasError;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -32,7 +35,6 @@ public class AggregateFunctions {
                         case "ParentesisAbrir":
                             moverToken();
                             SELAVG();
-                            moverToken();
                             if (!TokenActual().get_token().equals("ParentesisCerrar")) {
                                 setHasError(true);
                                 Errores.SyntaxError(TokenActual(), "parentesis de cierre");
@@ -50,7 +52,6 @@ public class AggregateFunctions {
                         case "ParentesisAbrir":
                             moverToken();
                             SELCOUNT();
-                            moverToken();
                             if (!TokenActual().get_token().equals("ParentesisCerrar")) {
                                 setHasError(true);
                                 Errores.SyntaxError(TokenActual(), "parentesis de cierre");
@@ -69,7 +70,6 @@ public class AggregateFunctions {
                             case "ParentesisAbrir":
                                 moverToken();
                                 SELAGR();
-                                moverToken();
                                 if (!TokenActual().get_token().equals("ParentesisCerrar")) {
                                     setHasError(true);
                                     Errores.SyntaxError(TokenActual(), "parentesis de cierre");
@@ -120,9 +120,10 @@ public class AggregateFunctions {
                 SELAVG3();
             } else {
                 ScalarExpression sexp = new ScalarExpression();
-                if (sexp.Analizar()) {
-                    SELAVG1();
-                    SELAVG2();
+                List<String> siguientes = new ArrayList();
+                siguientes.add("ParentesisCerrar");
+                if (sexp.Analizar(true, siguientes)) {
+                    System.out.print("Analizó correctamente SEXP");
                 } else {
                     setHasError(true);
                     Errores.SyntaxError(TokenActual(), "scalar expression");
@@ -147,49 +148,104 @@ public class AggregateFunctions {
     
     public void SELCOUNT() {
         if (!getHasError()) {
-            
+            if (TokenActual().get_token().equals("ALL") || TokenActual().get_token().equals("DISTINCT") || TokenActual().get_token().equals("Identificador")
+                    || TokenActual().get_token().equals("ParentesisAbrir") || TokenActual().get_token().equals("DatoEntero") 
+                    || TokenActual().get_token().equals("DatoFloat") || TokenActual().get_token().equals("Arroba") || TokenActual().get_token().equals("Multiplicacion")) {
+                SELCOUNT1();
+                SELCOUNT2();
+            } else {
+                setHasError(true);
+                Errores.SyntaxError(TokenActual(), "'ALL' o 'DISTINCT' o un identificador o una scalar expression");
+            }
         }
     }
     
     public void SELCOUNT1() {
         if (!getHasError()) {
-            
+            if (TokenActual().get_token().equals("ALL") || TokenActual().get_token().equals("DISTINCT")) {
+                moverToken();
+            }
         }
     }
     
     public void SELCOUNT2() {
         if (!getHasError()) {
-            
+            if (TokenActual().get_token().equals("Identificador")) {
+                moverToken();
+                SELCOUNT3();
+            } else if (TokenActual().get_token().equals("Multiplicacion")) {
+                moverToken();
+            } else {
+                ScalarExpression sexp = new ScalarExpression();
+                List<String> siguientes = new ArrayList();
+                siguientes.add("ParentesisCerrar");
+                if (sexp.Analizar(true, siguientes)) {
+                    System.out.print("Analizó correctamente SEXP");
+                } else {
+                    setHasError(true);
+                    Errores.SyntaxError(TokenActual(), "scalar expression");
+                }
+            }
         }
     }
     
     public void SELCOUNT3() {
         if (!getHasError()) {
-            
+            if (TokenActual().get_token().equals("Punto")) {
+                moverToken();
+                if (TokenActual().get_token().equals("Identificador")) {
+                    moverToken();
+                }
+            }
         }
     }
     
     public void SELAGR() {
         if (!getHasError()) {
-            
+            if (TokenActual().get_token().equals("ALL") || TokenActual().get_token().equals("DISTINCT") || TokenActual().get_token().equals("Identificador")
+                    || TokenActual().get_token().equals("ParentesisAbrir") || TokenActual().get_token().equals("DatoEntero") 
+                    || TokenActual().get_token().equals("DatoFloat") || TokenActual().get_token().equals("Arroba")) {
+                SELAGR1();
+                SELAGR2();
+            }
         }
     }
     
     public void SELAGR1() {
         if (!getHasError()) {
-            
+            if (TokenActual().get_token().equals("ALL") || TokenActual().get_token().equals("DISTINCT")) {
+                moverToken();
+            }
         }
     }
     
     public void SELAGR2() {
         if (!getHasError()) {
-            
+            if (TokenActual().get_token().equals("Identificador")) {
+                moverToken();
+                SELAGR3();
+            } else {
+                ScalarExpression sexp = new ScalarExpression();
+                List<String> siguientes = new ArrayList();
+                siguientes.add("ParentesisCerrar");
+                if (sexp.Analizar(true, siguientes)) {
+                    System.out.print("Analizó correctamente SEXP");
+                } else {
+                    setHasError(true);
+                    Errores.SyntaxError(TokenActual(), "scalar expression");
+                }
+            }
         }
     }
     
     public void SELAGR3() {
         if (!getHasError()) {
-            
+            if (TokenActual().get_token().equals("Punto")) {
+                moverToken();
+                if (TokenActual().get_token().equals("Identificador")) {
+                    moverToken();
+                }
+            }
         }
     }
     

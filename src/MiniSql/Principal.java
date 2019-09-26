@@ -124,6 +124,7 @@ public class Principal extends javax.swing.JFrame {
                 // Obtiene el archivo seleccionado
                 txtCodigo.setText("");
                 txtMensajes.setText("");
+                Errores.Errores = new StringBuilder();
                 File archivoSeleccionado = chooser.getSelectedFile();
                 txtPrueba.setText(archivoSeleccionado.getAbsolutePath());
                 String ubicacion = archivoSeleccionado.getParent();
