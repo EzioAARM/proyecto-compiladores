@@ -11,7 +11,6 @@ import static AnalizadorSintactico.AnalizadorSintactico.moverToken;
 import static AnalizadorSintactico.AnalizadorSintactico.getHasError;
 import static AnalizadorSintactico.AnalizadorSintactico.regresarToken;
 import static AnalizadorSintactico.AnalizadorSintactico.setHasError;
-import static AnalizadorSintactico.Utilidades.Utilidades.regresarGramaticaAnterior;
 import java.util.ArrayList;
 import java.util.List;
 

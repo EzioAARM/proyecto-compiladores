@@ -117,18 +117,19 @@
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <expression>
-    EXPRESSION ::= SEXP
-                | STRING
-                | IDENTIFICADOR EXPRESSION1
-                | "(" EXPRESSION ")"
-                | EXPRESSION2
-                | EXPRESSION5 EXPRESSION4
+    EXPRESSION ::= SEXP EXPRESSION5
+                | STRING EXPRESSION5
+                | IDENTIFICADOR EXPRESSION1 EXPRESSION5
+                | "(" EXPRESSION ")" EXPRESSION5
+                | EXPRESSION2 EXPRESSION5
     EXPRESSION1 ::= "." IDENTIFICADOR
                 | VACIO
     EXPRESSION2 ::= EXPRESSION3 EXPRESSION
     EXPRESSION3 ::= "+"
                 | "-"
     EXPRESSION4 ::= BIN_OPR EXPRESSION
+    EXPRESSION5 ::= EXPRESSION4 EXPRESSION5
+                | VACIO;
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

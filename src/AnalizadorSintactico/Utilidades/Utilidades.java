@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class Utilidades {
     
-    public static boolean regresarGramaticaAnterior(String tokenEncontrado, List<String> tiposRequeridos) {
+    public static boolean verificarExistencia(String tokenEncontrado, List<String> tiposRequeridos) {
         for (int i = 0; i < tiposRequeridos.size() - 1; i++) {
             if (tiposRequeridos.get(i).equals(tokenEncontrado))
                 return true;
