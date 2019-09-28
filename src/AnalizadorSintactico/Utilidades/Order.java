@@ -3,18 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package AnalizadorSintactico.DML;
-
-import AnalizadorSintactico.Utilidades.OtherFunctions;
+package AnalizadorSintactico.Utilidades;
 
 /**
  *
  * @author axel
  */
-public class Select {
+public class Order {
     
-    public void test() {
-        OtherFunctions.OTHFN();
+    public static void ORDER() {
+        
     }
     
 }
