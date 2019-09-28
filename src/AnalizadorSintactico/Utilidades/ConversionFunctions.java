@@ -50,7 +50,11 @@ public class ConversionFunctions {
     }
     
     public static void CONV1() {
-        
+        Expression.EXPRESSION();
+        if (TokenActual().get_token().equals("AS")) {
+            moverToken();
+            
+        }
     }
     
 }

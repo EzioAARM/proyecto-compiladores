@@ -41,16 +41,6 @@ public class Expression {
                         break;
                 }
                 break;
-            case "Mas":
-                moverToken();
-                EXPRESSION2();
-                EXPRESSION();
-                break;
-            case "Menos":
-                moverToken();
-                EXPRESSION2();
-                EXPRESSION();
-                break;
             default:
                 if (TokenActual().get_token().equals("ParentesisAbrir") || TokenActual().get_token().equals("DatoEntero") 
                         || TokenActual().get_token().equals("DatoFloat") || TokenActual().get_token().equals("Arroba")) {
@@ -58,7 +48,7 @@ public class Expression {
                     EXPRESSION5();
                 } else {
                     setHasError(true);
-                    Errores.SyntaxError(TokenActual(), "string, identificador, signo más, signo menos, parentesis de apertura, dato entero, dato float o una variable");
+                    Errores.SyntaxError(TokenActual(), "string, identificador, parentesis de apertura, dato entero, dato float o una variable");
                 }
                 break;
         }
@@ -76,25 +66,38 @@ public class Expression {
         }
     }
     
-    private static void EXPRESSION2() {
-        if (TokenActual().get_token().equals("Mas") || TokenActual().get_token().equals("Menos")) {
-            EXPRESSION3();
+    private static void EXPRESSION4() {
+        if (TokenActual().get_token().equals("Mas") || TokenActual().get_token().equals("Menos")
+                || TokenActual().get_token().equals("Multiplicacion") || TokenActual().get_token().equals("Divison")
+                || TokenActual().get_token().equals("Modulo") || TokenActual().get_token().equals("Igual") 
+                || TokenActual().get_token().equals("AND") || TokenActual().get_token().equals("OR")
+                || TokenActual().get_token().equals("NOT") || TokenActual().get_token().equals("Menor")
+                || TokenActual().get_token().equals("Mayor") || TokenActual().get_token().equals("MenorIgual")
+                || TokenActual().get_token().equals("MayorIgual") || TokenActual().get_token().equals("Diferente") 
+                || TokenActual().get_token().equals("ALL") || TokenActual().get_token().equals("ANY")
+                || TokenActual().get_token().equals("BETWEEN") || TokenActual().get_token().equals("EXISTS")
+                || TokenActual().get_token().equals("IN") || TokenActual().get_token().equals("LIKE")
+                || TokenActual().get_token().equals("SOME")) {
+            BinaryOperators.BINOPR();
             EXPRESSION();
         }
     }
     
-    private static void EXPRESSION3() {
-        if (TokenActual().get_token().equals("Mas") || TokenActual().get_token().equals("Menos")) {
-            moverToken();
-        }
-    }
-    
-    private static void EXPRESSION4() {
-        
-    }
-    
     private static void EXPRESSION5() {
-        
+        if (TokenActual().get_token().equals("Mas") || TokenActual().get_token().equals("Menos")
+                || TokenActual().get_token().equals("Multiplicacion") || TokenActual().get_token().equals("Divison")
+                || TokenActual().get_token().equals("Modulo") || TokenActual().get_token().equals("Igual") 
+                || TokenActual().get_token().equals("AND") || TokenActual().get_token().equals("OR")
+                || TokenActual().get_token().equals("NOT") || TokenActual().get_token().equals("Menor")
+                || TokenActual().get_token().equals("Mayor") || TokenActual().get_token().equals("MenorIgual")
+                || TokenActual().get_token().equals("MayorIgual") || TokenActual().get_token().equals("Diferente") 
+                || TokenActual().get_token().equals("ALL") || TokenActual().get_token().equals("ANY")
+                || TokenActual().get_token().equals("BETWEEN") || TokenActual().get_token().equals("EXISTS")
+                || TokenActual().get_token().equals("IN") || TokenActual().get_token().equals("LIKE")
+                || TokenActual().get_token().equals("SOME")) {
+            EXPRESSION4();
+            EXPRESSION5();
+        }
     }
     
 }
