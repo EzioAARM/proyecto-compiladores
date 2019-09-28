@@ -6,6 +6,7 @@
 package AnalizadorSintactico.DML;
 
 import AnalizadorSintactico.Utilidades.AggregateFunctions;
+import AnalizadorSintactico.Utilidades.DataType;
 import AnalizadorSintactico.Utilidades.DateFunctions;
 import AnalizadorSintactico.Utilidades.Expression;
 import AnalizadorSintactico.Utilidades.StringFunctions;
@@ -17,7 +18,7 @@ import AnalizadorSintactico.Utilidades.StringFunctions;
 public class Select {
     
     public void test() {
-        Expression.EXPRESSION();
+        DataType.DATATYPE();
     }
     
 }
