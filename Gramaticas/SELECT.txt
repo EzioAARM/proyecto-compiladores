@@ -76,7 +76,7 @@
                 | "NULLIF" "(" EXPRESSION "," EXPRESSION ")"
     OTH_FN1 ::=  "." IDENTIFICADOR OTH_FN2
                 | OTH_FN2
-    OTH_FN2 ::= " "." IDENTIFICADOR OTH_FN3
+    OTH_FN2 ::= "." IDENTIFICADOR OTH_FN3
                 | OTH_FN3
     OTH_FN3 ::= "OVER" "ORDER" "BY" ORDER
 
