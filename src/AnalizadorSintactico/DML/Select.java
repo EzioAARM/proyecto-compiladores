@@ -7,6 +7,7 @@ package AnalizadorSintactico.DML;
 
 import AnalizadorSintactico.Utilidades.AggregateFunctions;
 import AnalizadorSintactico.Utilidades.DateFunctions;
+import AnalizadorSintactico.Utilidades.StringFunctions;
 
 /**
  *
@@ -15,7 +16,7 @@ import AnalizadorSintactico.Utilidades.DateFunctions;
 public class Select {
     
     public void test() {
-        DateFunctions.DTFN();
+        StringFunctions.STRFN();
     }
     
 }
