@@ -42,12 +42,7 @@ public class AnalizadorSintactico {
         }
         esObjeto = true;
         Select test = new Select();
-        test.SEXP();
-        if (hasError) {
-            Errores.DevelopErrors("Hubo un error analizando");
-        } else {
-            Errores.DevelopErrors("Se analizó con éxito");
-        }
+        test.AGGFN();
     }
     
     public static void moverToken() {

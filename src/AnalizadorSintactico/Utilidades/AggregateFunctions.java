@@ -58,20 +58,25 @@ public class AggregateFunctions {
                 }
                 break;
             default:
-                moverToken();
-                switch (TokenActual().get_token()) {
-                    case "ParentesisAbrir":
-                        moverToken();
-                        SELAGR();
-                        if (!TokenActual().get_token().equals("ParentesisCerrar")) {
-                            setHasError(true);
-                            Errores.SyntaxError(TokenActual(), "parentesis de cierre");
-                        }
-                        break;
-                    default:
+                if (TokenActual().get_token().equals("MIN") || TokenActual().get_token().equals("MAX") || TokenActual().get_token().equals("SUM")) {
+                    moverToken();
+                    switch (TokenActual().get_token()) {
+                        case "ParentesisAbrir":
+                            moverToken();
+                            SELAGR();
+                            if (!TokenActual().get_token().equals("ParentesisCerrar")) {
+                                setHasError(true);
+                                Errores.SyntaxError(TokenActual(), "parentesis de cierre");
+                            }
+                            break;
+                        default:
+                        setHasError(true);
+                        Errores.SyntaxError(TokenActual(), "parentesis de apertura");
+                            break;
+                    }
+                } else {
                     setHasError(true);
-                    Errores.SyntaxError(TokenActual(), "parentesis de apertura");
-                        break;
+                    Errores.SyntaxError(TokenActual(), "función de agregación");
                 }
                 break;
         }
