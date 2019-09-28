@@ -6,6 +6,7 @@
 package AnalizadorSintactico;
 
 import AnalizadorLexico.MyToken;
+import AnalizadorSintactico.DML.Select;
 import AnalizadorSintactico.Utilidades.AggregateFunctions;
 import AnalizadorSintactico.Utilidades.ScalarExpression;
 import MiniSql.Errores;
@@ -40,8 +41,8 @@ public class AnalizadorSintactico {
             }
         }
         esObjeto = true;
-        AggregateFunctions test = new AggregateFunctions();
-        test.Analizar();
+        Select test = new Select();
+        test.SEXP();
         if (hasError) {
             Errores.DevelopErrors("Hubo un error analizando");
         } else {
