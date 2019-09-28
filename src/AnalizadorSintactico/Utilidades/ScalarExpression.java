@@ -23,7 +23,7 @@ public class ScalarExpression {
     
     /* <scalar_expression> */
     
-    public void SEXP() {
+    public static void SEXP() {
         if (TokenActual().get_token().equals("ParentesisAbrir") || TokenActual().get_token().equals("DatoEntero") 
                 || TokenActual().get_token().equals("DatoFloat") || TokenActual().get_token().equals("Arroba")) {
             SEXP3();
@@ -31,17 +31,15 @@ public class ScalarExpression {
         }
     }
     
-    public void SEXP2() {
+    private static void SEXP2() {
         if (TokenActual().get_token().equals("Mas") || TokenActual().get_token().equals("Menos")) {
             moverToken();
-            System.out.print(TokenActual().get_token());
             SEXP3();
-            System.out.print(TokenActual().get_token());
             SEXP2();
         }
     }
     
-    public void SEXP3() {
+    private static void SEXP3() {
         if (TokenActual().get_token().equals("ParentesisAbrir") || TokenActual().get_token().equals("DatoEntero") 
                 || TokenActual().get_token().equals("DatoFloat") || TokenActual().get_token().equals("Arroba")) {
             SEXP5();
@@ -52,7 +50,7 @@ public class ScalarExpression {
         }
     }
     
-    public void SEXP4() {
+    private static void SEXP4() {
         if (TokenActual().get_token().equals("Multiplicacion") || TokenActual().get_token().equals("Division")) {
             moverToken();
             SEXP5();
@@ -60,7 +58,7 @@ public class ScalarExpression {
         }
     }
     
-    public void SEXP5() {
+    private static void SEXP5() {
         if (TokenActual().get_token().equals("ParentesisAbrir")) {
             moverToken();
             SEXP();

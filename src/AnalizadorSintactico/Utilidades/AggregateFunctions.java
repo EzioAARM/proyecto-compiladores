@@ -21,7 +21,7 @@ import java.util.List;
  */
 public class AggregateFunctions {
     
-    public void AGGFN() {
+    public static void AGGFN() {
         switch (TokenActual().get_token()) {
             case "AVG":
                 moverToken();
@@ -82,7 +82,7 @@ public class AggregateFunctions {
         }
     }
     
-    public void SELAVG() {
+    private static void SELAVG() {
         if (TokenActual().get_token().equals("ALL") || TokenActual().get_token().equals("DISTINCT") || TokenActual().get_token().equals("Identificador")
                 || TokenActual().get_token().equals("ParentesisAbrir") || TokenActual().get_token().equals("DatoEntero") 
                 || TokenActual().get_token().equals("DatoFloat") || TokenActual().get_token().equals("Arroba")) {
@@ -94,26 +94,26 @@ public class AggregateFunctions {
         }
     }
     
-    public void SELAVG1() {
+    private static void SELAVG1() {
         if (TokenActual().get_token().equals("ALL") || TokenActual().get_token().equals("DISTINCT")) {
             moverToken();
         }
     }
     
-    public void SELAVG2() {
+    private static void SELAVG2() {
         if (TokenActual().get_token().equals("Identificador") ) {
             moverToken();
             SELAVG3();
         } else if (TokenActual().get_token().equals("ParentesisAbrir") || TokenActual().get_token().equals("DatoEntero") 
                 || TokenActual().get_token().equals("DatoFloat") || TokenActual().get_token().equals("Arroba")) {
-            //SEXP();
+            ScalarExpression.SEXP();
         } else{
             setHasError(true);
             Errores.SyntaxError(TokenActual(), "nombre de columna o scalar expression");
         }
     }
     
-    public void SELAVG3() {
+    private static void SELAVG3() {
         if (TokenActual().get_token().equals("Punto")) {
             moverToken();
             if (TokenActual().get_token().equals("Identificador")) {
@@ -125,7 +125,7 @@ public class AggregateFunctions {
         }
     }
     
-    public void SELCOUNT() {
+    private static void SELCOUNT() {
         if (TokenActual().get_token().equals("ALL") || TokenActual().get_token().equals("DISTINCT") || TokenActual().get_token().equals("Identificador")
                 || TokenActual().get_token().equals("ParentesisAbrir") || TokenActual().get_token().equals("DatoEntero") 
                 || TokenActual().get_token().equals("DatoFloat") || TokenActual().get_token().equals("Arroba") || TokenActual().get_token().equals("Multiplicacion")) {
@@ -137,13 +137,13 @@ public class AggregateFunctions {
         }
     }
     
-    public void SELCOUNT1() {
+    private static void SELCOUNT1() {
         if (TokenActual().get_token().equals("ALL") || TokenActual().get_token().equals("DISTINCT")) {
             moverToken();
         }
     }
     
-    public void SELCOUNT2() {
+    private static void SELCOUNT2() {
         if (TokenActual().get_token().equals("Identificador")) {
             moverToken();
             SELCOUNT3();
@@ -151,14 +151,14 @@ public class AggregateFunctions {
             moverToken();
         } else if (TokenActual().get_token().equals("ParentesisAbrir") || TokenActual().get_token().equals("DatoEntero") 
                 || TokenActual().get_token().equals("DatoFloat") || TokenActual().get_token().equals("Arroba")) {
-            //SEXP();
+            ScalarExpression.SEXP();
         } else {
             setHasError(true);
             Errores.SyntaxError(TokenActual(), "scalar expression");
         }
     }
     
-    public void SELCOUNT3() {
+    private static void SELCOUNT3() {
         if (TokenActual().get_token().equals("Punto")) {
             moverToken();
             if (TokenActual().get_token().equals("Identificador")) {
@@ -167,7 +167,7 @@ public class AggregateFunctions {
         }
     }
     
-    public void SELAGR() {
+    private static void SELAGR() {
         if (TokenActual().get_token().equals("ALL") || TokenActual().get_token().equals("DISTINCT") || TokenActual().get_token().equals("Identificador")
                 || TokenActual().get_token().equals("ParentesisAbrir") || TokenActual().get_token().equals("DatoEntero") 
                 || TokenActual().get_token().equals("DatoFloat") || TokenActual().get_token().equals("Arroba")) {
@@ -176,26 +176,26 @@ public class AggregateFunctions {
         }
     }
     
-    public void SELAGR1() {
+    private static void SELAGR1() {
         if (TokenActual().get_token().equals("ALL") || TokenActual().get_token().equals("DISTINCT")) {
             moverToken();
         }
     }
     
-    public void SELAGR2() {
+    private static void SELAGR2() {
         if (TokenActual().get_token().equals("Identificador")) {
             moverToken();
             SELAGR3();
         } else if (TokenActual().get_token().equals("ParentesisAbrir") || TokenActual().get_token().equals("DatoEntero") 
                 || TokenActual().get_token().equals("DatoFloat") || TokenActual().get_token().equals("Arroba")) {
-            //SEXP();
+            ScalarExpression.SEXP();
         } else {
             setHasError(true);
             Errores.SyntaxError(TokenActual(), "scalar expression");
         }
     }
     
-    public void SELAGR3() {
+    private static void SELAGR3() {
         if (TokenActual().get_token().equals("Punto")) {
             moverToken();
             if (TokenActual().get_token().equals("Identificador")) {

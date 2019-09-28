@@ -5,7 +5,10 @@
  */
 package AnalizadorSintactico.Utilidades;
 
-import java.util.List;
+import static AnalizadorSintactico.AnalizadorSintactico.TokenActual;
+import static AnalizadorSintactico.AnalizadorSintactico.moverToken;
+import static AnalizadorSintactico.AnalizadorSintactico.setHasError;
+import MiniSql.Errores;
 
 /**
  *
@@ -13,18 +16,41 @@ import java.util.List;
  */
 public class ConversionFunctions {
     
-    private boolean CaracterFinal;
-    private boolean OmitirError;
-    private List<String> Continuacion;
-    
-    public boolean Analizar(boolean omitirError, List<String> siguientes) {
-        OmitirError = omitirError;
-        Continuacion = siguientes;
-        CaracterFinal = false;
-        return CONV() || CaracterFinal;
+    public static void CONV() {
+        switch (TokenActual().get_token()) {
+            case "CAST":
+                moverToken();
+                switch (TokenActual().get_token()) {
+                    case "ParentesisAbrir":
+                        moverToken();
+                        break;
+                    default:
+                        setHasError(true);
+                        Errores.SyntaxError(TokenActual(), "parentesis de apertura");
+                        break;
+                }
+                break;
+            case "CONVERT":
+                moverToken();
+                switch (TokenActual().get_token()) {
+                    case "ParentesisAbrir":
+                        moverToken();
+                        break;
+                    default:
+                        setHasError(true);
+                        Errores.SyntaxError(TokenActual(), "parentesis de apertura");
+                        break;
+                }
+                break;
+            default:
+                setHasError(true);
+                Errores.SyntaxError(TokenActual(), "funcion de conversión");
+                break;
+        }
     }
     
-    public boolean CONV() {
-        return true;
+    public static void CONV1() {
+        
     }
+    
 }

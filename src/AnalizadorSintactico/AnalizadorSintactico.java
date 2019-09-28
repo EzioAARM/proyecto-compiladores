@@ -12,6 +12,7 @@ import AnalizadorSintactico.Utilidades.ScalarExpression;
 import MiniSql.Errores;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -42,7 +43,7 @@ public class AnalizadorSintactico {
         }
         esObjeto = true;
         Select test = new Select();
-        test.AGGFN();
+        test.test();
     }
     
     public static void moverToken() {

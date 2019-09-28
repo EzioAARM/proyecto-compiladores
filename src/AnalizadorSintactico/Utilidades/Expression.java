@@ -3,19 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package AnalizadorSintactico.DML;
-
-import AnalizadorSintactico.Utilidades.AggregateFunctions;
-import AnalizadorSintactico.Utilidades.DateFunctions;
+package AnalizadorSintactico.Utilidades;
 
 /**
  *
  * @author axel
  */
-public class Select {
+public class Expression {
     
-    public void test() {
-        DateFunctions.DTFN();
+    public static void Expression() {
+        
     }
     
 }
