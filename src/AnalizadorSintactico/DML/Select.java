@@ -5,8 +5,7 @@
  */
 package AnalizadorSintactico.DML;
 
-import AnalizadorSintactico.Utilidades.CaseWhen;
-import AnalizadorSintactico.Utilidades.OtherFunctions;
+import AnalizadorSintactico.Utilidades.JoinType;
 
 /**
  *
@@ -15,7 +14,7 @@ import AnalizadorSintactico.Utilidades.OtherFunctions;
 public class Select {
     
     public void test() {
-        CaseWhen.CASEW();
+        JoinType.JOINTYPE();
     }
     
 }
