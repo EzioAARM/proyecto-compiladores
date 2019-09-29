@@ -5,7 +5,9 @@
  */
 package AnalizadorSintactico.DML;
 
+import AnalizadorSintactico.Utilidades.Expression;
 import AnalizadorSintactico.Utilidades.JoinType;
+import AnalizadorSintactico.Utilidades.SelectList;
 
 /**
  *
@@ -14,7 +16,7 @@ import AnalizadorSintactico.Utilidades.JoinType;
 public class Select {
     
     public void test() {
-        JoinType.JOINTYPE();
+        SelectList.SELIST();
     }
     
 }

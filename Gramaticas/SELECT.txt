@@ -1,12 +1,13 @@
 <select_list>
-    SELIST ::= SELIST1 SELIST7
+    SELIST ::= SELIST1
     SELIST1 ::= "*"
                 | IDENTIFICADOR SELIST2
-                | EXPRESSION
-                | AGG_FN
-                | STR_FN
-                | DT_FN
-                | CONV
+                | EXPRESSION SELIST5
+                | AGG_FN SELIST5
+                | STR_FN SELIST5
+                | DT_FN SELIST5
+                | CONV SELIST5
+                | CASEW SELIST5
     SELIST2 ::= "." SELIST3
                 | "::" SELIST4
                 | "=" SELIST6
@@ -18,8 +19,6 @@
                 | IDENTIFICADOR 
                 | VACIO
     SELIST6 ::= EXPRESSION
-    SELIST7 ::= SELIST
-                | VACIO
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

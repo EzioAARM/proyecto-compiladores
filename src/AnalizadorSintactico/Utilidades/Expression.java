@@ -46,6 +46,9 @@ public class Expression {
                         || TokenActual().get_token().equals("DatoFloat") || TokenActual().get_token().equals("Arroba")) {
                     ScalarExpression.SEXP();
                     EXPRESSION5();
+                } else {
+                    setHasError(true);
+                    Errores.SyntaxError(TokenActual(), "se esperaba expression");
                 }
                 break;
         }
