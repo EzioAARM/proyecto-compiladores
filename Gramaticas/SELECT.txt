@@ -275,7 +275,7 @@
                 | SELECT12
     SELECT12 ::= "WHERE" SearchC SELECT13
                 | SELECT13
-    SELECT13 ::= "GROUP" "BY" GROUP_CL SELECT14
+    SELECT13 ::= "GROUP" "BY" EXPRESSION SELECT18 SELECT14
                 | SELECT14
     SELECT14 ::= "HAVING" SearchC SELECT15
                 | SELECT15
@@ -283,3 +283,5 @@
                 | VACIO
     SELECT17 ::= "," TB_SOURCE SELECT17
                 | SELECT12
+    SELECT18 ::= "," EXPRESSION SELEC18
+                | VACIO;

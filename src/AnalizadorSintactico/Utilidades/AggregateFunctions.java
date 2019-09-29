@@ -48,6 +48,8 @@ public class AggregateFunctions {
                         if (!TokenActual().get_token().equals("ParentesisCerrar")) {
                             setHasError(true);
                             Errores.SyntaxError(TokenActual(), "parentesis de cierre");
+                        } else {
+                            moverToken();
                         }
                         break;
                     default:
@@ -66,6 +68,8 @@ public class AggregateFunctions {
                             if (!TokenActual().get_token().equals("ParentesisCerrar")) {
                                 setHasError(true);
                                 Errores.SyntaxError(TokenActual(), "parentesis de cierre");
+                            } else {
+                                moverToken();
                             }
                             break;
                         default:

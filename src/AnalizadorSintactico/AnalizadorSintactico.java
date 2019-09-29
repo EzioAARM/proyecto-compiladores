@@ -42,8 +42,7 @@ public class AnalizadorSintactico {
             }
         }
         esObjeto = true;
-        Select test = new Select();
-        test.test();
+        Select.SELECT1();
     }
     
     public static void moverToken() {

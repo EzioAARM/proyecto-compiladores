@@ -82,11 +82,7 @@ public class Expression {
                 || TokenActual().get_token().equals("IN") || TokenActual().get_token().equals("LIKE")
                 || TokenActual().get_token().equals("SOME")) {
             BinaryOperators.BINOPR();
-            System.out.print(TokenActual().get_token());
             EXPRESSION5();
-        } else {
-            setHasError(true);
-            Errores.SyntaxError(TokenActual(), "operador binario");
         }
     }
     
