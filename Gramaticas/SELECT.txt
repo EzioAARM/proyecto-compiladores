@@ -215,39 +215,35 @@
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <joined_table>
-    JOIN_TB ::= JOIN_TB1
-                | JOIN_TB2
-                | JOIN_TB3
-    JOIN_TB1 ::= TB_SOURCE JOIN_TYPE TB_SOURCE "ON" SearchC
-    JOIN_TB2 ::= TB_SOURCE "CROSS" "JOIN" TB_SOURCE
-    JOIN_TB3 ::= "(" JOIN_TB ")"
-                | JOIN_TB
+    JOINTB ::= TB_SOURCE JOINTB1
+                | "(" JOIN ")"
+    JOINTB1 ::= "JOIN_TYPE" JOINTB3
+                | "CROSS","JOIN" JOINTB4
                 | VACIO
+    JOINTB2 ::= "JOIN_TYPE" JOINTB3
+                | "CROSS","JOIN" JOINTB4
+    JOINTB3 ::= TB_SOURCE "ON" SearchC JOINTB4
+    JOINTB4 ::= JOINTB2
+                | VACIO
+    
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <table_source>
-    TB_SOURCE ::= TB_VNAME TB_SOURCE1
-                | ROWSET TB_SOURCE6
-                | JOIN_TB
-                | "@" IDENTIFICADOR TB_SOURCE8
-    TB_SOURCE1 ::= "AS" IDENTIFICADOR TB_SOURCE2
-                | IDENTIFICADOR TB_SOURCE2
-                | TB_SOURCE2
-    TB_SOURCE2 ::= SAM_CL 
+    TB_SOURCE ::= TB_VNAME TB_SOURCE1 TB_SOURCE2
+                | ROWSET TB_SOURCE1
+                | "@" IDENTIFICADOR TB_SOURCE1
+    TB_SOURCE1 ::= "AS" IDENTIFICADOR
+                | IDENTIFICADOR
                 | VACIO
-    TB_SOURCE6 ::= "AS" TB_SOURCE7
-                | TB_SOURCE7
-    TB_SOURCE7 ::= IDENTIFICADOR
-                | VACIO
-    TB_SOURCE8 ::= "AS" IDENTIFICADOR
+    TB_SOURCE2 ::= SAM_CL
                 | VACIO
     
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <order_by>
-    ORDER ::= SEL_EXP ORDER1
+    ORDER ::= EXPRESSION ORDER1
     ORDER1 ::= ORDER2
                 | "," ORDER
     ORDER2 ::= "COLLATE" ORDER3

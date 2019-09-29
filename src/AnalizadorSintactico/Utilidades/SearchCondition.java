@@ -3,17 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package AnalizadorSintactico.DML;
+package AnalizadorSintactico.Utilidades;
 
+import static AnalizadorSintactico.AnalizadorSintactico.moverToken;
 
 /**
  *
  * @author axel
  */
-public class Select {
+public class SearchCondition {
     
-    public void test() {
-        
+    public static void SEARCHC() {
+        moverToken();
     }
     
 }

@@ -53,7 +53,6 @@ public class Rowset {
                 break;
             case "OPENQUERY":
                 moverToken();
-                moverToken();
                 if (TokenActual().get_token().equals("ParentesisAbrir")) {
                     moverToken();
                     if (TokenActual().get_token().equals("Identificador")) {
