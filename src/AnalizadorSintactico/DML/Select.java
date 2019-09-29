@@ -8,6 +8,7 @@ package AnalizadorSintactico.DML;
 import AnalizadorSintactico.Utilidades.Expression;
 import AnalizadorSintactico.Utilidades.JoinType;
 import AnalizadorSintactico.Utilidades.SelectList;
+import AnalizadorSintactico.Utilidades.TableSample;
 
 /**
  *
@@ -16,7 +17,7 @@ import AnalizadorSintactico.Utilidades.SelectList;
 public class Select {
     
     public void test() {
-        SelectList.SELIST();
+        Expression.EXPRESSION();
     }
     
 }

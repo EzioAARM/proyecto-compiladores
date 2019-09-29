@@ -59,7 +59,6 @@ public class SelectList {
             setHasError(true);
             Errores.SyntaxError(TokenActual(), "se esperaba expresión para select");
         }
-        System.out.print(TokenActual().get_token());
     }
     
     private static void SELIST2() {

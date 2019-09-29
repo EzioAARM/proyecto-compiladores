@@ -116,16 +116,16 @@
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <expression>
-    EXPRESSION ::= SEXP EXPRESSION5
-                | STRING EXPRESSION5
-                | IDENTIFICADOR EXPRESSION1 EXPRESSION5
-                | "(" EXPRESSION ")" EXPRESSION5
-                | EXPRESSION5
+    EXPRESSION ::= SEXP
+                | STRING
+                | IDENTIFICADOR EXPRESSION1
+                | "(" EXPRESSION ")"
+                | EXPRESSION2 EXPRESSION
     EXPRESSION1 ::= "." IDENTIFICADOR
                 | VACIO
-   EXPRESSION4 ::= BIN_OPR EXPRESSION
-    EXPRESSION5 ::= EXPRESSION4 EXPRESSION5
-                | VACIO;
+    EXPRESSION2 ::= "+"
+                | "-"
+    EXPRESSION4 ::= BIN_OPR EXPRESSION
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -185,24 +185,11 @@
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<table_hint>
-    TB_HINT ::= "INDEX" TB_HINT1
-                | HOLDLOCK
-    TB_HINT1 ::= "=" "(" TB_HINT4 ")" 
-                | "(" TB_HINT3
-    TB_HINT3 ::= TB_HINT4 TB_HINT5
-    TB_HINT4 ::= INTEGER
-                | IDENTIFICADOR
-    TB_HINT5 ::= "," TB_HINT3
-                | ")"
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <tablesample_clause>
     SAM_CL ::= "TABLESAMPLE" "(" SAM_CL1 ")"
     SAM_CL1 ::= SEXP SAM_CL2
     SAM_CL2 ::= "PERCENT"
-                | ROWS
+                | "ROWS"
                 | VACIO
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
