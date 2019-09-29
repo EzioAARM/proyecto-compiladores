@@ -70,7 +70,8 @@ public class OtherFunctions {
                 }
                 break;
             default:
-                
+                setHasError(true);
+                Errores.SyntaxError(TokenActual(), "función");
                 break;
         }
     }

@@ -37,7 +37,7 @@ public class Expression {
                         break;
                     default:
                         setHasError(true);
-                        Errores.SyntaxError(TokenActual(), "parentesis cerrar");
+                        Errores.SyntaxError(TokenActual(), "parentesis de cierre");
                         break;
                 }
                 break;
@@ -46,9 +46,6 @@ public class Expression {
                         || TokenActual().get_token().equals("DatoFloat") || TokenActual().get_token().equals("Arroba")) {
                     ScalarExpression.SEXP();
                     EXPRESSION5();
-                } else {
-                    setHasError(true);
-                    Errores.SyntaxError(TokenActual(), "string, identificador, parentesis de apertura, dato entero, dato float o una variable");
                 }
                 break;
         }
@@ -80,6 +77,9 @@ public class Expression {
                 || TokenActual().get_token().equals("SOME")) {
             BinaryOperators.BINOPR();
             EXPRESSION();
+        } else {
+            setHasError(true);
+            Errores.SyntaxError(TokenActual(), "operador binario");
         }
     }
     

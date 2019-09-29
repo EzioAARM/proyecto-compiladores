@@ -5,6 +5,7 @@
  */
 package AnalizadorSintactico.DML;
 
+import AnalizadorSintactico.Utilidades.CaseWhen;
 import AnalizadorSintactico.Utilidades.OtherFunctions;
 
 /**
@@ -14,7 +15,7 @@ import AnalizadorSintactico.Utilidades.OtherFunctions;
 public class Select {
     
     public void test() {
-        OtherFunctions.OTHFN();
+        CaseWhen.CASEW();
     }
     
 }
