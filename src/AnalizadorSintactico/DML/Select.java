@@ -121,9 +121,7 @@ public class Select {
                 || TokenActual().get_token().equals("DatoEntero") || TokenActual().get_token().equals("DatoFloat") 
                 || TokenActual().get_token().equals("Arroba") || TokenActual().get_token().equals("Multiplicacion")) {
             SelectList.SELIST();
-            System.out.print(TokenActual().get_token());
             SELECT19();
-            System.out.print(TokenActual().get_token());
             SELECT8();
         } else {
             setHasError(true);
@@ -201,7 +199,7 @@ public class Select {
         switch (TokenActual().get_token()) {
             case "WHERE":
                 moverToken();
-                SearchCondition.SEARCHC();
+                Expression.EXPRESSION();
                 SELECT13();
                 break;
             default:

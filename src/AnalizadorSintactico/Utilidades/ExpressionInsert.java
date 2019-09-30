@@ -15,9 +15,8 @@ import static AnalizadorSintactico.AnalizadorSintactico.moverToken;
 public class ExpressionInsert {
     
     public static void INSEXPR() {
-        if (TokenActual().get_token().equals("ParentesisAbrir") 
-                || TokenActual().get_token().equals("DatoEntero") || TokenActual().get_token().equals("DatoFloat") 
-                || TokenActual().get_token().equals("Arroba")) {
+        if (TokenActual().get_token().equals("ParentesisAbrir") || TokenActual().get_token().equals("DatoEntero") 
+                || TokenActual().get_token().equals("DatoFloat") || TokenActual().get_token().equals("Arroba")) {
             ScalarExpression.SEXP();
         } else if (TokenActual().get_token().equals("DatoString") || TokenActual().get_token().equals("DatoBit")) {
             moverToken();

@@ -6,6 +6,7 @@
 package AnalizadorSintactico;
 
 import AnalizadorLexico.MyToken;
+import AnalizadorSintactico.DML.Delete;
 import AnalizadorSintactico.DML.Insert;
 import AnalizadorSintactico.DML.Select;
 import AnalizadorSintactico.Utilidades.AggregateFunctions;
@@ -47,7 +48,7 @@ public class AnalizadorSintactico {
             }
         }
         esObjeto = true;
-        Insert.INSERT();
+        Delete.DELETE1();
         setHasError(false);
         Errores.cambiarEstado();
     }

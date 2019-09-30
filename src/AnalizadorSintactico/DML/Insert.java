@@ -177,7 +177,6 @@ public class Insert {
     }
     
     private static void INSERT10() {
-        System.out.print(TokenActual().get_token());
         switch (TokenActual().get_token()) {
             case "DEFAULT":
                 moverToken();
@@ -192,7 +191,6 @@ public class Insert {
     }
     
     private static void INSERT11() {
-        System.out.print(TokenActual().get_token());
         switch (TokenActual().get_token()) {
             case "Coma":
                 moverToken();
@@ -210,7 +208,6 @@ public class Insert {
     }
     
     private static void INSERT12() {
-        System.out.print(TokenActual().get_token());
         switch (TokenActual().get_token()) {
             case "Coma":
                 moverToken();
