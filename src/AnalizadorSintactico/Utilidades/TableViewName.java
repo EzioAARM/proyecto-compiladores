@@ -20,6 +20,9 @@ public class TableViewName {
         if (TokenActual().get_token().equals("Identificador")) {
             moverToken();
             TBVNAME1();
+        } else if (TokenActual().get_token().equals("FINDELARCHIVO")) {
+            setHasError(true);
+            Errores.SyntaxError(TokenActual(), "identificador");
         }
     }
     

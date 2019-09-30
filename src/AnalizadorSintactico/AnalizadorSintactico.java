@@ -20,6 +20,9 @@ import javax.swing.JOptionPane;
  */
 public class AnalizadorSintactico {
     
+    // Variable que indica si se debe seguir analizando o no
+    private static boolean continuarAnalisis = true;
+    
     // Guarda si existe error en algún punto de la expresión analizada
     private static boolean hasError;
     
@@ -43,14 +46,30 @@ public class AnalizadorSintactico {
         }
         esObjeto = true;
         Select.SELECT1();
+        setHasError(false);
+        Errores.cambiarEstado();
     }
     
     public static void moverToken() {
-        if (esObjeto) {
-            TokensAnalizados.add(TokensAnalizar.get(0));
-            TokensAnalizar.remove(0);
+        if (getHasError()) {
+            
+            while (!TokenActual().get_token().equals("GO") && !TokenActual().get_token().equals("PuntoComa") && !TokenActual().get_token().equals("FINDELARCHIVO")) {
+                TokensAnalizados.add(TokensAnalizar.get(0));
+                TokensAnalizar.remove(0);
+            }
+            if (TokenActual().get_token().equals("FINDELARCHIVO")) {
+                Errores.cambiarEstado();
+                setHasError(true);
+                Errores.SyntaxError(TokenActual(), "fin de instrucción");
+                continuarAnalisis = false;
+            }
         } else {
-            Errores.DevelopErrors("No se inicializó la clase \"AnalizadorSintactico\"");
+            if (esObjeto) {
+                TokensAnalizados.add(TokensAnalizar.get(0));
+                TokensAnalizar.remove(0);
+            } else {
+                Errores.DevelopErrors("No se inicializó la clase \"AnalizadorSintactico\"");
+            }
         }
     }
     

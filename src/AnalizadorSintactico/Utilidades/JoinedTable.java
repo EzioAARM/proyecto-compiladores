@@ -108,7 +108,7 @@ public class JoinedTable {
                 switch (TokenActual().get_token()) {
                     case "ON":
                         moverToken();
-                        SearchCondition.SEARCHC();
+                        Expression.EXPRESSION();
                         JOINTB4();
                         break;
                     default:
@@ -122,7 +122,7 @@ public class JoinedTable {
                 switch (TokenActual().get_token()) {
                     case "ON":
                         moverToken();
-                        SearchCondition.SEARCHC();
+                        Expression.EXPRESSION();
                         JOINTB4();
                         break;
                     default:
@@ -136,7 +136,7 @@ public class JoinedTable {
                 switch (TokenActual().get_token()) {
                     case "ON":
                         moverToken();
-                        SearchCondition.SEARCHC();
+                        Expression.EXPRESSION();
                         JOINTB4();
                         break;
                     default:
@@ -150,7 +150,7 @@ public class JoinedTable {
                 switch (TokenActual().get_token()) {
                     case "ON":
                         moverToken();
-                        SearchCondition.SEARCHC();
+                        Expression.EXPRESSION();
                         JOINTB4();
                         break;
                     default:

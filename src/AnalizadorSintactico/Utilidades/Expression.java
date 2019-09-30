@@ -46,7 +46,8 @@ public class Expression {
                         || TokenActual().get_token().equals("Arroba")) {
                     ScalarExpression.SEXP();
                     EXPRESSION4();
-                } else if (TokenActual().get_token().equals("Mas") || TokenActual().get_token().equals("Menos")) {
+                } else if (TokenActual().get_token().equals("Mas") || TokenActual().get_token().equals("Menos")
+                        || TokenActual().get_token().equals("NOT")) {
                     moverToken();
                     EXPRESSION4();
                 } else {
@@ -74,7 +75,7 @@ public class Expression {
                 || TokenActual().get_token().equals("Multiplicacion") || TokenActual().get_token().equals("Divison")
                 || TokenActual().get_token().equals("Modulo") || TokenActual().get_token().equals("Igual") 
                 || TokenActual().get_token().equals("AND") || TokenActual().get_token().equals("OR")
-                || TokenActual().get_token().equals("NOT") || TokenActual().get_token().equals("Menor")
+                || TokenActual().get_token().equals("Menor")
                 || TokenActual().get_token().equals("Mayor") || TokenActual().get_token().equals("MenorIgual")
                 || TokenActual().get_token().equals("MayorIgual") || TokenActual().get_token().equals("Diferente") 
                 || TokenActual().get_token().equals("ALL") || TokenActual().get_token().equals("ANY")
@@ -114,9 +115,6 @@ public class Expression {
                     ScalarExpression.SEXP();
                 } else if (TokenActual().get_token().equals("Mas") || TokenActual().get_token().equals("Menos")) {
                     moverToken();
-                } else {
-                    setHasError(true);
-                    Errores.SyntaxError(TokenActual(), "se esperaba expression");
                 }
                 break;
         }

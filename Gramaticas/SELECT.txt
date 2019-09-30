@@ -116,16 +116,21 @@
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <expression>
-    EXPRESSION ::= SEXP
+    EXPRESSION ::= SEXP EXPRESSION1 EXPRESSION3
+                | EXPRESSION2 SUM_OPR EXPRESSION2
+                | NOT_OPR EXPRESSION EXPRESSION4
+                | 
+    EXPRESSION1 ::= AR_OPR
+                | COMPARE_OPR
+                | SUM_OPR
+    EXPRESSION2 ::= STRING
+                | IDENTIFICADOR
+    EXPRESSION3 ::= SEXP
+                | IDENTIFICADOR
                 | STRING
-                | IDENTIFICADOR EXPRESSION1
-                | "(" EXPRESSION ")"
-                | EXPRESSION2 EXPRESSION
-    EXPRESSION1 ::= "." IDENTIFICADOR
-                | VACIO
-    EXPRESSION2 ::= "+"
-                | "-"
-    EXPRESSION4 ::= BIN_OPR EXPRESSION
+    EXPRESSION4 ::= COMPARE_OPR
+                | LOGIC_OPR
+                
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -136,35 +141,29 @@
                 | COMPARE_OPR
                 | LOGIC_OPR
 
-    AR_OPR ::= "+"
-                | "-"
+    AR_OPR ::= "-"
                 | "*"
                 | "/"
                 | "%"
+
+    SUM_OPR ::= "+"
     
     ASIG_OPR ::= "="
 
     BIT_OPR ::= "AND"
                 | "OR"
-                | "NOT"
+    
+    NOT_OPR ::= "NOT";
     
     COMPARE_OPR ::= ">"
                 | "<"
                 | ">="
                 | "<="
                 | "<>"
-                | "!="
 
-    LOGIC_OPR ::= "ALL"
-                | "AND"
-                | "ANY"
-                | "BETWEEN"
-                | "EXISTS"
+    LOGIC_OPR ::= "BETWEEN"
                 | "IN"
                 | "LIKE"
-                | "NOT"
-                | "OR"
-                | "SOME"
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

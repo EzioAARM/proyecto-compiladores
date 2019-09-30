@@ -32,10 +32,8 @@ public class BinaryOperators {
                 || TokenActual().get_token().equals("Mayor") || TokenActual().get_token().equals("MenorIgual")
                 || TokenActual().get_token().equals("MayorIgual") || TokenActual().get_token().equals("Diferente")) {
             COMPAREOPR();
-        } else if (TokenActual().get_token().equals("ALL") || TokenActual().get_token().equals("ANY")
-                || TokenActual().get_token().equals("BETWEEN") || TokenActual().get_token().equals("EXISTS")
-                || TokenActual().get_token().equals("IN") || TokenActual().get_token().equals("LIKE")
-                || TokenActual().get_token().equals("SOME")) {
+        } else if (TokenActual().get_token().equals("BETWEEN") || TokenActual().get_token().equals("IN") 
+                || TokenActual().get_token().equals("LIKE")) {
             LOGICOPR();
         } else {
             setHasError(true);
@@ -64,8 +62,7 @@ public class BinaryOperators {
     }
     
     public static void BITOPR() {
-        if (TokenActual().get_token().equals("AND") || TokenActual().get_token().equals("OR")
-                || TokenActual().get_token().equals("NOT")) {
+        if (TokenActual().get_token().equals("AND") || TokenActual().get_token().equals("OR")) {
             moverToken();
         } else {
             setHasError(true);
@@ -85,12 +82,12 @@ public class BinaryOperators {
     }
     
     public static void LOGICOPR() {
-        if (TokenActual().get_token().equals("ALL") || TokenActual().get_token().equals("ANY")
-                || TokenActual().get_token().equals("BETWEEN") || TokenActual().get_token().equals("EXISTS")
-                || TokenActual().get_token().equals("IN") || TokenActual().get_token().equals("LIKE")
-                || TokenActual().get_token().equals("SOME")) {
+        if (TokenActual().get_token().equals("IN") || TokenActual().get_token().equals("LIKE")) {
             moverToken();
-        } else {
+        } else if (TokenActual().get_token().equals("BETWEEN")) {
+            moverToken();
+            Expression.EXPRESSION();
+        }else {
             setHasError(true);
             Errores.SyntaxError(TokenActual(), "operador lógico");
         }
