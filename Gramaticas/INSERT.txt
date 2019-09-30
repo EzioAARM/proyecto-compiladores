@@ -67,12 +67,12 @@
     INSERT2 ::= "PERCENT" INSERT3
                     | INSERT3
     INSERT3 ::= "INTO" INSERT4
-                    | INSERT5
+                    | INSERT4
     INSERT4 ::= OBJECT INSERT5
     INSERT5 ::= COLST INSERT6
                     | INSERT6
     INSERT6 ::= OUTCL INSERT7   
-                    | INSERT 7
+                    | INSERT7
     INSERT7 ::= "VALUES" "(" INSERT8
                     | SELECT1 INSERT9
                     | "DEFAULT" "VALUES" INSERT9
@@ -80,7 +80,7 @@
     INSERT10 ::= "DEFAULT"
                     | "NULL"
                     | EXPRESSION
-    INSERT11 ::= "," INSERT10
+    INSERT11 ::= "," INSERT8
                     | ")" INSERT12
     INSERT12 ::= "," "VALUES" "(" INSERT8
                     | INSERT9
