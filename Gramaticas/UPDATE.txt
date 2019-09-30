@@ -1,0 +1,29 @@
+<update>
+    UPDATE ::= "UPDATE" UPDATE1
+    UPDATE1 ::= "TOP" "(" SEXP ")" UPDATE2 UPDATE3
+                | UPDATE3
+    UPDATE2 ::= "PERCENT"
+                | VACIO
+    UPDATE3 ::= OBJECT UPDATE4
+                | "@" IDENTIFICADOR UPDATE4
+    UPDATE4 ::= "SET" UPDATE5
+    UPDATE5 ::= UPDATE6 UPDATE11
+    UPDATE6 ::= "IDENTIFICADOR" UPDATE7
+                | "@" IDENTIFICADOR "=" UPDATE10
+    UPDATE7 ::= "." UPDATE8
+                | "=" UPDATE9
+    UPDATE8 ::= "IDENTIFICADOR" "=" UPDATE10
+    UPDATE9 ::= EXPRESSION
+                | "DEFAULT"
+                | "NULL"
+    UPDATE10 ::= EXPRESSION
+    UPDATE11 ::= "," UPDATE5
+                | UPDATE12 UPDATE15
+    UPDATE12 ::= OUTCL
+                | "FROM" UPDATE13
+                | "WHERE" EXPRESSION
+                | VACIO
+    UPDATE13 ::= JOINTB UPDATE14
+    UPDATE14 ::= "," UPDATE13
+    UPDATE15 ::= "GO"
+                | ";"

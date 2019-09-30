@@ -1,0 +1,6 @@
+<truncate>
+    TRUNCATE ::= "TRUNCATE" "TABLE" OBJECT TRUNCATE1 TRUNCATE2
+    TRUNCATE1 ::= "," OBJECT
+                | VACIO
+    TRUNCATE2 ::= ";"
+                | "GO"
