@@ -8,6 +8,7 @@ package AnalizadorSintactico;
 import AnalizadorLexico.MyToken;
 import AnalizadorSintactico.DML.Select;
 import AnalizadorSintactico.Utilidades.AggregateFunctions;
+import AnalizadorSintactico.Utilidades.OutputClause;
 import AnalizadorSintactico.Utilidades.ScalarExpression;
 import MiniSql.Errores;
 import java.util.ArrayList;
@@ -45,7 +46,7 @@ public class AnalizadorSintactico {
             }
         }
         esObjeto = true;
-        Select.SELECT1();
+        OutputClause.OUTCL();
         setHasError(false);
         Errores.cambiarEstado();
     }
