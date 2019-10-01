@@ -245,6 +245,29 @@ public class TableConstraint {
                 switch (TokenActual().get_token()) {
                     case "KEY":
                         moverToken();
+                        switch (TokenActual().get_token()) {
+                            case "ParentesisAbrir":
+                                moverToken();
+                                switch (TokenActual().get_token()) {
+                                    case "Identificador":
+                                        moverToken();
+                                        switch (TokenActual().get_token()) {
+                                            case "ParentesisCerrar":
+                                                moverToken();
+                                                break;
+                                            default:
+                                                setHasError(true);
+                                                Errores.SyntaxError(TokenActual(), "parentesis de cierre'");
+                                                break;
+                                        }
+                                        break;
+                                    default:
+                                        setHasError(true);
+                                        Errores.SyntaxError(TokenActual(), "identificador");
+                                        break;
+                                }
+                                break;
+                        }
                         break;
                     default:
                         setHasError(true);

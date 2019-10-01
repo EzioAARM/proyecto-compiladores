@@ -6,6 +6,7 @@
 package AnalizadorSintactico;
 
 import AnalizadorLexico.MyToken;
+import AnalizadorSintactico.DDL.Alter;
 import AnalizadorSintactico.Utilidades.ColumnConstraint;
 import AnalizadorSintactico.Utilidades.ColumnDefinition;
 import MiniSql.Errores;
@@ -44,7 +45,7 @@ public class AnalizadorSintactico {
             }
         }
         esObjeto = true;
-        ColumnDefinition.COLDEF();
+        Alter.ALTER();
         setHasError(false);
         Errores.cambiarEstado();
     }
