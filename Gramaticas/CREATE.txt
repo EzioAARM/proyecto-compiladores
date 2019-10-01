@@ -1,0 +1,43 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<create>
+    CREATE ::= "CREATE" CREATE1 CREATE21
+    CREATE1 ::= "DATABASE" IDENTIFICADOR
+                | CREATE2 CREATE4
+                | "TABLE" CREATE11
+                | "USER" IDENTIFICADOR
+                | CREATE14 CREATE15
+    CREATE2 ::= "UNIQUE" CREATE3
+                | CREATE3
+    CREATE3 ::= "CLUSTERED"
+                | "NOCLUSTERED"
+    CREATE4 ::= "INDEX" IDENTIFICADOR "ON" OBJECT CREATE5
+    CREATE5 ::= "(" CREATE6
+    CREATE6 ::= IDENTIFICADOR CREATE7 CREATE8
+    CREATE7 ::= "ASC"
+                | "DESC"
+                | VACIO
+    CREATE8 ::= "," CREATE6
+                | CREATE9
+    CREATE9 ::= "INCLUDE" "(" IDENTIFICADOR CREATE10 ")"
+                | VACIO
+    CREATE10 ::= "," IDENTIFICADOR CREATE10
+                | VACIO
+    CREATE11 ::= OBJECT CREATE12
+    CREATE12 ::= COL_DEF CREATE13
+                | TB_CST CREATE13
+    CREATE13 ::= "," CREATE12
+                | VACIO
+    CREATE14 ::= "OR" "ALTER"
+                | VACIO
+    CREATE15 ::= "VIEW" IDENTIFICADOR CREATE16
+    CREATE16 ::= "." IDENTIFICADOR CREATE17
+                | CREATE17
+    CREATE17 ::= "(" IDENTIFICADOR CREATE18 ")" CREATE19
+                | CREATE19
+    CREATE18 ::= "," IDENTIFICADOR CREATE18
+                | VACIO
+    CREATE19 ::= "AS" SELECT CREATE20
+    CREATE20 ::= "WITH" "CHECK" "OPTION"
+                | VACIO
+    CREATE21 ::= ";"
+                | "GO"

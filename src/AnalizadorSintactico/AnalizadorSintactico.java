@@ -7,6 +7,7 @@ package AnalizadorSintactico;
 
 import AnalizadorLexico.MyToken;
 import AnalizadorSintactico.DDL.Alter;
+import AnalizadorSintactico.DDL.Create;
 import AnalizadorSintactico.DDL.Drop;
 import AnalizadorSintactico.DDL.Truncate;
 import AnalizadorSintactico.DML.Delete;
@@ -91,6 +92,12 @@ public class AnalizadorSintactico {
                     break;
                 case "ALTER":
                     Alter.ALTER();
+                    if (!getHasError()) {
+                        Errores.MensajeExito("SELECT");
+                    }
+                    break;
+                case "CREATE":
+                    Create.CREATE();
                     if (!getHasError()) {
                         Errores.MensajeExito("SELECT");
                     }
