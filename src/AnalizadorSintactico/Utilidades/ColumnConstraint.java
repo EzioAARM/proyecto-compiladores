@@ -17,25 +17,7 @@ import MiniSql.Errores;
 public class ColumnConstraint {
     
     public static void COLCST() {
-        COLCST1();
         COLCST2();
-    }
-    
-    private static void COLCST1() {
-        switch (TokenActual().get_token()) {
-            case "CONSTRAINT":
-                moverToken();
-                switch (TokenActual().get_token()) {
-                    case "Identificador":
-                        moverToken();
-                        break;
-                    default:
-                        setHasError(true);
-                        Errores.SyntaxError(TokenActual(), "identificador");
-                        break;
-                }
-                break;
-        }
     }
     
     private static void COLCST2() {

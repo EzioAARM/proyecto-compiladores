@@ -7,6 +7,8 @@ package AnalizadorSintactico.Utilidades;
 
 import static AnalizadorSintactico.AnalizadorSintactico.TokenActual;
 import static AnalizadorSintactico.AnalizadorSintactico.moverToken;
+import static AnalizadorSintactico.AnalizadorSintactico.setHasError;
+import MiniSql.Errores;
 
 /**
  *
@@ -23,7 +25,8 @@ public class ConstantExpression {
                         moverToken();
                         break;
                     default:
-                        
+                        setHasError(true);
+                        Errores.SyntaxError(TokenActual(), "identificador");
                         break;
                 }
                 break;
@@ -38,6 +41,10 @@ public class ConstantExpression {
                 break;
             case "DatoString":
                 moverToken();
+                break;
+            default:
+                setHasError(true);
+                Errores.SyntaxError(TokenActual(), "constant expression");
                 break;
         }
     }

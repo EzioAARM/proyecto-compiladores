@@ -102,7 +102,7 @@
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <column_definition>
     COL_DEF ::= IDENTIFICADOR DATATYPE COL_DEF1
-    COL_DEF1 ::= "COLLATE" STRING COL_DEF2
+    COL_DEF1 ::= "COLLATE" IDENTIFICADOR COL_DEF2
                 | COL_DEF2
     COL_DEF2 ::= "NULL" COL_DEF3
                 | "NOT" "NULL" COL_DEF3
