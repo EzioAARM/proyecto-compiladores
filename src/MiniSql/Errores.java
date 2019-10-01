@@ -22,6 +22,10 @@ public class Errores {
         agregado = false;
     }
     
+    public static void MensajeExito(String type) {
+        Errores.append("\n\nla sentencia " + type + " se analizó con éxito\n");
+    }
+    
     public static void DevelopErrors(String errorName) {
         Errores.append("\n" + errorName + "\n");
     }

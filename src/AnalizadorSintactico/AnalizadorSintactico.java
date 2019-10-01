@@ -7,6 +7,12 @@ package AnalizadorSintactico;
 
 import AnalizadorLexico.MyToken;
 import AnalizadorSintactico.DDL.Alter;
+import AnalizadorSintactico.DDL.Drop;
+import AnalizadorSintactico.DDL.Truncate;
+import AnalizadorSintactico.DML.Delete;
+import AnalizadorSintactico.DML.Insert;
+import AnalizadorSintactico.DML.Select;
+import AnalizadorSintactico.DML.Update;
 import AnalizadorSintactico.Utilidades.ColumnConstraint;
 import AnalizadorSintactico.Utilidades.ColumnDefinition;
 import MiniSql.Errores;
@@ -45,8 +51,65 @@ public class AnalizadorSintactico {
             }
         }
         esObjeto = true;
-        Alter.ALTER();
-        setHasError(false);
+        while (!TokenActual().get_token().equals("FINDELARCHIVO")) {
+            switch (TokenActual().get_token()) {
+                case "SELECT":
+                    Select.SELECT1();
+                    if (!getHasError()) {
+                        Errores.MensajeExito("SELECT");
+                    }
+                    break;
+                case "UPDATE":
+                    Update.UPDATE();
+                    if (!getHasError()) {
+                        Errores.MensajeExito("SELECT");
+                    }
+                    break;
+                case "DELETE":
+                    Delete.DELETE1();
+                    if (!getHasError()) {
+                        Errores.MensajeExito("SELECT");
+                    }
+                    break;
+                case "INSERT":
+                    Insert.INSERT();
+                    if (!getHasError()) {
+                        Errores.MensajeExito("SELECT");
+                    }
+                    break;
+                case "TRUNCATE":
+                    Truncate.TRUNCATE();
+                    if (!getHasError()) {
+                        Errores.MensajeExito("SELECT");
+                    }
+                    break;
+                case "DROP":
+                    Drop.DROP();
+                    if (!getHasError()) {
+                        Errores.MensajeExito("SELECT");
+                    }
+                    break;
+                case "ALTER":
+                    Alter.ALTER();
+                    if (!getHasError()) {
+                        Errores.MensajeExito("SELECT");
+                    }
+                    break;
+                case "PuntoComa":
+                    setHasError(false);
+                    moverToken();
+                    break;
+                case "GO":
+                    setHasError(false);
+                    moverToken();
+                    break;
+                default:
+                    setHasError(true);
+                    Errores.SyntaxError(TokenActual(), "inicio de instrucción");
+                    moverToken();
+                    break;
+            }
+        }
         Errores.cambiarEstado();
     }
     
