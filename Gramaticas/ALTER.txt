@@ -109,7 +109,7 @@
                 | COL_DEF3
                 | "IDENTITY" COL_DEF6
     COL_DEF3 ::= "CONSTRAINT" IDENTIFICADOR COL_DEF10
-                | COL_CST COL_DEF11
+                | COL_CST
                 | COL_DEF4
     COL_DEF4 ::= "DEFAULT" CONST_EXP COL_DEF5
     COL_DEF5 ::= "WITH" "VALUES" COL_DEF8
@@ -121,11 +121,7 @@
     COL_DEF8 ::= "ROWGUIDCOL" COL_DEF9
                 | COL_DEF9
     COL_DEF10 ::= COL_DEF4
-                | COL_CST COL_DEF11
-    COL_DEF11 ::= "," COL_DEF12
-                | VACIO
-    COL_DEF12 ::= COL_CST COL_DEF11
-                | COL_DEF
+                | COL_CST
 
 
 
@@ -140,8 +136,9 @@
     ALTER3 ::= "." IDENTIFICADOR ALTER4
                 | ALTER4
     ALTER4 ::= "(" IDENTIFICADOR ALTER5
+                | "AS" SELECT ALTER24
     ALTER5 ::= "," IDENTIFICADOR ALTER5
-                | ")" "AS" SELECT "WITH" "CHECK" "OPTION"
+                | ")" "AS" SELECT ALTER24
     ALTER6 ::= "ALTER" "COLUMN" IDENTIFICADOR ALTER7
                 | "ADD" ALTER15
                 | "DROP" ALTER18
@@ -150,16 +147,16 @@
                 | "DROP" ALTER14
     ALTER8 ::= "." IDENTIFICADOR
                 | VACIO
-    ALTER9 ::= "(" INTEGER ALTER10 ")"
+    ALTER9 ::= "(" INTEGER ALTER10 ")" ALTER11
     ALTER10 ::= "," INTEGER
-                | ALTER11
+                | VACIO
     ALTER11 ::= "COLLATE" IDENTIFICADOR ALTER12
                 | ALTER12
     ALTER12 ::= ALTER13
                 | VACIO
     ALTER13 ::= "NULL"
                 | "NOT" "NULL"
-    ALTER14 ::= STRING
+    ALTER14 ::= "ROWGUIDCOL"
                 | "NOT" "FOR" "REPLICATION"
     ALTER15 ::= COL_DEF ALTER16
                 | TB_CST ALTER16
@@ -178,3 +175,5 @@
     ALTER22 ::= IDENTIFICADOR
                 | "CURRENT"
     ALTER23 ::= "COLLATE" STRING ALTER17
+    ALTER24 ::= "WITH" "CHECK" "OPTION"
+                | VACIO

@@ -97,23 +97,18 @@ public class ColumnDefinition {
                 break;
             case "PRIMARY":
                 ColumnConstraint.COLCST();
-                COLDEF11();
                 break;
             case "UNIQUE":
                 ColumnConstraint.COLCST();
-                COLDEF11();
                 break;
             case "CHECK":
                 ColumnConstraint.COLCST();
-                COLDEF11();
                 break;
             case "FOREIGN":
                 ColumnConstraint.COLCST();
-                COLDEF11();
                 break;
             case "REFERENCES":
                 ColumnConstraint.COLCST();
-                COLDEF11();
                 break;
             default:
                 COLDEF4();
@@ -230,52 +225,31 @@ public class ColumnDefinition {
     }
     
     private static void COLDEF10() {
-        ColumnConstraint.COLCST();
-        COLDEF11();
-    }
-    
-    private static void COLDEF11() {
         switch (TokenActual().get_token()) {
-            case "Coma":
-                moverToken();
-                switch (TokenActual().get_token()) {
-                    case "Identificador":
-                        COLDEF();
-                        break;
-                case "CONSTRAINT":
-                    moverToken();
-                    switch (TokenActual().get_token()) {
-                        case "Identificador":
-                            moverToken();
-                            COLDEF10();
-                            break;
-                        default:
-                            setHasError(true);
-                            Errores.SyntaxError(TokenActual(), "identificador");
-                            break;
-                    }
-                    break;
-                case "PRIMARY":
-                    ColumnConstraint.COLCST();
-                    COLDEF11();
-                    break;
-                case "UNIQUE":
-                    ColumnConstraint.COLCST();
-                    COLDEF11();
-                    break;
-                case "CHECK":
-                    ColumnConstraint.COLCST();
-                    COLDEF11();
-                    break;
-                case "FOREIGN":
-                    ColumnConstraint.COLCST();
-                    COLDEF11();
-                    break;
-                case "REFERENCES":
-                    ColumnConstraint.COLCST();
-                    COLDEF11();
-                    break;
-                }
+            case "DEFAULT":
+                COLDEF4();
+                break;
+            case "PRIMARY":
+                ColumnConstraint.COLCST();
+                break;
+            case "UNIQUE":
+                ColumnConstraint.COLCST();
+                break;
+            case "CHECK":
+                ColumnConstraint.COLCST();
+                break;
+            case "FOREIGN":
+                ColumnConstraint.COLCST();
+                break;
+            case "REFERENCES":
+                ColumnConstraint.COLCST();
+                break;
+            case "CONSTRAINT":
+                ColumnConstraint.COLCST();
+                break;
+            default:
+                setHasError(true);
+                Errores.SyntaxError(TokenActual(), "tipo de constraint o 'DEFAULT'");
                 break;
         }
     }
