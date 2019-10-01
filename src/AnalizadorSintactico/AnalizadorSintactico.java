@@ -6,16 +6,7 @@
 package AnalizadorSintactico;
 
 import AnalizadorLexico.MyToken;
-import AnalizadorSintactico.DDL.Drop;
-import AnalizadorSintactico.DDL.Truncate;
-import AnalizadorSintactico.DML.Delete;
-import AnalizadorSintactico.DML.Insert;
-import AnalizadorSintactico.DML.Select;
-import AnalizadorSintactico.DML.Update;
-import AnalizadorSintactico.Utilidades.AggregateFunctions;
 import AnalizadorSintactico.Utilidades.ColumnConstraint;
-import AnalizadorSintactico.Utilidades.OutputClause;
-import AnalizadorSintactico.Utilidades.ScalarExpression;
 import MiniSql.Errores;
 import java.util.ArrayList;
 import java.util.List;
