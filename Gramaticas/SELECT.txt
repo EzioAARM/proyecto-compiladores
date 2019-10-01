@@ -242,7 +242,7 @@
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <order_by>
-    ORDER ::= EXPRESSION ORDER1
+    ORDER ::= SELIST ORDER1
     ORDER1 ::= ORDER2
                 | "," ORDER
     ORDER2 ::= "COLLATE" ORDER3
@@ -270,17 +270,17 @@
     SELECT9 ::= IDENTIFICADOR SELECT10
     SELECT10 ::= "." IDENTIFICADOR
                 | SELECT11
-    SELECT11 ::= "FROM" TB_SOURCE SELECT17
+    SELECT11 ::= "FROM" JOINTB SELECT17
                 | SELECT12
-    SELECT12 ::= "WHERE" SearchC SELECT13
+    SELECT12 ::= "WHERE" EXPRESSION SELECT13
                 | SELECT13
     SELECT13 ::= "GROUP" "BY" EXPRESSION SELECT18 SELECT14
                 | SELECT14
-    SELECT14 ::= "HAVING" SearchC SELECT15
+    SELECT14 ::= "HAVING" EXPRESSION SELECT15
                 | SELECT15
     SELECT15 ::= "ORDER" "BY" ORDER
                 | VACIO
-    SELECT17 ::= "," TB_SOURCE SELECT17
+    SELECT17 ::= "," JOINTB SELECT17
                 | SELECT12
     SELECT18 ::= "," EXPRESSION SELEC18
                 | VACIO;

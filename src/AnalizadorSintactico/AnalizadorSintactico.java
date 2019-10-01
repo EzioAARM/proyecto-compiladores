@@ -10,6 +10,7 @@ import AnalizadorSintactico.DDL.Truncate;
 import AnalizadorSintactico.DML.Delete;
 import AnalizadorSintactico.DML.Insert;
 import AnalizadorSintactico.DML.Select;
+import AnalizadorSintactico.DML.Update;
 import AnalizadorSintactico.Utilidades.AggregateFunctions;
 import AnalizadorSintactico.Utilidades.OutputClause;
 import AnalizadorSintactico.Utilidades.ScalarExpression;
@@ -49,7 +50,7 @@ public class AnalizadorSintactico {
             }
         }
         esObjeto = true;
-        Truncate.TRUNCATE();
+        Update.UPDATE();
         setHasError(false);
         Errores.cambiarEstado();
     }

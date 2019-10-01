@@ -19,9 +19,11 @@
     UPDATE10 ::= EXPRESSION
     UPDATE11 ::= "," UPDATE5
                 | UPDATE12 UPDATE15
-    UPDATE12 ::= OUTCL
-                | "FROM" UPDATE13
-                | "WHERE" EXPRESSION
+    UPDATE12 ::= OUTCL UPDATE16
+                | UPDATE16
+    UPDATE16 ::= "FROM" UPDATE13 UPDATE17
+                | UPDATE17
+    UPDATE17 ::= "WHERE" EXPRESSION
                 | VACIO
     UPDATE13 ::= JOINTB UPDATE14
     UPDATE14 ::= "," UPDATE13
