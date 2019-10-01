@@ -6,6 +6,7 @@
 package AnalizadorSintactico;
 
 import AnalizadorLexico.MyToken;
+import AnalizadorSintactico.DDL.Drop;
 import AnalizadorSintactico.DDL.Truncate;
 import AnalizadorSintactico.DML.Delete;
 import AnalizadorSintactico.DML.Insert;
@@ -50,12 +51,13 @@ public class AnalizadorSintactico {
             }
         }
         esObjeto = true;
-        Update.UPDATE();
+        Drop.DROP();
         setHasError(false);
         Errores.cambiarEstado();
     }
     
     public static void moverToken() {
+        System.out.println(TokenActual().get_token());
         if (getHasError()) {
             
             while (!TokenActual().get_token().equals("GO") && !TokenActual().get_token().equals("PuntoComa") && !TokenActual().get_token().equals("FINDELARCHIVO")) {

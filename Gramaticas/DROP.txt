@@ -1,0 +1,26 @@
+<drop>
+    DROP ::= "DROP" DROP2 DROP1 DROP10
+    DROP1 ::= "TABLE" DROP3 
+                | "DATABASE" DROP5
+                | "USER" IDENTIFICADOR
+                | "VIEW" DROP3
+                | "INDEX" DROP7
+    DROP2 ::= "IF" "EXISTS"
+                | VACIO
+    DROP3 ::= OBJECT DROP4
+    DROP4 ::= "," DROP11
+                | VACIO
+    DROP5 ::= IDENTIFICADOR DROP6
+    DROP6 ::= "," DROP5
+                | VACIO
+    DROP7 ::= IDENTIFICADOR DROP8
+    DROP8 ::= "ON" OBJECT
+                | "." IDENTIFICADOR DROP9
+    DROP9 ::= "." IDENTIFICADOR
+                | VACIO
+    DROP10 ::= ";"
+                | "GO"
+                | "," DROP
+    DROP11 ::= DROP3
+                | DROP
+
