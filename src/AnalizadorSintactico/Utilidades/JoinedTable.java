@@ -8,6 +8,7 @@ package AnalizadorSintactico.Utilidades;
 import static AnalizadorSintactico.AnalizadorSintactico.TokenActual;
 import static AnalizadorSintactico.AnalizadorSintactico.moverToken;
 import static AnalizadorSintactico.AnalizadorSintactico.setHasError;
+import AnalizadorSintactico.DML.Select;
 import MiniSql.Errores;
 
 /**
@@ -36,9 +37,16 @@ public class JoinedTable {
                 break;
             case "ParentesisAbrir":
                 moverToken();
-                JOINTB();
+                if (TokenActual().get_token().equals("SELECT")) {
+                    Select.SELECT1(true);
+                } else {
+                    JOINTB();
+                }
                 if (TokenActual().get_token().equals("ParentesisCerrar")) {
                     moverToken();
+                    if (TokenActual().get_token().equals("Identificador")) {
+                        moverToken();
+                    }
                 } else {
                     setHasError(true);
                     Errores.SyntaxError(TokenActual(), "parentesis de cierre");

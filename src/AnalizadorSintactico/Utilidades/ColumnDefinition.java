@@ -56,6 +56,7 @@ public class ColumnDefinition {
             case "NULL":
                 moverToken();
                 COLDEF3();
+                COLDEF6();
                 break;
             case "NOT":
                 moverToken();
@@ -63,6 +64,7 @@ public class ColumnDefinition {
                     case "NULL":
                         moverToken();
                         COLDEF3();
+                        COLDEF6();
                         break;
                     default:
                         setHasError(true);
@@ -71,7 +73,6 @@ public class ColumnDefinition {
                 }
                 break;
             case "IDENTITY":
-                moverToken();
                 COLDEF6();
                 break;
             default:
@@ -88,6 +89,24 @@ public class ColumnDefinition {
                     case "Identificador":
                         moverToken();
                         COLDEF10();
+                        break;
+                    case "CorcheteAbrir":
+                        moverToken();
+                        switch (TokenActual().get_token()) {
+                            case "Identificador":
+                                moverToken();
+                                switch (TokenActual().get_token()) {
+                                    case "CorcheteCerrar":
+                                        moverToken();
+                                        COLDEF10();
+                                        break;
+                                }
+                                break;
+                            default:
+                                setHasError(true);
+                                Errores.SyntaxError(TokenActual(), "identificador");
+                                break;
+                        }
                         break;
                     default:
                         setHasError(true);
@@ -124,8 +143,7 @@ public class ColumnDefinition {
                 COLDEF5();
                 break;
             default:
-                setHasError(true);
-                Errores.SyntaxError(TokenActual(), "'DEFAULT'");
+                COLDEF8();
                 break;
         }
     }
@@ -153,26 +171,31 @@ public class ColumnDefinition {
     
     private static void COLDEF6() {
         switch (TokenActual().get_token()) {
-            case "ParentesisAbrir":
+            case "IDENTITY":
                 moverToken();
-                ScalarExpression.SEXP();
                 switch (TokenActual().get_token()) {
-                    case "Coma":
+                    case "ParentesisAbrir":
                         moverToken();
+                        ScalarExpression.SEXP();
                         switch (TokenActual().get_token()) {
-                            case "ParentesisCerrar":
+                            case "Coma":
                                 moverToken();
-                                COLDEF7();
+                                switch (TokenActual().get_token()) {
+                                    case "ParentesisCerrar":
+                                        moverToken();
+                                        COLDEF7();
+                                        break;
+                                    default:
+                                        setHasError(true);
+                                        Errores.SyntaxError(TokenActual(), "parentesis de cierre");
+                                        break;
+                                }
                                 break;
                             default:
                                 setHasError(true);
-                                Errores.SyntaxError(TokenActual(), "parentesis de cierre");
+                                Errores.SyntaxError(TokenActual(), "coma");
                                 break;
                         }
-                        break;
-                    default:
-                        setHasError(true);
-                        Errores.SyntaxError(TokenActual(), "coma");
                         break;
                 }
                 break;
@@ -246,10 +269,6 @@ public class ColumnDefinition {
                 break;
             case "CONSTRAINT":
                 ColumnConstraint.COLCST();
-                break;
-            default:
-                setHasError(true);
-                Errores.SyntaxError(TokenActual(), "tipo de constraint o 'DEFAULT'");
                 break;
         }
     }

@@ -42,6 +42,9 @@ public class ConstantExpression {
             case "DatoString":
                 moverToken();
                 break;
+            case "NULL":
+                moverToken();
+                break;
             default:
                 setHasError(true);
                 Errores.SyntaxError(TokenActual(), "constant expression");

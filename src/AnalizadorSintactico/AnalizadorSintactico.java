@@ -63,43 +63,43 @@ public class AnalizadorSintactico {
                 case "UPDATE":
                     Update.UPDATE();
                     if (!getHasError()) {
-                        Errores.MensajeExito("SELECT");
+                        Errores.MensajeExito("UPDATE");
                     }
                     break;
                 case "DELETE":
                     Delete.DELETE1();
                     if (!getHasError()) {
-                        Errores.MensajeExito("SELECT");
+                        Errores.MensajeExito("DELETE");
                     }
                     break;
                 case "INSERT":
                     Insert.INSERT();
                     if (!getHasError()) {
-                        Errores.MensajeExito("SELECT");
+                        Errores.MensajeExito("INSERT");
                     }
                     break;
                 case "TRUNCATE":
                     Truncate.TRUNCATE();
                     if (!getHasError()) {
-                        Errores.MensajeExito("SELECT");
+                        Errores.MensajeExito("TRUNCATE");
                     }
                     break;
                 case "DROP":
                     Drop.DROP();
                     if (!getHasError()) {
-                        Errores.MensajeExito("SELECT");
+                        Errores.MensajeExito("DROP");
                     }
                     break;
                 case "ALTER":
                     Alter.ALTER();
                     if (!getHasError()) {
-                        Errores.MensajeExito("SELECT");
+                        Errores.MensajeExito("ALTER");
                     }
                     break;
                 case "CREATE":
                     Create.CREATE();
                     if (!getHasError()) {
-                        Errores.MensajeExito("SELECT");
+                        Errores.MensajeExito("CREATE");
                     }
                     break;
                 case "PuntoComa":
@@ -121,7 +121,6 @@ public class AnalizadorSintactico {
     }
     
     public static void moverToken() {
-        System.out.println(TokenActual().get_token());
         if (getHasError()) {
             
             while (!TokenActual().get_token().equals("GO") && !TokenActual().get_token().equals("PuntoComa") && !TokenActual().get_token().equals("FINDELARCHIVO")) {

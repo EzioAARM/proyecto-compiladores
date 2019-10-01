@@ -23,6 +23,7 @@ public class Create {
     public static void CREATE() {
         switch (TokenActual().get_token()) {
             case "CREATE":
+                moverToken();
                 CREATE1();
                 CREATE21();
                 break;
@@ -33,6 +34,15 @@ public class Create {
         switch (TokenActual().get_token()) {
             case "DATABASE":
                 moverToken();
+                switch (TokenActual().get_token()) {
+                    case "Identificador":
+                        moverToken();
+                        break;
+                    default:
+                        setHasError(true);
+                        Errores.SyntaxError(TokenActual(), "identificador");
+                        break;
+                }
                 break;
             case "TABLE":
                 moverToken();

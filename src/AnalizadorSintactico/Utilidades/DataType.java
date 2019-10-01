@@ -55,6 +55,9 @@ public class DataType {
                 if (TokenActual().get_token().equals("DatoEntero")) {  
                     moverToken();
                     DATATYPE5();
+                } else if (TokenActual().get_token().equals("MAX")) {
+                    moverToken();
+                    DATATYPE5();
                 }
                 break;
         }
@@ -66,6 +69,15 @@ public class DataType {
                 moverToken();
                 if (TokenActual().get_token().equals("DatoEntero")) {
                     moverToken();
+                    switch (TokenActual().get_token()) {
+                        case "ParentesisCerrar":
+                            moverToken();
+                            break;
+                        default:
+                            setHasError(true);
+                            Errores.SyntaxError(TokenActual(), "parentesis de cierre");
+                            break;
+                    }
                 } else {
                     setHasError(true);
                     Errores.SyntaxError(TokenActual(), "numero entero");

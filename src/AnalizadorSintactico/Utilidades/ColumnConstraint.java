@@ -27,6 +27,7 @@ public class ColumnConstraint {
                 switch (TokenActual().get_token()) {
                     case "KEY":
                         moverToken();
+                        COLCST17();
                         COLCST3();
                         break;
                     default:
@@ -225,6 +226,18 @@ public class ColumnConstraint {
                                 switch (TokenActual().get_token()) {
                                     case "Identificador":
                                         moverToken();
+                                        while (TokenActual().get_token().equals("Coma")) {
+                                            moverToken();
+                                            switch (TokenActual().get_token()) {
+                                                case "Identificador":
+                                                    moverToken();
+                                                    break;
+                                                default:
+                                                    setHasError(true);
+                                                    Errores.SyntaxError(TokenActual(), "identificador");
+                                                    break;
+                                            }
+                                        }
                                         switch (TokenActual().get_token()) {
                                             case "ParentesisCerrar":
                                                 moverToken();
@@ -280,6 +293,18 @@ public class ColumnConstraint {
                 switch (TokenActual().get_token()) {
                     case "Identificador":
                         moverToken();
+                        while (TokenActual().get_token().equals("Coma")) {
+                            moverToken();
+                            switch (TokenActual().get_token()) {
+                                case "Identificador":
+                                    moverToken();
+                                    break;
+                                default:
+                                    setHasError(true);
+                                    Errores.SyntaxError(TokenActual(), "identificador");
+                                    break;
+                            }
+                        }
                         switch (TokenActual().get_token()) {
                             case "ParentesisCerrar":
                                 moverToken();
@@ -310,6 +335,13 @@ public class ColumnConstraint {
                 moverToken();
                 COLCST12();
                 COLCST13();
+                switch (TokenActual().get_token()) {
+                    case "ON":
+                        moverToken();
+                        COLCST12();
+                        COLCST13();
+                        break;
+                }
                 break;
             case "NOT":
                 switch (TokenActual().get_token()) {
@@ -440,6 +472,49 @@ public class ColumnConstraint {
             default:
                 setHasError(true);
                 Errores.SyntaxError(TokenActual(), "parentesis de apertura");
+                break;
+        }
+    }
+    
+    private static void COLCST17() {
+        switch (TokenActual().get_token()) {
+            case "ParentesisAbrir":
+                moverToken();
+                switch (TokenActual().get_token()) {
+                    case "Identificador":
+                        moverToken();
+                        COLCST18();
+                        break;
+                    default:
+                        setHasError(true);
+                        Errores.SyntaxError(TokenActual(), "identificador");
+                        break;
+                }
+                break;
+        }
+    }
+    
+    private static void COLCST18() {
+        switch (TokenActual().get_token()) {
+            case "Coma":
+                moverToken();
+                switch (TokenActual().get_token()) {
+                    case "Identificador":
+                        moverToken();
+                        COLCST17();
+                        break;
+                    default:
+                        setHasError(true);
+                        Errores.SyntaxError(TokenActual(), "identificador");
+                        break;
+                }
+                break;
+            case "ParentesisCerrar":
+                moverToken();
+                break;
+            default:
+                setHasError(true);
+                Errores.SyntaxError(TokenActual(), "parentesis de cierre");
                 break;
         }
     }

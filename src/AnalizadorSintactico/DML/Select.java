@@ -23,6 +23,8 @@ import MiniSql.Errores;
  */
 public class Select {
     
+    private static boolean EsSubquery;
+    
     public static void SELECT1() {
         switch (TokenActual().get_token()) {
             case "SELECT":
@@ -39,6 +41,30 @@ public class Select {
                         setHasError(true);
                         Errores.SyntaxError(TokenActual(), "fin de instrucción");
                         break;
+                }
+                break;
+        }
+    }
+    
+    public static void SELECT1(boolean esSub) {
+        EsSubquery = esSub;
+        switch (TokenActual().get_token()) {
+            case "SELECT":
+                moverToken();
+                SELECT2();
+                if (!esSub) {
+                    switch (TokenActual().get_token()) {
+                        case "PuntoComa":
+                            moverToken();
+                            break;
+                        case "GO":
+                            moverToken();
+                            break;
+                        default:
+                            setHasError(true);
+                            Errores.SyntaxError(TokenActual(), "fin de instrucción");
+                            break;
+                    }
                 }
                 break;
         }

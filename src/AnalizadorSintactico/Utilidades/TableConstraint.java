@@ -29,6 +29,23 @@ public class TableConstraint {
                     case "Identificador":
                         moverToken();
                         break;
+                    case "CorcheteAbrir":
+                        moverToken();
+                        switch (TokenActual().get_token()) {
+                            case "Identificador":
+                                moverToken();
+                                switch (TokenActual().get_token()) {
+                                    case "CorcheteCerrar":
+                                        moverToken();
+                                        break;
+                                }
+                                break;
+                            default:
+                                setHasError(true);
+                                Errores.SyntaxError(TokenActual(), "identificador");
+                                break;
+                        }
+                        break;
                     default:
                         setHasError(true);
                         Errores.SyntaxError(TokenActual(), "identificador");
@@ -45,6 +62,7 @@ public class TableConstraint {
                 switch (TokenActual().get_token()) {
                     case "KEY":
                         moverToken();
+                        TBCST24();
                         TBCST3();
                         break;
                     default:
@@ -251,6 +269,18 @@ public class TableConstraint {
                                 switch (TokenActual().get_token()) {
                                     case "Identificador":
                                         moverToken();
+                                        while (TokenActual().get_token().equals("Coma")) {
+                                            moverToken();
+                                            switch (TokenActual().get_token()) {
+                                                case "Identificador":
+                                                    moverToken();
+                                                    break;
+                                                default:
+                                                    setHasError(true);
+                                                    Errores.SyntaxError(TokenActual(), "identificador");
+                                                    break;
+                                            }
+                                        }
                                         switch (TokenActual().get_token()) {
                                             case "ParentesisCerrar":
                                                 moverToken();
@@ -306,6 +336,18 @@ public class TableConstraint {
                 switch (TokenActual().get_token()) {
                     case "Identificador":
                         moverToken();
+                        while (TokenActual().get_token().equals("Coma")) {
+                            moverToken();
+                            switch (TokenActual().get_token()) {
+                                case "Identificador":
+                                    moverToken();
+                                    break;
+                                default:
+                                    setHasError(true);
+                                    Errores.SyntaxError(TokenActual(), "identificador");
+                                    break;
+                            }
+                        }
                         switch (TokenActual().get_token()) {
                             case "ParentesisCerrar":
                                 moverToken();
@@ -325,7 +367,7 @@ public class TableConstraint {
                 break;
             default:
                 setHasError(true);
-                Errores.SyntaxError(TokenActual(), "identificador");
+                Errores.SyntaxError(TokenActual(), "parentesis de apertura");
                 break;
         }
     }
@@ -631,8 +673,7 @@ public class TableConstraint {
                         }
                         break;
                     default:
-                        setHasError(true);
-                        Errores.SyntaxError(TokenActual(), "'TO'");
+                        TBCST20();
                         break;
                 }
                 break;
@@ -707,6 +748,49 @@ public class TableConstraint {
                         Errores.SyntaxError(TokenActual(), "VALUES");
                         break;
                 }
+                break;
+        }
+    }
+    
+    private static void TBCST24() {
+        switch (TokenActual().get_token()) {
+            case "ParentesisAbrir":
+                moverToken();
+                switch (TokenActual().get_token()) {
+                    case "Identificador":
+                        moverToken();
+                        TBCST25();
+                        break;
+                    default:
+                        setHasError(true);
+                        Errores.SyntaxError(TokenActual(), "identificador");
+                        break;
+                }
+                break;
+        }
+    }
+    
+    private static void TBCST25() {
+        switch (TokenActual().get_token()) {
+            case "Coma":
+                moverToken();
+                switch (TokenActual().get_token()) {
+                    case "Identificador":
+                        moverToken();
+                        TBCST25();
+                        break;
+                    default:
+                        setHasError(true);
+                        Errores.SyntaxError(TokenActual(), "identificador");
+                        break;
+                }
+                break;
+            case "ParentesisCerrar":
+                moverToken();
+                break;
+            default:
+                setHasError(true);
+                Errores.SyntaxError(TokenActual(), "parentesis de cierre");
                 break;
         }
     }
