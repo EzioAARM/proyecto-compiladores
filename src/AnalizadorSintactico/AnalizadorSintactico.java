@@ -7,6 +7,7 @@ package AnalizadorSintactico;
 
 import AnalizadorLexico.MyToken;
 import AnalizadorSintactico.Utilidades.ColumnConstraint;
+import AnalizadorSintactico.Utilidades.ColumnDefinition;
 import MiniSql.Errores;
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +44,7 @@ public class AnalizadorSintactico {
             }
         }
         esObjeto = true;
-        ColumnConstraint.COLCST();
+        ColumnDefinition.COLDEF();
         setHasError(false);
         Errores.cambiarEstado();
     }

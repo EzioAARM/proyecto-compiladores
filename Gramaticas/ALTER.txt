@@ -122,8 +122,10 @@
                 | COL_DEF9
     COL_DEF10 ::= COL_DEF4
                 | COL_CST COL_DEF11
-    COL_DEF11 ::= "," COL_CST COL_DEF11
+    COL_DEF11 ::= "," COL_DEF12
                 | VACIO
+    COL_DEF12 ::= COL_CST COL_DEF11
+                | COL_DEF
 
 
 

@@ -238,8 +238,44 @@ public class ColumnDefinition {
         switch (TokenActual().get_token()) {
             case "Coma":
                 moverToken();
-                ColumnConstraint.COLCST();
-                COLDEF11();
+                switch (TokenActual().get_token()) {
+                    case "Identificador":
+                        COLDEF();
+                        break;
+                case "CONSTRAINT":
+                    moverToken();
+                    switch (TokenActual().get_token()) {
+                        case "Identificador":
+                            moverToken();
+                            COLDEF10();
+                            break;
+                        default:
+                            setHasError(true);
+                            Errores.SyntaxError(TokenActual(), "identificador");
+                            break;
+                    }
+                    break;
+                case "PRIMARY":
+                    ColumnConstraint.COLCST();
+                    COLDEF11();
+                    break;
+                case "UNIQUE":
+                    ColumnConstraint.COLCST();
+                    COLDEF11();
+                    break;
+                case "CHECK":
+                    ColumnConstraint.COLCST();
+                    COLDEF11();
+                    break;
+                case "FOREIGN":
+                    ColumnConstraint.COLCST();
+                    COLDEF11();
+                    break;
+                case "REFERENCES":
+                    ColumnConstraint.COLCST();
+                    COLDEF11();
+                    break;
+                }
                 break;
         }
     }
