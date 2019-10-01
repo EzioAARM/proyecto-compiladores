@@ -1,0 +1,178 @@
+<column_constraint>
+    COL_CST ::= COL_CST1 COL_CST2 
+    COL_CST1 ::= "CONSTRAINT" IDENTIFICADOR
+                | VACIO
+    COL_CST2 ::= "PRIMARY" "KEY" COL_CST3
+                | "UNIQUE" COL_CST3
+                | COL_CST7
+                | "CHECK" COL_CST15
+    COL_CST3 ::= "CLUSTERED" COL_CST4
+                | "NOCLUSTERED" COL_CST4
+                | COL_CST4
+    COL_CST4 ::= "WITH" COL_CST5 COL_CST6
+                | COL_CST6
+    COL_CST5 ::= "FILLFACTOR" "=" INTEGER
+                | "(" "FILLFACTOR" "=" INTEGER ")"
+    COL_CST6 ::= "ON" IDENTIFICADOR "(" IDENTIFICADOR ")"
+                | VACIO
+    COL_CST7 ::= COL_CST8 "REFERENCES" IDENTIFICADOR COL_CST9
+    COL_CST8 ::= "FOREIGN" "KEY"
+                | VACIO
+    COL_CST9 ::= "." IDENTIFICADOR COL_CST10
+                | COL_CST10
+    COL_CST10 ::= "(" IDENTIFICADOR ")" COL_CST11
+    COL_CST11 ::= "ON" COL_CST12 COL_CST13
+                | "NOT" "FOR" "REPLICATION"
+                | VACIO
+    COL_CST12 ::= "DELETE"
+                | "UPDATE"
+    COL_CST13 ::= "NO" "ACTION"
+                | "CASCADE"
+                | "SET" COL_CST14
+    COL_CST14 ::= "NULL"
+                | "DEFAULT"
+    COL_CST15 ::= "NOT" "FOR" "REPLICATION" COL_CST16
+                | COL_CST16
+    COL_CST16 ::= "(" EXPRESSION ")"
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<constant_expression>
+    CONST_EXP ::= "@" IDENTIFICADOR
+                | IDENTIFICADOR
+                | STRING
+                | INTEGER
+                | FLOAT
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<table_constraint>   
+    TB_CST ::= TB_CST1 TB_CST2 
+    TB_CST1 ::= "CONSTRAINT" IDENTIFICADOR
+                | VACIO
+    TB_CST2 ::= "PRIMARY" "KEY" TB_CST3
+                | "UNIQUE" TB_CST3
+                | TB_CST7
+                | "CONNECTION" TB_CST17
+                | "DEFAULT" TB_CST18
+                | "CHECK" TB_CST15
+    TB_CST3 ::= "CLUSTERED" TB_CST4
+                | "NOCLUSTERED" TB_CST4
+                | TB_CST4
+    TB_CST4 ::= "WITH" TB_CST5 TB_CST6
+                | TB_CST6
+    TB_CST5 ::= "FILLFACTOR" "=" INTEGER
+                | "(" "FILLFACTOR" "=" INTEGER ")"
+    TB_CST6 ::= "ON" IDENTIFICADOR "(" IDENTIFICADOR ")"
+    TB_CST7 ::= TB_CST8 "REFERENCES" IDENTIFICADOR TB_CST9
+    TB_CST8 ::= "FOREIGN" "KEY"
+                | VACIO
+    TB_CST9 ::= "." IDENTIFICADOR TB_CST10
+                | TB_CST10
+    TB_CST10 ::= "(" IDENTIFICADOR ")" TB_CST11
+    TB_CST11 ::= "ON" TB_CST12 TB_CST13
+                | "NOT" "FOR" "REPLICATION"
+                | VACIO
+    TB_CST12 ::= "DELETE"
+                | "UPDATE"
+    TB_CST13 ::= "NO" "ACTION"
+                | "CASCADE"
+                | "SET" TB_CST14
+    TB_CST14 ::= "NULL"
+                | "DEFAULT"
+    TB_CST15 ::= "NOT" "FOR" "REPLICATION" TB_CST16
+                | TB_CST16
+    TB_CST16 ::= "(" EXPRESSION ")" TB_CST21
+    TB_CST17 ::= "(" TB_CST19 ")"
+    TB_CST18 ::= CONST_EXP "FOR" IDENTIFICADOR TB_CST23
+    TB_CST19 ::= IDENTIFICADOR "TO" IDENTIFICADOR TB_CST20
+    TB_CST20 ::= "," TB_CST19
+                | VACIO
+    TB_CST21 ::= "ON" "DELETE" TB_CST22 
+                | VACIO
+    TB_CST22 ::= "NO" "ACTION"
+                | "CASCADE"
+    TB_CST23 ::= "WITH" "VALUES"
+                | VACIO
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<column_definition>
+    COL_DEF ::= IDENTIFICADOR DATATYPE COL_DEF1
+    COL_DEF1 ::= "COLLATE" STRING COL_DEF2
+                | COL_DEF2
+    COL_DEF2 ::= "NULL" COL_DEF3
+                | "NOT" "NULL" COL_DEF3
+                | COL_DEF3
+                | "IDENTITY" COL_DEF6
+    COL_DEF3 ::= "CONSTRAINT" IDENTIFICADOR COL_DEF10
+                | COL_CST COL_DEF11
+                | COL_DEF4
+    COL_DEF4 ::= "DEFAULT" CONST_EXP COL_DEF5
+    COL_DEF5 ::= "WITH" "VALUES" COL_DEF8
+                | COL_DEF8
+    COL_DEF6 ::= "(" SEXP "," SEXP ")" COL_DEF7
+                | COL_DEF7
+    COL_DEF7 ::= "NOT" "FOR" "REPLICATION" COL_DEF8
+                | COL_DEF8
+    COL_DEF8 ::= "ROWGUIDCOL" COL_DEF9
+                | COL_DEF9
+    COL_DEF10 ::= COL_DEF4
+                | COL_CST COL_DEF11
+    COL_DEF11 ::= "," COL_CST COL_DEF11
+                | VACIO
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<alter>
+    ALTER ::= "ALTER" ALTER1
+    ALTER1 ::= "VIEW" ALTER2
+                | "TABLE" OBJECT ALTER6
+                | "USER" IDENTIFICADOR ALTER17
+                | "DATABASE" ALTER22 ALTER23
+    ALTER2 ::= IDENTIFICADOR ALTER3
+    ALTER3 ::= "." IDENTIFICADOR ALTER4
+                | ALTER4
+    ALTER4 ::= "(" IDENTIFICADOR ALTER5
+    ALTER5 ::= "," IDENTIFICADOR ALTER5
+                | ")" "AS" SELECT "WITH" "CHECK" "OPTION"
+    ALTER6 ::= "ALTER" "COLUMN" IDENTIFICADOR ALTER7
+                | "ADD" ALTER15
+                | "DROP" ALTER18
+    ALTER7 ::= "IDENTIFICADOR ALTER8 ALTER9
+                | "ADD" ALTER14
+                | "DROP" ALTER14
+    ALTER8 ::= "." IDENTIFICADOR
+                | VACIO
+    ALTER9 ::= "(" INTEGER ALTER10 ")"
+    ALTER10 ::= "," INTEGER
+                | ALTER11
+    ALTER11 ::= "COLLATE" IDENTIFICADOR ALTER12
+                | ALTER12
+    ALTER12 ::= ALTER13
+                | VACIO
+    ALTER13 ::= "NULL"
+                | "NOT" "NULL"
+    ALTER14 ::= STRING
+                | "NOT" "FOR" "REPLICATION"
+    ALTER15 ::= COL_DEF ALTER16
+                | TB_CST ALTER16
+    ALTER16 ::= "," ALTER15
+                | ALTER17
+    ALTER17 ::= ";"
+                | "GO"
+    ALTER18 ::= "CONSTRAINT" ALTER19
+                | "COLUMN" ALTER19
+                | ALTER19
+    ALTER19 ::= "IF" "EXISTS" ALTER20
+                | ALTER20
+    ALTER20 ::= IDENTIFICADOR ALTER21
+    ALTER21 ::= "," ALTER20
+                | ALTER17
+    ALTER22 ::= IDENTIFICADOR
+                | "CURRENT"
+    ALTER23 ::= "COLLATE" STRING ALTER17

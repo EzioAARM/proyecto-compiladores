@@ -13,6 +13,7 @@ import AnalizadorSintactico.DML.Insert;
 import AnalizadorSintactico.DML.Select;
 import AnalizadorSintactico.DML.Update;
 import AnalizadorSintactico.Utilidades.AggregateFunctions;
+import AnalizadorSintactico.Utilidades.ColumnConstraint;
 import AnalizadorSintactico.Utilidades.OutputClause;
 import AnalizadorSintactico.Utilidades.ScalarExpression;
 import MiniSql.Errores;
@@ -51,7 +52,7 @@ public class AnalizadorSintactico {
             }
         }
         esObjeto = true;
-        Drop.DROP();
+        ColumnConstraint.COLCST();
         setHasError(false);
         Errores.cambiarEstado();
     }
