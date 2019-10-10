@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package AnalizadorSintactico.Utilidades;
+package AnalizadorSintactico.Descendente.Utilidades;
 
 import java.util.List;
 

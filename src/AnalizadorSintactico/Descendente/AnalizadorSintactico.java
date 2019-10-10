@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package AnalizadorSintactico;
+package AnalizadorSintactico.Descendente;
 
 import AnalizadorLexico.MyToken;
-import AnalizadorSintactico.DDL.Alter;
-import AnalizadorSintactico.DDL.Create;
-import AnalizadorSintactico.DDL.Drop;
-import AnalizadorSintactico.DDL.Truncate;
-import AnalizadorSintactico.DML.Delete;
-import AnalizadorSintactico.DML.Insert;
-import AnalizadorSintactico.DML.Select;
-import AnalizadorSintactico.DML.Update;
-import AnalizadorSintactico.Utilidades.ColumnConstraint;
-import AnalizadorSintactico.Utilidades.ColumnDefinition;
+import AnalizadorSintactico.Descendente.DDL.Alter;
+import AnalizadorSintactico.Descendente.DDL.Create;
+import AnalizadorSintactico.Descendente.DDL.Drop;
+import AnalizadorSintactico.Descendente.DDL.Truncate;
+import AnalizadorSintactico.Descendente.DML.Delete;
+import AnalizadorSintactico.Descendente.DML.Insert;
+import AnalizadorSintactico.Descendente.DML.Select;
+import AnalizadorSintactico.Descendente.DML.Update;
+import AnalizadorSintactico.Descendente.Utilidades.ColumnConstraint;
+import AnalizadorSintactico.Descendente.Utilidades.ColumnDefinition;
 import MiniSql.Errores;
 import java.util.ArrayList;
 import java.util.List;

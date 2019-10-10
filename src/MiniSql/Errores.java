@@ -6,7 +6,7 @@
 package MiniSql;
 
 import AnalizadorLexico.MyToken;
-import static AnalizadorSintactico.AnalizadorSintactico.getHasError;
+import static AnalizadorSintactico.Descendente.AnalizadorSintactico.getHasError;
 import javax.swing.JOptionPane;
 
 /**

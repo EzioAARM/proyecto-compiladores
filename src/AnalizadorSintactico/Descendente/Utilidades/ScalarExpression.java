@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package AnalizadorSintactico.Utilidades;
+package AnalizadorSintactico.Descendente.Utilidades;
 
 import MiniSql.Errores;
-import static AnalizadorSintactico.AnalizadorSintactico.TokenActual;
-import static AnalizadorSintactico.AnalizadorSintactico.moverToken;
-import static AnalizadorSintactico.AnalizadorSintactico.getHasError;
-import static AnalizadorSintactico.AnalizadorSintactico.setHasError;
+import static AnalizadorSintactico.Descendente.AnalizadorSintactico.TokenActual;
+import static AnalizadorSintactico.Descendente.AnalizadorSintactico.moverToken;
+import static AnalizadorSintactico.Descendente.AnalizadorSintactico.getHasError;
+import static AnalizadorSintactico.Descendente.AnalizadorSintactico.setHasError;
 import java.util.List;
 
 

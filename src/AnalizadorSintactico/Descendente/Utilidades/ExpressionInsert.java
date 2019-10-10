@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package AnalizadorSintactico.Utilidades;
+package AnalizadorSintactico.Descendente.Utilidades;
 
-import static AnalizadorSintactico.AnalizadorSintactico.TokenActual;
-import static AnalizadorSintactico.AnalizadorSintactico.moverToken;
+import static AnalizadorSintactico.Descendente.AnalizadorSintactico.TokenActual;
+import static AnalizadorSintactico.Descendente.AnalizadorSintactico.moverToken;
 
 /**
  *

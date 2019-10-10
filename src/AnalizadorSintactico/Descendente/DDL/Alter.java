@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package AnalizadorSintactico.DDL;
+package AnalizadorSintactico.Descendente.DDL;
 
-import static AnalizadorSintactico.AnalizadorSintactico.TokenActual;
-import static AnalizadorSintactico.AnalizadorSintactico.moverToken;
-import static AnalizadorSintactico.AnalizadorSintactico.setHasError;
-import AnalizadorSintactico.DML.Select;
-import AnalizadorSintactico.Utilidades.ColumnDefinition;
-import AnalizadorSintactico.Utilidades.ObjectExp;
-import AnalizadorSintactico.Utilidades.TableConstraint;
+import static AnalizadorSintactico.Descendente.AnalizadorSintactico.TokenActual;
+import static AnalizadorSintactico.Descendente.AnalizadorSintactico.moverToken;
+import static AnalizadorSintactico.Descendente.AnalizadorSintactico.setHasError;
+import AnalizadorSintactico.Descendente.DML.Select;
+import AnalizadorSintactico.Descendente.Utilidades.ColumnDefinition;
+import AnalizadorSintactico.Descendente.Utilidades.ObjectExp;
+import AnalizadorSintactico.Descendente.Utilidades.TableConstraint;
 import MiniSql.Errores;
 
 /**

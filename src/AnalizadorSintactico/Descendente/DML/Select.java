@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package AnalizadorSintactico.DML;
+package AnalizadorSintactico.Descendente.DML;
 
-import static AnalizadorSintactico.AnalizadorSintactico.TokenActual;
-import static AnalizadorSintactico.AnalizadorSintactico.moverToken;
-import static AnalizadorSintactico.AnalizadorSintactico.setHasError;
-import AnalizadorSintactico.Utilidades.Expression;
-import AnalizadorSintactico.Utilidades.JoinedTable;
-import AnalizadorSintactico.Utilidades.Order;
-import AnalizadorSintactico.Utilidades.ScalarExpression;
-import AnalizadorSintactico.Utilidades.SearchCondition;
-import AnalizadorSintactico.Utilidades.SelectList;
+import static AnalizadorSintactico.Descendente.AnalizadorSintactico.TokenActual;
+import static AnalizadorSintactico.Descendente.AnalizadorSintactico.moverToken;
+import static AnalizadorSintactico.Descendente.AnalizadorSintactico.setHasError;
+import AnalizadorSintactico.Descendente.Utilidades.Expression;
+import AnalizadorSintactico.Descendente.Utilidades.JoinedTable;
+import AnalizadorSintactico.Descendente.Utilidades.Order;
+import AnalizadorSintactico.Descendente.Utilidades.ScalarExpression;
+import AnalizadorSintactico.Descendente.Utilidades.SearchCondition;
+import AnalizadorSintactico.Descendente.Utilidades.SelectList;
 import MiniSql.Errores;
 
 

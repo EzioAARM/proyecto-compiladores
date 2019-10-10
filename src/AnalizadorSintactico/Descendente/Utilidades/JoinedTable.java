@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package AnalizadorSintactico.Utilidades;
+package AnalizadorSintactico.Descendente.Utilidades;
 
-import static AnalizadorSintactico.AnalizadorSintactico.TokenActual;
-import static AnalizadorSintactico.AnalizadorSintactico.moverToken;
-import static AnalizadorSintactico.AnalizadorSintactico.setHasError;
-import AnalizadorSintactico.DML.Select;
+import static AnalizadorSintactico.Descendente.AnalizadorSintactico.TokenActual;
+import static AnalizadorSintactico.Descendente.AnalizadorSintactico.moverToken;
+import static AnalizadorSintactico.Descendente.AnalizadorSintactico.setHasError;
+import AnalizadorSintactico.Descendente.DML.Select;
 import MiniSql.Errores;
 
 /**

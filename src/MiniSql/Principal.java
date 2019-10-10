@@ -6,7 +6,7 @@
 package MiniSql;
 
 import AnalizadorLexico.*;
-import AnalizadorSintactico.AnalizadorSintactico;
+import AnalizadorSintactico.Descendente.AnalizadorSintactico;
 import java.awt.Color;
 import java.util.List;
 import java.io.BufferedReader;
