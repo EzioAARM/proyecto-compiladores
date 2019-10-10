@@ -5,7 +5,7 @@
  */
 package AnalizadorSintactico.Descendente.Utilidades;
 
-import static AnalizadorSintactico.Descendente.AnalizadorSintactico.moverToken;
+import static AnalizadorSintactico.AnalizadorSintactico.moverToken;
 
 /**
  *

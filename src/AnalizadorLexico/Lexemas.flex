@@ -1,6 +1,7 @@
 package AnalizadorLexico;
 import java.util.List;
 import java.util.ArrayList;
+import java_cup.runtime.*;
 %%
 %public
 %class Lexemas

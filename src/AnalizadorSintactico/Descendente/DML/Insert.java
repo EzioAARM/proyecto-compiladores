@@ -5,9 +5,9 @@
  */
 package AnalizadorSintactico.Descendente.DML;
 
-import static AnalizadorSintactico.Descendente.AnalizadorSintactico.TokenActual;
-import static AnalizadorSintactico.Descendente.AnalizadorSintactico.moverToken;
-import static AnalizadorSintactico.Descendente.AnalizadorSintactico.setHasError;
+import static AnalizadorSintactico.AnalizadorSintactico.TokenActual;
+import static AnalizadorSintactico.AnalizadorSintactico.moverToken;
+import static AnalizadorSintactico.AnalizadorSintactico.setHasError;
 import AnalizadorSintactico.Descendente.Utilidades.ColumnList;
 import AnalizadorSintactico.Descendente.Utilidades.Expression;
 import AnalizadorSintactico.Descendente.Utilidades.ObjectExp;
