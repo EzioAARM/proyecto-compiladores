@@ -22,6 +22,7 @@ import java.util.ArrayList;
 %}
 %line
 %column
+%cup
 %char
 %state COMENTARIOMULTI
 %full

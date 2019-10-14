@@ -4,3 +4,14 @@
                 | VACIO
     TRUNCATE2 ::= ";"
                 | "GO"
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<object>
+    OBJECT ::= IDENTIFICADOR OBJECT1
+    OBJECT1 ::= "." IDENTIFICADOR OBJECT2
+                | VACIO
+    OBJECT2 ::= "." IDENTIFICADOR OBJECT3
+                | VACIO
+    OBJECT3 ::= "." IDENTIFICADOR
+                | VACIO

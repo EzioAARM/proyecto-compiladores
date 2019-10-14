@@ -191,12 +191,6 @@
                 | "ROWS"
                 | VACIO
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<table_or_view_name>
-    TB_VNAME ::= IDENTIFICADOR TB_VNAME1
-    TB_VNAME1 ::= "." IDENTIFICADOR
-                | VACIO
-
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <join_type>
@@ -229,7 +223,7 @@
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <table_source>
-    TB_SOURCE ::= TB_VNAME TB_SOURCE1 TB_SOURCE2
+    TB_SOURCE ::= OBJECT TB_SOURCE1 TB_SOURCE2
                 | ROWSET TB_SOURCE1
                 | "@" IDENTIFICADOR TB_SOURCE1
     TB_SOURCE1 ::= "AS" IDENTIFICADOR
@@ -267,9 +261,7 @@
     SELECT7 ::= SELIST SELECT8
     SELECT8 ::= "INTO" SELECT9
                 | SELECT11
-    SELECT9 ::= IDENTIFICADOR SELECT10
-    SELECT10 ::= "." IDENTIFICADOR
-                | SELECT11
+    SELECT9 ::= OBJECT SELECT11
     SELECT11 ::= "FROM" JOINTB SELECT17
                 | SELECT12
     SELECT12 ::= "WHERE" EXPRESSION SELECT13

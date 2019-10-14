@@ -33,8 +33,11 @@ public class AnalizadorSintactico {
     // Guarda si existe error en algún punto de la expresión analizada
     private static boolean hasError;
     
-    // Tokens por analizar
+    // Tokens por analizar descendente
     private static List<MyToken> TokensAnalizar;
+    
+    // Tokens por analizar ascendente
+    private static List<MyToken> TokensAnalizarAsc;
     
     // Tokens analizados
     private static List<MyToken> TokensAnalizados;
@@ -45,12 +48,15 @@ public class AnalizadorSintactico {
     public AnalizadorSintactico(List<MyToken> tokens) {
         TokensAnalizados = new ArrayList();
         TokensAnalizar = new ArrayList();
+        TokensAnalizarAsc = new ArrayList();
         for (int i = 0; i < tokens.size(); i++) {
             if (!tokens.get(i).get_type().equals("Separador") && !tokens.get(i).get_type().equals("Espacio") 
                     && !tokens.get(i).get_type().equals("Comentario") && !tokens.get(i).get_type().equals("Advertencia")) {
                 TokensAnalizar.add(tokens.get(i));
+                TokensAnalizarAsc.add(tokens.get(i));
             }
         }
+        
         esObjeto = true;
         while (!TokenActual().get_token().equals("FINDELARCHIVO")) {
             switch (TokenActual().get_token()) {
@@ -150,6 +156,10 @@ public class AnalizadorSintactico {
         } else {
             Errores.DevelopErrors("No se inicializó la clase \"AnalizadorSintactico\"");
         }
+    }
+    
+    public static void next_token() {
+        
     }
     
     public static MyToken TokenActual() {
