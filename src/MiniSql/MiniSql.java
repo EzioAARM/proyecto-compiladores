@@ -5,11 +5,15 @@
  */
 package MiniSql;
 
+import java.io.File;
+
 /**
  *
  * @author axel
  */
 public class MiniSql {
+    
+    public static File ubicacionArchivo;
     
     /**
      * @param args the command line arguments

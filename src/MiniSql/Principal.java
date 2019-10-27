@@ -7,6 +7,7 @@ package MiniSql;
 
 import AnalizadorLexico.*;
 import AnalizadorSintactico.AnalizadorSintactico;
+import AnalizadorSintactico.Ascendente.parser;
 import java.awt.Color;
 import java.util.List;
 import java.io.BufferedReader;
@@ -129,9 +130,12 @@ public class Principal extends javax.swing.JFrame {
                 txtPrueba.setText(archivoSeleccionado.getAbsolutePath());
                 String ubicacion = archivoSeleccionado.getParent();
                 BufferedReader buffered = new BufferedReader(new FileReader(archivoSeleccionado));
-                Lexemas analizadorFlex = new Lexemas(buffered);
+                //Lexemas analizadorFlex = new Lexemas(buffered);
                 String erroresLexicos = "";
-                List<MyToken> datos = analizadorFlex.yylex();
+                MiniSql.ubicacionArchivo = archivoSeleccionado;
+                parser pr = new parser();
+                pr.parse();
+                /*List<MyToken> datos = analizadorFlex.yylex();
                 boolean existeError = false;
                 for (int i = 0; i < datos.size(); i++) {
                     if (datos.get(i).get_type().equals("Error")) {
@@ -177,14 +181,16 @@ public class Principal extends javax.swing.JFrame {
                     doc.insertString(txtCodigo.getText().length(), datos.get(i).get_lexema(), estiloUsado);
                 }
                 analizadorSin = new AnalizadorSintactico(datos);
-                txtMensajes.setText(txtMensajes.getText() + "\n" + "\n" + Errores.Errores.toString());
+                txtMensajes.setText(txtMensajes.getText() + "\n" + "\n" + Errores.Errores.toString());*/
                 
             }
         } catch (IOException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (BadLocationException ex) {
+        } catch (Exception ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }/* catch (BadLocationException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
     }//GEN-LAST:event_btnSeleccionarActionPerformed
 
     /**
