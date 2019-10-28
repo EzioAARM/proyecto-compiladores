@@ -35,7 +35,7 @@ import AnalizadorLexico.MyToken;
 %full
 %eofclose
 %eofval{
-    return symbol(sym.EOF);
+    return symbol(sym.EOF, new MyToken("FinArchivo", "Fin", "EOF", yyline + 1, yylength() + 1, yycolumn + 1));
 %eofval}
 %init{
 
@@ -1480,5 +1480,5 @@ reservadaEXCEPTION = (EXCEPTION)
     
 }
 [^] {
-    return symbol(sym.Error, new MyToken("ErrorInesperado", yytext(), "Error", yyline + 1, yylength() + 1, yycolumn + 1));
+    //return symbol(sym.Error, new MyToken("ErrorInesperado", yytext(), "Error", yyline + 1, yylength() + 1, yycolumn + 1));
 }
