@@ -30,21 +30,561 @@ scan with {: return analizadorFlex.next_token(); :};
 terminal token            ADD,ALL,ALTER,AND,ANY,AS,ASC,AUTHORIZATION,BACKUP,BEGIN,BETWEEN,BREAK,BROWSE,BULK,BY,CASCADE,CASE,CHECK,CHECKPOINT,CLOSE,CLUSTERED,COALESCE,COLLATE,COLUMN,COMMIT,COMPUTE,CONSTRAINT,CONTAINS,CONTAINSTABLE,CONTINUE,CONVERT,CREATE,CROSS,CURRENT,CURRENT_DATE,CURRENT_TIME,CURRENT_TIMESTAMP,CURRENT_USER,CURSOR,DATABASE,DBCC,DEALLOCATE,DECLARE,DEFAULT,DELETE,DENY,DESC,DISK,DISTINCT,DISTRIBUTED,DOUBLE,DROP,DUMP,ELSE,END,ERRLVL,ESCAPE,EXCEPT,EXEC,EXECUTE,EXISTS,EXIT,EXTERNAL,FETCH,FILE,FILLFACTOR,FOR,FOREIGN,FREETEXT,FREETEXTTABLE,FROM,FULL,FUNCTION,GOTO,GRANT,GROUP,HAVING,HOLDLOCK,IDENTITY,IDENTITY_INSERT,IDENTITYCOL,IF,IN,INDEX,INNER,INSERT,INTERSECT,INTO,IS,JOIN,KEY,KILL,LEFT,LIKE,LINENO,LOAD,MERGE,NATIONAL,NOCHECK,NOCLUSTERED,NOT,NULL,NULLIF,OF,OFF,OFFSETS,ON,OPEN,OPENDATASOURCE,OPENQUERY,OPENXML,OPTION,OR,ORDER,OUTER,OVER,PERCENT,PIVOT,PLAN,PRECISION,PRIMARY,PRINT,PROC,PROCEDURE,PUBLIC,RAISERROR,READ,READTEXT,RECONFIGURE,REFERENCES,REPLICATION,RESTORE,RESTRICT,RETURN,REVERT,REVOKE,RIGHT,ROLLBACK,ROWCOUNT,ROWGUIDCOL,RULE,SAVE,SCHEMA,SECURITYAUDIT,SELECT,SEMANTICKEYPHRASETABLE,SEMANTICSIMILARITYDETAILSTABLE,SEMANTICSIMILARITYTABLE,SESSION_USER,SET,SETUSER,SHUTDOWN,SOME,STATISTICS,SYSTEM_USER,TABLE,TABLESAMPLE,TEXTSIZE,THEN,TO,TOP,TRAN,TRANSACTION,TRIGGER,TRUNCATE,TRY_CONVERT,TSEQUAL,UNION,UNIQUE,UNPIVOT,UPDATE,UPDATETEXT,USE,USER,VALUES,VARYING,VIEW,WAITFOR,WHEN,WHERE,WHILE,WITH,WITHIN,WRITETEXT,ABSOLUTE,OVERLAPS,ACTION,PAD,ADA,PARTIAL,PASCAL,EXTRACT,POSITION,ALLOCATE,FALSO,PREPARE,FIRST,PRESERVE,FLOAT,ARE,PRIOR,PRIVILEGES,FORTRAN,ASSERTION,FOUND,AT,REAL,AVG,GET,GLOBAL,RELATIVE,GO,BIT,BIT_LENGTH,BOTH,ROWS,HOUR,CASCADED,SCROLL,IMMEDIATE,SECOND,CAST,SECTION,CATALOG,INCLUDE,CHAR,SESSION,CHAR_LENGTH,INDICATOR,CHARACTER,INITIALLY,CHARACTER_LENGTH,SIZE,INPUT,SMALLINT,INSENSITIVE,SPACE,INT,SQL,COLLATION,INTEGER,SQLCA,SQLCODE,INTERVAL,SQLERROR,CONNECT,SQLSTATE,CONNECTION,SQLWARNING,ISOLATION,SUBSTRING,CONSTRAINTS,SUM,LANGUAGE,CORRESPONDING,LAST,TEMPORARY,COUNT,LEADING,TIME,LEVEL,TIMESTAMP,TIMEZONE_HOUR,LOCAL,TIMEZONE_MINUTE,LOWER,MATCH,TRAILING,MAX,MIN,TRANSLATE,DATE,MINUTE,TRANSLATION,DAY,MODULE,TRIM,MONTH,VERDADERO,DEC,NAMES,DECIMAL,NATURAL,UNKNOWN,NCHAR,DEFERRABLE,NEXT,UPPER,DEFERRED,NO,USAGE,NONE,USING,DESCRIBE,VALUE,DESCRIPTOR,DIAGNOSTICS,NUMERIC,VARCHAR,DISCONNECT,OCTET_LENGTH,DOMAIN,ONLY,WHENEVER,WORK,ENDEXEC,WRITE,YEAR,OUTPUT,ZONE,EXCEPTION,DatoEntero,DatoFloat,DatoBit,DatoString,StringNoCerrado,Identificador,Mas,Menos,Multiplicacion,Division,Modulo,MenorIgual,Corchetes,Llaves,Parentesis,MayorIgual,Igual,Mayor,Menor,IgualIgual,Diferente,And,Or,Not,PuntoComa,Coma,Punto,CorcheteAbrir,CorcheteCerrar,ParentesisAbrir,ParentesisCerrar,LlaveAbrir,LlaveCerrar,Arroba,DobleNumeral,Numeral;
 
 /* Non terminals */
-non terminal            OBJECT, OBJECT1, OBJECT2, OBJECT3;
+non terminal            OBJECT,OBJECT1,OBJECT2,OBJECT3,SEXP,SEXP2,SEXP3,SEXP4,SEXP5,CONV,CONV1,CONV2,CONV3,CONV4,CONV5,AGG_FN,SEL_AVG,SEL_AVG1,SEL_AVG2,SEL_AVG3,SEL_COUNT,SEL_COUNT1,SEL_COUNT2,SEL_COUNT3,SEL_AGR,SEL_AGR1,SEL_AGR2,SEL_AGR3,EXPRESSION,EXPRESSION1,EXPRESSION2,EXPRESSION3,EXPRESSION4,AR_OPR,SUM_OPR,ASIG_OPR,BIT_OPR,NOT_OPR,COMPARE_OPR,LOGIC_OPR,CASEW,CASEW1,CASEW2,CASEW3,CONST_EXP,DATATYPE,DATATYPE1,DATATYPE2,DATATYPE3,DATATYPE4,DATATYPE5,SH_COND,SH_COND1,SH_COND2,PREDICATE,PREDICATE1,PREDICATE2,PREDICATE3,PREDICATE4,PREDICATE5,PREDICATE6,PREDICATE7,PREDICATE8,PREDICATE9,SH_CONDWM,SH_CONDWM1,SH_CONDWM2,SH_CONDWM3,GSP,GSP1,DT_FN,DT_FN1,DT_FN2,STR_FN,STR_FN1,STR_FN2,OTH_FN,OTH_FN1,OTH_FN2,OTH_FN3,ROWSET,SAM_CL,SAM_CL1,SAM_CL2,JOIN_TYPE,JOIN_TYPE1,JOIN_TYPE2,JOIN_TYPE3,JOINTB,JOINTB1,JOINTB2,JOINTB3,JOINTB4,TB_SOURCE,TB_SOURCE1,TB_SOURCE2,ORDERB,ORDERB1,ORDERB2,ORDERB3,ORDERB4,SELIST,SELIST1,SELIST2,SELIST3,SELIST4,SELIST5,SELIST6,DML,DML2,DML3,DML4,OUTCL,OUTCL1,OUTCL2,OUTCL3,COLST,COLST1,COLST2,EXPR_INSERT,COL_CST,COL_CST1,COL_CST2,COL_CST3,COL_CST4,COL_CST5,COL_CST6,COL_CST7,COL_CST8,COL_CST9,COL_CST10,COL_CST11,COL_CST12,COL_CST13,COL_CST14,COL_CST15,COL_CST16,COL_DEF,COL_DEF1,COL_DEF2,COL_DEF3,COL_DEF4,COL_DEF5,COL_DEF6,COL_DEF7,COL_DEF8,COL_DEF9,COL_DEF10,TB_CST,TB_CST1,TB_CST2,TB_CST3,TB_CST4,TB_CST5,TB_CST6,TB_CST7,TB_CST8,TB_CST9,TB_CST10,TB_CST11,TB_CST12,TB_CST13,TB_CST14,TB_CST15,TB_CST16,TB_CST17,TB_CST18,TB_CST19,TB_CST20,TB_CST21,TB_CST22,TB_CST23;
 
 start with OBJECT;
 
 /* The grammar rules */
-OBJECT ::= Identificador OBJECT1                    {: System.out.println("object");:};
+OBJECT ::= Identificador OBJECT1;
 
-OBJECT1 ::= Punto Identificador OBJECT2             {: System.out.println("object1");:}
-
+OBJECT1 ::= Punto Identificador OBJECT2
             | ; 
 
-OBJECT2 ::= Punto Identificador OBJECT3             {: System.out.println("object2");:}
-
+OBJECT2 ::= Punto Identificador OBJECT3
             | ; 
 
-OBJECT3 ::= Punto Identificador                     {: System.out.println("object3");:}
-
+OBJECT3 ::= Punto Identificador
             | ; 
+
+SEXP ::= SEXP3 SEXP2 ;
+
+SEXP2 ::= Mas SEXP3 SEXP2 
+            | Menos SEXP3 SEXP2 
+            | ; 
+
+SEXP3 ::= SEXP5 SEXP4 ;
+
+SEXP4 ::= Multiplicacion SEXP5 SEXP4 
+            | Division SEXP5 SEXP4 
+            | ; 
+
+SEXP5 ::= ParentesisAbrir SEXP ParentesisCerrar 
+            | DatoEntero 
+            | DatoFloat 
+            | Arroba Identificador 
+            | AGG_FN;
+
+CONV ::= CAST ParentesisAbrir CONV1  
+            | CONVERT ParentesisAbrir CONV2 ;
+
+CONV1 ::= EXPRESSION AS DATATYPE CONV3 ParentesisCerrar ;
+
+CONV2 ::= DATATYPE CONV3 CONV4 ;
+
+CONV3 ::= ParentesisAbrir DatoEntero ParentesisCerrar 
+            | ; 
+
+CONV4 ::= EXPRESSION CONV5 ;
+
+CONV5 ::= Coma SEXP 
+            | ParentesisCerrar ;
+
+AGG_FN ::= AVG ParentesisAbrir SEL_AVG ParentesisCerrar 
+            | COUNT ParentesisAbrir SEL_COUNT ParentesisCerrar 
+            | MAX ParentesisAbrir SEL_AGR ParentesisCerrar 
+            | MIN ParentesisAbrir SEL_AGR ParentesisCerrar 
+            | SUM ParentesisAbrir SEL_AGR ParentesisCerrar ;
+
+SEL_AVG ::= SEL_AVG1 SEL_AVG2 ;
+
+SEL_AVG1 ::= ALL 
+            | DISTINCT 
+            | ; 
+
+SEL_AVG2 ::= SEXP 
+            | Identificador SEL_AVG3 ;
+
+SEL_AVG3 ::= Punto Identificador 
+            | ; 
+
+SEL_COUNT ::= SEL_COUNT1 SEL_COUNT2 ;
+
+SEL_COUNT1 ::= ALL 
+            | DISTINCT 
+            | ; 
+
+SEL_COUNT2 ::= Multiplicacion 
+            | Identificador SEL_COUNT3 
+            | SEXP ;
+
+SEL_COUNT3 ::= Punto Identificador 
+            | ; 
+
+SEL_AGR ::= SEL_AGR1 SEL_AGR2 ;
+
+SEL_AGR1 ::= ALL 
+            | DISTINCT 
+            | ; 
+
+SEL_AGR2 ::= Identificador SEL_AGR3 
+            | SEXP ; 
+
+SEL_AGR3 ::= Punto Identificador 
+            | ; 
+
+EXPRESSION ::= SEXP EXPRESSION1 EXPRESSION3 
+            | EXPRESSION2 SUM_OPR EXPRESSION2 
+            | NOT_OPR EXPRESSION EXPRESSION4 
+            | ;
+
+EXPRESSION1 ::= AR_OPR 
+            | COMPARE_OPR 
+            | SUM_OPR ;
+
+EXPRESSION2 ::= DatoString 
+            | Identificador ;
+
+EXPRESSION3 ::= SEXP 
+            | Identificador 
+            | DatoString ;
+
+EXPRESSION4 ::= COMPARE_OPR 
+            | LOGIC_OPR ;
+
+AR_OPR ::= Menos 
+            | Multiplicacion
+            | Division 
+            | Modulo ;
+
+SUM_OPR ::= Mas ;
+
+ASIG_OPR ::= Igual ;
+
+BIT_OPR ::= AND 
+            | OR ;
+
+NOT_OPR ::= NOT; 
+
+COMPARE_OPR ::= Mayor 
+            | Menor 
+            | MayorIgual 
+            | MenorIgual
+            | Diferente ;
+
+LOGIC_OPR ::= BETWEEN 
+            | IN 
+            | LIKE ;
+
+CASEW ::= CASE CASEW1 ;
+
+CASEW1 ::= EXPRESSION CASEW2 
+            | CASEW2 ;
+
+CASEW2 ::= WHEN EXPRESSION THEN EXPRESSION CASEW3 ;
+
+CASEW3 ::= ELSE EXPRESSION END 
+            | CASEW2 
+            | END ;
+
+CONST_EXP ::= Arroba Identificador 
+            | Identificador
+            | DatoString 
+            | DatoEntero
+            | DatoFloat ;
+
+DATATYPE ::= Identificador DATATYPE2 
+            |DATATYPE3 ;
+
+DATATYPE2 ::= Punto Identificador ;
+
+DATATYPE3 ::= BIT DATATYPE4 
+            |INT DATATYPE4 
+            |INTEGER DATATYPE4 
+            |FLOAT DATATYPE4 
+            |VARCHAR DATATYPE4 
+            |DATE DATATYPE4 
+            |REAL DATATYPE4 
+            |DECIMAL DATATYPE4 
+            |NUMERIC DATATYPE4 
+            |SMALLINT DATATYPE4 
+            |TIME DATATYPE4 
+            |CHAR DATATYPE4 
+            |NCHAR DATATYPE4 ;
+
+DATATYPE4 ::= ParentesisAbrir DatoEntero DATATYPE5 
+            |  ;
+
+DATATYPE5 ::= Coma DatoEntero ParentesisCerrar 
+            | ParentesisCerrar ;
+
+SH_COND ::= SH_COND1 SH_COND2 ;
+
+SH_COND1 ::= MATCH ParentesisAbrir GSP ParentesisCerrar  
+            | SH_CONDWM ;
+
+SH_COND2 ::= AND SH_COND ;
+
+PREDICATE ::= PREDICATE1 PREDICATE2 
+            | CONTAINS ParentesisAbrir PREDICATE7 Coma PREDICATE8 ParentesisCerrar
+            | FREETEXT ParentesisAbrir PREDICATE7 Coma PREDICATE9 ParentesisCerrar;
+
+PREDICATE1 ::= Identificador 
+            | SEXP 
+            | CASEW 
+            | AGG_FN 
+            | STR_FN 
+            | DT_FN 
+            | CONV 
+            | OTH_FN ;
+
+PREDICATE2 ::= COMPARE_OPR PREDICATE1 
+            | NOT PREDICATE3 
+            | LIKE PREDICATE1 PREDICATE6 
+            | BETWEEN PREDICATE1 AND PREDICATE1 
+            | IS PREDICATE4 NULL 
+            | IN PREDICATE1 PREDICATE5 ;
+
+PREDICATE3 ::= LIKE PREDICATE1 PREDICATE6 
+            | BETWEEN PREDICATE1 AND PREDICATE1 
+            | IN PREDICATE1 PREDICATE5 ;
+
+PREDICATE4 ::= NOT 
+            | ;
+
+PREDICATE5 ::= Coma PREDICATE1 PREDICATE5 
+            | ;
+
+PREDICATE6 ::= ESCAPE DatoString 
+            | ; 
+
+PREDICATE7 ::= Multiplicacion 
+            | OBJECT ;
+
+PREDICATE8 ::= SH_COND ;
+
+PREDICATE9 ::= DatoString 
+            | Arroba Identificador ;
+
+SH_CONDWM ::= NOT PREDICATE SH_CONDWM1 
+            | ParentesisAbrir SH_CONDWM ParentesisCerrar SH_CONDWM1 ;
+
+SH_CONDWM1 ::= OR SH_CONDWM2 
+            | ; 
+
+SH_CONDWM2 ::= NOT SH_CONDWM3 
+            | SH_CONDWM3 ;
+
+SH_CONDWM3 ::= PREDICATE SH_CONDWM1 
+            | ParentesisAbrir SH_CONDWM ParentesisCerrar SH_CONDWM1 ;
+
+GSP ::= Identificador GSP1 Identificador ;
+
+GSP1 ::= Menor Menos ParentesisAbrir Identificador ParentesisCerrar Menos 
+            | Menos ParentesisAbrir Identificador ParentesisCerrar Menos Mayor ;
+
+DT_FN ::= CURRENT_TIMESTAMP 
+            | DAY ParentesisAbrir DT_FN1 ParentesisCerrar 
+            | MONTH ParentesisAbrir DT_FN1 ParentesisCerrar 
+            | YEAR ParentesisAbrir DT_FN1 ParentesisCerrar 
+            | SET LANGUAGE DT_FN2 ;
+
+DT_FN1 ::= DatoString 
+            | Arroba Identificador ;
+
+DT_FN2 ::= Arroba Identificador 
+            | Identificador;
+
+STR_FN ::= LOWER ParentesisAbrir STR_FN1 ParentesisCerrar 
+            | TRANSLATE ParentesisAbrir STR_FN1 Coma STR_FN1 Coma STR_FN1 ParentesisCerrar 
+            | UPPER ParentesisAbrir STR_FN1 ParentesisCerrar 
+            | CHAR ParentesisAbrir SEXP ParentesisCerrar 
+            | LEFT ParentesisAbrir STR_FN1 Coma SEXP ParentesisCerrar 
+            | TRIM ParentesisAbrir STR_FN1 STR_FN2 ParentesisCerrar 
+            | NCHAR ParentesisAbrir SEXP ParentesisCerrar 
+            | RIGHT ParentesisAbrir STR_FN1 Coma SEXP ParentesisCerrar 
+            | SPACE ParentesisAbrir SEXP ParentesisCerrar  
+            | SUBSTRING ParentesisAbrir STR_FN1 Coma SEXP Coma SEXP ParentesisCerrar ;
+
+STR_FN1 ::= Arroba Identificador 
+            | DatoString 
+            | Identificador ;
+
+STR_FN2 ::= FROM STR_FN1 
+            | ; 
+
+OTH_FN ::= NEXT VALUE FOR Identificador OTH_FN1 
+            | SYSTEM_USER 
+            | SESSION_USER 
+            | NULLIF ParentesisAbrir EXPRESSION Coma EXPRESSION ParentesisCerrar ;
+
+OTH_FN1 ::=  Punto Identificador OTH_FN2 
+            | OTH_FN2 ;
+
+OTH_FN2 ::= Punto Identificador OTH_FN3 
+            | OTH_FN3 ;
+
+OTH_FN3 ::= OVER ORDER BY ORDERB ;
+
+ROWSET ::= OPENDATASOURCE ParentesisAbrir DatoString Coma DatoString ParentesisCerrar 
+            | OPENQUERY ParentesisAbrir Identificador Coma DatoString ParentesisCerrar ;
+
+SAM_CL ::= TABLESAMPLE ParentesisAbrir SAM_CL1 ParentesisCerrar ;
+
+SAM_CL1 ::= SEXP SAM_CL2 ;
+
+SAM_CL2 ::= PERCENT 
+            | ROWS 
+            | ; 
+JOIN_TYPE ::= JOIN_TYPE1 JOIN ;
+
+JOIN_TYPE1 ::= INNER 
+            |JOIN_TYPE2  
+            | ; 
+
+JOIN_TYPE2 ::= LEFT JOIN_TYPE3 
+            | RIGHT JOIN_TYPE3 
+            | FULL JOIN_TYPE3 
+            | ; 
+
+JOIN_TYPE3 ::= OUTER 
+            | ; 
+
+JOINTB ::= TB_SOURCE JOINTB1 
+            | ParentesisAbrir JOIN ParentesisCerrar; 
+
+JOINTB1 ::= JOIN_TYPE JOINTB3 
+            | CROSS JOIN JOINTB4 
+            | ; 
+
+JOINTB2 ::= JOIN_TYPE JOINTB3 
+            | CROSS JOIN JOINTB4 ;
+
+JOINTB3 ::= TB_SOURCE ON SH_COND JOINTB4 ;
+
+JOINTB4 ::= JOINTB2 
+            | ; 
+
+TB_SOURCE ::= OBJECT TB_SOURCE1 TB_SOURCE2 
+            | ROWSET TB_SOURCE1 
+            | Arroba Identificador TB_SOURCE1 ;
+
+TB_SOURCE1 ::= AS Identificador 
+            | Identificador 
+            | ; 
+
+TB_SOURCE2 ::= SAM_CL 
+            | ; 
+
+ORDERB ::= SELIST ORDERB1 ;
+
+ORDERB1 ::= ORDERB2 
+            | Coma ORDERB ;
+
+ORDERB2 ::= COLLATE ORDERB3 
+            | ORDERB4 ;
+
+ORDERB3 ::= Identificador ORDERB4 ;
+
+ORDERB4 ::= ASC 
+            | DESC ;
+
+SELIST ::= SELIST1 ;
+
+SELIST1 ::= Multiplicacion 
+            | Identificador SELIST2 
+            | EXPRESSION SELIST5 
+            | AGG_FN SELIST5 
+            | STR_FN SELIST5 
+            | DT_FN SELIST5 
+            | CONV SELIST5 
+            | CASEW SELIST5 ;
+
+SELIST2 ::= Punto SELIST3 
+            | Igual SELIST6 
+            | ; 
+
+SELIST3 ::= Multiplicacion 
+            | Identificador SELIST5 ;
+
+SELIST5 ::= AS Identificador 
+            | Identificador  
+            | ; 
+
+SELIST6 ::= EXPRESSION ;
+
+DML ::= DML2 DML3 ;
+
+DML2 ::= OBJECT 
+            | SEXP ;
+
+DML3 ::= AS Identificador DML4 
+            | ; 
+
+DML4 ::= Coma DML 
+            | ;
+
+OUTCL ::= OUTPUT DML OUTCL1 
+            | ; 
+
+OUTCL1 ::= INTO OUTCL2 
+            | ; 
+
+OUTCL2 ::= Arroba Identificador OUTCL3 
+            | Identificador OUTCL3 ;
+
+OUTCL3 ::= COLST 
+            | ; 
+
+COLST ::= ParentesisAbrir COLST1 ;
+
+COLST1 ::= Identificador COLST2 ;
+
+COLST2 ::= Coma COLST1 
+            | ParentesisCerrar ;
+
+EXPR_INSERT ::= SEXP 
+            | DatoString 
+            | DatoBit ;
+
+COL_CST ::= COL_CST1 COL_CST2 ;
+
+COL_CST1 ::= CONSTRAINT Identificador 
+            | ; 
+
+COL_CST2 ::= PRIMARY KEY COL_CST3 
+            | UNIQUE COL_CST3 
+            | COL_CST7 
+            | CHECK COL_CST15 ;
+
+COL_CST3 ::= CLUSTERED COL_CST4 
+            | COL_CST4 ;
+
+COL_CST4 ::= WITH COL_CST5 COL_CST6 
+            | COL_CST6 ;
+
+COL_CST5 ::= FILLFACTOR Igual INTEGER 
+            | ParentesisAbrir FILLFACTOR Igual INTEGER ParentesisCerrar;
+
+COL_CST6 ::= ON Identificador ParentesisAbrir Identificador ParentesisCerrar
+            | ; 
+
+COL_CST7 ::= COL_CST8 REFERENCES Identificador COL_CST9 ;
+
+COL_CST8 ::= FOREIGN KEY 
+            | ; 
+
+COL_CST9 ::= Punto Identificador COL_CST10 
+            | COL_CST10 ;
+
+COL_CST10 ::= ParentesisAbrir Identificador ParentesisCerrar COL_CST11 ;
+
+COL_CST11 ::= ON COL_CST12 COL_CST13 
+            | NOT FOR REPLICATION 
+            | ; 
+
+COL_CST12 ::= DELETE 
+            | UPDATE ;
+
+COL_CST13 ::= NO ACTION 
+            | CASCADE 
+            | SET COL_CST14 ;
+
+COL_CST14 ::= NULL 
+            | DEFAULT ;
+
+COL_CST15 ::= NOT FOR REPLICATION COL_CST16 
+            | COL_CST16 ;
+
+COL_CST16 ::= ParentesisAbrir EXPRESSION ParentesisCerrar;
+
+COL_DEF ::= Identificador DATATYPE COL_DEF1 ;
+
+COL_DEF1 ::= COLLATE Identificador COL_DEF2 
+            | COL_DEF2 ;
+
+COL_DEF2 ::= NULL COL_DEF3 
+            | NOT NULL COL_DEF3 
+            | COL_DEF3 
+            | IDENTITY COL_DEF6 ;
+
+COL_DEF3 ::= CONSTRAINT Identificador COL_DEF10 
+            | COL_CST 
+            | COL_DEF4 ;
+
+COL_DEF4 ::= DEFAULT CONST_EXP COL_DEF5 ;
+
+COL_DEF5 ::= WITH VALUES COL_DEF8 
+            | COL_DEF8 ;
+
+COL_DEF6 ::= ParentesisAbrir SEXP Coma SEXP ParentesisCerrar COL_DEF7 
+            | COL_DEF7 ;
+
+COL_DEF7 ::= NOT FOR REPLICATION COL_DEF8 
+            | COL_DEF8 ;
+
+COL_DEF8 ::= ROWGUIDCOL COL_DEF9 
+            | COL_DEF9 ;
+
+COL_DEF10 ::= COL_DEF4 
+            | COL_CST ;
+
+TB_CST ::= TB_CST1 TB_CST2  ;
+
+TB_CST1 ::= CONSTRAINT Identificador 
+            | ; 
+
+TB_CST2 ::= PRIMARY KEY TB_CST3 
+            | UNIQUE TB_CST3 
+            | TB_CST7 
+            | CONNECTION TB_CST17 
+            | DEFAULT TB_CST18 
+            | CHECK TB_CST15 ;
+
+TB_CST3 ::= CLUSTERED TB_CST4 
+            | TB_CST4 ;
+
+TB_CST4 ::= WITH TB_CST5 TB_CST6 
+            | TB_CST6 ;
+
+TB_CST5 ::= FILLFACTOR Igual INTEGER ParentesisAbrir DatoEntero ParentesisCerrar 
+            | ParentesisAbrir FILLFACTOR Igual INTEGER ParentesisAbrir DatoEntero ParentesisCerrar ParentesisCerrar ;
+
+TB_CST6 ::= ON Identificador ParentesisAbrir Identificador ParentesisCerrar ;
+
+TB_CST7 ::= TB_CST8 REFERENCES Identificador TB_CST9 ;
+
+TB_CST8 ::= FOREIGN KEY 
+            | ; 
+
+TB_CST9 ::= Punto Identificador TB_CST10 
+            | TB_CST10 ;
+
+TB_CST10 ::= ParentesisAbrir Identificador ParentesisCerrar TB_CST11 ;
+
+TB_CST11 ::= ON TB_CST12 TB_CST13 
+            | NOT FOR REPLICATION 
+            | ; 
+
+TB_CST12 ::= DELETE 
+            | UPDATE ;
+
+TB_CST13 ::= NO ACTION 
+            | CASCADE 
+            | SET TB_CST14 ;
+
+TB_CST14 ::= NULL 
+            | DEFAULT ;
+
+TB_CST15 ::= NOT FOR REPLICATION TB_CST16 
+            | TB_CST16 ;
+
+TB_CST16 ::= ParentesisAbrir EXPRESSION ParentesisCerrar TB_CST21 ;
+
+TB_CST17 ::= ParentesisAbrir TB_CST19 ParentesisCerrar ;
+
+TB_CST18 ::= CONST_EXP FOR Identificador TB_CST23 ;
+
+TB_CST19 ::= Identificador TO Identificador TB_CST20 ;
+
+TB_CST20 ::= Coma TB_CST19 
+            | ; 
+
+TB_CST21 ::= ON DELETE TB_CST22  
+            | ; 
+
+TB_CST22 ::= NO ACTION 
+            | CASCADE ;
+
+TB_CST23 ::= WITH VALUES 
+            | ; 
+
