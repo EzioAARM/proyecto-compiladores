@@ -1326,6 +1326,9 @@ reservadaEXCEPTION = (EXCEPTION)
 <YYINITIAL> {reservadaEXCEPTION} {
     Tokens.add(new MyToken("EXCEPTION", yytext(), "Reservada", yyline + 1, yylength(), yycolumn + 1));
 }
+<YYINITIAL> {bit} {
+    Tokens.add(new MyToken("DatoBit", yytext(), "Token", yyline + 1, yylength(), yycolumn + 1));
+}
 <YYINITIAL> {int} {
     Tokens.add(new MyToken("DatoEntero", yytext(), "Token", yyline + 1, yylength(), yycolumn + 1));
 }
@@ -1334,9 +1337,6 @@ reservadaEXCEPTION = (EXCEPTION)
 }
 <YYINITIAL> {floatExp} {
     Tokens.add(new MyToken("DatoFloat", yytext(), "Token", yyline + 1, yylength(), yycolumn + 1));
-}
-<YYINITIAL> {bit} {
-    Tokens.add(new MyToken("DatoBit", yytext(), "Token", yyline + 1, yylength(), yycolumn + 1));
 }
 <YYINITIAL> {string} {
     Tokens.add(new MyToken("DatoString", yytext(), "Token", yyline + 1, yylength(), yycolumn + 1));
