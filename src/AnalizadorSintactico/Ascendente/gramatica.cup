@@ -281,7 +281,7 @@ PREDICATE9 ::= DatoString
 SH_CONDWM ::= SH_CONDWM4 PREDICATE SH_CONDWM1 
             | ParentesisAbrir SH_CONDWM ParentesisCerrar SH_CONDWM1 ;
 
-SH_CONDWM1 ::= OR SH_CONDWM2 
+SH_CONDWM1 ::= OR SH_CONDWM2                                {: System.out.println("SH_CONDWM1"); :}
             | ; 
 
 SH_CONDWM2 ::= NOT SH_CONDWM3 
@@ -375,7 +375,7 @@ JOINTB1 ::= JOIN_TYPE JOINTB3
 JOINTB2 ::= JOIN_TYPE JOINTB3 
             | CROSS JOIN JOINTB4 ;
 
-JOINTB3 ::= TB_SOURCE ON SH_COND JOINTB4 ;
+JOINTB3 ::= TB_SOURCE ON SH_COND JOINTB4                {: System.out.println("on de join"); :};
 
 JOINTB4 ::= JOINTB2 
             | ; 
@@ -633,39 +633,39 @@ SELECT5 ::= ParentesisAbrir SEXP ParentesisCerrar SELECT6 ;
 SELECT6 ::= PERCENT SELECT7 
             | SELECT7 ;
 
-SELECT7 ::= SELIST SELECT20 ;
+SELECT7 ::= SELIST SELECT20                 {: System.out.println("inicio select list"); :};
 
-SELECT20 ::= Coma SELECT7
-            | SELECT8 ;
+SELECT20 ::= Coma SELECT7                   {: System.out.println("select list continuacion"); :}
+            | SELECT8                       {: System.out.println("termino select list"); :};
 
 SELECT8 ::= INTO SELECT9 
             | SELECT11 ;
 
 SELECT9 ::= OBJECT SELECT11 ;
 
-SELECT11 ::= FROM JOINTB SELECT17 
-            | SELECT12 ;
+SELECT11 ::= FROM JOINTB SELECT17           {: System.out.println("inicio from"); :}
+            | SELECT12                      {: System.out.println("no hay from"); :};
 
-SELECT12 ::= WHERE SH_COND SELECT13 
-            | SELECT13 ;
+SELECT12 ::= WHERE SH_COND SELECT13         {: System.out.println("inicio where"); :}
+            | SELECT13                      {: System.out.println("no hay where"); :};
 
-SELECT13 ::= GROUP BY EXPRESSION SELECT18 SELECT14 
-            | SELECT14 ;
+SELECT13 ::= GROUP BY EXPRESSION SELECT18 SELECT14          {: System.out.println("inicio group by"); :}
+            | SELECT14                                      {: System.out.println("no hay group by"); :} ;
 
-SELECT14 ::= HAVING SH_COND SELECT15 
-            | SELECT15 ;
+SELECT14 ::= HAVING SH_COND SELECT15        {: System.out.println("inicio having"); :}
+            | SELECT15                      {: System.out.println("no hay having"); :};
 
-SELECT15 ::= ORDER BY ORDERB SELECT19
-            | SELECT19 ;
+SELECT15 ::= ORDER BY ORDERB SELECT19       {: System.out.println("inicio order by"); :}
+            | SELECT19                      {: System.out.println("no hay order by"); :};
 
-SELECT17 ::= Coma JOINTB SELECT17 
-            | SELECT12 ;
+SELECT17 ::= Coma JOINTB SELECT17           {: System.out.println("jointb otra vez"); :}       
+            | SELECT12                      {: System.out.println("Termino from"); :};
 
 SELECT18 ::= Coma EXPRESSION SELECT18 
             | ;
 
-SELECT19 ::= GO 
-            | PuntoComa; 
+SELECT19 ::= GO                             {: System.out.println("GO"); :}
+            | PuntoComa                     {: System.out.println("Punto y coma"); :};
 
 INSERT0 ::= INSERT INSERT1 ;
 

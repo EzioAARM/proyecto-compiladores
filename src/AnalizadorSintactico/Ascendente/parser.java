@@ -3516,7 +3516,7 @@ class CUP$parser$actions {
           case 165: // SH_CONDWM1 ::= OR SH_CONDWM2 
             {
               Object RESULT =null;
-
+		 System.out.println("SH_CONDWM1"); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("SH_CONDWM1",65, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -4128,7 +4128,7 @@ class CUP$parser$actions {
           case 233: // JOINTB3 ::= TB_SOURCE ON SH_COND JOINTB4 
             {
               Object RESULT =null;
-
+		 System.out.println("on de join"); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("JOINTB3",92, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-3)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -5688,7 +5688,7 @@ class CUP$parser$actions {
           case 404: // SELECT7 ::= SELIST SELECT20 
             {
               Object RESULT =null;
-
+		 System.out.println("inicio select list"); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("SELECT7",179, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -5697,7 +5697,7 @@ class CUP$parser$actions {
           case 405: // SELECT20 ::= Coma SELECT7 
             {
               Object RESULT =null;
-
+		 System.out.println("select list continuacion"); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("SELECT20",190, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -5706,7 +5706,7 @@ class CUP$parser$actions {
           case 406: // SELECT20 ::= SELECT8 
             {
               Object RESULT =null;
-
+		 System.out.println("termino select list"); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("SELECT20",190, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -5742,7 +5742,7 @@ class CUP$parser$actions {
           case 410: // SELECT11 ::= FROM JOINTB SELECT17 
             {
               Object RESULT =null;
-
+		 System.out.println("inicio from"); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("SELECT11",182, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -5751,7 +5751,7 @@ class CUP$parser$actions {
           case 411: // SELECT11 ::= SELECT12 
             {
               Object RESULT =null;
-
+		 System.out.println("no hay from"); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("SELECT11",182, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -5760,7 +5760,7 @@ class CUP$parser$actions {
           case 412: // SELECT12 ::= WHERE SH_COND SELECT13 
             {
               Object RESULT =null;
-
+		 System.out.println("inicio where"); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("SELECT12",183, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -5769,7 +5769,7 @@ class CUP$parser$actions {
           case 413: // SELECT12 ::= SELECT13 
             {
               Object RESULT =null;
-
+		 System.out.println("no hay where"); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("SELECT12",183, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -5778,7 +5778,7 @@ class CUP$parser$actions {
           case 414: // SELECT13 ::= GROUP BY EXPRESSION SELECT18 SELECT14 
             {
               Object RESULT =null;
-
+		 System.out.println("inicio group by"); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("SELECT13",184, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-4)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -5787,7 +5787,7 @@ class CUP$parser$actions {
           case 415: // SELECT13 ::= SELECT14 
             {
               Object RESULT =null;
-
+		 System.out.println("no hay group by"); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("SELECT13",184, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -5796,7 +5796,7 @@ class CUP$parser$actions {
           case 416: // SELECT14 ::= HAVING SH_COND SELECT15 
             {
               Object RESULT =null;
-
+		 System.out.println("inicio having"); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("SELECT14",185, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -5805,7 +5805,7 @@ class CUP$parser$actions {
           case 417: // SELECT14 ::= SELECT15 
             {
               Object RESULT =null;
-
+		 System.out.println("no hay having"); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("SELECT14",185, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -5814,7 +5814,7 @@ class CUP$parser$actions {
           case 418: // SELECT15 ::= ORDER BY ORDERB SELECT19 
             {
               Object RESULT =null;
-
+		 System.out.println("inicio order by"); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("SELECT15",186, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-3)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -5823,7 +5823,7 @@ class CUP$parser$actions {
           case 419: // SELECT15 ::= SELECT19 
             {
               Object RESULT =null;
-
+		 System.out.println("no hay order by"); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("SELECT15",186, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -5832,7 +5832,7 @@ class CUP$parser$actions {
           case 420: // SELECT17 ::= Coma JOINTB SELECT17 
             {
               Object RESULT =null;
-
+		 System.out.println("jointb otra vez"); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("SELECT17",187, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -5841,7 +5841,7 @@ class CUP$parser$actions {
           case 421: // SELECT17 ::= SELECT12 
             {
               Object RESULT =null;
-
+		 System.out.println("Termino from"); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("SELECT17",187, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -5868,7 +5868,7 @@ class CUP$parser$actions {
           case 424: // SELECT19 ::= GO 
             {
               Object RESULT =null;
-
+		 System.out.println("GO"); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("SELECT19",189, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -5877,7 +5877,7 @@ class CUP$parser$actions {
           case 425: // SELECT19 ::= PuntoComa 
             {
               Object RESULT =null;
-
+		 System.out.println("Punto y coma"); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("SELECT19",189, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;

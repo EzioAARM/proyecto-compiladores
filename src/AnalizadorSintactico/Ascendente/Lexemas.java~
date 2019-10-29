@@ -2019,7 +2019,7 @@ public class Lexemas implements java_cup.runtime.Scanner {
             // fall through
           case 358: break;
           case 6: 
-            { return symbol(sym.Error, new MyToken("ErrorInesperado", yytext(), "Error", yyline + 1, yylength() + 1, yycolumn + 1));
+            { //return symbol(sym.Error, new MyToken("ErrorInesperado", yytext(), "Error", yyline + 1, yylength() + 1, yycolumn + 1));
             } 
             // fall through
           case 359: break;
