@@ -7,12 +7,12 @@ non terminal SELIST,SELIST1,SELIST2,SELIST3,SELIST5,SELIST6,SELIST7
                 | Multiplicacion
                 | Arroba Identificador Igual SELIST1 ;
     SELIST1 ::= Identificador SELIST2
-                | EXPRESSION SELIST5
-                | AGG_FN SELIST5
-                | STR_FN SELIST5
-                | DT_FN SELIST5
-                | CONV SELIST5
-                | CASEW SELIST5 ;
+                | EXPRESSION
+                | AGG_FN
+                | STR_FN
+                | DT_FN
+                | CONV
+                | CASEW ;
     SELIST2 ::= Punto SELIST3
                 | Igual SELIST6
                 | /* VACIO */;
@@ -147,7 +147,7 @@ non terminal EXPRESSION,EXPRESSION1,EXPRESSION2,EXPRESSION3,EXPRESSION4
     EXPRESSION ::= SEXP EXPRESSION1 EXPRESSION3 
             | EXPRESSION2 SUM_OPR EXPRESSION2 
             | NOT_OPR EXPRESSION EXPRESSION4 
-            | /* VACIO */;
+            | EXPRESSION3;
     EXPRESSION1 ::= AR_OPR 
             | COMPARE_OPR 
             | SUM_OPR ;
@@ -289,7 +289,8 @@ non terminal ORDERB,ORDER1,ORDER2,ORDER3,ORDER4
                 | ORDER4 ;
     ORDER3 ::= Identificador ORDER4 ;
     ORDER4 ::= ASC
-                | DESC ;
+                | DESC 
+                | /* VACIO */;
 
 
 /*
@@ -297,27 +298,26 @@ non terminal DATATYPE,DATATYPE2,DATATYPE3,DATATYPE4,DATATYPE5
 */
 
 /* <datatype> */
-
-DATATYPE ::= Identificador DATATYPE2 
-            |DATATYPE3 ;
-DATATYPE2 ::= Punto Identificador ;
-DATATYPE3 ::= BIT DATATYPE4 
-            |INT DATATYPE4 
-            |INTEGER DATATYPE4 
-            |FLOAT DATATYPE4 
-            |VARCHAR DATATYPE4 
-            |DATE DATATYPE4 
-            |REAL DATATYPE4 
-            |DECIMAL DATATYPE4 
-            |NUMERIC DATATYPE4 
-            |SMALLINT DATATYPE4 
-            |TIME DATATYPE4 
-            |CHAR DATATYPE4 
-            |NCHAR DATATYPE4 ;
-DATATYPE4 ::= ParentesisAbrir DatoEntero DATATYPE5 
-            |  ;
-DATATYPE5 ::= Coma DatoEntero ParentesisCerrar 
-            | ParentesisCerrar ;
+    DATATYPE ::= Identificador DATATYPE2 
+                |DATATYPE3 ;
+    DATATYPE2 ::= Punto Identificador ;
+    DATATYPE3 ::= BIT DATATYPE4 
+                |INT DATATYPE4 
+                |INTEGER DATATYPE4 
+                |FLOAT DATATYPE4 
+                |VARCHAR DATATYPE4 
+                |DATE DATATYPE4 
+                |REAL DATATYPE4 
+                |DECIMAL DATATYPE4 
+                |NUMERIC DATATYPE4 
+                |SMALLINT DATATYPE4 
+                |TIME DATATYPE4 
+                |CHAR DATATYPE4 
+                |NCHAR DATATYPE4 ;
+    DATATYPE4 ::= ParentesisAbrir DatoEntero DATATYPE5 
+                |  ;
+    DATATYPE5 ::= Coma DatoEntero ParentesisCerrar 
+                | ParentesisCerrar ;
 
 
 /*

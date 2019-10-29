@@ -6,7 +6,8 @@ non terminal SH_COND,SH_COND1,SH_COND2
     SH_COND ::= SH_COND1 SH_COND2 ;
     SH_COND1 ::= MATCH ParentesisAbrir GSP ParentesisCerrar 
                 | SH_CONDWM ;
-    SH_COND2 ::= AND SH_COND ;
+    SH_COND2 ::= AND SH_COND 
+                | /* VACIO */ ;
 
 
 /*
