@@ -1,21 +1,25 @@
-<delete>
-    DELETE1 ::= "DELETE" DEL2
-    DEL2 ::= "TOP" "(" SEXP ")" DEL3
-                | DEL4
-    DEL3 ::= "PERCENT" DEL4
-                | DEL4
-    DEL4 ::= "FROM" DEL5
-                | DEL5
+/*
+non terminal DELETE1,DEL2,DEL3,DEL4,DEL5,DEL6,DEL7,DEL8,DEL9,DEL10
+*/
+
+/* <delete> */
+    DELETE1 ::= DELETE DEL2 ;
+    DEL2 ::= TOP ParentesisAbrir SEXP ParentesisCerrar DEL3
+                | DEL4 ;
+    DEL3 ::= PERCENT DEL4
+                | DEL4 ;
+    DEL4 ::= FROM DEL5
+                | DEL5 ;
     DEL5 ::= OBJECT DEL6
-                | "@" IDENTIFICADOR DEL6
+                | Arroba Identificador DEL6 ;
     DEL6 ::= OUTCL DEL7
-                | DEL7
-    DEL7 ::= "FROM" JOINTB DEL8
-                | DEL9
-    DEL8 ::= "," JOINTB DEL8
-                | DEL9
-    DEL9 ::= "WHERE" EXPRESSION DEL10
-                | DEL10
-    DEL10 ::= ";"
-                | "GO"
+                | DEL7 ;
+    DEL7 ::= FROM JOINTB DEL8
+                | DEL9 ;
+    DEL8 ::= Coma JOINTB DEL8
+                | DEL9 ;
+    DEL9 ::= WHERE SH_COND DEL10
+                | DEL10 ;
+    DEL10 ::= PuntoComa
+                | GO ;
     

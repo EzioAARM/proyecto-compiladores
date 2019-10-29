@@ -1,4 +1,4 @@
-/*SELECT * FROM miTabla
+SELECT * FROM miTabla
 GO
 
 SELECT OrderDateKey, SUM(SalesAmount) AS TotalSales  
@@ -8,7 +8,7 @@ ORDER BY OrderDateKey;
 
 SELECT SUM(SalesAmount) AS TotalSales  
 FROM FactInternetSales  
-GROUP BY (OrderDateKey);*/
+GROUP BY (OrderDateKey);
 
 INSERT INTO dbo.EmployeeSales  
     SELECT 'SELECT', sp.BusinessEntityID, c.LastName, sp.SalesYTD   
@@ -19,7 +19,7 @@ INSERT INTO dbo.EmployeeSales
     ORDER BY sp.BusinessEntityID, c.LastName; 
 
 
-/*SELECT OrderDateKey, SUM(SalesAmount) AS TotalSales  
+SELECT OrderDateKey, SUM(SalesAmount) AS TotalSales  
 FROM FactInternetSales  
 GROUP BY OrderDateKey  
 ORDER BY OrderDateKey; 
@@ -28,4 +28,11 @@ SELECT OrderDateKey, SUM(SalesAmount) AS TotalSales
 FROM FactInternetSales  
 GROUP BY OrderDateKey  
 HAVING OrderDateKey > 20010000  
-ORDER BY OrderDateKey;*/
+ORDER BY OrderDateKey;
+
+
+SELECT @row_count = CONTEO FROM OPENQUERY(ORACLE_LINK, 'SELECT COUNT(employee_id) AS CONTEO FROM JOB_HISTORY');
+
+DELETE Production.ProductCostHistory  
+WHERE StandardCost BETWEEN 12.00 AND 14.00  
+      AND EndDate IS NULL;
