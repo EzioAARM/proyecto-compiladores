@@ -18,75 +18,93 @@ non terminal SEXP,SEXP2,SEXP3,SEXP4,SEXP5
                 | AGG_FN ;
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<dml_select_list>
-    DML ::= DML2 DML3
+/*
+non terminal DML,DML2,DML3,DML4
+*/
+
+/* <dml_select_list> */
+    DML ::= DML2 DML3 ;
     DML2 ::= COLNAME
-                | SEXP
-    DML3 ::= "AS" IDENTIFICADOR DML4
-                | VACIO
-    DML4 ::= "," DML1
-                | VACIO
+                | SEXP ;
+    DML3 ::= AS Identificador DML4
+                | /* VACIO */ ;
+    DML4 ::= Coma DML
+                | /* VACIO */ ;
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<column_name>
-    COLNAME ::= IDENTIFICADOR "." COLNAME1
-    COLNAME1 ::= "*"
-                    | IDENTIFICADOR
+/*
+non terminal COLNAME,COLNAME1
+*/
+
+/* <column_name> */
+    COLNAME ::= Identificador Punto COLNAME1 ;
+    COLNAME1 ::= Multiplicacion
+                    | Identificador ;
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<output_clause>
-    OUTCL ::= "OUTPUT" DML1 OUTCL1
-                | VACIO
-    OUTCL1 ::= "INTO" OUTCL2
-                | VACIO
-    OUTCL2 ::= "@" IDENTIFICADOR OUTCL3
-                | IDENTIFICADOR OUTCL3
+/*
+non terminal OUTCL,OUTCL1,OUTCL2,OUTCL3
+*/
+
+/* <output_clause> */
+    OUTCL ::= OUTPUT DML1 OUTCL1
+                | /* VACIO */ ;
+    OUTCL1 ::= INTO OUTCL2
+                | /* VACIO */ ;
+    OUTCL2 ::= Arroba Identificador OUTCL3
+                | Identificador OUTCL3 ;
     OUTCL3 ::= COLST
-                | VACIO
+                | /* VACIO */ ;
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<column_list>
-    COLST ::= "(" COLST1
-    COLST1 ::= IDENTIFICADOR COLST2
-    COLST2 ::= "," COLST1
-                | ")"
+/*
+non terminal COLST,COLST1,COLST2
+*/
+
+/* <column_list> */
+    COLST ::= ParentesisAbrir COLST1 ;
+    COLST1 ::= Identificador COLST2 ;
+    COLST2 ::= Coma COLST1
+                | ParentesisCerrar ;
                 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<expression>
+/*
+non terminal EXPR_INSERT
+*/
+
+/* <expression> */
     EXPR_INSERT ::= SEXP
-                    | STRING
-                    | BIT
+                    | DatoString
+                    | DatoBit ;
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<insert>
-    INSERT ::= "INSERT" INSERT1
-    INSERT1 ::= "TOP" "(" SEXP ")" INSERT2
-                    | INSERT3
-    INSERT2 ::= "PERCENT" INSERT3
-                    | INSERT3
-    INSERT3 ::= "INTO" INSERT4
-                    | INSERT4
-    INSERT4 ::= OBJECT INSERT5
+/*
+non terminal INSERT0,INSERT1,INSERT2,INSERT3,INSERT4,INSERT5,INSERT6,INSERT7,INSERT8,INSERT10,INSERT11,INSERT12,INSERT9
+*/
+
+/* <insert> */
+    INSERT0 ::= INSERT INSERT1 ;
+    INSERT1 ::= TOP ParentesisAbrir SEXP ParentesisCerrar INSERT2
+                    | INSERT3 ;
+    INSERT2 ::= PERCENT INSERT3
+                    | INSERT3 ;
+    INSERT3 ::= INTO INSERT4
+                    | INSERT4 ;
+    INSERT4 ::= OBJECT INSERT5 ;
     INSERT5 ::= COLST INSERT6
-                    | INSERT6
+                    | INSERT6 ;
     INSERT6 ::= OUTCL INSERT7   
-                    | INSERT7
-    INSERT7 ::= "VALUES" "(" INSERT8
+                    | INSERT7 ;
+    INSERT7 ::= VALUES ParentesisAbrir INSERT8
                     | SELECT1 INSERT9
-                    | "DEFAULT" "VALUES" INSERT9
-    INSERT8 ::= INSERT10 INSERT11
-    INSERT10 ::= "DEFAULT"
-                    | "NULL"
-                    | EXPRESSION
-    INSERT11 ::= "," INSERT8
-                    | ")" INSERT12
-    INSERT12 ::= "," "VALUES" "(" INSERT8
-                    | INSERT9
-    INSERT9 ::= ";"
-                    | "GO"
+                    | DEFAULT VALUES INSERT9 ;
+    INSERT8 ::= INSERT10 INSERT11 ;
+    INSERT10 ::= DEFAULT
+                    | NULL
+                    | EXPR_INSERT ;
+    INSERT11 ::= Coma INSERT8
+                    | ParentesisCerrar INSERT12 ;
+    INSERT12 ::= Coma ParentesisAbrir INSERT8
+                    | INSERT9 ;
+    INSERT9 ::= PuntoComa
+                    | GO ;
