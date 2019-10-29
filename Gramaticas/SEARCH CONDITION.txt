@@ -1,59 +1,99 @@
-<search_condition>
-    SH_COND ::= SH_COND1 SH_COND2
-    SH_COND1 ::= "MATCH" "(" GSP ")" 
-                | SH_CONDWM
-    SH_COND2 ::= "AND" SH_COND
+/*
+non terminal SH_COND,SH_COND1,SH_COND2
+*/
+
+/* <search_condition> */
+    SH_COND ::= SH_COND1 SH_COND2 ;
+    SH_COND1 ::= MATCH ParentesisAbrir GSP ParentesisCerrar 
+                | SH_CONDWM ;
+    SH_COND2 ::= AND SH_COND ;
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<predicate>
-    PREDICATE ::= PREDICATE1 PREDICATE2
-                | "CONTAINS" "(" PREDICATE7 "," PREDICATE8 ")"
-                | "FREETEXT" "(" PREDICATE7 "," PREDICATE9 ")"
-    PREDICATE1 ::= IDENTIFICADOR
-                | SEXP
-                | CASEW
-                | AGG_FN
-                | STR_FN
-                | DT_FN
-                | CONV
-                | OTH_FN
-    PREDICATE2 ::= COMPARE_OPR PREDICATE1
-                | "NOT" PREDICATE3
-                | "LIKE" PREDICATE1 PREDICATE6
-                | "BETWEEN" PREDICATE1 "AND" PREDICATE1
-                | "IS" PREDICATE4 "NULL"
-                | "IN" PREDICATE1 PREDICATE5
-    PREDICATE3 ::= "LIKE" PREDICATE1 PREDICATE6
-                | "BETWEEN" PREDICATE1 "AND" PREDICATE1
-                | "IN" PREDICATE1 PREDICATE5
-    PREDICATE4 ::= "NOT"
-                | "VACIO"
-    PREDICATE5 ::= "," PREDICATE1 PREDICATE5
-                | "VACIO"
-    PREDICATE6 ::= "ESCAPE" STRING
-                | VACIO
-    PREDICATE7 ::= "*"
-                | OBJECT
-    PREDICATE8 ::= SH_COND
-    PREDICATE9 ::= STRING
-                | "@" IDENTIFICADOR
+/*
+non terminal PREDICATE,PREDICATE1,PREDICATE2,PREDICATE3,PREDICATE4,PREDICATE5,PREDICATE6,PREDICATE7,PREDICATE8,PREDICATE9
+*/
+
+/* <predicate> */
+    PREDICATE ::= PREDICATE1 PREDICATE2 
+                | CONTAINS ParentesisAbrir PREDICATE7 Coma PREDICATE8 ParentesisCerrar
+                | FREETEXT ParentesisAbrir PREDICATE7 Coma PREDICATE9 ParentesisCerrar;
+    PREDICATE1 ::= OBJECT 
+                | SEXP 
+                | CASEW 
+                | AGG_FN 
+                | STR_FN 
+                | DT_FN 
+                | CONV 
+                | OTH_FN ;
+    PREDICATE2 ::= COMPARE_OPR PREDICATE1 
+                | NOT PREDICATE3 
+                | LIKE PREDICATE1 PREDICATE6 
+                | BETWEEN PREDICATE1 AND PREDICATE1 
+                | IS PREDICATE4 NULL 
+                | IN PREDICATE1 PREDICATE5 ;
+    PREDICATE3 ::= LIKE PREDICATE1 PREDICATE6 
+                | BETWEEN PREDICATE1 AND PREDICATE1 
+                | IN PREDICATE1 PREDICATE5 ;
+    PREDICATE4 ::= NOT 
+                | /* VACIO */ ;
+    PREDICATE5 ::= Coma PREDICATE1 PREDICATE5 
+                | /* VACIO */ ;
+    PREDICATE6 ::= ESCAPE DatoString 
+                | /* VACIO */ ; 
+    PREDICATE7 ::= Multiplicacion 
+                | OBJECT ;
+    PREDICATE8 ::= SH_COND ;
+    PREDICATE9 ::= DatoString 
+                | Arroba Identificador ;
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<search_condition_without_match>
-    SH_CONDWM ::= "NOT" PREDICATE SH_CONDWM1
-                | "(" SH_CONDWM ")" SH_CONDWM1
-    SH_CONDWM1 ::= "OR" SH_CONDWM2
-                | VACIO
-    SH_CONDWM2 ::= "NOT" SH_CONDWM3
-                | SH_CONDWM3
-    SH_CONDWM3 ::= PREDICATE SH_CONDWM1
-                | "(" SH_CONDWM ")" SH_CONDWM1
+/*
+non terminal SH_CONDWM,SH_CONDWM1,SH_CONDWM2,SH_CONDWM3,SH_CONDWM4
+*/
+
+/* <search_condition_without_match> */
+    SH_CONDWM ::= SH_CONDWM4 PREDICATE SH_CONDWM1 
+                | ParentesisAbrir SH_CONDWM ParentesisCerrar SH_CONDWM1 ;
+    SH_CONDWM1 ::= OR SH_CONDWM2 
+                | /* VACIO */ ; 
+    SH_CONDWM2 ::= NOT SH_CONDWM3 
+                | SH_CONDWM3 ;
+    SH_CONDWM3 ::= PREDICATE SH_CONDWM1 
+                | ParentesisAbrir SH_CONDWM ParentesisCerrar SH_CONDWM1 ;
+    SH_CONDWM4 ::= NOT
+                | /* VACIO */ ;
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<graph_search_pattern>
-    GSP ::= IDENTIFICADOR GSP1 IDENTIFICADOR
-    GSP1 ::= "<" "-" "(" IDENTIFICADOR ")" "-"
-                | "-" "(" IDENTIFICADOR ")" "-" ">"
+/*
+non terminal GSP,GSP1
+*/
+
+/* <graph_search_pattern> */
+    GSP ::= Identificador GSP1 Identificador ;
+    GSP1 ::= Menor Menos ParentesisAbrir Identificador ParentesisCerrar Menos 
+            | Menos ParentesisAbrir Identificador ParentesisCerrar Menos Mayor ;
+
+
+/*
+non terminal OBJECT,OBJECT1,OBJECT2,OBJECT3
+*/
+
+/* <object> */
+    OBJECT ::= Identificador OBJECT1;
+
+    OBJECT1 ::= Punto Identificador OBJECT2
+            | /* VACIO */ ; 
+
+    OBJECT2 ::= Punto Identificador OBJECT3
+            | /* VACIO */ ; 
+
+    OBJECT3 ::= Punto Identificador
+            | /* VACIO */ ; 
+
+/*
+non terminal FIN_AN
+*/
+
+/* <fin_instruccion> */
+    FIN_AN ::= PuntoComa
+            | GO;

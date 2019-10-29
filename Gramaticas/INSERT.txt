@@ -1,17 +1,21 @@
-<scalar_expression>
-    SEXP ::= SEXP3 SEXP2
-    SEXP2 ::= "+" SEXP3 SEXP2
-                | "-" SEXP3 SEXP2
-                | VACIO
-    SEXP3 ::= SEXP5 SEXP4
-    SEXP4 ::= "*" SEXP5 SEXP4
-                | "/" SEXP5 SEXP4
-                | VACIO
-    SEXP5 ::= "(" SEXP ")"
-                | INTEGER
-                | FLOAT
-                | "@" IDENTIFICADOR
-                | AGG_FN
+/*
+non terminal SEXP,SEXP2,SEXP3,SEXP4,SEXP5
+*/
+
+/* <scalar_expression> */
+    SEXP ::= SEXP3 SEXP2 ;
+    SEXP2 ::= Mas SEXP3 SEXP2
+                | Menos SEXP3 SEXP2
+                | /* VACIO */ ;
+    SEXP3 ::= SEXP5 SEXP4 ;
+    SEXP4 ::= Multiplicacion SEXP5 SEXP4
+                | Division SEXP5 SEXP4
+                | /* VACIO */ ;
+    SEXP5 ::= ParentesisAbrir SEXP ParentesisCerrar
+                | DatoEntero
+                | DatoFloat
+                | Arroba Identificador
+                | AGG_FN ;
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

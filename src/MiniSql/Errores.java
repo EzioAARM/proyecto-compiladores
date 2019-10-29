@@ -39,6 +39,11 @@ public class Errores {
             
     }
     
+    public static void SyntaxErrorCup(MyToken tokenError) {
+        Errores.append("\n" + "Error en la linea " + tokenError.getFila() + " columna " + tokenError.get_columnaInicial() 
+                    + "\n" + "Se encontró " + tokenError.get_token());
+    }
+    
     public static void EOF(String claseAnalisis) {
         Errores.append("\n" + "se encontró el fin del archivo, el analisis estaba en: " + claseAnalisis);
     }

@@ -1,278 +1,357 @@
-<select_list>
-    SELIST ::= SELIST1
-    SELIST1 ::= "*"
-                | IDENTIFICADOR SELIST2
+/*
+non terminal SELIST,SELIST1,SELIST2,SELIST3,SELIST5,SELIST6,SELIST7
+*/
+
+/*<select_list>*/
+    SELIST ::= SELIST1 SELIST5
+                | Multiplicacion
+                | Arroba Identificador Igual SELIST1 ;
+    SELIST1 ::= Identificador SELIST2
                 | EXPRESSION SELIST5
                 | AGG_FN SELIST5
                 | STR_FN SELIST5
                 | DT_FN SELIST5
                 | CONV SELIST5
-                | CASEW SELIST5
-    SELIST2 ::= "." SELIST3
-                | "::" SELIST4
-                | "=" SELIST6
-                | VACIO
-    SELIST3 ::= "*"
-                | IDENTIFICADOR SELIST5
-    SELIST4 ::= IDENTIFICADOR SELIST5
-    SELIST5 ::= "AS" IDENTIFICADOR
-                | IDENTIFICADOR 
-                | VACIO
-    SELIST6 ::= EXPRESSION
+                | CASEW SELIST5 ;
+    SELIST2 ::= Punto SELIST3
+                | Igual SELIST6
+                | /* VACIO */;
+    SELIST3 ::= Multiplicacion
+                | Identificador SELIST7;
+    SELIST5 ::= AS Identificador
+                | Identificador 
+                | /* VACIO */;
+    SELIST6 ::= EXPRESSION ;
+    SELIST7 ::= Punto Identificador SELIST5
+                | SELIST5 ;
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<conversion_functions>
-    CONV ::= "CAST" "(" CONV1 
-                | "CONVERT" "(" CONV2
-    CONV1 ::= EXPRESSION "AS" DATA_TYPE CONV3 ")"
-    CONV2 ::= DATA_TYPE CONV3 CONV4
-    CONV3 ::= "(" INTEGER ")"
-                | VACIO
-    CONV4 ::= EXPRESSION CONV5
-    CONV5 ::= "," SEXP
-                | ")"
+
+/*
+non terminal CONV,CONV1,CONV2,CONV3,CONV4,CONV5
+*/
+
+/* <conversion_functions> */
+    CONV ::= CAST ParentesisAbrir CONV1 
+                | CONVERT ParentesisAbrir CONV2 ;
+    CONV1 ::= EXPRESSION AS DATATYPE CONV3 ParentesisCerrar ;
+    CONV2 ::= DATATYPE CONV3 CONV4 ;
+    CONV3 ::= ParentesisAbrir DatoEntero ParentesisCerrar
+                | /* VACIO */ ;
+    CONV4 ::= EXPRESSION CONV5 ;
+    CONV5 ::= Coma SEXP
+                | ParentesisCerrar ;
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<datetime_functions>
-    DT_FN ::= "CURRENT_TIMESTAMP"
-                | "GETDATE" "(" ")"
-                | "DAY" "(" DT_FN1 ")"
-                | "MONTH" "(" DT_FN1 ")"
-                | "YEAR" "(" DT_FN1 ")"
-                | "SET" "LANGUAGE" DT_FN2
-    DT_FN1 ::= STRING
-                | "@" IDENTIFICADOR
-    DT_FN2 ::= "@" IDENTIFICADOR
-                | IDENTIFICADOR
+
+/*
+non terminal DT_FN,DT_FN1,DT_FN2
+*/
+
+/* <datetime_functions> */
+    DT_FN ::= CURRENT_TIMESTAMP
+                | DAY ParentesisAbrir DT_FN1 ParentesisCerrar
+                | MONTH ParentesisAbrir DT_FN1 ParentesisCerrar
+                | YEAR ParentesisAbrir DT_FN1 ParentesisCerrar
+                | SET LANGUAGE DT_FN2 ;
+    DT_FN1 ::= DatoString
+                | Arroba Identificador ;
+    DT_FN2 ::= Arroba Identificador
+                | Identificador ;
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<string_functions>
-    STR_FN ::= "LOWER" "(" STR_FN1 ")"
-                | "TRANSLATE" "(" STR_FN1 "," STR_FN1 "," STR_FN1 ")"
-                | "UPPER" "(" STR_FN1 ")"
-                | "CHAR" "(" SEXP ")"
-                | "LEFT" "(" STR_FN1 "," SEXP ")"
-                | "TRIM" "(" STR_FN1 STR_FN2 ")"
-                | "NCHAR" "(" SEXP ")"
-                | "RIGHT" "(" STR_FN1 "," SEXP ")"
-                | "SPACE" "(" SEXP ")" 
-                | "SUBSTRING" "(" STR_FN1 "," SEXP "," SEXP ")"
-    STR_FN1 ::= "@" IDENTIFICADOR
-                | STRING
-                | IDENTIFICADOR
-    STR_FN2 ::= "FROM" STR_FN1
-                | VACIO
+
+/*
+non terminal STR_FN,STR_FN1,STR_FN2
+*/
+
+/* <string_functions> */
+    STR_FN ::= LOWER ParentesisAbrir STR_FN1 ParentesisCerrar
+                | TRANSLATE ParentesisAbrir STR_FN1 Coma STR_FN1 Coma STR_FN1 ParentesisCerrar
+                | UPPER ParentesisAbrir STR_FN1 ParentesisCerrar
+                | CHAR ParentesisAbrir SEXP ParentesisCerrar
+                | LEFT ParentesisAbrir STR_FN1 Coma SEXP ParentesisCerrar
+                | TRIM ParentesisAbrir STR_FN1 STR_FN2 ParentesisCerrar
+                | NCHAR ParentesisAbrir SEXP ParentesisCerrar
+                | RIGHT ParentesisAbrir STR_FN1 Coma SEXP ParentesisCerrar
+                | SPACE ParentesisAbrir SEXP ParentesisCerrar 
+                | SUBSTRING ParentesisAbrir STR_FN1 Coma SEXP Coma SEXP ParentesisCerrar ;
+    STR_FN1 ::= Arroba Identificador
+                | DatoString
+                | Identificador ;
+    STR_FN2 ::= FROM STR_FN1
+                | /* VACIO */ ;
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<other_functions>
-    OTH_FN ::= "NEXT" "VALUE" "FOR" IDENTIFICADOR OTH_FN1
-                | "SYSTEM_USER"
-                | "SESSION_USER"
-                | "NULLIF" "(" EXPRESSION "," EXPRESSION ")"
-    OTH_FN1 ::=  "." IDENTIFICADOR OTH_FN2
-                | OTH_FN2
-    OTH_FN2 ::= "." IDENTIFICADOR OTH_FN3
-                | OTH_FN3
-    OTH_FN3 ::= "OVER" "ORDER" "BY" ORDER
+
+/*
+non terminal OTH_FN,OTH_FN1,OTH_FN2,OTH_FN3
+*/
+
+/* <other_functions> */
+    OTH_FN ::= NEXT VALUE FOR Identificador OTH_FN1
+                | SYSTEM_USER
+                | SESSION_USER
+                | NULLIF ParentesisAbrir EXPRESSION Coma EXPRESSION ParentesisCerrar ;
+    OTH_FN1 ::=  Punto Identificador OTH_FN2
+                | OTH_FN2 ;
+    OTH_FN2 ::= Punto Identificador OTH_FN3
+                | OTH_FN3 ;
+    OTH_FN3 ::= OVER ORDER BY ORDERB ;
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<aggregate_functions>
-    AGG_FN ::= "AVG" "(" SEL_AVG ")"
-                | "COUNT" "(" SEL_COUNT ")"
-                | "MAX" "(" SEL_AGR ")"
-                | "MIN" "(" SEL_AGR ")"
-                | "SUM" "(" SEL_AGR ")"
-    SEL_AVG ::= SEL_AVG1 SEL_AVG2
-    SEL_AVG1 ::= "ALL"
-                | "DISTINC"
-                | VACIO
-    SEL_AVG2 ::= SEXP
-                | IDENTIFICADOR SEL_AVG3
-    SEL_AVG3 ::= "." IDENTIFICADOR
-                | VACIO
-    SEL_COUNT ::= SEL_COUNT1 SEL_COUNT2
-    SEL_COUNT1 ::= "ALL"
-                | "DISTINC"
-                | VACIO
-    SEL_COUNT2 ::= "*"
-                | IDENTIFICADOR SEL_COUNT3
-                | SEXP 
-    SEL_COUNT3 ::= "." IDENTIFICADOR
-                | VACIO
-    SEL_AGR ::= SEL_AGR1 SEL_AGR2
-    SEL_AGR1 ::= "ALL"
-                | "DISTINC"
-                | VACIO
-    SEL_AGR2 ::= IDENTIFICADOR SEL_AGR3
-                | SEXP 
-    SEL_AGR3 ::= "." IDENTIFICADOR
-                | VACIO
+
+/*
+non terminal AGG_FN,SEL_AVG,SEL_AVG1,SEL_AVG2,SEL_AVG3,SEL_COUNT,SEL_COUNT1,SEL_COUNT2,SEL_COUNT3,SEL_AGR,SEL_AGR1,SEL_AGR2,SEL_AGR3
+*/
+
+/* <aggregate_functions> */
+    AGG_FN ::= AVG ParentesisAbrir SEL_AVG ParentesisCerrar 
+            | COUNT ParentesisAbrir SEL_COUNT ParentesisCerrar 
+            | MAX ParentesisAbrir SEL_AGR ParentesisCerrar 
+            | MIN ParentesisAbrir SEL_AGR ParentesisCerrar 
+            | SUM ParentesisAbrir SEL_AGR ParentesisCerrar ;
+    SEL_AVG ::= SEL_AVG1 SEL_AVG2 ;
+    SEL_AVG1 ::= ALL 
+            | DISTINCT 
+            | /* VACIO */; 
+    SEL_AVG2 ::= SEXP 
+            | Identificador SEL_AVG3 ;
+    SEL_AVG3 ::= Punto Identificador 
+            | /* VACIO */; 
+    SEL_COUNT ::= SEL_COUNT1 SEL_COUNT2 ;
+    SEL_COUNT1 ::= ALL 
+            | DISTINCT 
+            | /* VACIO */; 
+    SEL_COUNT2 ::= Multiplicacion 
+            | Identificador SEL_COUNT3 
+            | SEXP ;
+    SEL_COUNT3 ::= Punto Identificador 
+            | /* VACIO */; 
+    SEL_AGR ::= SEL_AGR1 SEL_AGR2 ;
+    SEL_AGR1 ::= ALL 
+            | DISTINCT 
+            | /* VACIO */;
+    SEL_AGR2 ::= Identificador SEL_AGR3 
+            | SEXP ; 
+    SEL_AGR3 ::= Punto Identificador 
+            | /* VACIO */; 
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<expression>
-    EXPRESSION ::= SEXP EXPRESSION1 EXPRESSION3
-                | EXPRESSION2 SUM_OPR EXPRESSION2
-                | NOT_OPR EXPRESSION EXPRESSION4
-                | 
-    EXPRESSION1 ::= AR_OPR
-                | COMPARE_OPR
-                | SUM_OPR
-    EXPRESSION2 ::= STRING
-                | IDENTIFICADOR
-    EXPRESSION3 ::= SEXP
-                | IDENTIFICADOR
-                | STRING
-    EXPRESSION4 ::= COMPARE_OPR
-                | LOGIC_OPR
-                
+
+/*
+non terminal EXPRESSION,EXPRESSION1,EXPRESSION2,EXPRESSION3,EXPRESSION4
+*/
+
+/* <expression> */
+    EXPRESSION ::= SEXP EXPRESSION1 EXPRESSION3 
+            | EXPRESSION2 SUM_OPR EXPRESSION2 
+            | NOT_OPR EXPRESSION EXPRESSION4 
+            | /* VACIO */;
+    EXPRESSION1 ::= AR_OPR 
+            | COMPARE_OPR 
+            | SUM_OPR ;
+    EXPRESSION2 ::= DatoString 
+            | Identificador ;
+    EXPRESSION3 ::= SEXP 
+            | Identificador 
+            | DatoString ;
+    EXPRESSION4 ::= COMPARE_OPR 
+            | LOGIC_OPR ;
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<binary_operators>
+
+/*
+non terminal BIN_OPR,AR_OPR,ASIG_OPR,BIT_OPR,COMPARE_OPR,LOGIC_OPR,SUM_OPR,NOT_OPR
+*/
+
+/* <binary_operators> */
     BIN_OPR ::= AR_OPR
                 | ASIG_OPR
                 | BIT_OPR
                 | COMPARE_OPR
-                | LOGIC_OPR
-
-    AR_OPR ::= "-"
-                | "*"
-                | "/"
-                | "%"
-
-    SUM_OPR ::= "+"
-    
-    ASIG_OPR ::= "="
-
-    BIT_OPR ::= "AND"
-                | "OR"
-    
-    NOT_OPR ::= "NOT";
-    
-    COMPARE_OPR ::= ">"
-                | "<"
-                | ">="
-                | "<="
-                | "<>"
-
-    LOGIC_OPR ::= "BETWEEN"
-                | "IN"
-                | "LIKE"
+                | LOGIC_OPR ;
+    AR_OPR ::= Menos
+                | Multiplicacion
+                | Division
+                | Modulo ;
+    SUM_OPR ::= Mas ;
+    ASIG_OPR ::= Igual ;
+    BIT_OPR ::= AND
+                | OR ;
+    NOT_OPR ::= NOT;
+    COMPARE_OPR ::= Mayor
+                | Menor
+                | MayorIgual
+                | MenorIgual
+                | Diferente ;
+    LOGIC_OPR ::= BETWEEN
+                | IN
+                | LIKE ;
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<case_when>
-    CASEW ::= "CASE" CASEW1
+
+/*
+non terminal CASEW,CASEW1,CASEW2,CASEW3
+*/
+
+/* <case_when> */
+    CASEW ::= CASE CASEW1;
     CASEW1 ::= EXPRESSION CASEW2
+                | CASEW2;
+    CASEW2 ::= WHEN EXPRESSION THEN EXPRESSION CASEW3;
+    CASEW3 ::= ELSE EXPRESSION END
                 | CASEW2
-    CASEW2 ::= "WHEN" EXPRESSION "THEN" EXPRESSION CASEW3
-    CASEW3 ::= "ELSE" EXPRESSION "END"
-                | CASEW2
-                | "END"
+                | END;
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<rowset_function>
-    ROWSET ::= "OPENDATASOURCE" "(" STRING, STRING ")"
-                | "OPENQUERY" "(" IDENTIFICADOR, STRING ")"
+/*
+non terminal ROWSET
+*/
+
+/* <rowset_function> */
+    ROWSET ::= OPENDATASOURCE ParentesisAbrir DatoString Coma DatoString ParentesisCerrar
+                | OPENQUERY ParentesisAbrir Identificador Coma DatoString ParentesisCerrar ;
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<tablesample_clause>
-    SAM_CL ::= "TABLESAMPLE" "(" SAM_CL1 ")"
-    SAM_CL1 ::= SEXP SAM_CL2
-    SAM_CL2 ::= "PERCENT"
-                | "ROWS"
-                | VACIO
+/*
+non terminal SAM_CL,SAM_CL1,SAM_CL2
+*/
+
+/* <tablesample_clause> */
+    SAM_CL ::= TABLESAMPLE ParentesisAbrir SAM_CL1 ParentesisCerrar ;
+    SAM_CL1 ::= SEXP SAM_CL2 ;
+    SAM_CL2 ::= PERCENT
+                | ROWS
+                | /* VACIO */ ;
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<join_type>
-    JOIN_TYPE ::= JOIN_TYPE1 "JOIN"
-    JOIN_TYPE1 ::= "INNER"
+/*
+non terminal JOIN_TYPE,JOIN_TYPE1,JOIN_TYPE2,JOIN_TYPE3
+*/
+
+/* <join_type> */
+    JOIN_TYPE ::= JOIN_TYPE1 JOIN ;
+    JOIN_TYPE1 ::= INNER
                 |JOIN_TYPE2 
-                | VACIO
-    JOIN_TYPE2 ::= "LEFT" JOIN_TYPE3
-                | "RIGHT" JOIN_TYPE3
-                | "FULL" JOIN_TYPE3
-                | VACIO
-    JOIN_TYPE3 ::= "OUTER"
-                | VACIO
+                | /* VACIO */ ;
+    JOIN_TYPE2 ::= LEFT JOIN_TYPE3
+                | RIGHT JOIN_TYPE3
+                | FULL JOIN_TYPE3
+                | /* VACIO */ ;
+    JOIN_TYPE3 ::= OUTER
+                | /* VACIO */ ;
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<joined_table>
+/*
+non terminal JOINTB,JOINTB1,JOINTB2,JOINTB3,JOINTB4
+*/
+
+/* <joined_table> */
     JOINTB ::= TB_SOURCE JOINTB1
-                | "(" JOIN ")"
-    JOINTB1 ::= "JOIN_TYPE" JOINTB3
-                | "CROSS","JOIN" JOINTB4
-                | VACIO
-    JOINTB2 ::= "JOIN_TYPE" JOINTB3
-                | "CROSS","JOIN" JOINTB4
-    JOINTB3 ::= TB_SOURCE "ON" SearchC JOINTB4
+                | ParentesisAbrir JOIN ParentesisCerrar ;
+    JOINTB1 ::= JOIN_TYPE JOINTB3
+                | CROSS Coma JOIN JOINTB4
+                | /* VACIO */ ;
+    JOINTB2 ::= JOIN_TYPE JOINTB3
+                | CROSS Coma JOIN JOINTB4 ;
+    JOINTB3 ::= TB_SOURCE ON SH_COND JOINTB4 ;
     JOINTB4 ::= JOINTB2
-                | VACIO
+                | /* VACIO */ ;
     
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<table_source>
+/*
+non terminal TB_SOURCE,TB_SOURCE1,TB_SOURCE2
+*/
+
+/* <table_source> */
     TB_SOURCE ::= OBJECT TB_SOURCE1 TB_SOURCE2
                 | ROWSET TB_SOURCE1
-                | "@" IDENTIFICADOR TB_SOURCE1
-    TB_SOURCE1 ::= "AS" IDENTIFICADOR
-                | IDENTIFICADOR
-                | VACIO
+                | Arroba Identificador TB_SOURCE1 ;
+    TB_SOURCE1 ::= AS Identificador
+                | Identificador
+                | /* VACIO */ ;
     TB_SOURCE2 ::= SAM_CL
-                | VACIO
+                | /* VACIO */ ;
     
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<order_by>
-    ORDER ::= SELIST ORDER1
+/*
+non terminal ORDERB,ORDER1,ORDER2,ORDER3,ORDER4
+*/
+
+/* <order_by> */
+    ORDERB ::= SELIST ORDER1 ;
     ORDER1 ::= ORDER2
-                | "," ORDER
-    ORDER2 ::= "COLLATE" ORDER3
-                | ORDER4
-    ORDER3 ::= IDENTIFICADOR ORDER4
-    ORDER4 ::= "ASC"
-                | "DESC"
+                | Coma ORDER ;
+    ORDER2 ::= COLLATE ORDER3
+                | ORDER4 ;
+    ORDER3 ::= Identificador ORDER4 ;
+    ORDER4 ::= ASC
+                | DESC ;
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<select>
-    SELECT1 ::= "SELECT" SELECT2
-    SELECT2 ::= SELECT3 SELECT4
-    SELECT3 ::= "ALL"
-                | "DISTINC"
-                | VACIO
-    SELECT4 ::= "TOP" SELECT5
-                | SELECT7
-    SELECT5 ::= "(" SEXP ")" SELECT6
-    SELECT6 ::= "PERCENT" SELECT7
-                | SELECT7
-    SELECT7 ::= SELIST SELECT8
-    SELECT8 ::= "INTO" SELECT9
-                | SELECT11
-    SELECT9 ::= OBJECT SELECT11
-    SELECT11 ::= "FROM" JOINTB SELECT17
-                | SELECT12
-    SELECT12 ::= "WHERE" EXPRESSION SELECT13
-                | SELECT13
-    SELECT13 ::= "GROUP" "BY" EXPRESSION SELECT18 SELECT14
-                | SELECT14
-    SELECT14 ::= "HAVING" EXPRESSION SELECT15
-                | SELECT15
-    SELECT15 ::= "ORDER" "BY" ORDER
-                | VACIO
-    SELECT17 ::= "," JOINTB SELECT17
-                | SELECT12
-    SELECT18 ::= "," EXPRESSION SELEC18
-                | VACIO;
+/*
+non terminal DATATYPE,DATATYPE2,DATATYPE3,DATATYPE4,DATATYPE5
+*/
+
+/* <datatype> */
+
+DATATYPE ::= Identificador DATATYPE2 
+            |DATATYPE3 ;
+DATATYPE2 ::= Punto Identificador ;
+DATATYPE3 ::= BIT DATATYPE4 
+            |INT DATATYPE4 
+            |INTEGER DATATYPE4 
+            |FLOAT DATATYPE4 
+            |VARCHAR DATATYPE4 
+            |DATE DATATYPE4 
+            |REAL DATATYPE4 
+            |DECIMAL DATATYPE4 
+            |NUMERIC DATATYPE4 
+            |SMALLINT DATATYPE4 
+            |TIME DATATYPE4 
+            |CHAR DATATYPE4 
+            |NCHAR DATATYPE4 ;
+DATATYPE4 ::= ParentesisAbrir DatoEntero DATATYPE5 
+            |  ;
+DATATYPE5 ::= Coma DatoEntero ParentesisCerrar 
+            | ParentesisCerrar ;
+
+
+/*
+non terminal SELECT1,SELECT2,SELECT3,SELECT4,SELECT5,SELECT6,SELECT7,SELECT8,SELECT9,SELECT11,SELECT12,SELECT13,SELECT14,SELECT15,SELECT17,SELECT18,SELECT19,SELECT20
+*/
+
+/* <select> */
+    SELECT1 ::= SELECT SELECT2 ;
+    SELECT2 ::= SELECT3 SELECT4 ;
+    SELECT3 ::= ALL 
+                | DISTINCT 
+                | /* VACIO */ ;
+    SELECT4 ::= TOP SELECT5 
+                | SELECT7 ;
+    SELECT5 ::= ParentesisAbrir SEXP ParentesisCerrar SELECT6 ;
+    SELECT6 ::= PERCENT SELECT7 
+                | SELECT7 ;
+    SELECT7 ::= SELIST SELECT20;
+    SELECT20 ::= Coma SELECT7
+                | SELECT8 ;
+    SELECT8 ::= INTO SELECT9 
+                | SELECT11 ;
+    SELECT9 ::= OBJECT SELECT11 ;
+    SELECT11 ::= FROM JOINTB SELECT17
+                | SELECT12;
+    SELECT12 ::= WHERE SH_COND SELECT13 
+                | SELECT13 ;
+    SELECT13 ::= GROUP BY EXPRESSION SELECT18 SELECT14
+                | SELECT14 ;
+    SELECT14 ::= HAVING SH_COND SELECT15
+                | SELECT15;
+    SELECT15 ::= ORDER BY ORDERB
+                | /* VACIO */ ;
+    SELECT17 ::= Coma JOINTB SELECT17       
+                | SELECT12 ;
+    SELECT18 ::= Coma EXPRESSION SELECT18 
+                | /* VACIO */ ;

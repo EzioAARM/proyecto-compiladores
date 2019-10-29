@@ -135,6 +135,7 @@ public class Principal extends javax.swing.JFrame {
                 MiniSql.ubicacionArchivo = archivoSeleccionado;
                 parser pr = new parser();
                 pr.parse();
+                txtMensajes.setText(txtMensajes.getText() + "\n" + "\n" + Errores.Errores.toString());
                 /*List<MyToken> datos = analizadorFlex.yylex();
                 boolean existeError = false;
                 for (int i = 0; i < datos.size(); i++) {
