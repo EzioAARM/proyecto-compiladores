@@ -54,7 +54,7 @@ non terminal INICIAL,SELIST,SELIST1,SELIST2,SELIST3,SELIST5,SELIST6,SELIST7,CONV
 
 start with INICIAL;
 
-    INICIAL ::= SELECT1
+    INICIAL ::= SELECT1 FIN_AN INICIAL
             | INSERT0 INICIAL
             | /* VACIO */ ;
 
@@ -103,6 +103,7 @@ non terminal PREDICATE,PREDICATE1,PREDICATE2,PREDICATE3,PREDICATE4,PREDICATE5,PR
                 | CONTAINS ParentesisAbrir PREDICATE7 Coma PREDICATE8 ParentesisCerrar
                 | FREETEXT ParentesisAbrir PREDICATE7 Coma PREDICATE9 ParentesisCerrar;
     PREDICATE1 ::= OBJECT 
+                | DatoString
                 | SEXP 
                 | CASEW 
                 | AGG_FN 
@@ -418,7 +419,8 @@ non terminal EXPRESSION,EXPRESSION1,EXPRESSION2,EXPRESSION3,EXPRESSION4
     EXPRESSION ::= SEXP EXPRESSION1 EXPRESSION3 
             | EXPRESSION2 SUM_OPR EXPRESSION2 
             | NOT_OPR EXPRESSION EXPRESSION4 
-            | EXPRESSION3;
+            | EXPRESSION3
+            | ParentesisAbrir EXPRESSION ParentesisCerrar;
     EXPRESSION1 ::= AR_OPR 
             | COMPARE_OPR 
             | SUM_OPR ;
@@ -455,7 +457,8 @@ non terminal BIN_OPR,AR_OPR,ASIG_OPR,BIT_OPR,COMPARE_OPR,LOGIC_OPR,SUM_OPR,NOT_O
                 | Menor
                 | MayorIgual
                 | MenorIgual
-                | Diferente ;
+                | Diferente 
+                | Igual;
     LOGIC_OPR ::= BETWEEN
                 | IN
                 | LIKE ;
@@ -502,7 +505,7 @@ non terminal JOIN_TYPE,JOIN_TYPE1,JOIN_TYPE2,JOIN_TYPE3
 */
 
 /* <join_type> */
-    JOIN_TYPE ::= JOIN_TYPE1 JOIN ;
+    JOIN_TYPE ::= JOIN_TYPE1 JOIN {: System.out.println("join type"); :};
     JOIN_TYPE1 ::= INNER
                 |JOIN_TYPE2 
                 | /* VACIO */ ;
@@ -540,7 +543,7 @@ non terminal TB_SOURCE,TB_SOURCE1,TB_SOURCE2
     TB_SOURCE ::= OBJECT TB_SOURCE1 TB_SOURCE2  {: System.out.println("table source"); :}
                 | ROWSET TB_SOURCE1
                 | Arroba Identificador TB_SOURCE1 ;
-    TB_SOURCE1 ::= AS Identificador
+    TB_SOURCE1 ::= AS Identificador             {: System.out.println("table source alias"); :}
                 | Identificador
                 | /* VACIO */ ;
     TB_SOURCE2 ::= SAM_CL
@@ -555,7 +558,7 @@ non terminal ORDERB,ORDER1,ORDER2,ORDER3,ORDER4
 /* <order_by> */
     ORDERB ::= SELIST ORDER1 ;
     ORDER1 ::= ORDER2
-                | Coma ORDER ;
+                | Coma ORDERB ;
     ORDER2 ::= COLLATE ORDER3
                 | ORDER4 ;
     ORDER3 ::= Identificador ORDER4 ;
@@ -596,7 +599,7 @@ non terminal SELECT1,SELECT2,SELECT3,SELECT4,SELECT5,SELECT6,SELECT7,SELECT8,SEL
 */
 
 /* <select> */
-    SELECT1 ::= SELECT SELECT2 ;
+    SELECT1 ::= SELECT SELECT2          {: System.out.println("analizado con exito"); :};
     SELECT2 ::= SELECT3 SELECT4 ;
     SELECT3 ::= ALL 
                 | DISTINCT 
@@ -606,7 +609,7 @@ non terminal SELECT1,SELECT2,SELECT3,SELECT4,SELECT5,SELECT6,SELECT7,SELECT8,SEL
     SELECT5 ::= ParentesisAbrir SEXP ParentesisCerrar SELECT6 ;
     SELECT6 ::= PERCENT SELECT7 
                 | SELECT7 ;
-    SELECT7 ::= SELIST SELECT20;
+    SELECT7 ::= SELIST SELECT20         {: System.out.println("select list"); :};
     SELECT20 ::= Coma SELECT7
                 | SELECT8 ;
     SELECT8 ::= INTO SELECT9 
@@ -616,11 +619,11 @@ non terminal SELECT1,SELECT2,SELECT3,SELECT4,SELECT5,SELECT6,SELECT7,SELECT8,SEL
                 | SELECT12;
     SELECT12 ::= WHERE SH_COND SELECT13 {: System.out.println("where"); :}
                 | SELECT13              {: System.out.println("where nel"); :};
-    SELECT13 ::= GROUP BY EXPRESSION SELECT18 SELECT14
-                | SELECT14 ;
-    SELECT14 ::= HAVING SH_COND SELECT15
-                | SELECT15;
+    SELECT13 ::= GROUP BY EXPRESSION SELECT18 SELECT14  {: System.out.println("group"); :}
+                | SELECT14              {: System.out.println("no group"); :};
+    SELECT14 ::= HAVING SH_COND SELECT15    {: System.out.println("having"); :}
+                | SELECT15                  {: System.out.println("no having"); :}; 
     SELECT15 ::= ORDER BY ORDERB    {: System.out.println("order by"); :}
-                | FIN_AN            {: System.out.println("order by vacio"); :};
+                | /* VACIO */            {: System.out.println("order by vacio"); :};
     SELECT18 ::= Coma EXPRESSION SELECT18 
                 | /* VACIO */ ;

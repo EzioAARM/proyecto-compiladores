@@ -19,6 +19,7 @@ non terminal PREDICATE,PREDICATE1,PREDICATE2,PREDICATE3,PREDICATE4,PREDICATE5,PR
                 | CONTAINS ParentesisAbrir PREDICATE7 Coma PREDICATE8 ParentesisCerrar
                 | FREETEXT ParentesisAbrir PREDICATE7 Coma PREDICATE9 ParentesisCerrar;
     PREDICATE1 ::= OBJECT 
+                | DatoString
                 | SEXP 
                 | CASEW 
                 | AGG_FN 

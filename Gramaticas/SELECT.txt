@@ -184,7 +184,8 @@ non terminal BIN_OPR,AR_OPR,ASIG_OPR,BIT_OPR,COMPARE_OPR,LOGIC_OPR,SUM_OPR,NOT_O
                 | Menor
                 | MayorIgual
                 | MenorIgual
-                | Diferente ;
+                | Diferente 
+                | Igual;
     LOGIC_OPR ::= BETWEEN
                 | IN
                 | LIKE ;
@@ -284,7 +285,7 @@ non terminal ORDERB,ORDER1,ORDER2,ORDER3,ORDER4
 /* <order_by> */
     ORDERB ::= SELIST ORDER1 ;
     ORDER1 ::= ORDER2
-                | Coma ORDER ;
+                | Coma ORDERB ;
     ORDER2 ::= COLLATE ORDER3
                 | ORDER4 ;
     ORDER3 ::= Identificador ORDER4 ;
@@ -335,7 +336,9 @@ non terminal SELECT1,SELECT2,SELECT3,SELECT4,SELECT5,SELECT6,SELECT7,SELECT8,SEL
     SELECT5 ::= ParentesisAbrir SEXP ParentesisCerrar SELECT6 ;
     SELECT6 ::= PERCENT SELECT7 
                 | SELECT7 ;
-    SELECT7 ::= SELIST SELECT8;
+    SELECT7 ::= SELIST SELECT20;
+    SELECT20 ::= Coma SELECT7
+                | SELECT8 ;
     SELECT8 ::= INTO SELECT9 
                 | SELECT11 ;
     SELECT9 ::= OBJECT SELECT11 ;
