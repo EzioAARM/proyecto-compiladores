@@ -42,3 +42,8 @@ SET dbo.Table2.ColB = dbo.Table2.ColB + dbo.Table1.ColB
 FROM dbo.Table2   
     INNER JOIN dbo.Table1   
     ON (dbo.Table2.ColA = dbo.Table1.ColA);  
+
+UPDATE x -- cte is referenced by the alias.  
+SET Value = y.Value  
+FROM cte AS x  -- cte is assigned an alias.  
+INNER JOIN @y AS y ON y.ID = x.ID; 
