@@ -1,31 +1,32 @@
-<update>
-    UPDATE ::= "UPDATE" UPDATE1
-    UPDATE1 ::= "TOP" "(" SEXP ")" UPDATE2 UPDATE3
-                | UPDATE3
-    UPDATE2 ::= "PERCENT"
-                | VACIO
+/*
+non terminal UPDATE0,UPDATE1,UPDATE2,UPDATE3,UPDATE4,UPDATE5,UPDATE6,UPDATE7,UPDATE8,UPDATE9,UPDATE10,UPDATE11,UPDATE12,UPDATE13,UPDATE14,UPDATE15,UPDATE16,UPDATE17
+*/
+
+/* <update> */
+    UPDATE0 ::= UPDATE UPDATE1 UPDATE15 ;
+    UPDATE1 ::= TOP ParentesisAbrir SEXP ParentesisCerrar UPDATE2 UPDATE3
+                | UPDATE3 ;
+    UPDATE2 ::= PERCENT
+                | /* VACIO */ ;
     UPDATE3 ::= OBJECT UPDATE4
-                | "@" IDENTIFICADOR UPDATE4
-    UPDATE4 ::= "SET" UPDATE5
-    UPDATE5 ::= UPDATE6 UPDATE11
-    UPDATE6 ::= "IDENTIFICADOR" UPDATE7
-                | "@" IDENTIFICADOR "=" UPDATE10
-    UPDATE7 ::= "." UPDATE8
-                | "=" UPDATE9
-    UPDATE8 ::= "IDENTIFICADOR" "=" UPDATE10
+                | Arroba Identificador UPDATE4 ;
+    UPDATE4 ::= SET UPDATE5 ;
+    UPDATE5 ::= UPDATE6 UPDATE11 ;
+    UPDATE6 ::= OBJECT UPDATE7
+                | Arroba Identificador Igual UPDATE10 ;
+    UPDATE7 ::= Igual UPDATE9 ;
     UPDATE9 ::= EXPRESSION
-                | "DEFAULT"
-                | "NULL"
-    UPDATE10 ::= EXPRESSION
-    UPDATE11 ::= "," UPDATE5
-                | UPDATE12 UPDATE15
+                | SEXP
+                | DEFAULT
+                | NULL ;
+    UPDATE10 ::= EXPRESSION ;
+    UPDATE11 ::= Coma UPDATE5
+                | UPDATE12 ;
     UPDATE12 ::= OUTCL UPDATE16
-                | UPDATE16
-    UPDATE16 ::= "FROM" UPDATE13 UPDATE17
-                | UPDATE17
-    UPDATE17 ::= "WHERE" EXPRESSION
-                | VACIO
-    UPDATE13 ::= JOINTB UPDATE14
-    UPDATE14 ::= "," UPDATE13
-    UPDATE15 ::= "GO"
-                | ";"
+                | UPDATE16 ;
+    UPDATE16 ::= FROM JOINTB UPDATE17
+                | UPDATE17 ;
+    UPDATE17 ::= WHERE SH_COND
+                | /* VACIO */ ;
+    UPDATE15 ::= GO
+                | PuntoComa ;

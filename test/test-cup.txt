@@ -36,3 +36,9 @@ SELECT @row_count = CONTEO FROM OPENQUERY(ORACLE_LINK, 'SELECT COUNT(employee_id
 DELETE Production.ProductCostHistory  
 WHERE StandardCost BETWEEN 12.00 AND 14.00  
       AND EndDate IS NULL;
+
+UPDATE dbo.Table2   
+SET dbo.Table2.ColB = dbo.Table2.ColB + dbo.Table1.ColB  
+FROM dbo.Table2   
+    INNER JOIN dbo.Table1   
+    ON (dbo.Table2.ColA = dbo.Table1.ColA);  

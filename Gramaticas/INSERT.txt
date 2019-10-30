@@ -15,7 +15,8 @@ non terminal SEXP,SEXP2,SEXP3,SEXP4,SEXP5
                 | DatoEntero
                 | DatoFloat
                 | Arroba Identificador
-                | AGG_FN ;
+                | AGG_FN 
+                | OBJECT;
 
 
 /*
