@@ -1,43 +1,76 @@
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<create>
-    CREATE ::= "CREATE" CREATE1 CREATE21
-    CREATE1 ::= "DATABASE" IDENTIFICADOR
-                | CREATE2 CREATE4
-                | "TABLE" CREATE11
-                | "USER" IDENTIFICADOR
-                | CREATE14 CREATE15
-    CREATE2 ::= "UNIQUE" CREATE3
-                | CREATE3
-    CREATE3 ::= "CLUSTERED"
-                | "NOCLUSTERED"
-    CREATE4 ::= "INDEX" IDENTIFICADOR "ON" OBJECT CREATE5
-    CREATE5 ::= "(" CREATE6
-    CREATE6 ::= IDENTIFICADOR CREATE7 CREATE8
-    CREATE7 ::= "ASC"
-                | "DESC"
-                | VACIO
-    CREATE8 ::= "," CREATE6
-                | CREATE9
-    CREATE9 ::= "INCLUDE" "(" IDENTIFICADOR CREATE10 ")"
-                | VACIO
-    CREATE10 ::= "," IDENTIFICADOR CREATE10
-                | VACIO
-    CREATE11 ::= OBJECT CREATE12
-    CREATE12 ::= COL_DEF CREATE13
-                | TB_CST CREATE13
-    CREATE13 ::= "," CREATE12
-                | VACIO
-    CREATE14 ::= "OR" "ALTER"
-                | VACIO
-    CREATE15 ::= "VIEW" IDENTIFICADOR CREATE16
-    CREATE16 ::= "." IDENTIFICADOR CREATE17
-                | CREATE17
-    CREATE17 ::= "(" IDENTIFICADOR CREATE18 ")" CREATE19
-                | CREATE19
-    CREATE18 ::= "," IDENTIFICADOR CREATE18
-                | VACIO
-    CREATE19 ::= "AS" SELECT CREATE20
-    CREATE20 ::= "WITH" "CHECK" "OPTION"
-                | VACIO
-    CREATE21 ::= ";"
-                | "GO"
+/*
+    non terminals DEFV
+*/
+/* <default_values> */3
+    DEFV ::= DatoString 
+            | DatoFloat
+            | DatoEntero
+            | DatoBit
+            | NULL ;
+
+/*
+    non terminals CRT,CRT1,CRT2
+*/
+/* <create> */
+    CRT ::= CREATE CRT1;
+    CRT1 ::= DATABASE Identificador DATABASE1 FIN_AN
+            | OR ALTER CRT2
+            | CRT2;
+    CRT2 ::= PROC PROCEDURE1
+            | PROCEDURE PROCEDURE1;
+
+/*
+    non terminals DATABASE1,DATABASE2,DATABASE3
+*/
+/* <create_database> */
+    DATABASE1 ::= ON DATABASE2 DATABASE3
+            | /* VACIO */ ;
+    DATABASE2 ::= PRIMARY FLSPC ;
+    DATABASE3 ::= COLLATE Identificador 
+            | /* VACIO */ ;
+
+/*
+    non terminals FLSPC
+*/
+/* <filespec> */
+    FLSPC ::= ParentesisAbrir NAMES Igual DatoString Coma FILE Igual DatoString ParentesisCerrar ;
+
+
+/*
+    non terminals PROCEDURE1,PROCEDURE2,PROCEDURE3,PROCEDURE4,PROCEDURE5,PROCEDURE6,PROCEDURE7,PROCEDURE8,PROCEDURE9,PROCEDURE10,PROCEDURE11,PROCEDURE12,PROCEDURE13,PROCEDURE14,PROCEDURE15,PROCEDURE16,PROCEDURE17
+*/
+/* <create_procedure> */
+    PROCEDURE1 ::= Identificador PROCEDURE2 ;
+    PROCEDURE2 ::= Punto Identificador PROCEDURE3
+            | PROCEDURE3;
+    PROCEDURE3 ::= PuntoComa DatoEntero PROCEDURE4
+            | PROCEDURE4 ;
+    PROCEDURE4 ::= Arroba Identificador PROCEDURE5 DATATYPE PROCEDURE6 ;
+    PROCEDURE5 ::= AS
+            | /* VACIO */ ;
+    PROCEDURE6 ::= VARYING PROCEDURE7
+            | PROCEDURE7 ;
+    PROCEDURE7 ::= Igual DEFV PROCEDURE8
+            | PROCEDURE8 ;
+    PROCEDURE8 ::= OUTPUT PROCEDURE9
+            | PROCEDURE9;
+    PROCEDURE9 ::= Coma PROCEDURE4
+            | PROCEDURE10;
+    PROCEDURE10 ::= WITH PROCEDURE11 AS PROCEDURE12 PROCEDURE13
+            | PROCEDURE13;
+    PROCEDURE11 ::= EXECUTE
+            | EXEC ;
+    PROCEDURE12 ::= DatoString ;
+    PROCEDURE13 ::= FOR REPLICATION PROCEDURE14
+            | PROCEDURE14 ;
+    PROCEDURE14 ::= AS PROCEDURE15 PROCEDURE16 PROCEDURE17 FIN_AN ;
+    PROCEDURE15 ::= BEGIN
+            | /* VACIO */ ;
+    PROCEDURE16 ::= SELECT1 FIN_AN
+            | INSERT0
+            | DELETE1
+            | UPDATE0;
+    PROCEDURE17 ::= PROCEDURE16 PROCEDURE17
+            | END
+            | /* VACIO */ ;
+    

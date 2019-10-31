@@ -1,179 +1,141 @@
-<column_constraint>
-    COL_CST ::= COL_CST1 COL_CST2 
-    COL_CST1 ::= "CONSTRAINT" IDENTIFICADOR
-                | VACIO
-    COL_CST2 ::= "PRIMARY" "KEY" COL_CST3
-                | "UNIQUE" COL_CST3
-                | COL_CST7
-                | "CHECK" COL_CST15
-    COL_CST3 ::= "CLUSTERED" COL_CST4
-                | "NOCLUSTERED" COL_CST4
-                | COL_CST4
-    COL_CST4 ::= "WITH" COL_CST5 COL_CST6
-                | COL_CST6
-    COL_CST5 ::= "FILLFACTOR" "=" INTEGER
-                | "(" "FILLFACTOR" "=" INTEGER ")"
-    COL_CST6 ::= "ON" IDENTIFICADOR "(" IDENTIFICADOR ")"
-                | VACIO
-    COL_CST7 ::= COL_CST8 "REFERENCES" IDENTIFICADOR COL_CST9
-    COL_CST8 ::= "FOREIGN" "KEY"
-                | VACIO
-    COL_CST9 ::= "." IDENTIFICADOR COL_CST10
-                | COL_CST10
-    COL_CST10 ::= "(" IDENTIFICADOR ")" COL_CST11
-    COL_CST11 ::= "ON" COL_CST12 COL_CST13
-                | "NOT" "FOR" "REPLICATION"
-                | VACIO
-    COL_CST12 ::= "DELETE"
-                | "UPDATE"
-    COL_CST13 ::= "NO" "ACTION"
-                | "CASCADE"
-                | "SET" COL_CST14
-    COL_CST14 ::= "NULL"
-                | "DEFAULT"
-    COL_CST15 ::= "NOT" "FOR" "REPLICATION" COL_CST16
-                | COL_CST16
-    COL_CST16 ::= "(" EXPRESSION ")"
+/*
+    non terminal COL_CST,COL_CST1,COL_CST2,COL_CST3,COL_CST4,COL_CST5,COL_CST6,COL_CST7,COL_CST8,COL_CST9,COL_CST10,COL_CST11,COL_CST12,COL_CST13,COL_CST14,COL_CST15,COL_CST16
+*/
+/* <column_constraint> */
+    COL_CST ::= COL_CST1 COL_CST2 COL_CST3; 
+    COL_CST1 ::= CONSTRAINT Identificador
+                | /* VACIO */ ;
+    COL_CST2 ::= NULL
+                | NOT NULL 
+                | /* VACIO */;
+    COL_CST3 ::= PRIMARY KEY COL_CST4
+                | UNIQUE COL_CST4 
+                | COL_CST8
+                | CHECK COL_CST16 ParentesisAbrir SH_COND ParentesisCerrar ;
+    COL_CST4 ::= CLUSTERED COL_CST5
+                | NOCLUSTERED COL_CST5
+                | COL_CST5 ;
+    COL_CST5 ::= WITH COL_CST6 COL_CST7
+                | COL_CST7 ;
+    COL_CST6 ::= FILLFACTOR Igual DatoEntero
+                | ParentesisAbrir FILLFACTOR Igual DatoEntero ParentesisCerrar ;
+    COL_CST7 ::= ON Identificador ParentesisAbrir Identificador ParentesisCerrar
+                | /* VACIO */ ;
+    COL_CST8 ::= COL_CST9 REFERENCES Identificador COL_CST10 COL_CST11 ;
+    COL_CST9 ::= FOREIGN KEY
+                | /* VACIO */ ; 
+    COL_CST10 ::= Punto Identificador
+                | /* VACIO */ ;
+    COL_CST11 ::= ParentesisAbrir Identificador ParentesisCerrar
+                | /* VACIO */;
+    COL_CST12 ::= ON COL_CST13 COL_CST14
+                | /* VACIO */;
+    COL_CST13 ::= DELETE
+                | UPDATE ;
+    COL_CST14 ::= NO ACTION
+                | CASCADE
+                | SET COL_CST15 ;
+    COL_CST15 ::= NULL
+                | DEFAULT ;
+    COL_CST16 ::= NOR FOR REPLICATION
+                | /* VACIO */ ;
 
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<constant_expression>
-    CONST_EXP ::= "@" IDENTIFICADOR
-                | IDENTIFICADOR
-                | STRING
-                | INTEGER
-                | FLOAT
+/*
+    non terminal CONST_EXP
+*/
+/* <constant_expression> */
+    CONST_EXP ::= Arroba Identificador
+                | Identificador
+                | DatoString
+                | DatoEntero
+                | DatoFloat ;
 
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<table_constraint>   
-    TB_CST ::= TB_CST1 TB_CST2 
-    TB_CST1 ::= "CONSTRAINT" IDENTIFICADOR
-                | VACIO
-    TB_CST2 ::= "PRIMARY" "KEY" TB_CST3
-                | "UNIQUE" TB_CST3
-                | TB_CST7
-                | "CONNECTION" TB_CST17
-                | "DEFAULT" TB_CST18
-                | "CHECK" TB_CST15
-    TB_CST3 ::= "CLUSTERED" TB_CST4
-                | "NOCLUSTERED" TB_CST4
-                | TB_CST4
-    TB_CST4 ::= "WITH" TB_CST5 TB_CST6
-                | TB_CST6
-    TB_CST5 ::= "FILLFACTOR" "=" INTEGER
-                | "(" "FILLFACTOR" "=" INTEGER ")"
-    TB_CST6 ::= "ON" IDENTIFICADOR "(" IDENTIFICADOR ")"
-    TB_CST7 ::= TB_CST8 "REFERENCES" IDENTIFICADOR TB_CST9
-    TB_CST8 ::= "FOREIGN" "KEY"
-                | VACIO
-    TB_CST9 ::= "." IDENTIFICADOR TB_CST10
-                | TB_CST10
-    TB_CST10 ::= "(" IDENTIFICADOR ")" TB_CST11
-    TB_CST11 ::= "ON" TB_CST12 TB_CST13
-                | "NOT" "FOR" "REPLICATION"
-                | VACIO
-    TB_CST12 ::= "DELETE"
-                | "UPDATE"
-    TB_CST13 ::= "NO" "ACTION"
-                | "CASCADE"
-                | "SET" TB_CST14
-    TB_CST14 ::= "NULL"
-                | "DEFAULT"
-    TB_CST15 ::= "NOT" "FOR" "REPLICATION" TB_CST16
-                | TB_CST16
-    TB_CST16 ::= "(" EXPRESSION ")" TB_CST21
-    TB_CST17 ::= "(" TB_CST19 ")"
-    TB_CST18 ::= CONST_EXP "FOR" IDENTIFICADOR TB_CST23
-    TB_CST19 ::= IDENTIFICADOR "TO" IDENTIFICADOR TB_CST20
-    TB_CST20 ::= "," TB_CST19
-                | VACIO
-    TB_CST21 ::= "ON" "DELETE" TB_CST22 
-                | VACIO
-    TB_CST22 ::= "NO" "ACTION"
-                | "CASCADE"
-    TB_CST23 ::= "WITH" "VALUES"
-                | VACIO
+/*
+    non terminal TB_CST,TB_CST1,TB_CST2,TB_CST3,TB_CST4,TB_CST5,TB_CST6,TB_CST7,TB_CST8,TB_CST9,TB_CST10,TB_CST11,TB_CST12,TB_CST13,TB_CST14,TB_CST15,TB_CST16,TB_CST17,TB_CST18,TB_CST19,TB_CST20,TB_CST21
+*/
+/* <table_constraint> */   
+    TB_CST ::= TB_CST1 TB_CST2 ;
+    TB_CST1 ::= CONSTRAINT Identificador 
+                | /* VACIO */ ;
+    TB_CST2 ::= PRIMARY KEY TB_CST3
+                | UNIQUE TB_CST3
+                | FOREIGN KEY TB_CST9
+                | CONNECTION TB_CST16
+                | DEFAULT CONST_EXP FOR Identificador TB_CST21
+                | CHECK TB_CST20;
+    TB_CST3 ::= ParentesisAbrir Identificador TB_CST5 TB_CST6 ParentesisCerrar TB_CST7 ;
+    TB_CST4 ::= CLUSTERED
+                | NOCLUSTERED ;
+    TB_CST5 ::= ASC
+                | DESC 
+                | /* VACIO */;
+    TB_CST6 ::= Coma Identificador TB_CST6
+                | /* VACIO */ ;
+    TB_CST7 ::= WITH FILLFACTOR Igual DatoEntero TB_CST8
+                | TB_CST8 ;
+    TB_CST8 ::= ON Identificador ParentesisAbrir Identificador ParentesisCerrar
+                | Identificador ;
+    TB_CST9 ::= ParentesisAbrir Identificador TB_CST6 ParentesisCerrar REFERENCES Identificador TB_CST10;
+    TB_CST10 ::= ParentesisAbrir Identificador TB_CST6 ParentesisCerrar TB_CST11
+                | TB_CST11;
+    TB_CST11 ::= ON TB_CST12 TB_CST13 TB_CST15;
+    TB_CST12 ::= DELETE
+                | UPDATE ;
+    TB_CST13 ::= NO ACTION
+                | CASCADE
+                | SET TB_CST14 ;
+    TB_CST14 ::= NULL
+                | DEFAULT ;
+    TB_CST15 ::= NOT FOR REPLICATION
+                | /* VACIO */ ;
+    TB_CST16 ::= ParentesisAbrir Identificador TO Identificador TB_CST17 ParentesisCerrar TB_CST18;
+    TB_CST17 ::= Coma Identificador TO Identificador TB_CST17
+                | /* VACIO*/;
+    TB_CST18 ::= ON DELETE TB_CST19;
+    TB_CST19 ::= NO ACTION
+                | CASCADE;
+    TB_CST20 ::= NOT FOR REPLICATION ParentesisAbrir SH_COND ParentesisCerrar
+                | ParentesisAbrir SH_COND ParentesisCerrar;
+    TB_CST21 ::= WITH VALUES
+                | /* VALUES */ ;
+    
 
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<column_definition>
-    COL_DEF ::= IDENTIFICADOR DATATYPE COL_DEF1
-    COL_DEF1 ::= "COLLATE" IDENTIFICADOR COL_DEF2
-                | COL_DEF2
-    COL_DEF2 ::= "NULL" COL_DEF3
-                | "NOT" "NULL" COL_DEF3
+/*
+    non terminal COL_DEF,COL_DEF1,COL_DEF2,COL_DEF3,COL_DEF4,COL_DEF5,COL_DEF6,COL_DEF7,COL_DEF8,COL_DEF10
+*/
+/* <column_definition> */
+    COL_DEF ::= Identificador DATATYPE COL_DEF1 ;
+    COL_DEF1 ::= COLLATE Identificador COL_DEF2
+                | COL_DEF2 ;
+    COL_DEF2 ::= NULL COL_DEF3
+                | NOT NULL COL_DEF3
                 | COL_DEF3
-                | "IDENTITY" COL_DEF6
-    COL_DEF3 ::= "CONSTRAINT" IDENTIFICADOR COL_DEF10
+                | IDENTITY COL_DEF6 ;
+    COL_DEF3 ::= CONSTRAINT Identificador COL_DEF10
                 | COL_CST
-                | COL_DEF4
-    COL_DEF4 ::= "DEFAULT" CONST_EXP COL_DEF5
-    COL_DEF5 ::= "WITH" "VALUES" COL_DEF8
-                | COL_DEF8
-    COL_DEF6 ::= "(" SEXP "," SEXP ")" COL_DEF7
-                | COL_DEF7
-    COL_DEF7 ::= "NOT" "FOR" "REPLICATION" COL_DEF8
-                | COL_DEF8
-    COL_DEF8 ::= "ROWGUIDCOL" COL_DEF9
-                | COL_DEF9
+                | COL_DEF4 ;
+    COL_DEF4 ::= DEFAULT CONST_EXP COL_DEF5 ;
+    COL_DEF5 ::= WITH VALUES COL_DEF8
+                | COL_DEF8 ;
+    COL_DEF6 ::= ParentesisAbrir SEXP Coma SEXP ParentesisCerrar COL_DEF7
+                | COL_DEF7 ;
+    COL_DEF7 ::= NOT FOR REPLICATION COL_DEF8
+                | COL_DEF8 ;
+    COL_DEF8 ::= ROWGUIDCOL COL_DEF10
+                | COL_DEF10 ;
     COL_DEF10 ::= COL_DEF4
-                | COL_CST
+                | COL_CST ;
 
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<alter>
-    ALTER ::= "ALTER" ALTER1
-    ALTER1 ::= "VIEW" ALTER2
-                | "TABLE" OBJECT ALTER6
-                | "USER" IDENTIFICADOR ALTER17
-                | "DATABASE" ALTER22 ALTER23
-    ALTER2 ::= IDENTIFICADOR ALTER3
-    ALTER3 ::= "." IDENTIFICADOR ALTER4
-                | ALTER4
-    ALTER4 ::= "(" IDENTIFICADOR ALTER5
-                | "AS" SELECT ALTER24
-    ALTER5 ::= "," IDENTIFICADOR ALTER5
-                | ")" "AS" SELECT ALTER24
-    ALTER6 ::= "ALTER" "COLUMN" IDENTIFICADOR ALTER7
-                | "ADD" ALTER15
-                | "DROP" ALTER18
-    ALTER7 ::= "IDENTIFICADOR ALTER8 ALTER9
-                | "ADD" ALTER14
-                | "DROP" ALTER14
-    ALTER8 ::= "." IDENTIFICADOR
-                | VACIO
-    ALTER9 ::= "(" INTEGER ALTER10 ")" ALTER11
-    ALTER10 ::= "," INTEGER
-                | VACIO
-    ALTER11 ::= "COLLATE" IDENTIFICADOR ALTER12
-                | ALTER12
-    ALTER12 ::= ALTER13
-                | VACIO
-    ALTER13 ::= "NULL"
-                | "NOT" "NULL"
-    ALTER14 ::= "ROWGUIDCOL"
-                | "NOT" "FOR" "REPLICATION"
-    ALTER15 ::= COL_DEF ALTER16
-                | TB_CST ALTER16
-    ALTER16 ::= "," ALTER15
-                | ALTER17
-    ALTER17 ::= ";"
-                | "GO"
-    ALTER18 ::= "CONSTRAINT" ALTER19
-                | "COLUMN" ALTER19
-                | ALTER19
-    ALTER19 ::= "IF" "EXISTS" ALTER20
-                | ALTER20
-    ALTER20 ::= IDENTIFICADOR ALTER21
-    ALTER21 ::= "," ALTER20
-                | ALTER17
-    ALTER22 ::= IDENTIFICADOR
-                | "CURRENT"
-    ALTER23 ::= "COLLATE" IDENTIFICADOR ALTER17
-    ALTER24 ::= "WITH" "CHECK" "OPTION"
-                | VACIO
+/*
+    non terminal ALTER0,ALTER1,ALTER2,ALTER3,ALTER4,ALTER5,ALTER6,ALTER7,ALTER8,ALTER9,ALTER10,ALTER11,ALTER12,ALTER13,ALTER14,ALTER15,ALTER16,ALTER17,ALTER18,ALTER19,ALTER20,ALTER21,ALTER22,ALTER23,ALTER24
+*/
+/* <alter> */
+    
