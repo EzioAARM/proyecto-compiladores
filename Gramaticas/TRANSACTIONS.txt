@@ -1,0 +1,38 @@
+/*
+    non terminals BEGINTRAN,BEGINTRAN1,BEGINTRAN2
+*/
+/* <begin_transaction> */
+    BEGINTRAN ::= BEGIN BEGINTRAN1 BEGINTRAN2 FIN_AN;
+    BEGINTRAN1 ::= TRAN
+            | TRANSACTION ;
+    BEGINTRAN2 ::= Identificador
+            | Arroba Identificador 
+            | /* VACIO */ ;
+
+
+/*
+    non terminals COMMITTRAN,COMMITTRAN1,COMMITTRAN2
+*/
+/* <commit_transaction> */
+    COMMITTRAN ::= COMMIT COMMITTRAN1 COMMITTRAN2 FIN_AN;
+    COMMITTRAN1 ::= BEGINTRAN1
+            | /* VACIO */ ;
+    COMMITTRAN2 ::= Identificador
+            | Arroba Identificador
+            | /* VACIO */ ;
+
+
+/*
+    non terminals ROLLBACKTRAN
+*/
+/* <rollback_transaction> */
+    ROLLBACKTRAN ::= ROLLBACK BEGINTRAN1 BEGINTRAN2 FIN_AN;
+
+
+/*
+    non terminals 
+*/
+/* <save_transaction> */
+    SAVETRAN ::= SAVE BEGINTRAN1 SAVETRAN1 FIN_AN;
+    SAVETRAN1 ::= Identificador
+            | Arroba Identificador ;
