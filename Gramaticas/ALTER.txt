@@ -11,8 +11,8 @@
     COL_CST3 ::= PRIMARY KEY COL_CST4
                 | UNIQUE COL_CST4 
                 | COL_CST8
-                | CHECK COL_CST16 ParentesisAbrir SH_COND ParentesisCerrar 
-                | DEFAULT COL_DEF11;
+                | DEFAULT COL_CST17 
+                | CHECK COL_CST16 ParentesisAbrir SH_COND ParentesisCerrar ;
     COL_CST4 ::= CLUSTERED COL_CST5
                 | COL_CST5 ;
     COL_CST5 ::= WITH COL_CST6 COL_CST7
@@ -38,6 +38,8 @@
     COL_CST15 ::= NULL
                 | DEFAULT ;
     COL_CST16 ::= NOT FOR REPLICATION
+                | /* VACIO */ ;
+    COL_CST17 ::= CONST_EXP 
                 | /* VACIO */ ;
 
 
@@ -65,7 +67,7 @@
                 | UNIQUE TB_CST4 TB_CST3
                 | FOREIGN KEY TB_CST9
                 | CONNECTION TB_CST16
-                | DEFAULT CONST_EXP FOR Identificador TB_CST21
+                | DEFAULT TB_CST22
                 | CHECK TB_CST20;
     TB_CST3 ::= ParentesisAbrir Identificador TB_CST5 TB_CST6 ParentesisCerrar TB_CST7 ;
     TB_CST4 ::= CLUSTERED
@@ -102,22 +104,24 @@
                 | ParentesisAbrir SH_COND ParentesisCerrar;
     TB_CST21 ::= WITH VALUES
                 | /* VALUES */ ;
+    TB_CST22 ::= CONST_EXP TB_CST23 ;
+    TB_CST23 ::= FOR Identificador TB_CST21
+                | /* VACIO */ ;
     
 
 
 
 /*
-    non terminal COL_DEF,COL_DEF1,COL_DEF2,COL_DEF3,COL_DEF5,COL_DEF6,COL_DEF7,COL_DEF8,COL_DEF10,COL_DEF11
+    non terminal COL_DEF,COL_DEF1,COL_DEF2,COL_DEF3,COL_DEF4,COL_DEF5,COL_DEF6,COL_DEF7,COL_DEF8,COL_DEF10
 */
 /* <column_definition> */
-    COL_DEF ::= Identificador DATATYPE COL_DEF1 ;
+    COL_DEF ::= Identificador DATATYPE COL_DEF1;
     COL_DEF1 ::= COLLATE Identificador COL_DEF2
                 | COL_DEF2 ;
     COL_DEF2 ::= NULL COL_DEF3
                 | NOT NULL COL_DEF3
                 | COL_DEF3 ;
-    COL_DEF3 ::= COL_CST
-                | COL_DEF5
+    COL_DEF3 ::= COL_DEF5
 		        | IDENTITY COL_DEF6
                 | /* VACIO */;
     COL_DEF5 ::= WITH VALUES COL_DEF8
@@ -129,9 +133,7 @@
     COL_DEF8 ::= ROWGUIDCOL COL_DEF10
                 | COL_DEF10 ;
     COL_DEF10 ::= COL_CST
-		| /* VACIO */ ;
-    COL_DEF11 ::= CONST_EXP
-                | /* VACIO */ ;
+		        | /* VACIO */ ;
 
 
 

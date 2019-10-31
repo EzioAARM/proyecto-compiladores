@@ -1,26 +1,18 @@
-CREATE TABLE dbo.PurchaseOrderDetail
-(
+CREATE FUNCTION dbo.ISOweek (@actualDate VARCHAR(50))  
+RETURNS INT 
+AS  
+BEGIN
+    SELECT * FROM miTabla ;
+END ;
 
-    rowguid FLOAT NOT NULL ROWGUIDCOL
-        CONSTRAINT DF_PurchaseOrderDetail_rowguid DEFAULT,
-    PurchaseOrderID INT NOT NULL
-        REFERENCES Purchasing.PurchaseOrderHeader(PurchaseOrderID),
-    LineNumber SMALLINT NOT NULL,
-    ProductID INT NULL
-        REFERENCES Production.Product(ProductID),
-    UnitPrice DECIMAL NULL,
-    OrderQty SMALLINT NULL,
-    ReceivedQty FLOAT NULL,
-    RejectedQty FLOAT NULL,
-    DueDate INT NULL,
-    ModifiedDate INT NOT NULL
-        CONSTRAINT DF_PurchaseOrderDetail_ModifiedDate DEFAULT,
-    LineTotal AS ((UnitPrice*OrderQty)),
-    StockedQty AS ((ReceivedQty-RejectedQty)),
-    CONSTRAINT PK_PurchaseOrderDetail_PurchaseOrderID_LineNumber
-               PRIMARY KEY CLUSTERED (PurchaseOrderID, LineNumber)
-)
-ON PRIMARY;
+CREATE TABLE Persona (
+	Identificacion INT PRIMARY KEY, 
+	Nombres VARCHAR(50), 
+	Apellidos VARCHAR(50), 
+	Nacionalidad VARCHAR(50), 
+	Fecha_Nacimiento VARCHAR(50),
+	fecha_modificacion VARCHAR(50) DEFAULT 'GETDATE()'
+) ON PRIMARY;
 
 CREATE PROCEDURE Production.uspGetList @Product VARCHAR(40)   
     , @MaxPrice VARCHAR   

@@ -35,7 +35,8 @@
             | TABLE TABLE1;
     CRT2 ::= PROC PROCEDURE1
             | PROCEDURE PROCEDURE1
-            | VIEW VIEW1;
+            | VIEW VIEW1
+			| FUNCTION FUNCTION1;
 
 /*
     non terminals DATABASE1,DATABASE2,DATABASE3,DATABASE4
@@ -115,12 +116,40 @@
 
 
 /*
-    non terminals TABLE1,TABLE2,TABLE3
+    non terminals TABLE1,TABLE2,TABLE3,TABLE4,TABLE5
 */
 /* <create_table> */
-    TABLE1 ::= OBJECT ParentesisAbrir TABLE2 TABLE3 ParentesisCerrar;
+    TABLE1 ::= OBJECT ParentesisAbrir TABLE2 TABLE3 ParentesisCerrar TABLE4 FIN_AN;
     TABLE2 ::= COL_DEF
             | TB_CST
             | COL_CST ;
     TABLE3 ::= Coma TABLE2 TABLE3
             | /* VACIO */ ;
+	TABLE4 ::= ON TABLE5
+			| /* VACIO */ ;
+	TABLE5 ::= Identificador ParentesisAbrir Identificador ParentesisCerrar
+			| PRIMARY ;
+
+
+/*
+    non terminals FUNCTION1,FUNCTION2,FUNCTION3,FUNCTION4,FUNCTION5,FUNCTION6,FUNCTION7,FUNCTION8,FUNCTION9
+*/
+/* <create_function> */
+	FUNCTION1 ::= Identificador FUNCTION2 ParentesisAbrir FUNCTION3 ParentesisCerrar RETURNS DATATYPE FUNCTION6 ;
+	FUNCTION2 ::= Punto Identificador
+			| /* VACIO */ ;
+	FUNCTION3 ::= Arroba Identificador FUNCTION4 DATATYPE FUNCTION5 FUNCTION3
+			| /* VACIO */ ;
+	FUNCTION4 ::= AS
+			| /* VACIO */ ;
+	FUNCTION5 ::= Igual DEFV
+			| /* VACIO */ ;
+	FUNCTION6 ::= WITH RETURNS NULL ON NULL INPUT FUNCTION7
+			| FUNCTION7 ;
+	FUNCTION7 ::= FUNCTION4 BEGIN FUNCTION8 FUNCTION9 END FIN_AN ;
+	FUNCTION8 ::= SELECT1 FIN_AN
+            | INSERT0
+            | DELETE1
+            | UPDATE0;
+	FUNCTION9 ::= FUNCTION8 FUNCTION9
+			| /* VACIO */ ;

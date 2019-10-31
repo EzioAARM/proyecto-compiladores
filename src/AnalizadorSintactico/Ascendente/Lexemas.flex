@@ -393,6 +393,7 @@ reservadaYEAR = (YEAR)
 reservadaOUTPUT = (OUTPUT)
 reservadaZONE = (ZONE)
 reservadaEXCEPTION = (EXCEPTION)
+reservadaRETURNS = (RETURNS)
 %%
 <YYINITIAL> [/]([*])+(.) {
     _cadenaComentario.append(yytext());
@@ -1331,6 +1332,9 @@ reservadaEXCEPTION = (EXCEPTION)
 }
 <YYINITIAL> {reservadaEXCEPTION} {
     return symbol(sym.EXCEPTION, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+}
+<YYINITIAL> {reservadaRETURNS} {
+    return symbol(sym.RETURNS, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
 }
 <YYINITIAL> {bit} {
     return symbol(sym.DatoBit, new MyToken("DatoBit", yytext(), "Token", yyline + 1, yylength() + 1, yycolumn + 1));

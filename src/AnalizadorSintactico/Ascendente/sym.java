@@ -8,7 +8,7 @@ package AnalizadorSintactico.Ascendente;
 /** CUP generated class containing symbol constants. */
 public class sym {
   /* terminals */
-  public static final int Multiplicacion = 321;
+  public static final int Multiplicacion = 322;
   public static final int SQLCODE = 244;
   public static final int DECLARE = 44;
   public static final int INTEGER = 242;
@@ -21,7 +21,7 @@ public class sym {
   public static final int GO = 213;
   public static final int PIVOT = 119;
   public static final int CLOSE = 21;
-  public static final int Coma = 338;
+  public static final int Coma = 339;
   public static final int PAD = 189;
   public static final int USE = 174;
   public static final int MODULE = 277;
@@ -46,15 +46,15 @@ public class sym {
   public static final int TEXTSIZE = 159;
   public static final int DUMP = 54;
   public static final int SET = 151;
-  public static final int LlaveAbrir = 344;
+  public static final int LlaveAbrir = 345;
   public static final int ASC = 8;
-  public static final int StringNoCerrado = 317;
+  public static final int StringNoCerrado = 318;
   public static final int SQLERROR = 246;
   public static final int DIAGNOSTICS = 298;
   public static final int KEY = 92;
   public static final int TIMEZONE_HOUR = 264;
   public static final int SQLCA = 243;
-  public static final int MenorIgual = 324;
+  public static final int MenorIgual = 325;
   public static final int RESTRICT = 134;
   public static final int FREETEXT = 70;
   public static final int GET = 210;
@@ -82,7 +82,7 @@ public class sym {
   public static final int BY = 16;
   public static final int DEFERRED = 290;
   public static final int EXISTS = 62;
-  public static final int DobleNumeral = 347;
+  public static final int DobleNumeral = 348;
   public static final int BIT = 214;
   public static final int HAVING = 78;
   public static final int LANGUAGE = 255;
@@ -101,11 +101,11 @@ public class sym {
   public static final int TIMEZONE_MINUTE = 266;
   public static final int BACKUP = 10;
   public static final int VALUES = 176;
-  public static final int Menos = 320;
-  public static final int Menor = 331;
+  public static final int Menos = 321;
+  public static final int Menor = 332;
   public static final int NEXT = 288;
   public static final int ANY = 6;
-  public static final int Parentesis = 327;
+  public static final int Parentesis = 328;
   public static final int KILL = 93;
   public static final int SUBSTRING = 252;
   public static final int PUBLIC = 126;
@@ -119,7 +119,7 @@ public class sym {
   public static final int PERCENT = 118;
   public static final int AND = 5;
   public static final int NCHAR = 286;
-  public static final int CorcheteAbrir = 340;
+  public static final int CorcheteAbrir = 341;
   public static final int RETURN = 135;
   public static final int DBCC = 42;
   public static final int CONTAINS = 29;
@@ -129,19 +129,19 @@ public class sym {
   public static final int ESCAPE = 58;
   public static final int VERDADERO = 280;
   public static final int CURSOR = 40;
-  public static final int Numeral = 348;
+  public static final int Numeral = 349;
   public static final int NATURAL = 284;
-  public static final int LlaveCerrar = 345;
+  public static final int LlaveCerrar = 346;
   public static final int UNPIVOT = 171;
   public static final int IMMEDIATE = 221;
   public static final int RULE = 142;
   public static final int INTO = 89;
   public static final int ALL = 3;
-  public static final int Llaves = 326;
+  public static final int Llaves = 327;
   public static final int LOAD = 97;
   public static final int TABLESAMPLE = 158;
   public static final int COLUMN = 25;
-  public static final int CorcheteCerrar = 341;
+  public static final int CorcheteCerrar = 342;
   public static final int BEGIN = 11;
   public static final int CORRESPONDING = 256;
   public static final int OPENQUERY = 111;
@@ -149,7 +149,7 @@ public class sym {
   public static final int LOWER = 267;
   public static final int SQLWARNING = 250;
   public static final int OCTET_LENGTH = 302;
-  public static final int Punto = 339;
+  public static final int Punto = 340;
   public static final int UNIQUE = 170;
   public static final int GRANT = 76;
   public static final int TRY_CONVERT = 167;
@@ -158,7 +158,7 @@ public class sym {
   public static final int OPEN = 109;
   public static final int WORK = 306;
   public static final int CURRENT_DATE = 36;
-  public static final int Mas = 319;
+  public static final int Mas = 320;
   public static final int TIMESTAMP = 263;
   public static final int ALTER = 4;
   public static final int PRIVILEGES = 203;
@@ -169,21 +169,21 @@ public class sym {
   public static final int EXTERNAL = 64;
   public static final int SUM = 254;
   public static final int MIN = 271;
-  public static final int DatoEntero = 313;
+  public static final int DatoEntero = 314;
   public static final int TEMPORARY = 258;
   public static final int ABSOLUTE = 186;
   public static final int CONVERT = 32;
   public static final int ORDER = 115;
-  public static final int Modulo = 323;
+  public static final int Modulo = 324;
   public static final int COMPUTE = 27;
   public static final int TO = 161;
   public static final int LIKE = 95;
   public static final int FILE = 66;
-  public static final int ParentesisAbrir = 342;
+  public static final int ParentesisAbrir = 343;
   public static final int REPLICATION = 132;
-  public static final int Identificador = 318;
+  public static final int Identificador = 319;
   public static final int PRIMARY = 122;
-  public static final int MayorIgual = 328;
+  public static final int MayorIgual = 329;
   public static final int DEFERRABLE = 287;
   public static final int FLOAT = 200;
   public static final int DOUBLE = 52;
@@ -194,13 +194,13 @@ public class sym {
   public static final int FIRST = 198;
   public static final int TRIM = 278;
   public static final int NAMES = 282;
-  public static final int PuntoComa = 337;
-  public static final int DatoFloat = 314;
+  public static final int PuntoComa = 338;
+  public static final int DatoFloat = 315;
   public static final int INPUT = 235;
   public static final int SQLSTATE = 248;
   public static final int WHERE = 181;
   public static final int UPDATE = 172;
-  public static final int ParentesisCerrar = 343;
+  public static final int ParentesisCerrar = 344;
   public static final int BETWEEN = 12;
   public static final int RAISERROR = 127;
   public static final int RECONFIGURE = 130;
@@ -212,7 +212,7 @@ public class sym {
   public static final int PRESERVE = 199;
   public static final int USER = 175;
   public static final int DOMAIN = 303;
-  public static final int Not = 336;
+  public static final int Not = 337;
   public static final int SQL = 240;
   public static final int LOCAL = 265;
   public static final int TRANSLATE = 272;
@@ -220,11 +220,11 @@ public class sym {
   public static final int VALUE = 296;
   public static final int ONLY = 304;
   public static final int EXIT = 63;
-  public static final int Or = 335;
+  public static final int Or = 336;
   public static final int LEADING = 260;
   public static final int TABLE = 157;
   public static final int SCHEMA = 144;
-  public static final int Igual = 329;
+  public static final int Igual = 330;
   public static final int error = 1;
   public static final int REVERT = 136;
   public static final int WAITFOR = 179;
@@ -281,7 +281,7 @@ public class sym {
   public static final int INDICATOR = 230;
   public static final int FILLFACTOR = 67;
   public static final int GLOBAL = 211;
-  public static final int Diferente = 333;
+  public static final int Diferente = 334;
   public static final int PARTIAL = 191;
   public static final int COLLATION = 241;
   public static final int GOTO = 75;
@@ -294,18 +294,18 @@ public class sym {
   public static final int CURRENT_TIMESTAMP = 38;
   public static final int BULK = 15;
   public static final int INITIALLY = 232;
-  public static final int Division = 322;
+  public static final int Division = 323;
   public static final int SESSION = 228;
   public static final int AUTHORIZATION = 9;
   public static final int EXEC = 60;
   public static final int REFERENCES = 131;
   public static final int ENDEXEC = 307;
-  public static final int Arroba = 346;
+  public static final int Arroba = 347;
   public static final int CREATE = 33;
   public static final int INSERT = 87;
   public static final int CHECKPOINT = 20;
   public static final int REAL = 208;
-  public static final int Mayor = 330;
+  public static final int Mayor = 331;
   public static final int ISOLATION = 251;
   public static final int READ = 128;
   public static final int SMALLINT = 236;
@@ -318,7 +318,7 @@ public class sym {
   public static final int DESCRIBE = 295;
   public static final int HOLDLOCK = 79;
   public static final int OVER = 117;
-  public static final int DatoString = 316;
+  public static final int DatoString = 317;
   public static final int OUTER = 116;
   public static final int DESC = 48;
   public static final int DEC = 281;
@@ -327,18 +327,19 @@ public class sym {
   public static final int HOUR = 218;
   public static final int FREETEXTTABLE = 71;
   public static final int IS = 90;
+  public static final int RETURNS = 313;
   public static final int ROWCOUNT = 140;
   public static final int IN = 84;
   public static final int OVERLAPS = 187;
   public static final int SETUSER = 152;
-  public static final int Corchetes = 325;
+  public static final int Corchetes = 326;
   public static final int MERGE = 98;
   public static final int DISTINCT = 50;
   public static final int IF = 83;
-  public static final int IgualIgual = 332;
+  public static final int IgualIgual = 333;
   public static final int CONSTRAINTS = 253;
   public static final int UNKNOWN = 285;
-  public static final int DatoBit = 315;
+  public static final int DatoBit = 316;
   public static final int RIGHT = 138;
   public static final int CROSS = 34;
   public static final int NOT = 102;
@@ -349,7 +350,7 @@ public class sym {
   public static final int EXCEPT = 59;
   public static final int NATIONAL = 99;
   public static final int READTEXT = 129;
-  public static final int And = 334;
+  public static final int And = 335;
   public static final int CHARACTER_LENGTH = 233;
   public static final int COLLATE = 24;
   public static final int FOUND = 206;
@@ -671,6 +672,7 @@ public class sym {
   "OUTPUT",
   "ZONE",
   "EXCEPTION",
+  "RETURNS",
   "DatoEntero",
   "DatoFloat",
   "DatoBit",
