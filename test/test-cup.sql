@@ -1,4 +1,8 @@
-/*SELECT * FROM miTabla
+CREATE DATABASE prueba ON  PRIMARY 
+( NAMES = 'prueba', FILE = 'C:\Program Files\Microsoft SQL Server\MSSQL.1\MSSQL\DATA\prueba.mdf' , SIZE = 60608),
+( NAMES = 'prueba2', FILE = 'H:\Data\prueba2.ndf' , SIZE = 1048576);
+
+SELECT * FROM miTabla
 GO
 
 SELECT OrderDateKey, SUM(SalesAmount) AS TotalSales  
@@ -48,7 +52,7 @@ SET Value = y.Value
 FROM cte AS x  -- cte is assigned an alias.  
 INNER JOIN @y AS y ON y.ID = x.ID; 
 
-ALTER TABLE Production.TransactionHistoryArchive
+/*ALTER TABLE Production.TransactionHistoryArchive
 ADD CONSTRAINT PK_TransactionHistoryArchive_TransactionID PRIMARY KEY CLUSTERED (TransactionID)
 WITH (DATA_COMPRESSION = PAGE);
 
@@ -61,8 +65,7 @@ Modify Name = Northwind ;
 
 ALTER INDEX idxcci_cci_target ON cci_target REORGANIZE WITH (COMPRESS_ALL_ROW_GROUPS = ON);
 
-ALTER INDEX cci_FactInternetSales2 ON FactInternetSales2 REORGANIZE;*/
-
+ALTER INDEX cci_FactInternetSales2 ON FactInternetSales2 REORGANIZE; */
 CREATE PROCEDURE Production.uspGetList @Product VARCHAR(40)   
     , @MaxPrice VARCHAR   
     , @ComparePrice VARCHAR OUTPUT  
@@ -119,3 +122,13 @@ SET Value = y.Value
 FROM cte AS x  -- cte is assigned an alias.  
 INNER JOIN @y AS y ON y.ID = x.ID; 
 END ;
+CREATE PROCEDURE HumanResources.uspGetEmployeesTest2   
+    @LastName VARCHAR(50),   
+    @FirstName VARCHAR(50)   
+AS   
+
+    SELECT FirstName, LastName, Department  
+    FROM HumanResources.vEmployeeDepartmentHistory  
+    WHERE FirstName = @FirstName AND LastName = @LastName  
+    AND EndDate IS NULL;  
+GO

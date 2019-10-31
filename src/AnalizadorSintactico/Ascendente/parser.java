@@ -38,7 +38,7 @@ public class parser extends java_cup.runtime.lr_parser {
   /** Production table. */
   protected static final short _production_table[][] = 
     unpackFromStrings(new String[] {
-    "\000\u01d6\000\002\002\004\000\002\002\005\000\002\002" +
+    "\000\u01da\000\002\002\004\000\002\002\005\000\002\002" +
     "\004\000\002\002\004\000\002\002\004\000\002\002\004" +
     "\000\002\002\002\000\002\143\004\000\002\144\005\000" +
     "\002\144\005\000\002\144\002\000\002\145\004\000\002" +
@@ -171,18 +171,20 @@ public class parser extends java_cup.runtime.lr_parser {
     "\000\002\311\003\000\002\311\003\000\002\311\003\000" +
     "\002\312\004\000\002\313\006\000\002\313\005\000\002" +
     "\313\003\000\002\314\004\000\002\314\004\000\002\315" +
-    "\005\000\002\315\002\000\002\316\004\000\002\317\004" +
-    "\000\002\317\002\000\002\320\013\000\002\270\004\000" +
-    "\002\271\005\000\002\271\003\000\002\272\005\000\002" +
-    "\272\003\000\002\273\007\000\002\274\003\000\002\274" +
-    "\002\000\002\275\004\000\002\275\003\000\002\276\005" +
-    "\000\002\276\003\000\002\277\004\000\002\277\003\000" +
-    "\002\300\004\000\002\300\003\000\002\301\007\000\002" +
-    "\301\003\000\002\302\003\000\002\302\003\000\002\303" +
-    "\003\000\002\304\005\000\002\304\003\000\002\305\007" +
-    "\000\002\306\003\000\002\306\002\000\002\307\004\000" +
-    "\002\307\003\000\002\307\003\000\002\307\003\000\002" +
-    "\310\004\000\002\310\003\000\002\310\002" });
+    "\005\000\002\315\002\000\002\316\005\000\002\317\004" +
+    "\000\002\317\002\000\002\320\005\000\002\320\002\000" +
+    "\002\321\014\000\002\322\006\000\002\322\002\000\002" +
+    "\270\004\000\002\271\005\000\002\271\003\000\002\272" +
+    "\005\000\002\272\003\000\002\273\007\000\002\274\003" +
+    "\000\002\274\002\000\002\275\004\000\002\275\003\000" +
+    "\002\276\005\000\002\276\003\000\002\277\004\000\002" +
+    "\277\003\000\002\300\004\000\002\300\003\000\002\301" +
+    "\007\000\002\301\003\000\002\302\003\000\002\302\003" +
+    "\000\002\303\003\000\002\304\005\000\002\304\003\000" +
+    "\002\305\007\000\002\306\003\000\002\306\002\000\002" +
+    "\307\004\000\002\307\003\000\002\307\003\000\002\307" +
+    "\003\000\002\310\004\000\002\310\003\000\002\310\002" +
+    "" });
 
   /** Access to production table. */
   public short[][] production_table() {return _production_table;}
@@ -190,7 +192,7 @@ public class parser extends java_cup.runtime.lr_parser {
   /** Parse-action table. */
   protected static final short[][] _action_table = 
     unpackFromStrings(new String[] {
-    "\000\u0347\000\016\002\ufffb\043\004\060\010\131\014\224" +
+    "\000\u0350\000\016\002\ufffb\043\004\060\010\131\014\224" +
     "\012\256\005\001\002\000\012\053\u02f1\164\u02f5\176\u02f2" +
     "\177\u02f0\001\002\000\010\244\u02c4\u0140\026\u015c\u02c6\001" +
     "\002\000\016\002\ufffb\043\004\060\010\131\014\224\012" +
@@ -1998,84 +2000,89 @@ public class parser extends java_cup.runtime.lr_parser {
     "\002\000\004\006\u02f6\001\002\000\006\176\u02f2\177\u02f0" +
     "\001\002\000\016\002\ufe56\043\ufe56\060\ufe56\131\ufe56\224" +
     "\ufe56\256\ufe56\001\002\000\016\002\ufe54\043\ufe54\060\ufe54" +
-    "\131\ufe54\224\ufe54\256\ufe54\001\002\000\010\u0153\u02fe\u0155" +
-    "\u02fd\u015c\u02ff\001\002\000\016\002\ufe48\043\ufe48\060\ufe48" +
-    "\131\ufe48\224\ufe48\256\ufe48\001\002\000\016\002\ufe4a\043" +
-    "\ufe4a\060\ufe4a\131\ufe4a\224\ufe4a\256\ufe4a\001\002\000\016" +
-    "\002\ufe4c\043\ufe4c\060\ufe4c\131\ufe4c\224\ufe4c\256\ufe4c\001" +
-    "\002\000\004\u0140\u0334\001\002\000\004\u013b\u0332\001\002" +
-    "\000\004\u0140\u0300\001\002\000\040\011\u0301\312\ufe45\322" +
-    "\ufe45\330\ufe45\345\ufe45\356\ufe45\361\ufe45\364\ufe45\u0107\ufe45" +
-    "\u0113\ufe45\u011d\ufe45\u0120\ufe45\u012d\ufe45\u012e\ufe45\u0140\ufe45\001" +
-    "\002\000\036\312\ufe46\322\ufe46\330\ufe46\345\ufe46\356\ufe46" +
-    "\361\ufe46\364\ufe46\u0107\ufe46\u0113\ufe46\u011d\ufe46\u0120\ufe46\u012d" +
-    "\ufe46\u012e\ufe46\u0140\ufe46\001\002\000\036\312\u024e\322\u024a" +
-    "\330\u0245\345\u024d\356\u0248\361\u023e\364\u0240\u0107\u0242\u0113" +
-    "\u0241\u011d\u023f\u0120\u0244\u012d\u0243\u012e\u0246\u0140\u0249\001\002" +
-    "\000\020\011\u0309\106\u0307\263\u030c\271\u030b\u0138\u0306\u014b" +
-    "\u030a\u0154\u0308\001\002\000\016\002\ufe47\043\ufe47\060\ufe47" +
-    "\131\ufe47\224\ufe47\256\ufe47\001\002\000\016\002\ufe3d\043" +
-    "\ufe3d\060\ufe3d\131\ufe3d\224\ufe3d\256\ufe3d\001\002\000\012" +
-    "\011\u0309\106\u0307\271\u030b\u0154\u0308\001\002\000\004\206" +
-    "\u032f\001\002\000\004\u015c\u02ff\001\002\000\014\015\u0321" +
-    "\060\ufe33\131\ufe33\224\ufe33\256\ufe33\001\002\000\014\151" +
-    "\u031d\u013b\u031e\u013c\u031c\u013d\u031b\u013e\u031f\001\002\000\006" +
-    "\076\u0314\077\u0313\001\002\000\016\011\u0309\106\u0307\271" +
-    "\u030b\u0138\u0306\u014b\u030a\u0154\u0308\001\002\000\016\002\ufe3f" +
-    "\043\ufe3f\060\ufe3f\131\ufe3f\224\ufe3f\256\ufe3f\001\002\000" +
-    "\016\002\ufe41\043\ufe41\060\ufe41\131\ufe41\224\ufe41\256\ufe41" +
-    "\001\002\000\016\002\ufe36\043\ufe36\060\ufe36\131\ufe36\224" +
-    "\ufe36\256\ufe36\001\002\000\016\002\ufe43\043\ufe43\060\ufe43" +
-    "\131\ufe43\224\ufe43\256\ufe43\001\002\000\016\002\ufe3b\043" +
-    "\ufe3b\060\ufe3b\131\ufe3b\224\ufe3b\256\ufe3b\001\002\000\016" +
-    "\002\ufe44\043\ufe44\060\ufe44\131\ufe44\224\ufe44\256\ufe44\001" +
-    "\002\000\004\011\ufe3a\001\002\000\004\011\ufe39\001\002" +
-    "\000\004\011\u0316\001\002\000\004\u013e\u0317\001\002\000" +
-    "\006\011\ufe38\106\ufe38\001\002\000\006\011\u0309\106\u0307" +
-    "\001\002\000\016\002\ufe3c\043\ufe3c\060\ufe3c\131\ufe3c\224" +
-    "\ufe3c\256\ufe3c\001\002\000\014\011\u0309\106\u0307\271\u030b" +
-    "\u0138\u0306\u0154\u0308\001\002\000\014\011\ufe5a\106\ufe5a\271" +
-    "\ufe5a\u0138\ufe5a\u0154\ufe5a\001\002\000\014\011\ufe5c\106\ufe5c" +
-    "\271\ufe5c\u0138\ufe5c\u0154\ufe5c\001\002\000\014\011\ufe59\106" +
-    "\ufe59\271\ufe59\u0138\ufe59\u0154\ufe59\001\002\000\014\011\ufe5b" +
-    "\106\ufe5b\271\ufe5b\u0138\ufe5b\u0154\ufe5b\001\002\000\014\011" +
-    "\ufe5d\106\ufe5d\271\ufe5d\u0138\ufe5d\u0154\ufe5d\001\002\000\016" +
-    "\002\ufe42\043\ufe42\060\ufe42\131\ufe42\224\ufe42\256\ufe42\001" +
-    "\002\000\012\060\ufe34\131\ufe34\224\ufe34\256\ufe34\001\002" +
+    "\131\ufe54\224\ufe54\256\ufe54\001\002\000\010\u0153\u02ff\u0155" +
+    "\u02fd\u015c\u02fe\001\002\000\016\002\ufe44\043\ufe44\060\ufe44" +
+    "\131\ufe44\224\ufe44\256\ufe44\001\002\000\016\002\ufe46\043" +
+    "\ufe46\060\ufe46\131\ufe46\224\ufe46\256\ufe46\001\002\000\016" +
+    "\002\ufe48\043\ufe48\060\ufe48\131\ufe48\224\ufe48\256\ufe48\001" +
+    "\002\000\004\u0140\u0334\001\002\000\004\u0140\u0302\001\002" +
+    "\000\004\u013b\u0300\001\002\000\004\u015c\u02fe\001\002\000" +
+    "\016\002\ufe45\043\ufe45\060\ufe45\131\ufe45\224\ufe45\256\ufe45" +
+    "\001\002\000\040\011\u0303\312\ufe41\322\ufe41\330\ufe41\345" +
+    "\ufe41\356\ufe41\361\ufe41\364\ufe41\u0107\ufe41\u0113\ufe41\u011d\ufe41" +
+    "\u0120\ufe41\u012d\ufe41\u012e\ufe41\u0140\ufe41\001\002\000\036\312" +
+    "\ufe42\322\ufe42\330\ufe42\345\ufe42\356\ufe42\361\ufe42\364\ufe42" +
+    "\u0107\ufe42\u0113\ufe42\u011d\ufe42\u0120\ufe42\u012d\ufe42\u012e\ufe42\u0140" +
+    "\ufe42\001\002\000\036\312\u024e\322\u024a\330\u0245\345\u024d" +
+    "\356\u0248\361\u023e\364\u0240\u0107\u0242\u0113\u0241\u011d\u023f\u0120" +
+    "\u0244\u012d\u0243\u012e\u0246\u0140\u0249\001\002\000\020\011\u030c" +
+    "\106\u0308\263\u030e\271\u030d\u0138\u0309\u014b\u030b\u0154\u030a\001" +
+    "\002\000\016\002\ufe43\043\ufe43\060\ufe43\131\ufe43\224\ufe43" +
+    "\256\ufe43\001\002\000\016\002\ufe39\043\ufe39\060\ufe39\131" +
+    "\ufe39\224\ufe39\256\ufe39\001\002\000\004\206\u0332\001\002" +
+    "\000\012\011\u030c\106\u0308\271\u030d\u0154\u030a\001\002\000" +
+    "\004\u015c\u02fe\001\002\000\014\151\u032c\u013b\u032d\u013c\u032b" +
+    "\u013d\u032a\u013e\u032e\001\002\000\014\015\u031c\060\ufe2f\131" +
+    "\ufe2f\224\ufe2f\256\ufe2f\001\002\000\006\076\u0316\077\u0315" +
+    "\001\002\000\016\011\u030c\106\u0308\271\u030d\u0138\u0309\u014b" +
+    "\u030b\u0154\u030a\001\002\000\016\002\ufe3b\043\ufe3b\060\ufe3b" +
+    "\131\ufe3b\224\ufe3b\256\ufe3b\001\002\000\016\002\ufe32\043" +
+    "\ufe32\060\ufe32\131\ufe32\224\ufe32\256\ufe32\001\002\000\016" +
+    "\002\ufe3d\043\ufe3d\060\ufe3d\131\ufe3d\224\ufe3d\256\ufe3d\001" +
+    "\002\000\016\002\ufe37\043\ufe37\060\ufe37\131\ufe37\224\ufe37" +
+    "\256\ufe37\001\002\000\016\002\ufe3f\043\ufe3f\060\ufe3f\131" +
+    "\ufe3f\224\ufe3f\256\ufe3f\001\002\000\016\002\ufe40\043\ufe40" +
+    "\060\ufe40\131\ufe40\224\ufe40\256\ufe40\001\002\000\004\011" +
+    "\ufe36\001\002\000\004\011\ufe35\001\002\000\004\011\u0318" +
+    "\001\002\000\004\u013e\u0319\001\002\000\006\011\ufe34\106" +
+    "\ufe34\001\002\000\006\011\u030c\106\u0308\001\002\000\016" +
+    "\002\ufe38\043\ufe38\060\ufe38\131\ufe38\224\ufe38\256\ufe38\001" +
+    "\002\000\012\060\ufe30\131\ufe30\224\ufe30\256\ufe30\001\002" +
     "\000\012\060\010\131\014\224\012\256\005\001\002\000" +
-    "\020\060\ufe30\072\ufe30\131\ufe30\224\ufe30\256\ufe30\327\ufe30" +
-    "\u0153\ufe30\001\002\000\006\327\264\u0153\265\001\002\000" +
-    "\020\060\010\072\u032a\131\014\224\012\256\005\327\ufe2c" +
-    "\u0153\ufe2c\001\002\000\020\060\ufe31\072\ufe31\131\ufe31\224" +
-    "\ufe31\256\ufe31\327\ufe31\u0153\ufe31\001\002\000\020\060\ufe2f" +
-    "\072\ufe2f\131\ufe2f\224\ufe2f\256\ufe2f\327\ufe2f\u0153\ufe2f\001" +
+    "\020\060\ufe2c\072\ufe2c\131\ufe2c\224\ufe2c\256\ufe2c\327\ufe2c" +
+    "\u0153\ufe2c\001\002\000\006\327\264\u0153\265\001\002\000" +
+    "\020\060\010\072\u0325\131\014\224\012\256\005\327\ufe28" +
+    "\u0153\ufe28\001\002\000\020\060\ufe2d\072\ufe2d\131\ufe2d\224" +
+    "\ufe2d\256\ufe2d\327\ufe2d\u0153\ufe2d\001\002\000\020\060\ufe2b" +
+    "\072\ufe2b\131\ufe2b\224\ufe2b\256\ufe2b\327\ufe2b\u0153\ufe2b\001" +
     "\002\000\006\327\264\u0153\265\001\002\000\020\060\010" +
-    "\072\u032a\131\014\224\012\256\005\327\ufe2c\u0153\ufe2c\001" +
-    "\002\000\006\327\ufe2d\u0153\ufe2d\001\002\000\006\327\ufe2e" +
-    "\u0153\ufe2e\001\002\000\016\002\ufe35\043\ufe35\060\ufe35\131" +
-    "\ufe35\224\ufe35\256\ufe35\001\002\000\020\060\ufe32\072\ufe32" +
-    "\131\ufe32\224\ufe32\256\ufe32\327\ufe32\u0153\ufe32\001\002\000" +
-    "\016\002\ufe3e\043\ufe3e\060\ufe3e\131\ufe3e\224\ufe3e\256\ufe3e" +
-    "\001\002\000\004\011\u0309\001\002\000\016\002\ufe37\043" +
-    "\ufe37\060\ufe37\131\ufe37\224\ufe37\256\ufe37\001\002\000\016" +
-    "\002\ufe40\043\ufe40\060\ufe40\131\ufe40\224\ufe40\256\ufe40\001" +
-    "\002\000\004\u015c\u02ff\001\002\000\016\002\ufe49\043\ufe49" +
-    "\060\ufe49\131\ufe49\224\ufe49\256\ufe49\001\002\000\006\u0153" +
-    "\u02fe\u015c\u02ff\001\002\000\016\002\ufe4b\043\ufe4b\060\ufe4b" +
-    "\131\ufe4b\224\ufe4b\256\ufe4b\001\002\000\010\156\u0337\327" +
+    "\072\u0325\131\014\224\012\256\005\327\ufe28\u0153\ufe28\001" +
+    "\002\000\006\327\ufe29\u0153\ufe29\001\002\000\006\327\ufe2a" +
+    "\u0153\ufe2a\001\002\000\016\002\ufe31\043\ufe31\060\ufe31\131" +
+    "\ufe31\224\ufe31\256\ufe31\001\002\000\020\060\ufe2e\072\ufe2e" +
+    "\131\ufe2e\224\ufe2e\256\ufe2e\327\ufe2e\u0153\ufe2e\001\002\000" +
+    "\014\011\u030c\106\u0308\271\u030d\u0138\u0309\u0154\u030a\001\002" +
+    "\000\014\011\ufe5a\106\ufe5a\271\ufe5a\u0138\ufe5a\u0154\ufe5a\001" +
+    "\002\000\014\011\ufe5c\106\ufe5c\271\ufe5c\u0138\ufe5c\u0154\ufe5c" +
+    "\001\002\000\014\011\ufe59\106\ufe59\271\ufe59\u0138\ufe59\u0154" +
+    "\ufe59\001\002\000\014\011\ufe5b\106\ufe5b\271\ufe5b\u0138\ufe5b" +
+    "\u0154\ufe5b\001\002\000\014\011\ufe5d\106\ufe5d\271\ufe5d\u0138" +
+    "\ufe5d\u0154\ufe5d\001\002\000\016\002\ufe3e\043\ufe3e\060\ufe3e" +
+    "\131\ufe3e\224\ufe3e\256\ufe3e\001\002\000\016\002\ufe3a\043" +
+    "\ufe3a\060\ufe3a\131\ufe3a\224\ufe3a\256\ufe3a\001\002\000\016" +
+    "\002\ufe3c\043\ufe3c\060\ufe3c\131\ufe3c\224\ufe3c\256\ufe3c\001" +
+    "\002\000\004\011\u030c\001\002\000\016\002\ufe33\043\ufe33" +
+    "\060\ufe33\131\ufe33\224\ufe33\256\ufe33\001\002\000\006\u0153" +
+    "\u02ff\u015c\u02fe\001\002\000\016\002\ufe47\043\ufe47\060\ufe47" +
+    "\131\ufe47\224\ufe47\256\ufe47\001\002\000\010\156\u0337\327" +
     "\ufe51\u0153\ufe51\001\002\000\004\174\u033a\001\002\000\006" +
     "\327\264\u0153\265\001\002\000\016\002\ufe57\043\ufe57\060" +
     "\ufe57\131\ufe57\224\ufe57\256\ufe57\001\002\000\004\u0158\u033f" +
     "\001\002\000\010\032\u033c\327\ufe4e\u0153\ufe4e\001\002\000" +
     "\004\u0140\u033e\001\002\000\006\327\ufe52\u0153\ufe52\001\002" +
-    "\000\006\327\ufe4f\u0153\ufe4f\001\002\000\004\u011c\u0341\001" +
-    "\002\000\010\032\ufe50\327\ufe50\u0153\ufe50\001\002\000\004" +
-    "\u014b\u0342\001\002\000\004\u013e\u0343\001\002\000\004\u0154" +
-    "\u0344\001\002\000\004\104\u0345\001\002\000\004\u014b\u0346" +
-    "\001\002\000\004\u013e\u0347\001\002\000\004\u0159\u0348\001" +
-    "\002\000\010\032\ufe4d\327\ufe4d\u0153\ufe4d\001\002\000\016" +
-    "\002\ufe53\043\ufe53\060\ufe53\131\ufe53\224\ufe53\256\ufe53\001" +
-    "\002" });
+    "\000\006\327\ufe4f\u0153\ufe4f\001\002\000\004\u011c\u0345\001" +
+    "\002\000\012\032\ufe4c\327\ufe4c\u0153\ufe4c\u0154\u0342\001\002" +
+    "\000\010\032\ufe50\327\ufe50\u0153\ufe50\001\002\000\004\u0158" +
+    "\u033f\001\002\000\012\032\ufe4c\327\ufe4c\u0153\ufe4c\u0154\u0342" +
+    "\001\002\000\010\032\ufe4d\327\ufe4d\u0153\ufe4d\001\002\000" +
+    "\004\u014b\u0346\001\002\000\004\u013e\u0347\001\002\000\004" +
+    "\u0154\u0348\001\002\000\004\104\u0349\001\002\000\004\u014b" +
+    "\u034a\001\002\000\004\u013e\u034b\001\002\000\006\u0154\u034d" +
+    "\u0159\ufe49\001\002\000\004\u0159\u0351\001\002\000\004\354" +
+    "\u034e\001\002\000\004\u014b\u034f\001\002\000\004\u013b\u0350" +
+    "\001\002\000\004\u0159\ufe4a\001\002\000\012\032\ufe4b\327" +
+    "\ufe4b\u0153\ufe4b\u0154\ufe4b\001\002\000\016\002\ufe53\043\ufe53" +
+    "\060\ufe53\131\ufe53\224\ufe53\256\ufe53\001\002" });
 
   /** Access to parse-action table. */
   public short[][] action_table() {return _action_table;}
@@ -2083,7 +2090,7 @@ public class parser extends java_cup.runtime.lr_parser {
   /** <code>reduce_goto</code> table. */
   protected static final short[][] _reduce_table = 
     unpackFromStrings(new String[] {
-    "\000\u0347\000\016\002\010\122\012\217\014\234\006\246" +
+    "\000\u0350\000\016\002\010\122\012\217\014\234\006\246" +
     "\015\312\005\001\001\000\006\313\u02f3\314\u02f2\001\001" +
     "\000\010\174\u02c1\247\u02c4\251\u02c2\001\001\000\016\002" +
     "\u02c0\122\012\217\014\234\006\246\015\312\005\001\001" +
@@ -2462,44 +2469,48 @@ public class parser extends java_cup.runtime.lr_parser {
     "\147\052\174\050\001\001\000\002\001\001\000\004\250" +
     "\u02ec\001\001\000\002\001\001\000\006\174\u02c1\251\u02ed" +
     "\001\001\000\002\001\001\000\002\001\001\000\004\270" +
-    "\u0348\001\001\000\002\001\001\000\004\270\u02f7\001\001" +
+    "\u0351\001\001\000\002\001\001\000\004\270\u02f7\001\001" +
     "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
     "\004\314\u02f6\001\001\000\002\001\001\000\002\001\001" +
     "\000\010\271\u02fb\272\u02fa\273\u02f9\001\001\000\002\001" +
     "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
-    "\000\002\001\001\000\002\001\001\000\004\274\u0301\001" +
-    "\001\000\002\001\001\000\006\115\u0302\117\u024b\001\001" +
-    "\000\020\275\u0303\276\u030f\277\u030d\300\u030c\301\u0304\304" +
-    "\u0310\305\u030e\001\001\000\002\001\001\000\002\001\001" +
-    "\000\012\300\u0330\301\u0304\304\u0310\305\u030e\001\001\000" +
-    "\002\001\001\000\004\273\u032d\001\001\000\004\306\u0321" +
-    "\001\001\000\004\311\u0319\001\001\000\004\302\u0314\001" +
-    "\001\000\016\276\u0311\277\u030d\300\u030c\301\u0304\304\u0310" +
-    "\305\u030e\001\001\000\002\001\001\000\002\001\001\000" +
-    "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
+    "\000\002\001\001\000\002\001\001\000\004\273\u0300\001" +
+    "\001\000\002\001\001\000\004\274\u0303\001\001\000\002" +
+    "\001\001\000\006\115\u0304\117\u024b\001\001\000\020\275" +
+    "\u0305\276\u0312\277\u0310\300\u030e\301\u0306\304\u0311\305\u030f" +
     "\001\001\000\002\001\001\000\002\001\001\000\002\001" +
-    "\001\000\004\303\u0317\001\001\000\002\001\001\000\006" +
-    "\304\u0318\305\u030e\001\001\000\002\001\001\000\014\277" +
-    "\u031f\300\u030c\301\u0304\304\u0310\305\u030e\001\001\000\002" +
+    "\001\000\012\300\u0330\301\u0306\304\u0311\305\u030f\001\001" +
+    "\000\004\273\u032f\001\001\000\004\311\u0328\001\001\000" +
+    "\004\306\u031c\001\001\000\004\302\u0316\001\001\000\016" +
+    "\276\u0313\277\u0310\300\u030e\301\u0306\304\u0311\305\u030f\001" +
+    "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
+    "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
+    "\002\001\001\000\002\001\001\000\002\001\001\000\004" +
+    "\303\u0319\001\001\000\002\001\001\000\006\304\u031a\305" +
+    "\u030f\001\001\000\002\001\001\000\002\001\001\000\014" +
+    "\122\u031e\217\u0320\234\u031d\246\u0321\307\u031f\001\001\000" +
+    "\002\001\001\000\004\200\u0327\001\001\000\016\122\u031e" +
+    "\217\u0320\234\u031d\246\u0321\307\u0323\310\u0322\001\001\000" +
+    "\002\001\001\000\002\001\001\000\004\200\u0326\001\001" +
+    "\000\016\122\u031e\217\u0320\234\u031d\246\u0321\307\u0323\310" +
+    "\u0325\001\001\000\002\001\001\000\002\001\001\000\002" +
+    "\001\001\000\002\001\001\000\014\277\u032e\300\u030e\301" +
+    "\u0306\304\u0311\305\u030f\001\001\000\002\001\001\000\002" +
     "\001\001\000\002\001\001\000\002\001\001\000\002\001" +
     "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
-    "\000\014\122\u0323\217\u0325\234\u0322\246\u0326\307\u0324\001" +
-    "\001\000\002\001\001\000\004\200\u032c\001\001\000\016" +
-    "\122\u0323\217\u0325\234\u0322\246\u0326\307\u0328\310\u0327\001" +
-    "\001\000\002\001\001\000\002\001\001\000\004\200\u032b" +
-    "\001\001\000\016\122\u0323\217\u0325\234\u0322\246\u0326\307" +
-    "\u0328\310\u032a\001\001\000\002\001\001\000\002\001\001" +
-    "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
-    "\004\305\u032f\001\001\000\002\001\001\000\002\001\001" +
-    "\000\004\273\u0332\001\001\000\002\001\001\000\006\272" +
+    "\000\004\305\u0332\001\001\000\002\001\001\000\006\272" +
     "\u0334\273\u02f9\001\001\000\002\001\001\000\004\315\u0337" +
     "\001\001\000\004\316\u033a\001\001\000\004\200\u0338\001" +
-    "\001\000\002\001\001\000\004\320\u033f\001\001\000\004" +
+    "\001\000\002\001\001\000\004\321\u033f\001\001\000\004" +
     "\317\u033c\001\001\000\002\001\001\000\002\001\001\000" +
-    "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
+    "\002\001\001\000\002\001\001\000\004\320\u0340\001\001" +
+    "\000\002\001\001\000\004\321\u0342\001\001\000\004\320" +
+    "\u0343\001\001\000\002\001\001\000\002\001\001\000\002" +
+    "\001\001\000\002\001\001\000\002\001\001\000\002\001" +
+    "\001\000\002\001\001\000\004\322\u034b\001\001\000\002" +
     "\001\001\000\002\001\001\000\002\001\001\000\002\001" +
     "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
-    "\000\002\001\001\000\002\001\001" });
+    "" });
 
   /** Access to <code>reduce_goto</code> table. */
   public short[][] reduce_table() {return _reduce_table;}
@@ -6530,11 +6541,11 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 433: // DATABASE2 ::= PRIMARY FLSPC 
+          case 433: // DATABASE2 ::= PRIMARY FLSPC DATABASE4 
             {
               Object RESULT =null;
 
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("DATABASE2",204, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("DATABASE2",204, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
@@ -6557,16 +6568,52 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 436: // FLSPC ::= ParentesisAbrir NAMES Igual DatoString Coma FILE Igual DatoString ParentesisCerrar 
+          case 436: // DATABASE4 ::= Coma FLSPC DATABASE4 
             {
               Object RESULT =null;
 
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("FLSPC",206, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-8)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("DATABASE4",206, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 437: // PROCEDURE1 ::= Identificador PROCEDURE2 
+          case 437: // DATABASE4 ::= 
+            {
+              Object RESULT =null;
+
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("DATABASE4",206, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+            }
+          return CUP$parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 438: // FLSPC ::= ParentesisAbrir NAMES Igual DatoString Coma FILE Igual DatoString FLSPC1 ParentesisCerrar 
+            {
+              Object RESULT =null;
+
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("FLSPC",207, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-9)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+            }
+          return CUP$parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 439: // FLSPC1 ::= Coma SIZE Igual DatoEntero 
+            {
+              Object RESULT =null;
+
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("FLSPC1",208, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-3)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+            }
+          return CUP$parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 440: // FLSPC1 ::= 
+            {
+              Object RESULT =null;
+
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("FLSPC1",208, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+            }
+          return CUP$parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 441: // PROCEDURE1 ::= Identificador PROCEDURE2 
             {
               Object RESULT =null;
 
@@ -6575,7 +6622,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 438: // PROCEDURE2 ::= Punto Identificador PROCEDURE3 
+          case 442: // PROCEDURE2 ::= Punto Identificador PROCEDURE3 
             {
               Object RESULT =null;
 
@@ -6584,7 +6631,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 439: // PROCEDURE2 ::= PROCEDURE3 
+          case 443: // PROCEDURE2 ::= PROCEDURE3 
             {
               Object RESULT =null;
 
@@ -6593,7 +6640,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 440: // PROCEDURE3 ::= PuntoComa DatoEntero PROCEDURE4 
+          case 444: // PROCEDURE3 ::= PuntoComa DatoEntero PROCEDURE4 
             {
               Object RESULT =null;
 
@@ -6602,7 +6649,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 441: // PROCEDURE3 ::= PROCEDURE4 
+          case 445: // PROCEDURE3 ::= PROCEDURE4 
             {
               Object RESULT =null;
 
@@ -6611,7 +6658,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 442: // PROCEDURE4 ::= Arroba Identificador PROCEDURE5 DATATYPE PROCEDURE6 
+          case 446: // PROCEDURE4 ::= Arroba Identificador PROCEDURE5 DATATYPE PROCEDURE6 
             {
               Object RESULT =null;
 
@@ -6620,7 +6667,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 443: // PROCEDURE5 ::= AS 
+          case 447: // PROCEDURE5 ::= AS 
             {
               Object RESULT =null;
 
@@ -6629,7 +6676,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 444: // PROCEDURE5 ::= 
+          case 448: // PROCEDURE5 ::= 
             {
               Object RESULT =null;
 
@@ -6638,7 +6685,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 445: // PROCEDURE6 ::= VARYING PROCEDURE7 
+          case 449: // PROCEDURE6 ::= VARYING PROCEDURE7 
             {
               Object RESULT =null;
 
@@ -6647,7 +6694,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 446: // PROCEDURE6 ::= PROCEDURE7 
+          case 450: // PROCEDURE6 ::= PROCEDURE7 
             {
               Object RESULT =null;
 
@@ -6656,7 +6703,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 447: // PROCEDURE7 ::= Igual DEFV PROCEDURE8 
+          case 451: // PROCEDURE7 ::= Igual DEFV PROCEDURE8 
             {
               Object RESULT =null;
 
@@ -6665,7 +6712,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 448: // PROCEDURE7 ::= PROCEDURE8 
+          case 452: // PROCEDURE7 ::= PROCEDURE8 
             {
               Object RESULT =null;
 
@@ -6674,7 +6721,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 449: // PROCEDURE8 ::= OUTPUT PROCEDURE9 
+          case 453: // PROCEDURE8 ::= OUTPUT PROCEDURE9 
             {
               Object RESULT =null;
 
@@ -6683,7 +6730,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 450: // PROCEDURE8 ::= PROCEDURE9 
+          case 454: // PROCEDURE8 ::= PROCEDURE9 
             {
               Object RESULT =null;
 
@@ -6692,7 +6739,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 451: // PROCEDURE9 ::= Coma PROCEDURE4 
+          case 455: // PROCEDURE9 ::= Coma PROCEDURE4 
             {
               Object RESULT =null;
 
@@ -6701,7 +6748,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 452: // PROCEDURE9 ::= PROCEDURE10 
+          case 456: // PROCEDURE9 ::= PROCEDURE10 
             {
               Object RESULT =null;
 
@@ -6710,7 +6757,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 453: // PROCEDURE10 ::= WITH PROCEDURE11 AS PROCEDURE12 PROCEDURE13 
+          case 457: // PROCEDURE10 ::= WITH PROCEDURE11 AS PROCEDURE12 PROCEDURE13 
             {
               Object RESULT =null;
 
@@ -6719,7 +6766,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 454: // PROCEDURE10 ::= PROCEDURE13 
+          case 458: // PROCEDURE10 ::= PROCEDURE13 
             {
               Object RESULT =null;
 
@@ -6728,7 +6775,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 455: // PROCEDURE11 ::= EXECUTE 
+          case 459: // PROCEDURE11 ::= EXECUTE 
             {
               Object RESULT =null;
 
@@ -6737,7 +6784,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 456: // PROCEDURE11 ::= EXEC 
+          case 460: // PROCEDURE11 ::= EXEC 
             {
               Object RESULT =null;
 
@@ -6746,7 +6793,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 457: // PROCEDURE12 ::= DatoString 
+          case 461: // PROCEDURE12 ::= DatoString 
             {
               Object RESULT =null;
 
@@ -6755,7 +6802,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 458: // PROCEDURE13 ::= FOR REPLICATION PROCEDURE14 
+          case 462: // PROCEDURE13 ::= FOR REPLICATION PROCEDURE14 
             {
               Object RESULT =null;
 
@@ -6764,7 +6811,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 459: // PROCEDURE13 ::= PROCEDURE14 
+          case 463: // PROCEDURE13 ::= PROCEDURE14 
             {
               Object RESULT =null;
 
@@ -6773,7 +6820,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 460: // PROCEDURE14 ::= AS PROCEDURE15 PROCEDURE16 PROCEDURE17 FIN_AN 
+          case 464: // PROCEDURE14 ::= AS PROCEDURE15 PROCEDURE16 PROCEDURE17 FIN_AN 
             {
               Object RESULT =null;
 
@@ -6782,7 +6829,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 461: // PROCEDURE15 ::= BEGIN 
+          case 465: // PROCEDURE15 ::= BEGIN 
             {
               Object RESULT =null;
 
@@ -6791,7 +6838,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 462: // PROCEDURE15 ::= 
+          case 466: // PROCEDURE15 ::= 
             {
               Object RESULT =null;
 
@@ -6800,7 +6847,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 463: // PROCEDURE16 ::= SELECT1 FIN_AN 
+          case 467: // PROCEDURE16 ::= SELECT1 FIN_AN 
             {
               Object RESULT =null;
 
@@ -6809,7 +6856,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 464: // PROCEDURE16 ::= INSERT0 
+          case 468: // PROCEDURE16 ::= INSERT0 
             {
               Object RESULT =null;
 
@@ -6818,7 +6865,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 465: // PROCEDURE16 ::= DELETE1 
+          case 469: // PROCEDURE16 ::= DELETE1 
             {
               Object RESULT =null;
 
@@ -6827,7 +6874,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 466: // PROCEDURE16 ::= UPDATE0 
+          case 470: // PROCEDURE16 ::= UPDATE0 
             {
               Object RESULT =null;
 
@@ -6836,7 +6883,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 467: // PROCEDURE17 ::= PROCEDURE16 PROCEDURE17 
+          case 471: // PROCEDURE17 ::= PROCEDURE16 PROCEDURE17 
             {
               Object RESULT =null;
 
@@ -6845,7 +6892,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 468: // PROCEDURE17 ::= END 
+          case 472: // PROCEDURE17 ::= END 
             {
               Object RESULT =null;
 
@@ -6854,7 +6901,7 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 469: // PROCEDURE17 ::= 
+          case 473: // PROCEDURE17 ::= 
             {
               Object RESULT =null;
 

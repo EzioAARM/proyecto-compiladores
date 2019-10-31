@@ -20,7 +20,7 @@
             | PROCEDURE PROCEDURE1;
 
 /*
-    non terminals DATABASE1,DATABASE2,DATABASE3
+    non terminals DATABASE1,DATABASE2,DATABASE3,DATABASE4
 */
 /* <create_database> */
     DATABASE1 ::= ON DATABASE2 DATABASE3
@@ -28,12 +28,16 @@
     DATABASE2 ::= PRIMARY FLSPC ;
     DATABASE3 ::= COLLATE Identificador 
             | /* VACIO */ ;
+    DATABASE4 ::= Coma FLSPC DATABASE4
+            | /* VACIO */ ;
 
 /*
     non terminals FLSPC
 */
 /* <filespec> */
-    FLSPC ::= ParentesisAbrir NAMES Igual DatoString Coma FILE Igual DatoString ParentesisCerrar ;
+    FLSPC ::= ParentesisAbrir NAMES Igual DatoString Coma FILE Igual DatoString FLSPC1 ParentesisCerrar  ;
+    FLSPC1 ::= Coma SIZE Igual DatoEntero 
+            | /* VACIO */ ;
 
 
 /*
