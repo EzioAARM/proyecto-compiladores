@@ -1,3 +1,35 @@
+CREATE TABLE dbo.PurchaseOrderDetail
+(
+    PurchaseOrderID INT NOT NULL
+        REFERENCES Purchasing.PurchaseOrderHeader(PurchaseOrderID),
+    LineNumber SMALLINT NOT NULL,
+    ProductID INT NULL
+        REFERENCES Production.Product(ProductID),
+    UnitPrice DECIMAL NULL,
+    OrderQty SMALLINT NULL,
+    ReceivedQty FLOAT NULL,
+    RejectedQty FLOAT NULL,
+    DueDate INT NULL,
+    rowguid FLOAT NOT NULL ROWGUIDCOL
+        CONSTRAINT DF_PurchaseOrderDetail_rowguid DEFAULT,
+    ModifiedDate INT NOT NULL
+        CONSTRAINT DF_PurchaseOrderDetail_ModifiedDate DEFAULT,
+    LineTotal AS ((UnitPrice*OrderQty)),
+    StockedQty AS ((ReceivedQty-RejectedQty)),
+    CONSTRAINT PK_PurchaseOrderDetail_PurchaseOrderID_LineNumber
+               PRIMARY KEY CLUSTERED (PurchaseOrderID, LineNumber)
+)
+ON PRIMARY;
+
+CREATE PROCEDURE Production.uspGetList @Product VARCHAR(40)   
+    , @MaxPrice VARCHAR   
+    , @ComparePrice VARCHAR OUTPUT  
+    , @ListPrice VARCHAR OUTPUT  
+AS  
+BEGIN
+    SELECT * FROM miTabla
+GO
+GO
 CREATE DATABASE prueba ON  PRIMARY 
 ( NAMES = 'prueba', FILE = 'C:\Program Files\Microsoft SQL Server\MSSQL.1\MSSQL\DATA\prueba.mdf' , SIZE = 60608),
 ( NAMES = 'prueba2', FILE = 'H:\Data\prueba2.ndf' , SIZE = 1048576);

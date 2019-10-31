@@ -11,9 +11,9 @@
     COL_CST3 ::= PRIMARY KEY COL_CST4
                 | UNIQUE COL_CST4 
                 | COL_CST8
-                | CHECK COL_CST16 ParentesisAbrir SH_COND ParentesisCerrar ;
+                | CHECK COL_CST16 ParentesisAbrir SH_COND ParentesisCerrar 
+                | DEFAULT COL_DEF11;
     COL_CST4 ::= CLUSTERED COL_CST5
-                | NOCLUSTERED COL_CST5
                 | COL_CST5 ;
     COL_CST5 ::= WITH COL_CST6 COL_CST7
                 | COL_CST7 ;
@@ -26,8 +26,8 @@
                 | /* VACIO */ ; 
     COL_CST10 ::= Punto Identificador
                 | /* VACIO */ ;
-    COL_CST11 ::= ParentesisAbrir Identificador ParentesisCerrar
-                | /* VACIO */;
+    COL_CST11 ::= ParentesisAbrir Identificador ParentesisCerrar COL_CST12
+                | COL_CST12;
     COL_CST12 ::= ON COL_CST13 COL_CST14
                 | /* VACIO */;
     COL_CST13 ::= DELETE
@@ -37,7 +37,7 @@
                 | SET COL_CST15 ;
     COL_CST15 ::= NULL
                 | DEFAULT ;
-    COL_CST16 ::= NOR FOR REPLICATION
+    COL_CST16 ::= NOT FOR REPLICATION
                 | /* VACIO */ ;
 
 
@@ -61,15 +61,15 @@
     TB_CST ::= TB_CST1 TB_CST2 ;
     TB_CST1 ::= CONSTRAINT Identificador 
                 | /* VACIO */ ;
-    TB_CST2 ::= PRIMARY KEY TB_CST3
-                | UNIQUE TB_CST3
+    TB_CST2 ::= PRIMARY KEY TB_CST4 TB_CST3
+                | UNIQUE TB_CST4 TB_CST3
                 | FOREIGN KEY TB_CST9
                 | CONNECTION TB_CST16
                 | DEFAULT CONST_EXP FOR Identificador TB_CST21
                 | CHECK TB_CST20;
     TB_CST3 ::= ParentesisAbrir Identificador TB_CST5 TB_CST6 ParentesisCerrar TB_CST7 ;
     TB_CST4 ::= CLUSTERED
-                | NOCLUSTERED ;
+                | /* VACIO */ ;
     TB_CST5 ::= ASC
                 | DESC 
                 | /* VACIO */;
@@ -107,7 +107,7 @@
 
 
 /*
-    non terminal COL_DEF,COL_DEF1,COL_DEF2,COL_DEF3,COL_DEF4,COL_DEF5,COL_DEF6,COL_DEF7,COL_DEF8,COL_DEF10
+    non terminal COL_DEF,COL_DEF1,COL_DEF2,COL_DEF3,COL_DEF5,COL_DEF6,COL_DEF7,COL_DEF8,COL_DEF10,COL_DEF11
 */
 /* <column_definition> */
     COL_DEF ::= Identificador DATATYPE COL_DEF1 ;
@@ -115,12 +115,11 @@
                 | COL_DEF2 ;
     COL_DEF2 ::= NULL COL_DEF3
                 | NOT NULL COL_DEF3
-                | COL_DEF3
-                | IDENTITY COL_DEF6 ;
-    COL_DEF3 ::= CONSTRAINT Identificador COL_DEF10
-                | COL_CST
-                | COL_DEF4 ;
-    COL_DEF4 ::= DEFAULT CONST_EXP COL_DEF5 ;
+                | COL_DEF3 ;
+    COL_DEF3 ::= COL_CST
+                | COL_DEF5
+		        | IDENTITY COL_DEF6
+                | /* VACIO */;
     COL_DEF5 ::= WITH VALUES COL_DEF8
                 | COL_DEF8 ;
     COL_DEF6 ::= ParentesisAbrir SEXP Coma SEXP ParentesisCerrar COL_DEF7
@@ -129,8 +128,10 @@
                 | COL_DEF8 ;
     COL_DEF8 ::= ROWGUIDCOL COL_DEF10
                 | COL_DEF10 ;
-    COL_DEF10 ::= COL_DEF4
-                | COL_CST ;
+    COL_DEF10 ::= COL_CST
+		| /* VACIO */ ;
+    COL_DEF11 ::= CONST_EXP
+                | /* VACIO */ ;
 
 
 

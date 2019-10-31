@@ -1,7 +1,22 @@
 /*
+    non terminals TB_IX,TB_IX1,TB_IX2,TB_IX3,TB_IX4
+*/
+/* <table_index> */
+    TB_IX ::= INDEX Identificador ParentesisAbrir TB_IX1 ParentesisCerrar TB_IX4 ;
+    TB_IX1 ::=  Identificador TB_IX2 TB_IX3 ;
+    TB_IX2 ::= ASC
+            | DEC
+            | /* VACIO */ ; 
+    TB_IX3 ::= Coma TB_IX2
+            | /* VACIO */ ;
+    TB_IX4 ::= WITH FILLFACTOR Igual DatoEntero 
+            | /* VACIO */ ;
+
+
+/*
     non terminals DEFV
 */
-/* <default_values> */3
+/* <default_values> */
     DEFV ::= DatoString 
             | DatoFloat
             | DatoEntero
@@ -16,7 +31,8 @@
     CRT1 ::= DATABASE Identificador DATABASE1 FIN_AN
             | OR ALTER CRT2
             | CRT2
-            | USER Identificador FIN_AN;
+            | USER Identificador FIN_AN
+            | TABLE TABLE1;
     CRT2 ::= PROC PROCEDURE1
             | PROCEDURE PROCEDURE1
             | VIEW VIEW1;
@@ -96,3 +112,15 @@
             | /* VACIO */ ;
     VIEW6 ::= WITH CHECK OPTION FIN_AN
             | FIN_AN ;
+
+
+/*
+    non terminals TABLE1,TABLE2,TABLE3
+*/
+/* <create_table> */
+    TABLE1 ::= OBJECT ParentesisAbrir TABLE2 TABLE3 ParentesisCerrar;
+    TABLE2 ::= COL_DEF
+            | TB_CST
+            | COL_CST ;
+    TABLE3 ::= Coma TABLE2 TABLE3
+            | /* VACIO */ ;
