@@ -1,5 +1,8 @@
 CREATE TABLE dbo.PurchaseOrderDetail
 (
+
+    rowguid FLOAT NOT NULL ROWGUIDCOL
+        CONSTRAINT DF_PurchaseOrderDetail_rowguid DEFAULT,
     PurchaseOrderID INT NOT NULL
         REFERENCES Purchasing.PurchaseOrderHeader(PurchaseOrderID),
     LineNumber SMALLINT NOT NULL,
@@ -10,8 +13,6 @@ CREATE TABLE dbo.PurchaseOrderDetail
     ReceivedQty FLOAT NULL,
     RejectedQty FLOAT NULL,
     DueDate INT NULL,
-    rowguid FLOAT NOT NULL ROWGUIDCOL
-        CONSTRAINT DF_PurchaseOrderDetail_rowguid DEFAULT,
     ModifiedDate INT NOT NULL
         CONSTRAINT DF_PurchaseOrderDetail_ModifiedDate DEFAULT,
     LineTotal AS ((UnitPrice*OrderQty)),
