@@ -1,26 +1,23 @@
-<drop>
-    DROP ::= "DROP" DROP2 DROP1 DROP10
-    DROP1 ::= "TABLE" DROP3 
-                | "DATABASE" DROP5
-                | "USER" IDENTIFICADOR
-                | "VIEW" DROP3
-                | "INDEX" DROP7
-    DROP2 ::= "IF" "EXISTS"
-                | VACIO
-    DROP3 ::= OBJECT DROP4
-    DROP4 ::= "," DROP11
-                | VACIO
-    DROP5 ::= IDENTIFICADOR DROP6
-    DROP6 ::= "," DROP5
-                | VACIO
-    DROP7 ::= IDENTIFICADOR DROP8
-    DROP8 ::= "ON" OBJECT
-                | "." IDENTIFICADOR DROP9
-    DROP9 ::= "." IDENTIFICADOR
-                | VACIO
-    DROP10 ::= ";"
-                | "GO"
-                | "," DROP
-    DROP11 ::= DROP3
-                | DROP
-
+/*
+    non terminals DROP0,DROP1,DROP2,DROP3,DROP4,DROP5,DROP6,DROP7,DROP8
+*/
+/* <drop> */
+    DROP0 ::= DROP DROP1 FIN_AN ;
+    DROP1 ::= TABLE DROP2 DROP5 
+            | DATABASE DROP2 DROP7
+            | USER DROP2 Identificador
+            | VIEW DROP2 DROP3
+            | PROC DROP2 DROP3
+            | PROCEDURE DROP2 DROP3 
+            | FUNCTION DROP2 DROP3;
+    DROP2 ::= IF EXISTS
+            | /* VACIO */ ;
+    DROP3 ::= Identificador DROP4 ;
+    DROP4 ::= Punto Identificador
+            | /* VACIO */ ;
+    DROP5 ::= OBJECT DROP6 ;
+    DROP6 ::= Coma DROP5
+            | /* VACIO */ ;
+    DROP7 ::= Identificador DROP8 ;
+    DROP8 ::= Coma DROP7
+            | /* VACIO */ ;

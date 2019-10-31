@@ -1,17 +1,7 @@
-<truncate>
-    TRUNCATE ::= "TRUNCATE" "TABLE" OBJECT TRUNCATE1 TRUNCATE2
-    TRUNCATE1 ::= "," OBJECT
-                | VACIO
-    TRUNCATE2 ::= ";"
-                | "GO"
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<object>
-    OBJECT ::= IDENTIFICADOR OBJECT1
-    OBJECT1 ::= "." IDENTIFICADOR OBJECT2
-                | VACIO
-    OBJECT2 ::= "." IDENTIFICADOR OBJECT3
-                | VACIO
-    OBJECT3 ::= "." IDENTIFICADOR
-                | VACIO
+/*
+    non terminals TRUNCATE1,TRUNCATE2
+*/
+/* <truncate> */
+    TRUNCATE1 ::= TRUNCATE TABLE OBJECT TRUNCATE2 TRUNCATE2 FIN_AN;
+    TRUNCATE2 ::= Coma OBJECT
+                | /* VACIO */ ;

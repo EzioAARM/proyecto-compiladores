@@ -1,3 +1,7 @@
+TRUNCATE TABLE HumanResources.JobCandidate;
+
+DROP FUNCTION Sales.fn_SalesByStore;  
+
 CREATE FUNCTION dbo.ISOweek (@actualDate VARCHAR(50))  
 RETURNS INT 
 AS  
