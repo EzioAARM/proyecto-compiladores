@@ -132,3 +132,9 @@ AS
     WHERE FirstName = @FirstName AND LastName = @LastName  
     AND EndDate IS NULL;  
 GO
+
+CREATE VIEW hiredate_view  
+AS   
+SELECT p.FirstName, p.LastName, e.BusinessEntityID, e.HireDate  
+FROM HumanResources.Employee e   
+JOIN Person.Person AS p ON e.BusinessEntityID = p.BusinessEntityID ;  

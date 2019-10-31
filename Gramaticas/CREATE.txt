@@ -15,9 +15,11 @@
     CRT ::= CREATE CRT1;
     CRT1 ::= DATABASE Identificador DATABASE1 FIN_AN
             | OR ALTER CRT2
-            | CRT2;
+            | CRT2
+            | USER Identificador FIN_AN;
     CRT2 ::= PROC PROCEDURE1
-            | PROCEDURE PROCEDURE1;
+            | PROCEDURE PROCEDURE1
+            | VIEW VIEW1;
 
 /*
     non terminals DATABASE1,DATABASE2,DATABASE3,DATABASE4
@@ -77,4 +79,20 @@
     PROCEDURE17 ::= PROCEDURE16 PROCEDURE17
             | END
             | /* VACIO */ ;
-    
+
+
+/*
+    non terminals VIEW1,VIEW2,VIEW3,VIEW4,VIEW5,VIEW6
+*/
+/* <create_view> */
+    VIEW1 ::= Identificador VIEW2 VIEW3 ;
+    VIEW2 ::= Punto Identificador
+            | /* VACIO */ ;
+    VIEW3 ::= ParentesisAbrir VIEW4 ParentesisCerrar AS SELECT1 VIEW6 
+            | AS SELECT1 VIEW6;
+    VIEW4 ::= Identificador VIEW5
+            | /* VACIO */ ; 
+    VIEW5 ::= Coma Identificador VIEW5
+            | /* VACIO */ ;
+    VIEW6 ::= WITH CHECK OPTION FIN_AN
+            | FIN_AN ;
