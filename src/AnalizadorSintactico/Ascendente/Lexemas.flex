@@ -1336,11 +1336,11 @@ reservadaRETURNS = (RETURNS)
 <YYINITIAL> {reservadaRETURNS} {
     return symbol(sym.RETURNS, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
 }
-<YYINITIAL> {bit} {
-    return symbol(sym.DatoBit, new MyToken("DatoBit", yytext(), "Token", yyline + 1, yylength() + 1, yycolumn + 1));
-}
 <YYINITIAL> {int} {
     return symbol(sym.DatoEntero, new MyToken("DatoEntero", yytext(), "Token", yyline + 1, yylength() + 1, yycolumn + 1));
+}
+<YYINITIAL> {bit} {
+    return symbol(sym.DatoBit, new MyToken("DatoBit", yytext(), "Token", yyline + 1, yylength() + 1, yycolumn + 1));
 }
 <YYINITIAL> {float} {
     return symbol(sym.DatoFloat, new MyToken("DatoFloat", yytext(), "Token", yyline + 1, yylength() + 1, yycolumn + 1));
