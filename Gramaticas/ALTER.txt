@@ -78,7 +78,8 @@
     TB_CST6 ::= Coma Identificador TB_CST6
                 | /* VACIO */ ;
     TB_CST7 ::= WITH FILLFACTOR Igual DatoEntero TB_CST8
-                | TB_CST8 ;
+                | TB_CST8 
+                | /* VACIO */ ;
     TB_CST8 ::= ON Identificador ParentesisAbrir Identificador ParentesisCerrar
                 | Identificador ;
     TB_CST9 ::= ParentesisAbrir Identificador TB_CST6 ParentesisCerrar REFERENCES Identificador TB_CST10;
@@ -141,4 +142,53 @@
     non terminal ALTER0,ALTER1,ALTER2,ALTER3,ALTER4,ALTER5,ALTER6,ALTER7,ALTER8,ALTER9,ALTER10,ALTER11,ALTER12,ALTER13,ALTER14,ALTER15,ALTER16,ALTER17,ALTER18,ALTER19,ALTER20,ALTER21,ALTER22,ALTER23,ALTER24
 */
 /* <alter> */
-    
+    ALTER0 ::= ALTER ALTER1
+    ALTER1 ::= TABLE ALTER2
+            | DATABASE ALTER20 ALTER21
+            | CRT2 ;
+    ALTER2 ::= OBJECT ALTER3 ;
+    ALTER3 ::= ALTER COLUMN Identificador 
+            | ADD ALTER11
+            | DROP ALTER12
+            | WITH ALTER18 CONSTRAINT ALTER19
+            | CHECK CONSTRAINT ALTER19
+            | NOCHECK CONSTRAINT ALTER19 ;
+    ALTER4 ::= ParentesisAbrir ALTER5 ParentesisCerrar ALTER7
+            | /* VACIO */ ;
+    ALTER5 ::= DatoEntero ALTER6 
+            | MAX;
+    ALTER6 ::=  Coma DatoEntero 
+            | /* VACIO */ ;
+    ALTER7 ::= COLLATE Identificador ALTER8
+            | ALTER8 ;
+    ALTER8 ::= NULL
+            | NOT NULL
+            | /* VACIO */ ;
+    ALTER9 ::= DATATYPE ALTER4
+            | DROP ALTER10
+            | ADD ALTER10 ;
+    ALTER10 ::= ROWGUIDCOL
+            | NOT FOR REPLICATION ;
+    ALTER11 ::= COL_DEF ALTER12
+            | TB_CST ALTER12 ;
+    ALTER12 ::= Coma ALTER11
+            | /* VACIO */ ;
+    ALTER12 ::= CONSTRAINT ALTER13
+            | ALTER13 ;
+    ALTER13 ::= IF EXISTS ALTER14
+            | ALTER14 ;
+    ALTER14 ::= Identificador
+            | COLUMN ALTER15 ALTER16;
+    ALTER15 ::= IF EXISTS
+            | /* VACIO */ ;
+    ALTER16 ::= Identificador ALTER17;
+    ALTER17 ::= Coma Identificador ALTER17
+            | /* VACIO */ ;
+    ALTER18 ::= CHECK
+            | NOCHECK ;
+    ALTER19 ::= ALL
+            | Identificador ;
+    ALTER20 ::= Identificador
+            | CURRENT ;
+    ALTER21 ::= COLLATE Identificador
+            | ADD FILE FLSPC ;

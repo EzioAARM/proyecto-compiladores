@@ -10,12 +10,13 @@ BEGIN
 END ;
 
 CREATE TABLE Persona (
-	Identificacion INT PRIMARY KEY, 
+	Identificacion INT, 
 	Nombres VARCHAR(50), 
 	Apellidos VARCHAR(50), 
 	Nacionalidad VARCHAR(50), 
 	Fecha_Nacimiento VARCHAR(50),
-	fecha_modificacion VARCHAR(50) DEFAULT 'GETDATE()'
+	fecha_modificacion VARCHAR(50) DEFAULT 'GETDATE()',
+    CONSTRAINT PK_TEST PRIMARY KEY (Identificacion, Nombres)
 ) ON PRIMARY;
 
 CREATE PROCEDURE Production.uspGetList @Product VARCHAR(40)   
@@ -81,20 +82,13 @@ SET Value = y.Value
 FROM cte AS x  -- cte is assigned an alias.  
 INNER JOIN @y AS y ON y.ID = x.ID; 
 
-/*ALTER TABLE Production.TransactionHistoryArchive
-ADD CONSTRAINT PK_TransactionHistoryArchive_TransactionID PRIMARY KEY CLUSTERED (TransactionID)
-WITH (DATA_COMPRESSION = PAGE);
+ALTER TABLE Production.TransactionHistoryArchive
+ADD CONSTRAINT PK_TransactionHistoryArchive_TransactionID PRIMARY KEY CLUSTERED (TransactionID);
 
 ALTER TABLE Production.TransactionHistoryArchive
-ADD CONSTRAINT PK_TransactionHistoryArchive_TransactionID PRIMARY KEY CLUSTERED (TransactionID)
-WITH (FILLFACTOR = 75, ONLINE = ON, PAD_INDEX = ON);
+ADD CONSTRAINT PK_TransactionHistoryArchive_TransactionID PRIMARY KEY CLUSTERED (TransactionID);
 
-ALTER DATABASE AdventureWorks2012
-Modify Name = Northwind ;
 
-ALTER INDEX idxcci_cci_target ON cci_target REORGANIZE WITH (COMPRESS_ALL_ROW_GROUPS = ON);
-
-ALTER INDEX cci_FactInternetSales2 ON FactInternetSales2 REORGANIZE; */
 CREATE PROCEDURE Production.uspGetList @Product VARCHAR(40)   
     , @MaxPrice VARCHAR   
     , @ComparePrice VARCHAR OUTPUT  
