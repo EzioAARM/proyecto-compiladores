@@ -1,1 +1,2 @@
-SELECT * FROM DIARIO.dbo.PERIODICO;
+ALTER TABLE Sales.SpecialOffer
+  ADD StoreName VARCHAR(30);

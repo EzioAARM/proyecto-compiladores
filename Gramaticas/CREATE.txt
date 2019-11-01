@@ -152,3 +152,25 @@
             | UPDATE0;
 	FUNCTION9 ::= FUNCTION8 FUNCTION9
 			| /* VACIO */ ;
+
+
+/*
+    non terminals EX,EX1,EX2,EX3,EX4,EX5,EX6
+*/
+/* <exec> */
+    EX ::= EX1 EX2 OBJECT EX6 EX5 FIN_AN;
+    EX1 ::= EXEC
+            | EXECUTE ;
+    EX2 ::= Arroba Identificador
+            | /* VACIO */ ;
+    EX3 ::= Identificador
+            | DEFV
+            | Arroba Identificador EX4
+            | DEFAULT 
+            | /* VACIO */ ;
+    EX4 ::= OUTPUT
+            | /* VACIO */ ;
+    EX5 ::= EX6 EX5
+            | /* VACIO */ ;
+    EX6 ::= Arroba Identificador Igual EX3
+            | EX3 ;

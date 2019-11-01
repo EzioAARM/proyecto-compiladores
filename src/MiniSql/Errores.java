@@ -41,7 +41,7 @@ public class Errores {
     
     public static void SyntaxErrorCup(MyToken tokenError) {
         Errores.append("\n" + "Error en la linea " + tokenError.getFila() + " columna " + tokenError.get_columnaInicial() 
-                    + "\n" + "Se encontró " + tokenError.get_token());
+                    + "\n" + "Se encontró " + tokenError.get_token() + "\n");
     }
     
     public static void EOF(String claseAnalisis) {
