@@ -1,7 +1,7 @@
 /*
     non terminal COL_CST,COL_CST1,COL_CST2,COL_CST3,COL_CST4,COL_CST5,COL_CST6,COL_CST7,COL_CST8,COL_CST9,COL_CST10,COL_CST11,COL_CST12,COL_CST13,COL_CST14,COL_CST15,COL_CST16
 */
-/* <column_constraint> */
+/* <column_constraint>   */
     COL_CST ::= COL_CST1 COL_CST2 COL_CST3; 
     COL_CST1 ::= CONSTRAINT Identificador
                 | /* VACIO */ ;
