@@ -657,13 +657,37 @@ non terminal DATATYPE,DATATYPE2,DATATYPE3,DATATYPE4,DATATYPE5
         ALTERI2 ::= ON OBJECT ALTERI3
                 ;
 
-        ALTERI3 ::= REBUILD PARTITION1
+        ALTERI3 ::= REBUILD PARTITION1 ALTERI4
                 |DISABLE
                 |REORGANIZE PARTITION1
                 |SET ParentesisAbrir SET_INDEX_OPTION SET_INDEX_OPTION2 ParentesisCerrar
-                |RESUME
+                |RESUME ALTERI6
                 |PAUSE 
                 |ABORT
+                ;
+
+        ALTERI6 ::= WITH ParentesisAbrir RESINDEX1 ParentesisCerrar
+                | /* VACIO */
+                ;
+
+        RESINDEX1 ::= MAXDOP /* AGREGAR */ Igual DatoEntero RESINDEX2
+                        | MAX_DURATION Igual DatoEntero MINOP RESINDEX2
+                        | LOWPRIORITY RESINDEX2
+                        ;
+        
+        RESINDEX2 ::= Coma RESINDEX1
+                        | /* VACIO */
+        
+        LOWPRIORITY ::= WAIT_AT_LOW_PRIORITY ParentesisAbrir DatoEntero MINOP Coma ABORT_AFTER_WAIT Igual ABORTAFTERW
+                        ;
+
+        ABORTAFTERW ::= NONE
+                        | SELF
+                        | BLOCKERS
+                        ;
+
+        MINOP ::= MINUTES
+                | /* VACIO */
                 ;
 
         PARTITION1 ::= PARTITION Igual ALL ALTERI4
@@ -671,21 +695,23 @@ non terminal DATATYPE,DATATYPE2,DATATYPE3,DATATYPE4,DATATYPE5
                 | /* VACIO */
                 ;
                 
-        ALTERI4 ::= WITH 
+        ALTERI4 ::= WITH ParentesisAbrir REORGANIZEOPTION1 ParentesisCerrar
 
-        SET_INDEX_OPTION ::= ALLOW_ROW_LOCKS Igual ON
-                        |ALLOW_ROW_LOCKS Igual OFF
-                        |ALLOW_PAGE_LOCKS Igual ON
-                        |ALLOW_PAGE_LOCKS Igual OFF
-                        |OPTIMIZE_FOR_SEQUENTIAL_KEY Igual ON
-                        |OPTIMIZE_FOR_SEQUENTIAL_KEY Igual OFF
-                        |IGNORE_DUP_KEY Igual ON
-                        |IGNORE_DUP_KEY Igual OFF
-                        |STATISTICS_NORECOMPUTE Igual ON
-                        |STATISTICS_NORECOMPUTE Igual OFF
+        REORGANIZEOPTION1 ::= LOB_COMPACTION Igual ONOFF
+                                | COMPRESS_ALL_ROW_GROUPS Igual ONOFF
+
+        SET_INDEX_OPTION ::= ALLOW_ROW_LOCKS Igual ONOFF
+                        |ALLOW_PAGE_LOCKS Igual ONOFF
+                        |OPTIMIZE_FOR_SEQUENTIAL_KEY Igual ONOFF
+                        |IGNORE_DUP_KEY Igual ONOFF
+                        |STATISTICS_NORECOMPUTE Igual ONOFF
                         ;
 
-        SET_INDEX_OPTION2 ::= COMA SET_INDEX_OPTION SET_INDEX_OPTION2
+        ONOFF ::= ON
+                | OFF
+                ;
+
+        SET_INDEX_OPTION2 ::= Coma SET_INDEX_OPTION SET_INDEX_OPTION2
                         |
                         ;
 
