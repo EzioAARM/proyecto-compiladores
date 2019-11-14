@@ -9,6 +9,10 @@ package TablaSimbolos.Manejadores;
  *
  * @author axel
  */
-public class Truncate {
+public class Truncate extends Objeto {
+    
+    public Truncate(int id, String nombre) {
+        super(id, nombre);
+    }
     
 }

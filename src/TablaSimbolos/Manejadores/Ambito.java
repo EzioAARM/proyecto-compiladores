@@ -16,7 +16,7 @@ public class Ambito {
     
     private List<Transaction> Transacciones;
     private String Nombre;
-    private List<Objeto> Contenido;
+    public List<Objeto> Contenido;
     private List<Ambito> Ambitos;
     private int Id;
     private int Nivel = 0;
@@ -45,6 +45,10 @@ public class Ambito {
     
     public int getId() {
         return Id;
+    }
+    
+    public void addObjeto(Objeto query) {
+        Contenido.add(query);
     }
     
     /*

@@ -16,7 +16,7 @@ public abstract class Objeto {
     
     private String Nombre;
     private int Id;
-    private List<Propiedades> propiedades; 
+    private List<Propiedades> propiedades;
     
     public Objeto(int id, String nombre) {
         Nombre = nombre;

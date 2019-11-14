@@ -9,6 +9,10 @@ package TablaSimbolos.Manejadores;
  *
  * @author axel
  */
-public class Function {
+public class Function extends Objeto {
+    
+    public Function(int id, String nombre) {
+        super(id, nombre);
+    }
     
 }

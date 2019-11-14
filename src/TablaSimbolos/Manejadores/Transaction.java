@@ -15,11 +15,13 @@ import java.util.List;
 public class Transaction {
     private String Nombre;
     private List<Checkpoint> SavePoints;
+    public List<Objeto> Contenido;
     private int Id;
     
     public Transaction(int id, String nombre) {
         Nombre = nombre;
         SavePoints = new ArrayList();
+        Contenido = new ArrayList();
         Id = id;
     }
     
@@ -33,6 +35,10 @@ public class Transaction {
     
     public void setNombre(String nombre) {
         Nombre = nombre;
+    }
+    
+    public void addObjeto(Objeto query) {
+        Contenido.add(query);
     }
     
 }

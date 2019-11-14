@@ -9,6 +9,10 @@ package TablaSimbolos.Manejadores;
  *
  * @author axel
  */
-public class Index {
+public class Index extends Objeto {
+    
+    public Index(int id, String nombre) {
+        super(id, nombre);
+    }
     
 }

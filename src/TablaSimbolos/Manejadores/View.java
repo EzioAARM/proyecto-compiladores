@@ -9,6 +9,10 @@ package TablaSimbolos.Manejadores;
  *
  * @author axel
  */
-public class View {
+public class View extends Objeto {
+    
+    public View(int id, String nombre) {
+        super(id, nombre);
+    }
     
 }

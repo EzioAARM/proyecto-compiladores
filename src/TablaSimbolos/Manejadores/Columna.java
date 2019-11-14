@@ -9,6 +9,10 @@ package TablaSimbolos.Manejadores;
  *
  * @author axel
  */
-public class Columna {
+public class Columna extends Objeto {
+    
+    public Columna(int id, String nombre) {
+        super(id, nombre);
+    }
     
 }
