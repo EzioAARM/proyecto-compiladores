@@ -18,9 +18,10 @@ public class Ambito {
     public int Nivel = 0;
     private String Nombre;
     
-    private List<Transaction> Transacciones;
+    public List<Transaction> Transacciones;
     public List<Objeto> Contenido;
-    private List<Ambito> Ambitos;
+    public List<Ambito> Ambitos;
+    public List<Variable> Variables;
     
     public Ambito(String nombre, String tipoAmbito, int nivel, int id) {
         Contenido = new ArrayList();
@@ -28,6 +29,7 @@ public class Ambito {
         Id = id;
         Nombre = nombre;
         Nivel = nivel;
+        Variables = new ArrayList();
         if (tipoAmbito.equals("use")) {
             Transacciones = new ArrayList();
         }

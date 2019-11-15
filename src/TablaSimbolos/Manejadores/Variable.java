@@ -9,10 +9,25 @@ package TablaSimbolos.Manejadores;
  *
  * @author axel
  */
-public class Variable extends Objeto {
+public class Variable<T> extends Objeto {
+    
+    public T valor;
+    public int Max;
+    public int Dec;
+    public boolean hayMax;
+    public boolean hayDec;
     
     public Variable(int id, String nombre) {
         super(id, nombre);
+        
+    }
+    
+    public Variable(int id, String nombre, int param1, boolean hayParam1, int param2, boolean hayParam2) {
+        super(id, nombre);
+        Max = param1;
+        Dec = param2;
+        hayMax = hayParam1;
+        hayDec = hayParam2;
     }
     
 }
