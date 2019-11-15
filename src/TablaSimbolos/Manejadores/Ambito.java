@@ -22,17 +22,10 @@ public class Ambito {
     public List<Objeto> Contenido;
     private List<Ambito> Ambitos;
     
-    public Ambito(int id, String nombre, int nivel) {
+    public Ambito(String nombre, String tipoAmbito, int nivel, int id) {
         Contenido = new ArrayList();
         Ambitos = new ArrayList();
-        Nombre = nombre;
         Id = id;
-        Nivel = nivel;
-    }
-    
-    public Ambito(String nombre, String tipoAmbito, int nivel) {
-        Contenido = new ArrayList();
-        Ambitos = new ArrayList();
         Nombre = nombre;
         Nivel = nivel;
         if (tipoAmbito.equals("use")) {
@@ -90,25 +83,12 @@ public class Ambito {
         Sección de ambitos
     */
     
-    public void addAmbito(String nombre) {
-        Ambitos.add(new Ambito(Ambitos.size() - 1, nombre, Nivel + 1));
-    }
-    
-    public void addAmbito() {
-        Ambitos.add(new Ambito(Ambitos.size() - 1, "", Nivel + 1));
+    public void addAmbito(String nombre, String tipo, int  nivel, int id) {
+        Ambitos.add(new Ambito(nombre, tipo, nivel, id));
     }
     
     public Ambito getLastAmbito() {
         return Ambitos.get(Ambitos.size() - 1);
-    }
-    
-    public Ambito getAmbito(int id) {
-        for (int i = 0; i < Ambitos.size() - 1; i++) {
-            if (Ambitos.get(i).getId() == id) {
-                return Ambitos.get(Ambitos.size() - 1);
-            }
-        }
-        return null;
     }
     
     public Ambito getAmbito(String nombre) {

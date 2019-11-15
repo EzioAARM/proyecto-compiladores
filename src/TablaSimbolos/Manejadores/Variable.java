@@ -9,9 +9,9 @@ package TablaSimbolos.Manejadores;
  *
  * @author axel
  */
-public class Alter extends Objeto {
+public class Variable extends Objeto {
     
-    public Alter(int id, String nombre) {
+    public Variable(int id, String nombre) {
         super(id, nombre);
     }
     

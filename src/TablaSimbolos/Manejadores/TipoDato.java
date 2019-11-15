@@ -5,20 +5,14 @@
  */
 package TablaSimbolos.Manejadores;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author axel
  */
-public class SymbolDriver {
+public class TipoDato extends Objeto {
     
-    int id = 0;
-    
-    List<Ambito> Ambitos = new ArrayList();
-    
-    public Objeto buscar(String nombre) {
-        return null;
+    public TipoDato(int id, String nombre) {
+        super(id, nombre);
     }
+    
 }
