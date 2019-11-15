@@ -100,4 +100,8 @@ public class Ambito {
         return null;
     }
     
+    public int getAmbitoSize() {
+        return Ambitos.size();
+    }
+    
 }
