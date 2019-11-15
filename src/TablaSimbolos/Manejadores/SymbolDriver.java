@@ -21,4 +21,9 @@ public class SymbolDriver {
     public Objeto buscar(String nombre) {
         return null;
     }
+    
+    public void agregarAmbito(String nombre, String tipo) {
+        id++;
+       Ambitos.add(new Ambito(nombre, tipo, 0, id));
+    }
 }
