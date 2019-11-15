@@ -34,50 +34,60 @@ public class SymbolDriver {
                 switch (type.toLowerCase()) {
                     case "columna":
                         if (objetoEncontrado instanceof Columna) {
+                            agregarLog("Se encontro el tipo " + type);
                             return true;
                         }
                         break;
                     case "database":
                         if (objetoEncontrado instanceof Database) {
+                            agregarLog("Se encontro el tipo " + type);
                             return true;
                         }
                         break;
                     case "funcion":
                         if (objetoEncontrado instanceof Function) {
+                            agregarLog("Se encontro el tipo " + type);
                             return true;
                         }
                         break;
                     case "index":
                         if (objetoEncontrado instanceof Index) {
+                            agregarLog("Se encontro el tipo " + type);
                             return true;
                         }
                         break;
                     case "tabla":
                         if (objetoEncontrado instanceof Tabla) {
+                            agregarLog("Se encontro el tipo " + type);
                             return true;
                         }
                         break;
                     case "tipo de dato":
                         if (objetoEncontrado instanceof TipoDato) {
+                            agregarLog("Se encontro el tipo " + type);
                             return true;
                         }
                         break;
                     case "usuario":
                         if (objetoEncontrado instanceof Usuario) {
+                            agregarLog("Se encontro el tipo " + type);
                             return true;
                         }
                         break;
                     case "variable":
                         if (objetoEncontrado instanceof Variable) {
+                            agregarLog("Se encontro el tipo " + type);
                             return true;
                         }
                         break;
                     case "vista":
                         if (objetoEncontrado instanceof View) {
+                            agregarLog("Se encontro el tipo " + type);
                             return true;
                         }
                         break;
                     default:
+                        agregarLog("El objeto  " + objeto + " no existe");
                         return false;
                 }
             }
