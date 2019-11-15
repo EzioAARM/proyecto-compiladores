@@ -12,13 +12,12 @@ import java.util.List;
  *
  * @author axel
  */
-public class Tabla extends Objeto {
+public class Database extends Objeto {
     
-    List<Columna> columnas = null;
+    List<Tabla>  tabla = new ArrayList();
     
-    public Tabla(int id, String nombre) {
+    public Database(int id, String nombre) {
         super(id, nombre);
-        columnas = new ArrayList();
     }
     
 }

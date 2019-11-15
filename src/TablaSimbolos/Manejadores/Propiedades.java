@@ -9,7 +9,7 @@ package TablaSimbolos.Manejadores;
  *
  * @author axel
  */
-public class Propiedades<T> {
+public class Propiedades {
     
     private String Nombre;
     private String Valor;

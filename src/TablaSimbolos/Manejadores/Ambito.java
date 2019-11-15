@@ -14,12 +14,13 @@ import java.util.List;
  */
 public class Ambito {
     
-    private List<Transaction> Transacciones;
-    private String Nombre;
-    public List<Objeto> Contenido;
-    private List<Ambito> Ambitos;
     private int Id;
     private int Nivel = 0;
+    private String Nombre;
+    
+    private List<Transaction> Transacciones;
+    public List<Objeto> Contenido;
+    private List<Ambito> Ambitos;
     
     public Ambito(int id, String nombre, int nivel) {
         Contenido = new ArrayList();

@@ -12,13 +12,10 @@ import java.util.List;
  *
  * @author axel
  */
-public class Tabla extends Objeto {
+public class SymbolDriver {
     
-    List<Columna> columnas = null;
+    int id = 0;
     
-    public Tabla(int id, String nombre) {
-        super(id, nombre);
-        columnas = new ArrayList();
-    }
+    List<Ambito> Ambitos = new ArrayList();
     
 }
