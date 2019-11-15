@@ -25,8 +25,64 @@ public class SymbolDriver {
         pilaAmbitos = new Stack<Integer>();
     }
     
-    public Objeto buscar(String nombre) {
-        return null;
+    public boolean existeObjeto(String objeto, String type) {
+        Ambito ambitoActual = Ambitos.get(pilaAmbitos.peek());
+        Objeto objetoEncontrado = null;
+        for (int i = 0; i < ambitoActual.getContentSize(); i++) {
+            if (ambitoActual.Contenido.get(i).getNombre().equals(objeto)) {
+                objetoEncontrado = ambitoActual.Contenido.get(i);
+                switch (type.toLowerCase()) {
+                    case "columna":
+                        if (objetoEncontrado instanceof Columna) {
+                            return true;
+                        }
+                        break;
+                    case "database":
+                        if (objetoEncontrado instanceof Database) {
+                            return true;
+                        }
+                        break;
+                    case "funcion":
+                        if (objetoEncontrado instanceof Function) {
+                            return true;
+                        }
+                        break;
+                    case "index":
+                        if (objetoEncontrado instanceof Index) {
+                            return true;
+                        }
+                        break;
+                    case "tabla":
+                        if (objetoEncontrado instanceof Tabla) {
+                            return true;
+                        }
+                        break;
+                    case "tipo de dato":
+                        if (objetoEncontrado instanceof TipoDato) {
+                            return true;
+                        }
+                        break;
+                    case "usuario":
+                        if (objetoEncontrado instanceof Usuario) {
+                            return true;
+                        }
+                        break;
+                    case "variable":
+                        if (objetoEncontrado instanceof Variable) {
+                            return true;
+                        }
+                        break;
+                    case "vista":
+                        if (objetoEncontrado instanceof View) {
+                            return true;
+                        }
+                        break;
+                    default:
+                        return false;
+                }
+            }
+        }
+        return false;
     }
     
     public void agregarAmbito(String nombre, String tipo) {

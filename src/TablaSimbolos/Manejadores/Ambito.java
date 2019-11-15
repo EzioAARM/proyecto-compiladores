@@ -15,7 +15,7 @@ import java.util.List;
 public class Ambito {
     
     private int Id;
-    private int Nivel = 0;
+    public int Nivel = 0;
     private String Nombre;
     
     private List<Transaction> Transacciones;
@@ -102,6 +102,10 @@ public class Ambito {
     
     public int getAmbitoSize() {
         return Ambitos.size();
+    }
+    
+    public int getContentSize() {
+        return Contenido.size();
     }
     
 }
