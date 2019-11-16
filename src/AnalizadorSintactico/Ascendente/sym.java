@@ -360,6 +360,7 @@ public class sym {
   public static final int GOTO = 76;
   public static final int INCLUDE = 227;
   public static final int WHILE = 183;
+  public static final int LOOK = 440;
   public static final int SEMANTICSIMILARITYTABLE = 150;
   public static final int FALSO = 197;
   public static final int CONNECT = 248;
@@ -888,7 +889,8 @@ public class sym {
   "INBOUND",
   "OUTBOUND",
   "PAUSED",
-  "MOVE"
+  "MOVE",
+  "LOOK"
   };
 }
 
