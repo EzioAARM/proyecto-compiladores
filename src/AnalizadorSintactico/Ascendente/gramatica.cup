@@ -1035,16 +1035,16 @@ DROP_CLUSTERED3 ::= Identificador
                 |DatoString
                 ;
 
-    ALTERI1 ::= OBJECT
-                |ALL
+    ALTERI1 ::= OBJECT ALTERI2
+                |ALL ALTERI2
                 ;
 
         ALTERI2 ::= ON OBJECT ALTERI3
                 ;
 
-        ALTERI3 ::= REBUILD  /* AGREGAR A FLEX */ PARTITION1 ALTERI4
+        ALTERI3 ::= REBUILD  /* AGREGAR A FLEX */ 
                 |DISABLE /* AGREGAR A FLEX */
-                |REORGANIZE /* AGREGAR A FLEX */ PARTITION1
+                |REORGANIZE /* AGREGAR A FLEX */  ALTERI4
                 |SET ParentesisAbrir SET_INDEX_OPTION SET_INDEX_OPTION2 ParentesisCerrar
                 |RESUME /* AGREGAR A FLEX */ ALTERI6
                 |PAUSE  /* AGREGAR A FLEX */
@@ -1082,6 +1082,7 @@ DROP_CLUSTERED3 ::= Identificador
                 ;
                 
         ALTERI4 ::= WITH ParentesisAbrir REORGANIZEOPTION1 ParentesisCerrar
+                | /* VACIO */
                 ;
 
         REORGANIZEOPTION1 ::= LOB_COMPACTION /* AGREGAR A FLEX */ Igual ONOFF
