@@ -28,7 +28,6 @@ import AnalizadorLexico.MyToken;
 %column
 %unicode
 %cup
-%standalone
 %char
 %function next_token
 %state COMENTARIOMULTI

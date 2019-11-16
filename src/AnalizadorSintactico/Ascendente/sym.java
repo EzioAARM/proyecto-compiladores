@@ -8,356 +8,446 @@ package AnalizadorSintactico.Ascendente;
 /** CUP generated class containing symbol constants. */
 public class sym {
   /* terminals */
-  public static final int Multiplicacion = 322;
-  public static final int SQLCODE = 244;
-  public static final int DECLARE = 44;
-  public static final int INTEGER = 242;
-  public static final int SIZE = 234;
-  public static final int DATABASE = 41;
-  public static final int RELATIVE = 212;
-  public static final int SOME = 154;
-  public static final int MONTH = 279;
-  public static final int BOTH = 216;
-  public static final int GO = 213;
-  public static final int PIVOT = 119;
+  public static final int Multiplicacion = 323;
+  public static final int SQLCODE = 245;
+  public static final int DECLARE = 45;
+  public static final int INTEGER = 243;
+  public static final int SIZE = 235;
+  public static final int DATABASE = 42;
+  public static final int RELATIVE = 213;
+  public static final int SOME = 155;
+  public static final int MONTH = 280;
+  public static final int BOTH = 217;
+  public static final int GO = 214;
+  public static final int PIVOT = 120;
   public static final int CLOSE = 21;
-  public static final int Coma = 339;
-  public static final int PAD = 189;
-  public static final int USE = 174;
-  public static final int MODULE = 277;
-  public static final int DAY = 276;
-  public static final int CONSTRAINT = 28;
-  public static final int WRITETEXT = 185;
+  public static final int MONTHS = 425;
+  public static final int INFINITE = 422;
+  public static final int Coma = 340;
+  public static final int PAD = 190;
+  public static final int USE = 175;
+  public static final int MODULE = 278;
+  public static final int DAY = 277;
+  public static final int SWITCH = 398;
+  public static final int CONSTRAINT = 29;
+  public static final int ONLINE = 400;
+  public static final int WRITETEXT = 186;
+  public static final int MINUTES = 362;
   public static final int BROWSE = 14;
-  public static final int CONTINUE = 31;
-  public static final int PROCEDURE = 125;
-  public static final int OPENDATASOURCE = 110;
-  public static final int WRITE = 308;
-  public static final int LEVEL = 262;
-  public static final int FETCH = 65;
-  public static final int ZONE = 311;
-  public static final int CATALOG = 225;
-  public static final int INTERSECT = 88;
-  public static final int DENY = 47;
-  public static final int OFF = 106;
-  public static final int DEALLOCATE = 43;
-  public static final int SECTION = 224;
-  public static final int FROM = 72;
-  public static final int TEXTSIZE = 159;
-  public static final int DUMP = 54;
-  public static final int SET = 151;
-  public static final int LlaveAbrir = 345;
+  public static final int CONTINUE = 32;
+  public static final int PROCEDURE = 126;
+  public static final int OPENDATASOURCE = 111;
+  public static final int WRITE = 309;
+  public static final int LEVEL = 263;
+  public static final int DEFAULT_LANGUAGE = 381;
+  public static final int FETCH = 66;
+  public static final int PAUSED = 438;
+  public static final int ZONE = 312;
+  public static final int CATALOG = 226;
+  public static final int INTERSECT = 89;
+  public static final int DENY = 48;
+  public static final int OLD_PASSWORD = 383;
+  public static final int OFF = 107;
+  public static final int DEALLOCATE = 44;
+  public static final int SECTION = 225;
+  public static final int FROM = 73;
+  public static final int TEXTSIZE = 160;
+  public static final int DUMP = 55;
+  public static final int SET = 152;
+  public static final int LlaveAbrir = 346;
   public static final int ASC = 8;
-  public static final int StringNoCerrado = 318;
-  public static final int SQLERROR = 246;
-  public static final int DIAGNOSTICS = 298;
-  public static final int KEY = 92;
-  public static final int TIMEZONE_HOUR = 264;
-  public static final int SQLCA = 243;
-  public static final int MenorIgual = 325;
-  public static final int RESTRICT = 134;
-  public static final int FREETEXT = 70;
-  public static final int GET = 210;
-  public static final int OPTION = 113;
-  public static final int NUMERIC = 299;
-  public static final int ARE = 201;
-  public static final int LINENO = 96;
-  public static final int DESCRIPTOR = 297;
-  public static final int SECURITYAUDIT = 145;
-  public static final int NULLIF = 104;
-  public static final int POSITION = 194;
-  public static final int SECOND = 222;
-  public static final int DECIMAL = 283;
-  public static final int COUNT = 259;
-  public static final int PRECISION = 121;
-  public static final int NONE = 293;
-  public static final int LAST = 257;
-  public static final int DISCONNECT = 301;
-  public static final int CURRENT_USER = 39;
-  public static final int EXECUTE = 61;
-  public static final int SAVE = 143;
-  public static final int TRUNCATE = 166;
-  public static final int DEFAULT = 45;
-  public static final int SESSION_USER = 150;
+  public static final int StringNoCerrado = 319;
+  public static final int SQLERROR = 247;
+  public static final int DIAGNOSTICS = 299;
+  public static final int KEY = 93;
+  public static final int SPARSE = 387;
+  public static final int TIMEZONE_HOUR = 265;
+  public static final int SQLCA = 244;
+  public static final int MenorIgual = 326;
+  public static final int ROWSET = 386;
+  public static final int RESTRICT = 135;
+  public static final int RANDOMIZED = 388;
+  public static final int FREETEXT = 71;
+  public static final int GET = 211;
+  public static final int OPTION = 114;
+  public static final int NUMERIC = 300;
+  public static final int COMPRESSION_DELAY = 410;
+  public static final int ARE = 202;
+  public static final int LINENO = 97;
+  public static final int DESCRIPTOR = 298;
+  public static final int SECURITYAUDIT = 146;
+  public static final int NULLIF = 105;
+  public static final int POSITION = 195;
+  public static final int SECOND = 223;
+  public static final int DECIMAL = 284;
+  public static final int COUNT = 260;
+  public static final int PRECISION = 122;
+  public static final int NONE = 294;
+  public static final int LAST = 258;
+  public static final int DISCONNECT = 302;
+  public static final int CURRENT_USER = 40;
+  public static final int PASSWORD = 380;
+  public static final int EXECUTE = 62;
+  public static final int SAVE = 144;
+  public static final int ALWAYS = 403;
+  public static final int TRUNCATE = 167;
+  public static final int PAD_INDEX = 408;
+  public static final int PARTITION = 375;
+  public static final int DEFAULT = 46;
+  public static final int SESSION_USER = 151;
   public static final int BY = 16;
-  public static final int DEFERRED = 290;
-  public static final int EXISTS = 62;
-  public static final int DobleNumeral = 348;
-  public static final int BIT = 214;
-  public static final int HAVING = 78;
-  public static final int LANGUAGE = 255;
-  public static final int IDENTITY_INSERT = 81;
-  public static final int CURRENT_TIME = 37;
-  public static final int INDEX = 85;
-  public static final int THEN = 160;
-  public static final int BIT_LENGTH = 215;
-  public static final int AT = 207;
+  public static final int DEFERRED = 291;
+  public static final int MASKED = 397;
+  public static final int EXISTS = 63;
+  public static final int DobleNumeral = 349;
+  public static final int BIT = 215;
+  public static final int HAVING = 79;
+  public static final int LANGUAGE = 256;
+  public static final int IDENTITY_INSERT = 82;
+  public static final int CURRENT_TIME = 38;
+  public static final int INDEX = 86;
+  public static final int THEN = 161;
+  public static final int BIT_LENGTH = 216;
+  public static final int AT = 208;
   public static final int EOF = 0;
-  public static final int ALLOCATE = 195;
+  public static final int ALLOCATE = 196;
   public static final int AS = 7;
-  public static final int EXTRACT = 193;
-  public static final int TRIGGER = 165;
-  public static final int INT = 239;
-  public static final int TIMEZONE_MINUTE = 266;
+  public static final int EXTRACT = 194;
+  public static final int TRIGGER = 166;
+  public static final int INT = 240;
+  public static final int TIMEZONE_MINUTE = 267;
   public static final int BACKUP = 10;
-  public static final int VALUES = 176;
-  public static final int Menos = 321;
-  public static final int Menor = 332;
-  public static final int NEXT = 288;
+  public static final int VALUES = 177;
+  public static final int Menos = 322;
+  public static final int Menor = 333;
+  public static final int ENABLE = 399;
+  public static final int NEXT = 289;
   public static final int ANY = 6;
-  public static final int Parentesis = 328;
-  public static final int KILL = 93;
-  public static final int SUBSTRING = 252;
-  public static final int PUBLIC = 126;
-  public static final int SEMANTICSIMILARITYDETAILSTABLE = 148;
-  public static final int CASCADED = 219;
+  public static final int DETERMINISTIC = 389;
+  public static final int Parentesis = 329;
+  public static final int KILL = 94;
+  public static final int SUBSTRING = 253;
+  public static final int PUBLIC = 127;
+  public static final int SEMANTICSIMILARITYDETAILSTABLE = 149;
+  public static final int CASCADED = 220;
+  public static final int LOGIN = 379;
   public static final int BREAK = 13;
-  public static final int PREPARE = 197;
-  public static final int END = 56;
-  public static final int ELSE = 55;
-  public static final int VIEW = 178;
-  public static final int PERCENT = 118;
+  public static final int PREPARE = 198;
+  public static final int END = 57;
+  public static final int ELSE = 56;
+  public static final int VIEW = 179;
+  public static final int PERCENT = 119;
+  public static final int CHANGE_TRACKING = 415;
   public static final int AND = 5;
-  public static final int NCHAR = 286;
-  public static final int CorcheteAbrir = 341;
-  public static final int RETURN = 135;
-  public static final int DBCC = 42;
-  public static final int CONTAINS = 29;
-  public static final int ROLLBACK = 139;
-  public static final int CONNECTION = 249;
-  public static final int FOREIGN = 69;
-  public static final int ESCAPE = 58;
-  public static final int VERDADERO = 280;
-  public static final int CURSOR = 40;
-  public static final int Numeral = 349;
-  public static final int NATURAL = 284;
-  public static final int LlaveCerrar = 346;
-  public static final int UNPIVOT = 171;
-  public static final int IMMEDIATE = 221;
-  public static final int RULE = 142;
-  public static final int INTO = 89;
+  public static final int NCHAR = 287;
+  public static final int FILESTREAM = 392;
+  public static final int PAGE = 412;
+  public static final int CorcheteAbrir = 342;
+  public static final int RETURN = 136;
+  public static final int DBCC = 43;
+  public static final int CONTAINS = 30;
+  public static final int STATISTICS_NORECOMPUTE = 369;
+  public static final int ROLLBACK = 140;
+  public static final int CONNECTION = 250;
+  public static final int FOREIGN = 70;
+  public static final int AUTO = 429;
+  public static final int ALLOW_PAGE_LOCKS = 366;
+  public static final int ESCAPE = 59;
+  public static final int BLOCKERS = 385;
+  public static final int VERDADERO = 281;
+  public static final int CURSOR = 41;
+  public static final int Numeral = 350;
+  public static final int NATURAL = 285;
+  public static final int HISTORY_RETENTION_PERIOD = 421;
+  public static final int LlaveCerrar = 347;
+  public static final int UNPIVOT = 172;
+  public static final int MAXDOP = 358;
+  public static final int WEEKS = 424;
+  public static final int NONCLUSTERED = 23;
+  public static final int DEFAULT_SCHEMA = 378;
+  public static final int RESUME = 353;
+  public static final int IMMEDIATE = 222;
+  public static final int RULE = 143;
+  public static final int INTO = 90;
   public static final int ALL = 3;
-  public static final int Llaves = 327;
-  public static final int LOAD = 97;
-  public static final int TABLESAMPLE = 158;
-  public static final int COLUMN = 25;
-  public static final int CorcheteCerrar = 342;
+  public static final int Llaves = 328;
+  public static final int LOAD = 98;
+  public static final int COLUMNSTORE = 413;
+  public static final int TABLESAMPLE = 159;
+  public static final int COLUMN = 26;
+  public static final int CorcheteCerrar = 343;
+  public static final int GENERATED = 402;
+  public static final int MAX_DURATION = 356;
   public static final int BEGIN = 11;
-  public static final int CORRESPONDING = 256;
-  public static final int OPENQUERY = 111;
-  public static final int OFFSETS = 107;
-  public static final int LOWER = 267;
-  public static final int SQLWARNING = 250;
-  public static final int OCTET_LENGTH = 302;
-  public static final int Punto = 340;
-  public static final int UNIQUE = 170;
-  public static final int GRANT = 76;
-  public static final int TRY_CONVERT = 167;
-  public static final int ROWS = 217;
-  public static final int INTERVAL = 245;
-  public static final int OPEN = 109;
-  public static final int WORK = 306;
-  public static final int CURRENT_DATE = 36;
-  public static final int Mas = 320;
-  public static final int TIMESTAMP = 263;
+  public static final int CORRESPONDING = 257;
+  public static final int OPENQUERY = 112;
+  public static final int OFFSETS = 108;
+  public static final int LOWER = 268;
+  public static final int SQLWARNING = 251;
+  public static final int OCTET_LENGTH = 303;
+  public static final int Punto = 341;
+  public static final int UNIQUE = 171;
+  public static final int GRANT = 77;
+  public static final int TRY_CONVERT = 168;
+  public static final int ROWS = 218;
+  public static final int INTERVAL = 246;
+  public static final int OPEN = 110;
+  public static final int HISTORY_TABLE = 419;
+  public static final int WORK = 307;
+  public static final int HIDDEN = 396;
+  public static final int CURRENT_DATE = 37;
+  public static final int Mas = 321;
+  public static final int TIMESTAMP = 264;
   public static final int ALTER = 4;
-  public static final int PRIVILEGES = 203;
-  public static final int TOP = 162;
-  public static final int REVOKE = 137;
-  public static final int FULL = 73;
-  public static final int RESTORE = 133;
-  public static final int EXTERNAL = 64;
-  public static final int SUM = 254;
-  public static final int MIN = 271;
-  public static final int DatoEntero = 314;
-  public static final int TEMPORARY = 258;
-  public static final int ABSOLUTE = 186;
-  public static final int CONVERT = 32;
-  public static final int ORDER = 115;
-  public static final int Modulo = 324;
-  public static final int COMPUTE = 27;
-  public static final int TO = 161;
-  public static final int LIKE = 95;
-  public static final int FILE = 66;
-  public static final int ParentesisAbrir = 343;
-  public static final int REPLICATION = 132;
-  public static final int Identificador = 319;
-  public static final int PRIMARY = 122;
-  public static final int MayorIgual = 329;
-  public static final int DEFERRABLE = 287;
-  public static final int FLOAT = 200;
-  public static final int DOUBLE = 52;
-  public static final int SEMANTICKEYPHRASETABLE = 147;
-  public static final int SELECT = 146;
-  public static final int VARYING = 177;
+  public static final int PRIVILEGES = 204;
+  public static final int ALGORITHM = 391;
+  public static final int TOP = 163;
+  public static final int REVOKE = 138;
+  public static final int PERIOD = 406;
+  public static final int FULL = 74;
+  public static final int TRACK_COLUMNS_UPDATED = 416;
+  public static final int RESTORE = 134;
+  public static final int EXTERNAL = 65;
+  public static final int SUM = 255;
+  public static final int MIN = 272;
+  public static final int DatoEntero = 315;
+  public static final int DATA_COMPRESSION = 411;
+  public static final int TEMPORARY = 259;
+  public static final int ABSOLUTE = 187;
+  public static final int CONVERT = 33;
+  public static final int ORDER = 116;
+  public static final int Modulo = 325;
+  public static final int COMPUTE = 28;
+  public static final int WEEK = 427;
+  public static final int TO = 162;
+  public static final int LIKE = 96;
+  public static final int FILE = 67;
+  public static final int ParentesisAbrir = 344;
+  public static final int OPTIMIZE_FOR_SEQUENTIAL_KEY = 367;
+  public static final int REPLICATION = 133;
+  public static final int ENCRYPTED = 390;
+  public static final int ABORT_AFTER_WAIT = 384;
+  public static final int Identificador = 320;
+  public static final int PRIMARY = 123;
+  public static final int MIGRATION_STATE = 434;
+  public static final int MayorIgual = 330;
+  public static final int DEFERRABLE = 288;
+  public static final int FLOAT = 201;
+  public static final int REORGANIZE = 351;
+  public static final int DOUBLE = 53;
+  public static final int OFFLINE = 401;
+  public static final int SEMANTICKEYPHRASETABLE = 148;
+  public static final int SYSTEM_VERSIONING = 417;
+  public static final int PARTITIONS = 374;
+  public static final int SELECT = 147;
+  public static final int VARYING = 178;
+  public static final int REBUILD = 357;
   public static final int CHECK = 19;
-  public static final int FIRST = 198;
-  public static final int TRIM = 278;
-  public static final int NAMES = 282;
-  public static final int PuntoComa = 338;
-  public static final int DatoFloat = 315;
-  public static final int INPUT = 235;
-  public static final int SQLSTATE = 248;
-  public static final int WHERE = 181;
-  public static final int UPDATE = 172;
-  public static final int ParentesisCerrar = 344;
+  public static final int FIRST = 199;
+  public static final int TRIM = 279;
+  public static final int LOB_COMPACTION = 363;
+  public static final int DISABLE = 352;
+  public static final int NAMES = 283;
+  public static final int PuntoComa = 339;
+  public static final int DatoFloat = 316;
+  public static final int INPUT = 236;
+  public static final int SQLSTATE = 249;
+  public static final int WHERE = 182;
+  public static final int UPDATE = 173;
+  public static final int SELF = 361;
+  public static final int ParentesisCerrar = 345;
   public static final int BETWEEN = 12;
-  public static final int RAISERROR = 127;
-  public static final int RECONFIGURE = 130;
-  public static final int IDENTITY = 80;
-  public static final int GROUP = 77;
-  public static final int TRANSLATION = 275;
-  public static final int USING = 294;
-  public static final int TSEQUAL = 168;
-  public static final int PRESERVE = 199;
-  public static final int USER = 175;
-  public static final int DOMAIN = 303;
-  public static final int Not = 337;
-  public static final int SQL = 240;
-  public static final int LOCAL = 265;
-  public static final int TRANSLATE = 272;
-  public static final int SYSTEM_USER = 156;
-  public static final int VALUE = 296;
-  public static final int ONLY = 304;
-  public static final int EXIT = 63;
-  public static final int Or = 336;
-  public static final int LEADING = 260;
-  public static final int TABLE = 157;
-  public static final int SCHEMA = 144;
-  public static final int Igual = 330;
+  public static final int ABORT = 355;
+  public static final int RAISERROR = 128;
+  public static final int RECONFIGURE = 131;
+  public static final int IDENTITY = 81;
+  public static final int GROUP = 78;
+  public static final int ALLOW_ENCRYPTED_VALUE_MODIFICATION = 382;
+  public static final int TRANSLATION = 276;
+  public static final int USING = 295;
+  public static final int TSEQUAL = 169;
+  public static final int PRESERVE = 200;
+  public static final int USER = 176;
+  public static final int DOMAIN = 304;
+  public static final int Not = 338;
+  public static final int SQL = 241;
+  public static final int FILETABLE_DIRECTORY = 431;
+  public static final int LOCAL = 266;
+  public static final int TRANSLATE = 273;
+  public static final int SYSTEM_USER = 157;
+  public static final int SCHEMABINDING = 372;
+  public static final int VALUE = 297;
+  public static final int ONLY = 305;
+  public static final int EXIT = 64;
+  public static final int Or = 337;
+  public static final int FILTER_PREDICATE = 435;
+  public static final int WAIT_AT_LOW_PRIORITY = 359;
+  public static final int DAYS = 423;
+  public static final int LEADING = 261;
+  public static final int TABLE = 158;
+  public static final int OFF_WITHOUT_DATA_RECOVERY = 433;
+  public static final int SCHEMA = 145;
+  public static final int Igual = 331;
   public static final int error = 1;
-  public static final int REVERT = 136;
-  public static final int WAITFOR = 179;
-  public static final int FORTRAN = 204;
-  public static final int STATISTICS = 155;
-  public static final int NOCHECK = 100;
-  public static final int TIME = 261;
-  public static final int LEFT = 94;
-  public static final int OR = 114;
-  public static final int ASSERTION = 205;
-  public static final int PROC = 124;
-  public static final int WHENEVER = 305;
-  public static final int ON = 108;
+  public static final int REVERT = 137;
+  public static final int WAITFOR = 180;
+  public static final int FORTRAN = 205;
+  public static final int STATISTICS = 156;
+  public static final int NOCHECK = 101;
+  public static final int TIME = 262;
+  public static final int LEFT = 95;
+  public static final int MOVE = 439;
+  public static final int OR = 115;
+  public static final int COMPRESS_ALL_ROW_GROUPS = 364;
+  public static final int ASSERTION = 206;
+  public static final int PROC = 125;
+  public static final int WHENEVER = 306;
+  public static final int ON = 109;
   public static final int CASCADE = 17;
-  public static final int EXCEPTION = 312;
-  public static final int CHAR = 227;
-  public static final int OF = 105;
-  public static final int ROWGUIDCOL = 141;
-  public static final int DELETE = 46;
-  public static final int UPPER = 289;
+  public static final int EXCEPTION = 313;
+  public static final int SYSTEM_TIME = 407;
+  public static final int FILETABLE_NAMESPACE = 430;
+  public static final int CHAR = 228;
+  public static final int OF = 106;
+  public static final int ROWGUIDCOL = 142;
+  public static final int DELETE = 47;
+  public static final int UPPER = 290;
   public static final int ADD = 2;
-  public static final int ADA = 190;
-  public static final int COMMIT = 26;
+  public static final int ADA = 191;
+  public static final int COMMIT = 27;
   public static final int CLUSTERED = 22;
-  public static final int ACTION = 188;
-  public static final int JOIN = 91;
-  public static final int WHEN = 180;
-  public static final int NULL = 103;
-  public static final int MINUTE = 274;
-  public static final int INNER = 86;
-  public static final int DISTRIBUTED = 51;
-  public static final int TRAILING = 269;
-  public static final int CONTAINSTABLE = 30;
-  public static final int TRANSACTION = 164;
-  public static final int NO = 291;
-  public static final int OPENXML = 112;
-  public static final int FUNCTION = 74;
-  public static final int PRIOR = 202;
-  public static final int SPACE = 238;
-  public static final int CAST = 223;
-  public static final int CHAR_LENGTH = 229;
-  public static final int SHUTDOWN = 153;
-  public static final int INSENSITIVE = 237;
-  public static final int SCROLL = 220;
+  public static final int ACTION = 189;
+  public static final int JOIN = 92;
+  public static final int WHEN = 181;
+  public static final int NULL = 104;
+  public static final int MINUTE = 275;
+  public static final int INNER = 87;
+  public static final int DISTRIBUTED = 52;
+  public static final int TRAILING = 270;
+  public static final int CONTAINSTABLE = 31;
+  public static final int TRANSACTION = 165;
+  public static final int NO = 292;
+  public static final int OPENXML = 113;
+  public static final int FUNCTION = 75;
+  public static final int PRIOR = 203;
+  public static final int SPACE = 239;
+  public static final int CAST = 224;
+  public static final int OWNER = 373;
+  public static final int IGNORE_DUP_KEY = 368;
+  public static final int CHAR_LENGTH = 230;
+  public static final int SHUTDOWN = 154;
+  public static final int START = 405;
+  public static final int NAME = 377;
+  public static final int INSENSITIVE = 238;
+  public static final int SCROLL = 221;
+  public static final int ALLOW_ROW_LOCKS = 365;
   public static final int CASE = 18;
-  public static final int ERRLVL = 57;
-  public static final int PLAN = 120;
-  public static final int UPDATETEXT = 173;
-  public static final int UNION = 169;
-  public static final int DROP = 53;
-  public static final int MAX = 270;
-  public static final int OUTPUT = 310;
-  public static final int PRINT = 123;
-  public static final int INDICATOR = 230;
-  public static final int FILLFACTOR = 67;
-  public static final int GLOBAL = 211;
-  public static final int Diferente = 334;
-  public static final int PARTIAL = 191;
-  public static final int COLLATION = 241;
-  public static final int GOTO = 75;
-  public static final int INCLUDE = 226;
-  public static final int WHILE = 182;
-  public static final int SEMANTICSIMILARITYTABLE = 149;
-  public static final int FALSO = 196;
-  public static final int CONNECT = 247;
-  public static final int VARCHAR = 300;
-  public static final int CURRENT_TIMESTAMP = 38;
+  public static final int ERRLVL = 58;
+  public static final int PLAN = 121;
+  public static final int UPDATETEXT = 174;
+  public static final int UNION = 170;
+  public static final int DROP = 54;
+  public static final int MAX = 271;
+  public static final int OUTPUT = 311;
+  public static final int PRINT = 124;
+  public static final int INDICATOR = 231;
+  public static final int FILESTREAM_ON = 418;
+  public static final int FILLFACTOR = 68;
+  public static final int GLOBAL = 212;
+  public static final int Diferente = 335;
+  public static final int PARTIAL = 192;
+  public static final int COLLATION = 242;
+  public static final int GOTO = 76;
+  public static final int INCLUDE = 227;
+  public static final int WHILE = 183;
+  public static final int SEMANTICSIMILARITYTABLE = 150;
+  public static final int FALSO = 197;
+  public static final int CONNECT = 248;
+  public static final int ENCRYPTION_TYPE = 394;
+  public static final int VARCHAR = 301;
+  public static final int CURRENT_TIMESTAMP = 39;
   public static final int BULK = 15;
-  public static final int INITIALLY = 232;
-  public static final int Division = 323;
-  public static final int SESSION = 228;
+  public static final int INITIALLY = 233;
+  public static final int Division = 324;
+  public static final int COLUMNSTORE_ARCHIVE = 414;
+  public static final int SESSION = 229;
+  public static final int LOCK_ESCALATION = 428;
   public static final int AUTHORIZATION = 9;
-  public static final int EXEC = 60;
-  public static final int REFERENCES = 131;
-  public static final int ENDEXEC = 307;
-  public static final int Arroba = 347;
-  public static final int CREATE = 33;
-  public static final int INSERT = 87;
+  public static final int EXEC = 61;
+  public static final int REFERENCES = 132;
+  public static final int OUTBOUND = 437;
+  public static final int ENDEXEC = 308;
+  public static final int Arroba = 348;
+  public static final int DATA_CONSISTENCY_CHECK = 420;
+  public static final int CREATE = 34;
+  public static final int INSERT = 88;
   public static final int CHECKPOINT = 20;
-  public static final int REAL = 208;
-  public static final int Mayor = 331;
-  public static final int ISOLATION = 251;
-  public static final int READ = 128;
-  public static final int SMALLINT = 236;
-  public static final int WITH = 183;
-  public static final int CURRENT = 35;
-  public static final int CHARACTER = 231;
-  public static final int DATE = 273;
-  public static final int TRAN = 163;
-  public static final int DISK = 49;
-  public static final int DESCRIBE = 295;
-  public static final int HOLDLOCK = 79;
-  public static final int OVER = 117;
-  public static final int DatoString = 317;
-  public static final int OUTER = 116;
-  public static final int DESC = 48;
-  public static final int DEC = 281;
-  public static final int USAGE = 292;
-  public static final int NOCLUSTERED = 101;
-  public static final int HOUR = 218;
-  public static final int FREETEXTTABLE = 71;
-  public static final int IS = 90;
-  public static final int RETURNS = 313;
-  public static final int ROWCOUNT = 140;
-  public static final int IN = 84;
-  public static final int OVERLAPS = 187;
-  public static final int SETUSER = 152;
-  public static final int Corchetes = 326;
-  public static final int MERGE = 98;
-  public static final int DISTINCT = 50;
-  public static final int IF = 83;
-  public static final int IgualIgual = 333;
-  public static final int CONSTRAINTS = 253;
-  public static final int UNKNOWN = 285;
-  public static final int DatoBit = 316;
-  public static final int RIGHT = 138;
-  public static final int CROSS = 34;
-  public static final int NOT = 102;
-  public static final int YEAR = 309;
-  public static final int MATCH = 268;
-  public static final int PASCAL = 192;
-  public static final int IDENTITYCOL = 82;
-  public static final int EXCEPT = 59;
-  public static final int NATIONAL = 99;
-  public static final int READTEXT = 129;
-  public static final int And = 335;
-  public static final int CHARACTER_LENGTH = 233;
-  public static final int COLLATE = 24;
-  public static final int FOUND = 206;
-  public static final int AVG = 209;
-  public static final int WITHIN = 184;
-  public static final int FOR = 68;
-  public static final int COALESCE = 23;
+  public static final int REAL = 209;
+  public static final int PAUSE = 354;
+  public static final int Mayor = 332;
+  public static final int ISOLATION = 252;
+  public static final int READ = 129;
+  public static final int SMALLINT = 237;
+  public static final int WITH = 184;
+  public static final int CURRENT = 36;
+  public static final int VIEW_METADATA = 376;
+  public static final int CHARACTER = 232;
+  public static final int DATE = 274;
+  public static final int TRAN = 164;
+  public static final int DISK = 50;
+  public static final int DESCRIBE = 296;
+  public static final int ENCRYPTION = 370;
+  public static final int HOLDLOCK = 80;
+  public static final int OVER = 118;
+  public static final int DatoString = 318;
+  public static final int OUTER = 117;
+  public static final int DESC = 49;
+  public static final int DEC = 282;
+  public static final int USAGE = 293;
+  public static final int NOCLUSTERED = 102;
+  public static final int HOUR = 219;
+  public static final int FREETEXTTABLE = 72;
+  public static final int IS = 91;
+  public static final int RETURNS = 314;
+  public static final int ROWCOUNT = 141;
+  public static final int IN = 85;
+  public static final int OVERLAPS = 188;
+  public static final int ROW = 404;
+  public static final int SETUSER = 153;
+  public static final int Corchetes = 327;
+  public static final int MERGE = 99;
+  public static final int INBOUND = 436;
+  public static final int CALLER = 360;
+  public static final int DISTINCT = 51;
+  public static final int IF = 84;
+  public static final int IgualIgual = 334;
+  public static final int CONSTRAINTS = 254;
+  public static final int REMOTE_DATA_ARCHIVE = 432;
+  public static final int YEARS = 426;
+  public static final int UNKNOWN = 286;
+  public static final int DatoBit = 317;
+  public static final int RIGHT = 139;
+  public static final int CROSS = 35;
+  public static final int NOT = 103;
+  public static final int YEAR = 310;
+  public static final int MATCH = 269;
+  public static final int PASCAL = 193;
+  public static final int IDENTITYCOL = 83;
+  public static final int PERSISTED = 395;
+  public static final int CALLED = 371;
+  public static final int EXCEPT = 60;
+  public static final int NATIONAL = 100;
+  public static final int COLUMN_ENCRYPTION_KEY = 393;
+  public static final int READTEXT = 130;
+  public static final int And = 336;
+  public static final int CHARACTER_LENGTH = 234;
+  public static final int COLLATE = 25;
+  public static final int FOUND = 207;
+  public static final int AVG = 210;
+  public static final int WITHIN = 185;
+  public static final int FOR = 69;
+  public static final int COALESCE = 24;
+  public static final int STATISTICS_INCREMENTAL = 409;
   public static final String[] terminalNames = new String[] {
   "EOF",
   "error",
@@ -382,6 +472,7 @@ public class sym {
   "CHECKPOINT",
   "CLOSE",
   "CLUSTERED",
+  "NONCLUSTERED",
   "COALESCE",
   "COLLATE",
   "COLUMN",
@@ -708,7 +799,96 @@ public class sym {
   "LlaveCerrar",
   "Arroba",
   "DobleNumeral",
-  "Numeral"
+  "Numeral",
+  "REORGANIZE",
+  "DISABLE",
+  "RESUME",
+  "PAUSE",
+  "ABORT",
+  "MAX_DURATION",
+  "REBUILD",
+  "MAXDOP",
+  "WAIT_AT_LOW_PRIORITY",
+  "CALLER",
+  "SELF",
+  "MINUTES",
+  "LOB_COMPACTION",
+  "COMPRESS_ALL_ROW_GROUPS",
+  "ALLOW_ROW_LOCKS",
+  "ALLOW_PAGE_LOCKS",
+  "OPTIMIZE_FOR_SEQUENTIAL_KEY",
+  "IGNORE_DUP_KEY",
+  "STATISTICS_NORECOMPUTE",
+  "ENCRYPTION",
+  "CALLED",
+  "SCHEMABINDING",
+  "OWNER",
+  "PARTITIONS",
+  "PARTITION",
+  "VIEW_METADATA",
+  "NAME",
+  "DEFAULT_SCHEMA",
+  "LOGIN",
+  "PASSWORD",
+  "DEFAULT_LANGUAGE",
+  "ALLOW_ENCRYPTED_VALUE_MODIFICATION",
+  "OLD_PASSWORD",
+  "ABORT_AFTER_WAIT",
+  "BLOCKERS",
+  "ROWSET",
+  "SPARSE",
+  "RANDOMIZED",
+  "DETERMINISTIC",
+  "ENCRYPTED",
+  "ALGORITHM",
+  "FILESTREAM",
+  "COLUMN_ENCRYPTION_KEY",
+  "ENCRYPTION_TYPE",
+  "PERSISTED",
+  "HIDDEN",
+  "MASKED",
+  "SWITCH",
+  "ENABLE",
+  "ONLINE",
+  "OFFLINE",
+  "GENERATED",
+  "ALWAYS",
+  "ROW",
+  "START",
+  "PERIOD",
+  "SYSTEM_TIME",
+  "PAD_INDEX",
+  "STATISTICS_INCREMENTAL",
+  "COMPRESSION_DELAY",
+  "DATA_COMPRESSION",
+  "PAGE",
+  "COLUMNSTORE",
+  "COLUMNSTORE_ARCHIVE",
+  "CHANGE_TRACKING",
+  "TRACK_COLUMNS_UPDATED",
+  "SYSTEM_VERSIONING",
+  "FILESTREAM_ON",
+  "HISTORY_TABLE",
+  "DATA_CONSISTENCY_CHECK",
+  "HISTORY_RETENTION_PERIOD",
+  "INFINITE",
+  "DAYS",
+  "WEEKS",
+  "MONTHS",
+  "YEARS",
+  "WEEK",
+  "LOCK_ESCALATION",
+  "AUTO",
+  "FILETABLE_NAMESPACE",
+  "FILETABLE_DIRECTORY",
+  "REMOTE_DATA_ARCHIVE",
+  "OFF_WITHOUT_DATA_RECOVERY",
+  "MIGRATION_STATE",
+  "FILTER_PREDICATE",
+  "INBOUND",
+  "OUTBOUND",
+  "PAUSED",
+  "MOVE"
   };
 }
 
