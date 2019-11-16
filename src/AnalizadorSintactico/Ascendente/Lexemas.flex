@@ -393,6 +393,56 @@ reservadaOUTPUT = (OUTPUT)
 reservadaZONE = (ZONE)
 reservadaEXCEPTION = (EXCEPTION)
 reservadaRETURNS = (RETURNS)
+
+
+reservadasENCRYPTION_TYPE = (ENCRYPTION_TYPE)
+reservadasPERSISTED = (PERSISTED)
+reservadasHIDDEN = (HIDDEN)
+reservadasMASKED = (MASKED)
+reservadasSWITCH = (SWITCH)
+reservadasENABLE = (ENABLE)
+reservadasONLINE = (ONLINE)
+reservadasOFFLINE = (OFFLINE)
+reservadasGENERATED = (GENERATED)
+reservadasALWAYS = (ALWAYS)
+reservadasROW = (ROW)
+reservadasSTART = (START)
+reservadasPERIOD = (PERIOD)
+reservadasSYSTEM_TIME = (SYSTEM_TIME)
+reservadasPAD_INDEX = (PAD_INDEX)
+reservadasSTATISTICS_INCREMENTAL = (STATISTICS_INCREMENTAL)
+reservadasCOMPRESSION_DELAY = (COMPRESSION_DELAY)
+reservadasDATA_COMPRESSION = (DATA_COMPRESSION)
+reservadasPAGE = (PAGE)
+reservadasCOLUMNSTORE = (COLUMNSTORE)
+reservadasCOLUMNSTORE_ARCHIVE = (COLUMNSTORE_ARCHIVE)
+reservadasCHANGE_TRACKING = (CHANGE_TRACKING)
+reservadasTRACK_COLUMNS_UPDATED = (TRACK_COLUMNS_UPDATED)
+reservadasSYSTEM_VERSIONING = (SYSTEM_VERSIONING)
+reservadasFILESTREAM_ON = (FILESTREAM_ON)
+reservadasHISTORY_TABLE = (HISTORY_TABLE)
+reservadasDATA_CONSISTENCY_CHECK = (DATA_CONSISTENCY_CHECK)
+reservadasHISTORY_RETENTION_PERIOD = (HISTORY_RETENTION_PERIOD)
+reservadasINFINITE = (INFINITE)
+reservadasDAYS = (DAYS)
+reservadasWEEKS = (WEEKS)
+reservadasMONTHS = (MONTHS)
+reservadasYEARS = (YEARS)
+reservadasWEEK = (WEEK)
+reservadasLOCK_ESCALATION = (LOCK_ESCALATION)
+reservadasAUTO = (AUTO)
+reservadasFILETABLE_NAMESPACE = (FILETABLE_NAMESPACE)
+reservadasFILETABLE_DIRECTORY = (FILETABLE_DIRECTORY)
+reservadasREMOTE_DATA_ARCHIVE = (REMOTE_DATA_ARCHIVE)
+reservadasOFF_WITHOUT_DATA_RECOVERY = (OFF_WITHOUT_DATA_RECOVERY)
+reservadasMIGRATION_STATE = (MIGRATION_STATE)
+reservadasFILTER_PREDICATE = (FILTER_PREDICATE)
+reservadasINBOUND = (INBOUND)
+reservadasOUTBOUND = (OUTBOUND)
+reservadasPAUSED = (PAUSED)
+reservadasMOVE = (MOVE)
+
+
 %%
 <YYINITIAL> [/]([*])+(.) {
     _cadenaComentario.append(yytext());
@@ -1335,6 +1385,197 @@ reservadaRETURNS = (RETURNS)
 <YYINITIAL> {reservadaRETURNS} {
     return symbol(sym.RETURNS, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
 }
+
+
+
+
+<YYINITIAL> {reservadasENCRYPTION_TYPE}
+     {
+         return symbol(sym.{ENCRYPTION_TYPE, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasPERSISTED}
+     {
+         return symbol(sym.{PERSISTED, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasHIDDEN}
+     {
+         return symbol(sym.{HIDDEN, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasMASKED}
+     {
+         return symbol(sym.{MASKED, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasSWITCH}
+     {
+         return symbol(sym.{SWITCH, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasENABLE}
+     {
+         return symbol(sym.{ENABLE, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasONLINE}
+     {
+         return symbol(sym.{ONLINE, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasOFFLINE}
+     {
+         return symbol(sym.{OFFLINE, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasGENERATED}
+     {
+         return symbol(sym.{GENERATED, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasALWAYS}
+     {
+         return symbol(sym.{ALWAYS, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasROW}
+     {
+         return symbol(sym.{ROW, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasSTART}
+     {
+         return symbol(sym.{START, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasPERIOD}
+     {
+         return symbol(sym.{PERIOD, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasSYSTEM_TIME}
+     {
+         return symbol(sym.{SYSTEM_TIME, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasPAD_INDEX}
+     {
+         return symbol(sym.{PAD_INDEX, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasSTATISTICS_INCREMENTAL}
+     {
+         return symbol(sym.{STATISTICS_INCREMENTAL, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasCOMPRESSION_DELAY}
+     {
+         return symbol(sym.{COMPRESSION_DELAY, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasDATA_COMPRESSION}
+     {
+         return symbol(sym.{DATA_COMPRESSION, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasPAGE}
+     {
+         return symbol(sym.{PAGE, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasCOLUMNSTORE}
+     {
+         return symbol(sym.{COLUMNSTORE, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasCOLUMNSTORE_ARCHIVE}
+     {
+         return symbol(sym.{COLUMNSTORE_ARCHIVE, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasCHANGE_TRACKING}
+     {
+         return symbol(sym.{CHANGE_TRACKING, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasTRACK_COLUMNS_UPDATED}
+     {
+         return symbol(sym.{TRACK_COLUMNS_UPDATED, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasSYSTEM_VERSIONING}
+     {
+         return symbol(sym.{SYSTEM_VERSIONING, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasFILESTREAM_ON}
+     {
+         return symbol(sym.{FILESTREAM_ON, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasHISTORY_TABLE}
+     {
+         return symbol(sym.{HISTORY_TABLE, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasDATA_CONSISTENCY_CHECK}
+     {
+         return symbol(sym.{DATA_CONSISTENCY_CHECK, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasHISTORY_RETENTION_PERIOD}
+     {
+         return symbol(sym.{HISTORY_RETENTION_PERIOD, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasINFINITE}
+     {
+         return symbol(sym.{INFINITE, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasDAYS}
+     {
+         return symbol(sym.{DAYS, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasWEEKS}
+     {
+         return symbol(sym.{WEEKS, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasMONTHS}
+     {
+         return symbol(sym.{MONTHS, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasYEARS}
+     {
+         return symbol(sym.{YEARS, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasWEEK}
+     {
+         return symbol(sym.{WEEK, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasLOCK_ESCALATION}
+     {
+         return symbol(sym.{LOCK_ESCALATION, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasAUTO}
+     {
+         return symbol(sym.{AUTO, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasFILETABLE_NAMESPACE}
+     {
+         return symbol(sym.{FILETABLE_NAMESPACE, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasFILETABLE_DIRECTORY}
+     {
+         return symbol(sym.{FILETABLE_DIRECTORY, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasREMOTE_DATA_ARCHIVE}
+     {
+         return symbol(sym.{REMOTE_DATA_ARCHIVE, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasOFF_WITHOUT_DATA_RECOVERY}
+     {
+         return symbol(sym.{OFF_WITHOUT_DATA_RECOVERY, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasMIGRATION_STATE}
+     {
+         return symbol(sym.{MIGRATION_STATE, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasFILTER_PREDICATE}
+     {
+         return symbol(sym.{FILTER_PREDICATE, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasINBOUND}
+     {
+         return symbol(sym.{INBOUND, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasOUTBOUND}
+     {
+         return symbol(sym.{OUTBOUND, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasPAUSED}
+     {
+         return symbol(sym.{PAUSED, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+<YYINITIAL> {reservadasMOVE}
+     {
+         return symbol(sym.{MOVE, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+     }
+
+
+
 <YYINITIAL> {int} {
     return symbol(sym.DatoEntero, new MyToken("DatoEntero", yytext(), "Token", yyline + 1, yylength() + 1, yycolumn + 1));
 }
