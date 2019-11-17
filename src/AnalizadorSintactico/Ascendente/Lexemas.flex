@@ -735,6 +735,7 @@ reservadasQUERY_STORE = (QUERY_STORE)
     return symbol(sym.DEALLOCATE, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
 }
 <YYINITIAL> {reservadaDECLARE} {
+    System.out.println("Leyo Declare");
     return symbol(sym.DECLARE, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
 }
 <YYINITIAL> {reservadaDEFAULT} {
@@ -2204,6 +2205,7 @@ reservadasQUERY_STORE = (QUERY_STORE)
 }
 <YYINITIAL> {identificador} {
     if (yytext().length() <= 31) {
+        System.out.println("Leyo Identificador");
         return symbol(sym.Identificador, new MyToken("Identificador", yytext(), "Token", yyline + 1, yylength() + 1, yycolumn + 1));
     } else {
         
@@ -2311,6 +2313,8 @@ reservadasQUERY_STORE = (QUERY_STORE)
     return symbol(sym.LlaveCerrar, new MyToken("LlaveCerrar", yytext(), "Simbolo", yyline + 1, yylength() + 1, yycolumn + 1));
 }
 {arroba} {
+
+    System.out.println("Leyo Arroba");
     return symbol(sym.Arroba, new MyToken("Arroba", yytext(), "Simbolo", yyline + 1, yylength() + 1, yycolumn + 1));
 }
 {hast} {

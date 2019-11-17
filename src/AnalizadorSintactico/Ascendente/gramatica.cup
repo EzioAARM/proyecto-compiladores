@@ -33,6 +33,10 @@ public void report_error(String message, Object info) {
     System.err.println(m);
 }
 public SymbolDriver Manejador = new SymbolDriver();
+public boolean isentero;
+public boolean isreal;
+public boolean isstring;
+public Variable varActual = null;
 
 
 :}
@@ -68,10 +72,10 @@ start with INICIALB;
 
     INICIAL ::= TRUNCATE1 GOOP INICIAL {:System.out.println("entro TRUNCATE");:}
             | ALTER0 GOOP INICIAL {:System.out.println("entro ALTER");:}
-            | USE1 FIN_AN {:System.out.println("entro USE");:}
-            | DECLARE1 FIN_AN {:System.out.println("entro DECLARE");:}
-            | SET1 FIN_AN {:System.out.println("entro SET");:}
-            | EX 
+            | USE1 FIN_AN INICIAL {:System.out.println("entro USE");:}
+            | DECLARE1 FIN_AN INICIAL {:System.out.println("entro DECLARE");:}
+            | SET1 FIN_AN INICIAL{:System.out.println("entro SET");:}
+            | EX INICIAL
             | /* VACIO */ {:System.out.println("entro DROP");:} ; 
     GOOP ::= GO
             | /* VACIO */ ;
@@ -120,7 +124,18 @@ non terminal SEXP,SEXP2,SEXP3,SEXP4,SEXP5
     SEXP5 ::= ParentesisAbrir SEXP ParentesisCerrar
                 | DatoEntero
                 | DatoFloat
-                | Arroba Identificador
+                | Arroba Identificador:o {:
+varActual = getVariable(o.get_lexema());
+if(varActual.asignado){
+    if(varActual.tipoDato == "smallint" || varActual.tipoDato == "int" || varActual.tipoDato == "integer"){
+        isentero = true;
+    }else if(varActual.tipoDato == "float" ||varActual.tipoDato == "real" || varActual.tipoDato == "numeric" || varActual.tipoDato == "decimal"){
+        isreal = true;
+    }else{
+        isstring = true;
+    }
+}
+:}
                 | OBJECT;
 
 /*
@@ -165,7 +180,7 @@ non terminal EXPRESSION,EXPRESSION1,EXPRESSION2,EXPRESSION3,EXPRESSION4
 
 /* <expression> */
     EXPRESSION ::= SEXP EXPRESSION1 EXPRESSION3 
-            | EXPRESSION2 SUM_OPR EXPRESSION2 
+            | EXPRESSION2 SUM_OPR EXPRESSION2 //CONCATENACION 
             | NOT_OPR EXPRESSION EXPRESSION4 
             | EXPRESSION3
             | ParentesisAbrir EXPRESSION ParentesisCerrar;
@@ -216,28 +231,33 @@ non terminal DATATYPE,DATATYPE2,DATATYPE3,DATATYPE4,DATATYPE5
 */
 
 /* <datatype> */
-    DATATYPE ::= OBJECT
-                |DATATYPE3
+    DATATYPE ::= OBJECT 
+                |DATATYPE3:f {:RESULT = f;:}
                 ;
-    DATATYPE3 ::= BIT DATATYPE4 
-                |INT DATATYPE4 
-                |INTEGER DATATYPE4 
-                |FLOAT DATATYPE4 
-                |VARCHAR DATATYPE4 
-                |DATE DATATYPE4 
-                |REAL DATATYPE4 
-                |DECIMAL DATATYPE4 
-                |NUMERIC DATATYPE4 
-                |SMALLINT DATATYPE4 
-                |TIME DATATYPE4 
-                |CHAR DATATYPE4 
-                |NCHAR DATATYPE4 
+    DATATYPE3 ::= BIT:e DATATYPE4:d4 {:RESULT = e.get_lexema() + " " + d4;:} 
+                |INT:e DATATYPE4:d4 {:RESULT = e.get_lexema() + " " + d4;:} 
+                |INTEGER:e DATATYPE4:d4 {:RESULT = e.get_lexema() + " " + d4;:}
+                |FLOAT:e DATATYPE4:d4 {:RESULT = e.get_lexema() + " " + d4;:} 
+                |VARCHAR:e DATATYPE4:d4 {:RESULT = e.get_lexema() + " " + d4;:} 
+                |DATE:e DATATYPE4:d4 {:RESULT = e.get_lexema() + " " + d4;:} 
+                |REAL:e DATATYPE4:d4 {:RESULT = e.get_lexema() + " " + d4;:} 
+                |DECIMAL:e DATATYPE4:d4 {:RESULT = e.get_lexema() + " " + d4;:} 
+                |NUMERIC:e DATATYPE4:d4 {:RESULT = e.get_lexema() + " " + d4;:} 
+                |SMALLINT:e DATATYPE4:d4 {:RESULT = e.get_lexema() + " " + d4;:} 
+                |TIME:e DATATYPE4:d4 {:RESULT = e.get_lexema() + " " + d4;:} 
+                |CHAR:e DATATYPE4:d4 {:RESULT = e.get_lexema() + " " + d4;:} 
+                |NCHAR:e DATATYPE4:d4 {:RESULT = e.get_lexema() + " " + d4;:} 
                 ;
-    DATATYPE4 ::= ParentesisAbrir DatoEntero DATATYPE5 
+    DATATYPE4 ::= ParentesisAbrir DatoEntero:d DATATYPE5:d5 {:
+if(d5.equals("")){
+    RESULT = d.get_lexema();
+}else{
+    RESULT =d.get_lexema() + " " + d5;
+} :}
                 | 
                 ;
-    DATATYPE5 ::= Coma DatoEntero ParentesisCerrar 
-                | ParentesisCerrar 
+    DATATYPE5 ::= Coma DatoEntero:d1 ParentesisCerrar {:RESULT = d1.get_lexema();;:}
+                | ParentesisCerrar {:RESULT = "";:}
                 ;
 
 
@@ -578,7 +598,7 @@ non terminal DATATYPE,DATATYPE2,DATATYPE3,DATATYPE4,DATATYPE5
 */
 /* <truncate> */
     TRUNCATE1 ::= TRUNCATE TABLE OBJECT:o TRUNCATE2 FIN_AN {: 
-    String prueba = o.get_lexema();
+    String prueba = o.toString();
     String[] nombre = prueba.split("\\.");
      int i = nombre.length;
     //funcion buscar, parametro nombre[i-1];
@@ -1783,12 +1803,23 @@ non terminal SELECT1,SELECT2,SELECT3,SELECT4,SELECT5,SELECT6,SELECT7,SELECT8,SEL
     SELECT18 ::= Coma EXPRESSION SELECT18 
                 | /* VACIO */ ;
 
-    DECLARE1 ::= DECLARE Arroba Identificador DECLARE2 DATATYPE DECLARE3;
+    DECLARE1 ::= DECLARE Arroba Identificador:o DECLARE2 DATATYPE:e DECLARE3 DECLARE4 {:
+
+//Metodo agregar
+Manejar.definirVariable(o.get_lexema(),)
+//Metodo asignar
+System.out.println(o.get_lexema());
+System.out.println(e.toString());
+:};
 
     DECLARE2 ::= AS
                 | /* VACIO */
                 ;
-    DECLARE3 ::= Igual DEFV
+    DECLARE3 ::= Igual SEXP
+                | /* VACIO */
+                ;
+    DECLARE4 ::= Coma Arroba Identificador:o DECLARE2 DATATYPE:e DECLARE3 DECLARE4 
+                |
                 ;
 
     SET1 ::= SET Arroba Identificador Igual SEXP ;

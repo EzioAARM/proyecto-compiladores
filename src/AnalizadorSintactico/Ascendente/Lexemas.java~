@@ -3848,6 +3848,7 @@ public class Lexemas implements java_cup.runtime.Scanner {
           case 550: break;
           case 4: 
             { if (yytext().length() <= 31) {
+        System.out.println("Entro Identificador");
         return symbol(sym.Identificador, new MyToken("Identificador", yytext(), "Token", yyline + 1, yylength() + 1, yycolumn + 1));
     } else {
         
@@ -3946,7 +3947,8 @@ public class Lexemas implements java_cup.runtime.Scanner {
             // fall through
           case 569: break;
           case 23: 
-            { return symbol(sym.Arroba, new MyToken("Arroba", yytext(), "Simbolo", yyline + 1, yylength() + 1, yycolumn + 1));
+            { System.out.println("Entro Arroba");
+    return symbol(sym.Arroba, new MyToken("Arroba", yytext(), "Simbolo", yyline + 1, yylength() + 1, yycolumn + 1));
             } 
             // fall through
           case 570: break;
@@ -5166,7 +5168,8 @@ public class Lexemas implements java_cup.runtime.Scanner {
             // fall through
           case 812: break;
           case 266: 
-            { return symbol(sym.DECLARE, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+            { System.out.println("Entro Declare");
+    return symbol(sym.DECLARE, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
             } 
             // fall through
           case 813: break;
