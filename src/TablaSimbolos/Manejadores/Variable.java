@@ -16,10 +16,12 @@ public class Variable<T> extends Objeto {
     public int Dec;
     public boolean hayMax;
     public boolean hayDec;
+    public String tipoDato;
+    public boolean asignado = false;
     
-    public Variable(int id, String nombre) {
+    public Variable(int id, String nombre, String tipo) {
         super(id, nombre);
-        
+        tipoDato = tipo;
     }
     
     public Variable(int id, String nombre, int param1, boolean hayParam1, int param2, boolean hayParam2) {

@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class Tabla extends Objeto {
     
-    List<Columna> columnas = null;
+    public List<Columna> columnas = null;
     
     public Tabla(int id, String nombre) {
         super(id, nombre);

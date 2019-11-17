@@ -28,10 +28,29 @@ public class SymbolDriver {
     public SymbolDriver() {
         Ambitos = new ArrayList();
         pilaAmbitos = new Stack<Integer>();
+        // Crea el ambito de la base de datos master
         agregarAmbito("master", "database");
+        // Crea el ambito de la base de datos dbtest1
+        agregarAmbito("dbtest1", "database");
+        // Agrega las tablas miTb1, miTb2, miTb3 en la base de datos dbtest1
+        agregarTabla("miTb1");
+        agregarTabla("miTb2");
+        agregarTabla("miTb3");
+        // Crea el ambito de la base de datos dbtest2
+        agregarAmbito("dbtest2", "database");
+        // Agrega las tablas miTb1, miTb2, miTb3 en la base de datos dbtest2
+        agregarTabla("miTb1");
+        agregarTabla("miTb2");
+        agregarTabla("miTb3");
+        // Crea el ambito de la base de datos dbtest3
+        agregarAmbito("dbtest3", "database");
+        // Agrega las tablas miTb1, miTb2, miTb3 en la base de datos dbtest3
+        agregarTabla("miTb1");
+        agregarTabla("miTb2");
+        agregarTabla("miTb3");
     }
     
-    public boolean actualizarPropiedad(String nombre, String tipo, String propiedad, String valor) {
+    /*public boolean actualizarPropiedad(String nombre, String tipo, String propiedad, String valor) {
         for (int i = 0; i < Ambitos.get(pilaAmbitos.size()).Contenido.size() - 1; i++) {
             if (Ambitos.get(pilaAmbitos.size()).Contenido.get(i).getNombre().equals(nombre)) {
                 Ambitos.get(pilaAmbitos.size()).Contenido.get(i).changeIfNotEqual(propiedad, valor);
@@ -41,6 +60,111 @@ public class SymbolDriver {
         }
         agregarLog("El objeto " + nombre + " no se encuentra en el ambito actual");
         return false;
+    }*/
+    
+    private int getAmbitoPos(int id) {
+        for (int i = 0; i < Ambitos.size() - 1; i++) {
+            if (Ambitos.get(i).getId() == id) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    
+    public boolean setVariable(Variable variable) {
+        int posActual = getAmbitoPos(pilaAmbitos.peek());
+        for (int i = 0; i < Ambitos.get(posActual).Variables.size() - 1; i++) {
+            if (Ambitos.get(posActual).Variables.get(i).getNombre().equals(variable.getNombre())) {
+                Ambitos.get(posActual).Variables.remove(i);
+                Ambitos.get(posActual).Variables.add(variable);
+                agregarLog("Se cambio el valor de la variable " + variable.getNombre());
+                return false;
+            }
+        }
+        agregarLog("La variable " + variable.getNombre() + " no se ha definido");
+        return true;
+    }
+    
+    public Variable getVariable(String nombre) {
+        int posActual = getAmbitoPos(pilaAmbitos.peek());
+        for (int i = 0; i < Ambitos.get(posActual).Variables.size() - 1; i++) {
+            if (Ambitos.get(posActual).Variables.get(i).getNombre().equals(nombre)) {
+                agregarLog("Se obtuvo la variable " + nombre);
+                return Ambitos.get(posActual).Variables.get(i);
+            }
+        }
+        agregarLog("La variable " + nombre + " no existe");
+        return null;
+    }
+    
+    public boolean removeVariable(String nombre) {
+        int posActual = getAmbitoPos(pilaAmbitos.peek());
+        for (int i = 0; i < Ambitos.get(posActual).Variables.size() - 1; i++) {
+            if (Ambitos.get(posActual).Variables.get(i).getNombre().equals(nombre)) {
+                Ambitos.get(posActual).Variables.remove(i);
+                i = Ambitos.get(posActual).Variables.size();
+                agregarLog("La variable " + nombre + " se elimino");
+                return false;
+            }
+        }
+        agregarLog("La variable " + nombre + " se intento eliminar pero no existe");
+        return true;
+    }
+    
+    public boolean agregarTabla(String nombre) {
+        int posActual = getAmbitoPos(pilaAmbitos.peek());
+        boolean existe = false;
+        for (int i = 0; i < Ambitos.get(posActual).Contenido.size() - 1; i++) {
+            if (Ambitos.get(posActual).Contenido.get(i) instanceof Tabla) {
+                if (Ambitos.get(posActual).Contenido.get(i).getNombre().equals(nombre)) {
+                    existe = true;
+                    i = Ambitos.get(posActual).Contenido.size();
+                }
+            } 
+        }
+        if (existe) {
+            agregarLog("La tabla " + nombre + " ya existe en la base de datos " + Ambitos.get(posActual).getNombre());
+            return true;
+        } else {
+            id++;
+            Ambitos.get(posActual).Contenido.add(new Tabla(id, nombre));
+            agregarLog("Se creo la tabla " + nombre + " en la base de datos " + Ambitos.get(posActual).getNombre());
+            return false;
+        }
+    }
+    
+    public boolean agregarColumna(String nombre, String tabla) {
+        int posActual = getAmbitoPos(pilaAmbitos.peek());
+        boolean existeTb = false;
+        boolean existeCol = false;
+        int tablePos = 0;
+        for (int i = 0; i < Ambitos.get(posActual).Contenido.size() - 1; i++) {
+            if (Ambitos.get(posActual).Contenido.get(i) instanceof Tabla) {
+                if (Ambitos.get(posActual).Contenido.get(i).getNombre().equals(nombre)) {
+                    existeTb = true;
+                    tablePos = i;
+                    i = Ambitos.get(posActual).Contenido.size();
+                }
+            }
+        }
+        if (existeTb) {
+            for (int i = 0; i < ((Tabla) Ambitos.get(posActual).Contenido.get(tablePos)).columnas.size(); i++) {
+                if (((Tabla) Ambitos.get(posActual).Contenido.get(tablePos)).columnas.get(i).getNombre().equals(nombre)) {
+                    existeCol = true;
+                    i = ((Tabla) Ambitos.get(posActual).Contenido.get(tablePos)).columnas.size();
+                }
+            }
+            if (existeCol) {
+                return true;
+            } else {
+                id++;
+                ((Tabla) Ambitos.get(posActual).Contenido.get(tablePos)).columnas.add(new Columna(id, nombre));
+                return false;
+            }
+        } else {
+            agregarLog("La tabla " + tabla + " a la que desea agregar la columna " + nombre + " no existe");
+            return true;
+        }
     }
     
     /*
@@ -50,7 +174,7 @@ public class SymbolDriver {
     */
     public boolean definirVariable(String nombre, String tipo, int param1, boolean hayParam1, int param2, boolean hayParam2) {
         boolean existe = false;
-        for (int i = 0; i < Ambitos.get(pilaAmbitos.peek()).Variables.size() - 1; i++) {
+        for (int i = 0; i < Ambitos.get(getAmbitoPos(pilaAmbitos.peek())).Variables.size() - 1; i++) {
             if (Ambitos.get(pilaAmbitos.peek()).Variables.get(i).getNombre().equals(nombre)) {
                 existe = true;
                 i = Ambitos.get(pilaAmbitos.peek()).Variables.size();
@@ -64,52 +188,51 @@ public class SymbolDriver {
             id++;
             switch (tipo.toLowerCase()) {
                 case "varchar":
-                    Ambitos.get(pilaAmbitos.peek()).Variables.add(new Variable<String>(id, nombre));
+                    Ambitos.get(pilaAmbitos.peek()).Variables.add(new Variable<String>(id, nombre, tipo));
                     break;
                 case "int":
-                    Ambitos.get(pilaAmbitos.peek()).Variables.add(new Variable<Integer>(id, nombre));
+                    Ambitos.get(pilaAmbitos.peek()).Variables.add(new Variable<Integer>(id, nombre, tipo));
                     break;
                 case "integer":
-                    Ambitos.get(pilaAmbitos.peek()).Variables.add(new Variable<Integer>(id, nombre));
+                    Ambitos.get(pilaAmbitos.peek()).Variables.add(new Variable<Integer>(id, nombre, tipo));
                     break;
                 case "decimal":
-                    Ambitos.get(pilaAmbitos.peek()).Variables.add(new Variable<Float>(id, nombre));
+                    Ambitos.get(pilaAmbitos.peek()).Variables.add(new Variable<Float>(id, nombre, tipo));
                     break;
                 case "float":
-                    Ambitos.get(pilaAmbitos.peek()).Variables.add(new Variable<Float>(id, nombre));
+                    Ambitos.get(pilaAmbitos.peek()).Variables.add(new Variable<Float>(id, nombre, tipo));
                     break;
                 case "bit":
-                    Ambitos.get(pilaAmbitos.peek()).Variables.add(new Variable<Boolean>(id, nombre));
+                    Ambitos.get(pilaAmbitos.peek()).Variables.add(new Variable<Boolean>(id, nombre, tipo));
                     break;
                 case "date":
-                    Ambitos.get(pilaAmbitos.peek()).Variables.add(new Variable<String>(id, nombre));
+                    Ambitos.get(pilaAmbitos.peek()).Variables.add(new Variable<String>(id, nombre, tipo));
                     break;
                 case "time":
-                    Ambitos.get(pilaAmbitos.peek()).Variables.add(new Variable<String>(id, nombre));
+                    Ambitos.get(pilaAmbitos.peek()).Variables.add(new Variable<String>(id, nombre, tipo));
                     break;
                 case "real":
-                    Ambitos.get(pilaAmbitos.peek()).Variables.add(new Variable<Integer>(id, nombre));
+                    Ambitos.get(pilaAmbitos.peek()).Variables.add(new Variable<Integer>(id, nombre, tipo));
                     break;
                 case "numeric":
-                    Ambitos.get(pilaAmbitos.peek()).Variables.add(new Variable<Float>(id, nombre));
+                    Ambitos.get(pilaAmbitos.peek()).Variables.add(new Variable<Float>(id, nombre, tipo));
                     break;
                 case "smallint":
-                    Ambitos.get(pilaAmbitos.peek()).Variables.add(new Variable<Integer>(id, nombre));
+                    Ambitos.get(pilaAmbitos.peek()).Variables.add(new Variable<Integer>(id, nombre, tipo));
                     break;
                 case "char":
-                    Ambitos.get(pilaAmbitos.peek()).Variables.add(new Variable<Character>(id, nombre));
+                    Ambitos.get(pilaAmbitos.peek()).Variables.add(new Variable<Character>(id, nombre, tipo));
                     break;
                 case "nchar":
-                    Ambitos.get(pilaAmbitos.peek()).Variables.add(new Variable<String>(id, nombre));
+                    Ambitos.get(pilaAmbitos.peek()).Variables.add(new Variable<String>(id, nombre, tipo));
                     break;
             }
-            
             return false;
         }
     }
     
     public boolean existeObjeto(String objeto, String type) {
-        Ambito ambitoActual = Ambitos.get(pilaAmbitos.peek());
+        Ambito ambitoActual = Ambitos.get(getAmbitoPos(pilaAmbitos.peek()));
         Objeto objetoEncontrado = null;
         for (int i = 0; i < ambitoActual.getContentSize() - 1; i++) {
             if (ambitoActual.Contenido.get(i).getNombre().equals(objeto)) {
