@@ -20,13 +20,24 @@ public class SymbolDriver extends DriverContainer {
         False --> Operacion exitosa
     */
     
-    
+    List<TipoDato> tiposDato = new ArrayList();
     
     public SymbolDriver() {
         // Crea el ambito de la base de datos master
         id++;
         estructuraServidor.add(new Database(id, "master"));
         agregarAmbito("master", "database");
+    }
+    
+    public void guardarDatatype(String nombre) {
+        for (int i = 0; i < tiposDato.size(); i++) {
+            if (tiposDato.get(i).getNombre().equals(nombre)) {
+                agregarLog("Se encontro el tipo de dato " + nombre);
+            }
+        }
+        id++;
+        tiposDato.add(new TipoDato(id, nombre));
+        agregarLog("Se creo el tipo de dato " + nombre);
     }
     
     /*
