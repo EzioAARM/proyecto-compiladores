@@ -20,11 +20,13 @@ public class sym {
   public static final int RELATIVE = 213;
   public static final int AUTOGROW_ALL_FILES = 543;
   public static final int SOME = 155;
+  public static final int INTERVAL_LENGTH_MINUTES = 486;
   public static final int DATE_CORRELATION_OPTIMIZATION = 457;
   public static final int MONTH = 280;
   public static final int BOTH = 217;
   public static final int GO = 214;
   public static final int PIVOT = 120;
+  public static final int QUERY_STORE = 546;
   public static final int CLOSE = 21;
   public static final int NESTED_TRIGGERS = 472;
   public static final int MONTHS = 425;
@@ -106,7 +108,6 @@ public class sym {
   public static final int DECIMAL = 284;
   public static final int COUNT = 260;
   public static final int PRECISION = 122;
-  public static final int INTERVAL_LENGHT_MINUTES = 486;
   public static final int READ_WRITE = 461;
   public static final int NONE = 294;
   public static final int LAST = 258;
@@ -1041,7 +1042,7 @@ public class sym {
   "CLEANUP_POLICY",
   "DATA_FLUSH_INTERVAL_SECONDS",
   "MAX_STORAGE_SIZE_MB",
-  "INTERVAL_LENGHT_MINUTES",
+  "INTERVAL_LENGTH_MINUTES",
   "SIZE_BASED_CLEANUP_MODE",
   "QUERY_CAPTURE_MODE",
   "MAX_PLANS_PER_QUERY",
@@ -1100,7 +1101,8 @@ public class sym {
   "AUTOGROW_SINGLE_FILE",
   "AUTOGROW_ALL_FILES",
   "READONLY",
-  "READWRITE"
+  "READWRITE",
+  "QUERY_STORE"
   };
 }
 
