@@ -14,11 +14,29 @@ import java.util.List;
  */
 public class Tabla extends Objeto {
     
-    public List<Columna> columnas = null;
+    public List<Columna> columnas = new ArrayList();
+    public List<Index> indices = new ArrayList();
     
     public Tabla(int id, String nombre) {
         super(id, nombre);
-        columnas = new ArrayList();
+    }
+    
+    public boolean existeColumna(String nombre) {
+        for (int i  = 0; i < columnas.size(); i++) {
+            if (columnas.get(i).getNombre().equals(nombre)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public int getColumna(String nombre) {
+        for (int i  = 0; i < columnas.size(); i++) {
+            if (columnas.get(i).getNombre().equals(nombre)) {
+                return i;
+            }
+        }
+        return -1;
     }
     
 }

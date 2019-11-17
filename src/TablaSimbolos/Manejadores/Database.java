@@ -14,10 +14,48 @@ import java.util.List;
  */
 public class Database extends Objeto {
     
-    List<Tabla>  tabla = new ArrayList();
+    public List<Tabla> tablas = new ArrayList();
+    public List<View> vistas = new ArrayList();
+    public List<Usuario> usuario = new ArrayList();
+    public List<Function> funciones = new ArrayList();
     
     public Database(int id, String nombre) {
         super(id, nombre);
     }
     
+    public boolean existeFuncion(String nombre) {
+        for (int i  = 0; i < funciones.size(); i++) {
+            if (funciones.get(i).getNombre().equals(nombre)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public int getFuncion(String nombre) {
+        for (int i  = 0; i < funciones.size(); i++) {
+            if (funciones.get(i).getNombre().equals(nombre)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    
+    public boolean existeTabla(String nombre) {
+        for (int i  = 0; i < tablas.size(); i++) {
+            if (tablas.get(i).getNombre().equals(nombre)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public int getTabla(String nombre) {
+        for (int i  = 0; i < tablas.size(); i++) {
+            if (tablas.get(i).getNombre().equals(nombre)) {
+                return i;
+            }
+        }
+        return -1;
+    }
 }
