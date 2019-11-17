@@ -70,6 +70,7 @@ public class sym {
   public static final int FREETEXT = 71;
   public static final int GET = 211;
   public static final int OPTION = 114;
+  public static final int ALLOW_ENCRYPTED_VALUE_MODIFICATIONS = 382;
   public static final int NUMERIC = 300;
   public static final int COMPRESSION_DELAY = 410;
   public static final int ARE = 202;
@@ -262,7 +263,6 @@ public class sym {
   public static final int RECONFIGURE = 131;
   public static final int IDENTITY = 81;
   public static final int GROUP = 78;
-  public static final int ALLOW_ENCRYPTED_VALUE_MODIFICATION = 382;
   public static final int TRANSLATION = 276;
   public static final int USING = 295;
   public static final int TSEQUAL = 169;
@@ -832,7 +832,7 @@ public class sym {
   "LOGIN",
   "PASSWORD",
   "DEFAULT_LANGUAGE",
-  "ALLOW_ENCRYPTED_VALUE_MODIFICATION",
+  "ALLOW_ENCRYPTED_VALUE_MODIFICATIONS",
   "OLD_PASSWORD",
   "ABORT_AFTER_WAIT",
   "BLOCKERS",

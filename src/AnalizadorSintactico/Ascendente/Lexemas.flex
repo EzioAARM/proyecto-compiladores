@@ -474,7 +474,7 @@ reservadasDEFAULT_SCHEMA =(DEFAULT_SCHEMA)
 reservadasLOGIN =(LOGIN)
 reservadasPASSWORD =(PASSWORD)
 reservadasDEFAULT_LANGUAGE =(DEFAULT_LANGUAGE)
-reservadasALLOW_ENCRYPTED_VALUE_MODIFICATION =(ALLOW_ENCRYPTED_VALUE_MODIFICATION)
+reservadasALLOW_ENCRYPTED_VALUE_MODIFICATIONS =(ALLOW_ENCRYPTED_VALUE_MODIFICATIONS)
 reservadasOLD_PASSWORD =(OLD_PASSWORD)
 reservadasABORT_AFTER_WAIT =(ABORT_AFTER_WAIT)
 reservadasBLOCKERS =(BLOCKERS)
@@ -1715,8 +1715,8 @@ reservadasCOLUMN_ENCRYPTION_KEY =(COLUMN_ENCRYPTION_KEY)
 <YYINITIAL> {reservadasDEFAULT_LANGUAGE} {
     return symbol(sym.DEFAULT_LANGUAGE, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
 }
-<YYINITIAL> {reservadasALLOW_ENCRYPTED_VALUE_MODIFICATION} {
-    return symbol(sym.ALLOW_ENCRYPTED_VALUE_MODIFICATION, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+<YYINITIAL> {reservadasALLOW_ENCRYPTED_VALUE_MODIFICATIONS} {
+    return symbol(sym.ALLOW_ENCRYPTED_VALUE_MODIFICATIONS, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
 }
 <YYINITIAL> {reservadasOLD_PASSWORD} {
     return symbol(sym.OLD_PASSWORD, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));

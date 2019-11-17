@@ -4873,7 +4873,7 @@ public class Lexemas implements java_cup.runtime.Scanner {
             // fall through
           case 881: break;
           case 441: 
-            { return symbol(sym.ALLOW_ENCRYPTED_VALUE_MODIFICATION, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
+            { return symbol(sym.ALLOW_ENCRYPTED_VALUE_MODIFICATIONS, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
             } 
             // fall through
           case 882: break;
