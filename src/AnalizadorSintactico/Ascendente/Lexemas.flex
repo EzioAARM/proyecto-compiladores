@@ -557,10 +557,7 @@ reservadasCOLUMN_ENCRYPTION_KEY =(COLUMN_ENCRYPTION_KEY)
 <YYINITIAL> {reservadaCLOSE} {
     return symbol(sym.CLOSE, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
 }
-}
-<YYINITIAL> {reservadaLOOK_ESCALATION} {
-    return symbol(sym.LOOK_ESCALATION, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
-}
+
 <YYINITIAL> {reservadaCLUSTERED} {
     return symbol(sym.CLUSTERED, new MyToken(yytext(), yytext(), "Reservada", yyline + 1, yylength() + 1, yycolumn + 1));
 }
