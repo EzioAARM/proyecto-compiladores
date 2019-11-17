@@ -28,6 +28,7 @@ public class SymbolDriver {
     public SymbolDriver() {
         Ambitos = new ArrayList();
         pilaAmbitos = new Stack<Integer>();
+        agregarAmbito("master", "database");
     }
     
     public boolean actualizarPropiedad(String nombre, String tipo, String propiedad, String valor) {
