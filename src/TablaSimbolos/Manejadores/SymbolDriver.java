@@ -34,33 +34,82 @@ public class SymbolDriver {
         agregarAmbito("dbtest1", "database");
         // Agrega las tablas miTb1, miTb2, miTb3 en la base de datos dbtest1
         agregarTabla("miTb1");
+        agregarColumna("col1", "miTb1");
+        agregarColumna("col2", "miTb1");
+        agregarColumna("col3", "miTb1");
+        agregarColumna("col4", "miTb1");
+        agregarColumna("col5", "miTb1");
         agregarTabla("miTb2");
+        agregarColumna("col1", "miTb2");
+        agregarColumna("col2", "miTb2");
+        agregarColumna("col3", "miTb2");
+        agregarColumna("col4", "miTb2");
+        agregarColumna("col5", "miTb2");
         agregarTabla("miTb3");
+        agregarColumna("col1", "miTb3");
+        agregarColumna("col2", "miTb3");
+        agregarColumna("col3", "miTb3");
+        agregarColumna("col4", "miTb3");
+        agregarColumna("col5", "miTb3");
         // Crea el ambito de la base de datos dbtest2
         agregarAmbito("dbtest2", "database");
         // Agrega las tablas miTb1, miTb2, miTb3 en la base de datos dbtest2
         agregarTabla("miTb1");
+        agregarColumna("col1", "miTb1");
+        agregarColumna("col2", "miTb1");
+        agregarColumna("col3", "miTb1");
+        agregarColumna("col4", "miTb1");
+        agregarColumna("col5", "miTb1");
         agregarTabla("miTb2");
+        agregarColumna("col1", "miTb2");
+        agregarColumna("col2", "miTb2");
+        agregarColumna("col3", "miTb2");
+        agregarColumna("col4", "miTb2");
+        agregarColumna("col5", "miTb2");
         agregarTabla("miTb3");
+        agregarColumna("col1", "miTb3");
+        agregarColumna("col2", "miTb3");
+        agregarColumna("col3", "miTb3");
+        agregarColumna("col4", "miTb3");
+        agregarColumna("col5", "miTb3");
         // Crea el ambito de la base de datos dbtest3
         agregarAmbito("dbtest3", "database");
         // Agrega las tablas miTb1, miTb2, miTb3 en la base de datos dbtest3
         agregarTabla("miTb1");
+        agregarColumna("col1", "miTb1");
+        agregarColumna("col2", "miTb1");
+        agregarColumna("col3", "miTb1");
+        agregarColumna("col4", "miTb1");
+        agregarColumna("col5", "miTb1");
         agregarTabla("miTb2");
+        agregarColumna("col1", "miTb2");
+        agregarColumna("col2", "miTb2");
+        agregarColumna("col3", "miTb2");
+        agregarColumna("col4", "miTb2");
+        agregarColumna("col5", "miTb2");
         agregarTabla("miTb3");
+        agregarColumna("col1", "miTb3");
+        agregarColumna("col2", "miTb3");
+        agregarColumna("col3", "miTb3");
+        agregarColumna("col4", "miTb3");
+        agregarColumna("col5", "miTb3");
     }
     
-    /*public boolean actualizarPropiedad(String nombre, String tipo, String propiedad, String valor) {
-        for (int i = 0; i < Ambitos.get(pilaAmbitos.size()).Contenido.size() - 1; i++) {
-            if (Ambitos.get(pilaAmbitos.size()).Contenido.get(i).getNombre().equals(nombre)) {
-                Ambitos.get(pilaAmbitos.size()).Contenido.get(i).changeIfNotEqual(propiedad, valor);
-                agregarLog("Se actualizo la propiedad " + propiedad + " con el valor " + valor + " del objeto " + Ambitos.get(pilaAmbitos.size()).Contenido.get(i).getNombre());
-                return true;
+    public boolean propiedadColumna(String nombre, String tabla, String propiedad, String valor) {
+        int ambitoPos = getAmbitoPos(pilaAmbitos.peek());
+        for (int i = 0; i < Ambitos.get(ambitoPos).Contenido.size(); i++) {
+            if (Ambitos.get(ambitoPos).Contenido.get(i).getNombre().equals(tabla)) {
+                for (int j = 0; j < ((Tabla) Ambitos.get(ambitoPos).Contenido.get(i)).columnas.size(); j++) {
+                    if (((Tabla) Ambitos.get(ambitoPos).Contenido.get(i)).columnas.get(j).hayPropiedad(propiedad)) {
+                        ((Tabla) Ambitos.get(ambitoPos).Contenido.get(i)).columnas.get(j).changeIfNotEqual(propiedad, valor);
+                    } else {
+                        ((Tabla) Ambitos.get(ambitoPos).Contenido.get(i)).columnas.get(j).propiedades.add(new Propiedades(propiedad, valor));
+                    }
+                }
             }
         }
-        agregarLog("El objeto " + nombre + " no se encuentra en el ambito actual");
         return false;
-    }*/
+    }
     
     private int getAmbitoPos(int id) {
         for (int i = 0; i < Ambitos.size() - 1; i++) {

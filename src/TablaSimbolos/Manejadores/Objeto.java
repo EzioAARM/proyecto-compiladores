@@ -40,6 +40,15 @@ public abstract class Objeto {
         Id = id;
     }
     
+    public boolean hayPropiedad(String propiedad) {
+        for (int i = 0; i < propiedades.size() - 1; i++) {
+            if (propiedades.get(i).getNombre().equals(propiedad)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
     public void changeIfNotEqual(String propiedad, String valor) {
         for (int i = 0; i < propiedades.size() - 1; i++) {
             if (!propiedades.get(i).getNombre().equals(propiedad)) {
