@@ -3674,7 +3674,7 @@ public class parser extends java_cup.runtime.lr_parser {
     {
  
     try {
-        SymbolDriver Manejador = new SymbolDriver();
+        //SymbolDriver Manejador = new SymbolDriver();
         BufferedReader buffered = new BufferedReader(new FileReader(MiniSql.ubicacionArchivo));
         analizadorFlex = new Lexemas(buffered);
     } catch (IOException ex) {
@@ -3714,8 +3714,7 @@ public void report_error(String message, Object info) {
     System.err.println(m);
 }
 public SymbolDriver Manejador = new SymbolDriver();
-public List<Ambito> Ambitos  = new LinkedList();
-Ambito ambitoActual = null;
+
 
 
 
