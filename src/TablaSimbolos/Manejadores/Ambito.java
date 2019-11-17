@@ -19,12 +19,10 @@ public class Ambito {
     private String Nombre;
     
     public List<Transaction> Transacciones;
-    public List<Objeto> Contenido;
     public List<Ambito> Ambitos;
     public List<Variable> Variables;
     
     public Ambito(String nombre, String tipoAmbito, int nivel, int id) {
-        Contenido = new ArrayList();
         Ambitos = new ArrayList();
         Id = id;
         Nombre = nombre;
@@ -41,10 +39,6 @@ public class Ambito {
     
     public int getId() {
         return Id;
-    }
-    
-    public void addObjeto(Objeto query) {
-        Contenido.add(query);
     }
     
     /*
@@ -104,10 +98,6 @@ public class Ambito {
     
     public int getAmbitoSize() {
         return Ambitos.size();
-    }
-    
-    public int getContentSize() {
-        return Contenido.size();
     }
     
 }

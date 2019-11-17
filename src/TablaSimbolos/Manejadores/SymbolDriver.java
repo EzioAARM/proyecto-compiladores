@@ -24,37 +24,10 @@ public class SymbolDriver extends DriverContainer {
     
     public SymbolDriver() {
         // Crea el ambito de la base de datos master
+        id++;
+        estructuraServidor.add(new Database(id, "master"));
         agregarAmbito("master", "database");
-        
     }
-    
-    
-    /*public boolean agregarPropiedad(String nombre, String tipo, String propiedad, String valor) {
-        return false;
-    }
-    
-    public boolean propiedadColumna(String nombre, String tabla, String propiedad, String valor) {
-        int ambitoPos = getAmbitoPos(pilaAmbitos.peek());
-        for (int i = 0; i < Ambitos.get(ambitoPos).Contenido.size(); i++) {
-            if (Ambitos.get(ambitoPos).Contenido.get(i).getNombre().equals(tabla)) {
-                for (int j = 0; j < ((Tabla) Ambitos.get(ambitoPos).Contenido.get(i)).columnas.size(); j++) {
-                    if (((Tabla) Ambitos.get(ambitoPos).Contenido.get(i)).columnas.get(j).hayPropiedad(propiedad)) {
-                        ((Tabla) Ambitos.get(ambitoPos).Contenido.get(i)).columnas.get(j).changeIfNotEqual(propiedad, valor);
-                    } else {
-                        ((Tabla) Ambitos.get(ambitoPos).Contenido.get(i)).columnas.get(j).propiedades.add(new Propiedades(propiedad, valor));
-                    }
-                }
-            }
-        }
-        return false;
-    }
-    
-    
-    
-    
-    
-    
-    */
     
     /*
         INT --> hayParam1 = false y hayParam2 = false
