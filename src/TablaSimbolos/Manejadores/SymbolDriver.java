@@ -191,10 +191,14 @@ public class SymbolDriver {
             if (!existe) {
                id++;
                Ambitos.add(new Ambito(nombre, tipo, 0, id));
-               pilaAmbitos.pop();
-               pilaAmbitos.push(id);
-               agregarLog("Se creo el ambito " + nombre);
-               
+               if (pilaAmbitos.size() != 0) {
+                   pilaAmbitos.pop();
+                   pilaAmbitos.push(id);
+                   agregarLog("Se creo el ambito " + nombre);
+               } else {
+                   pilaAmbitos.push(id);
+                   agregarLog("Se creo el ambito " + nombre);
+               }
             } else {
                 pilaAmbitos.pop();
                 pilaAmbitos.push(idEncontrado);
