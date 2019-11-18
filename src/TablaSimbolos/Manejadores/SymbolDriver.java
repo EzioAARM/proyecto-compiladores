@@ -110,6 +110,7 @@ public class SymbolDriver extends DriverContainer {
         for (int i = 0; i < Ambitos.get(posActual).Variables.size(); i++) {
             if (Ambitos.get(posActual).Variables.get(i).getNombre().equals(variable.getNombre())) {
                 Ambitos.get(posActual).Variables.remove(i);
+                variable.asignado = true;
                 Ambitos.get(posActual).Variables.add(variable);
                 agregarLog("Se cambio el valor de la variable " + variable.getNombre());
                 return false;
