@@ -27,6 +27,10 @@ public class SymbolDriver extends DriverContainer {
         id++;
         estructuraServidor.add(new Database(id, "master"));
         agregarAmbito("master", "database");
+        id++;
+        estructuraServidor.add(new Database(id, "dbTest"));
+        id++;
+        estructuraServidor.get(getDatabase(id)).tablas.add(new Tabla(id, "tablaPrueba"));
     }
     
     public void guardarDatatype(String nombre) {
