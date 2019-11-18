@@ -46,7 +46,8 @@ public class SymbolDriver extends DriverContainer {
         DECIMAL(5,2) --> hayParam1 = true y hayParam2 = true
     */
     public boolean definirVariable(String nombre, String tipo, int param1, boolean hayParam1, int param2, boolean hayParam2) {
-        for (int i = 0; i < Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.size() - 1; i++) {
+        int varsSize = Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.size();
+        for (int i = 0; i < varsSize; i++) {
             if (Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.get(i).getNombre().equals(nombre)) {
                 agregarLog("La variable " + nombre + " ya existe");
                 return true;
@@ -100,7 +101,7 @@ public class SymbolDriver extends DriverContainer {
     
     public boolean setVariable(Variable variable) {
         int posActual = getAmbito(pilaAmbitos.peek());
-        for (int i = 0; i < Ambitos.get(posActual).Variables.size() - 1; i++) {
+        for (int i = 0; i < Ambitos.get(posActual).Variables.size(); i++) {
             if (Ambitos.get(posActual).Variables.get(i).getNombre().equals(variable.getNombre())) {
                 Ambitos.get(posActual).Variables.remove(i);
                 Ambitos.get(posActual).Variables.add(variable);
@@ -114,7 +115,7 @@ public class SymbolDriver extends DriverContainer {
     
     public Variable getVariable(String nombre) {
         int posActual = getAmbito(pilaAmbitos.peek());
-        for (int i = 0; i < Ambitos.get(posActual).Variables.size() - 1; i++) {
+        for (int i = 0; i < Ambitos.get(posActual).Variables.size(); i++) {
             if (Ambitos.get(posActual).Variables.get(i).getNombre().equals(nombre)) {
                 agregarLog("Se obtuvo la variable " + nombre);
                 return Ambitos.get(posActual).Variables.get(i);
@@ -126,7 +127,7 @@ public class SymbolDriver extends DriverContainer {
     
     public boolean removeVariable(String nombre) {
         int posActual = getAmbito(pilaAmbitos.peek());
-        for (int i = 0; i < Ambitos.get(posActual).Variables.size() - 1; i++) {
+        for (int i = 0; i < Ambitos.get(posActual).Variables.size(); i++) {
             if (Ambitos.get(posActual).Variables.get(i).getNombre().equals(nombre)) {
                 Ambitos.get(posActual).Variables.remove(i);
                 i = Ambitos.get(posActual).Variables.size();

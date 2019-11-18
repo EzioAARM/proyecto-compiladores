@@ -41,7 +41,7 @@ public abstract class Objeto {
     }
     
     public boolean hayPropiedad(String propiedad) {
-        for (int i = 0; i < propiedades.size() - 1; i++) {
+        for (int i = 0; i < propiedades.size(); i++) {
             if (propiedades.get(i).getNombre().equals(propiedad)) {
                 return true;
             }
@@ -50,7 +50,7 @@ public abstract class Objeto {
     }
     
     public void changeIfNotEqual(String propiedad, String valor) {
-        for (int i = 0; i < propiedades.size() - 1; i++) {
+        for (int i = 0; i < propiedades.size(); i++) {
             if (!propiedades.get(i).getNombre().equals(propiedad)) {
                 propiedades.get(i).setValor(valor);
             }

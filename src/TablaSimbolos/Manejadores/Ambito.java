@@ -64,7 +64,7 @@ public class Ambito {
     }
     
     public Transaction getLastTransaction() {
-        return Transacciones.get(Transacciones.size() - 1);
+        return Transacciones.get(Transacciones.size());
     }
     
     public void addTransaction(String nombre) {
@@ -72,7 +72,7 @@ public class Ambito {
     }
     
     public void addTransaction() {
-        Transacciones.add(new Transaction(Transacciones.size() - 1, ""));
+        Transacciones.add(new Transaction(Transacciones.size(), ""));
     }
     
     /*
@@ -84,13 +84,13 @@ public class Ambito {
     }
     
     public Ambito getLastAmbito() {
-        return Ambitos.get(Ambitos.size() - 1);
+        return Ambitos.get(Ambitos.size());
     }
     
     public Ambito getAmbito(String nombre) {
-        for (int i = 0; i < Ambitos.size() - 1; i++) {
+        for (int i = 0; i < Ambitos.size(); i++) {
             if (Ambitos.get(i).getNombre().equals(nombre)) {
-                return Ambitos.get(Ambitos.size() - 1);
+                return Ambitos.get(Ambitos.size());
             }
         }
         return null;
