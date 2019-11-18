@@ -55,43 +55,43 @@ public class SymbolDriver extends DriverContainer {
         id++;
         switch (tipo.toLowerCase()) {
             case "varchar":
-                Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.add(new Variable<String>(id, nombre, tipo));
+                Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.add(new Variable<String>(id, nombre, tipo, param1, hayParam1, param2, hayParam2));
                 break;
             case "int":
-                Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.add(new Variable<Integer>(id, nombre, tipo));
+                Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.add(new Variable<Integer>(id, nombre, tipo, param1, hayParam1, param2, hayParam2));
                 break;
             case "integer":
-                Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.add(new Variable<Integer>(id, nombre, tipo));
+                Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.add(new Variable<Integer>(id, nombre, tipo, param1, hayParam1, param2, hayParam2));
                 break;
             case "decimal":
-                Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.add(new Variable<Float>(id, nombre, tipo));
+                Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.add(new Variable<Float>(id, nombre, tipo, param1, hayParam1, param2, hayParam2));
                 break;
             case "float":
-                Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.add(new Variable<Float>(id, nombre, tipo));
+                Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.add(new Variable<Float>(id, nombre, tipo, param1, hayParam1, param2, hayParam2));
                 break;
             case "bit":
-                Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.add(new Variable<Boolean>(id, nombre, tipo));
+                Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.add(new Variable<Boolean>(id, nombre, tipo, param1, hayParam1, param2, hayParam2));
                 break;
             case "date":
-                Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.add(new Variable<String>(id, nombre, tipo));
+                Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.add(new Variable<String>(id, nombre, tipo, param1, hayParam1, param2, hayParam2));
                 break;
             case "time":
-                Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.add(new Variable<String>(id, nombre, tipo));
+                Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.add(new Variable<String>(id, nombre, tipo, param1, hayParam1, param2, hayParam2));
                 break;
             case "real":
-                Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.add(new Variable<Integer>(id, nombre, tipo));
+                Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.add(new Variable<Integer>(id, nombre, tipo, param1, hayParam1, param2, hayParam2));
                 break;
             case "numeric":
-                Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.add(new Variable<Float>(id, nombre, tipo));
+                Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.add(new Variable<Float>(id, nombre, tipo, param1, hayParam1, param2, hayParam2));
                 break;
             case "smallint":
-                Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.add(new Variable<Integer>(id, nombre, tipo));
+                Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.add(new Variable<Integer>(id, nombre, tipo, param1, hayParam1, param2, hayParam2));
                 break;
             case "char":
-                Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.add(new Variable<Character>(id, nombre, tipo));
+                Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.add(new Variable<Character>(id, nombre, tipo, param1, hayParam1, param2, hayParam2));
                 break;
             case "nchar":
-                Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.add(new Variable<String>(id, nombre, tipo));
+                Ambitos.get(getAmbito(pilaAmbitos.peek())).Variables.add(new Variable<String>(id, nombre, tipo, param1, hayParam1, param2, hayParam2));
                 break;
         }
         agregarLog("Se creó la variable " + nombre + " de tipo " + tipo);
