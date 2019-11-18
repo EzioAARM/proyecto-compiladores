@@ -13777,9 +13777,11 @@ String nombre = o.get_lexema();
 		
 String[] data = e.toString().split(" ");
 //Metodo agregar
-if(data[1] == "0" && data[2] == "0"){
+//"0".equals(data[1]) && "0".equals(data[2])
+//!"0".equals(data[1]) && "0".equals(data[2])
+if(data[1].equals("0") && data[2].equals("0")){
         Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),false,Integer.parseInt(data[2]),false);
-}else if(data[1] != "0" && data[2] == "0"){
+}else if(!data[1].equals("0") && data[2].equals("0")){
         Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),true,Integer.parseInt(data[2]),false);
 }else{
         Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),true,Integer.parseInt(data[2]),true);
@@ -13850,6 +13852,32 @@ RESULT = o;
 		int eleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
 		int eright = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).right;
 		Object e = (Object)((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
+		int d3left = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).left;
+		int d3right = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).right;
+		Object d3 = (Object)((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-1)).value;
+		
+String[] data = e.toString().split(" ");
+//Metodo agregar
+//"0".equals(data[1]) && "0".equals(data[2])
+//!"0".equals(data[1]) && "0".equals(data[2])
+if(data[1].equals("0") && data[2].equals("0")){
+        Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),false,Integer.parseInt(data[2]),false);
+}else if(!data[1].equals("0") && data[2].equals("0")){
+        Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),true,Integer.parseInt(data[2]),false);
+}else{
+        Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),true,Integer.parseInt(data[2]),true);
+}
+
+//Metodo asignar
+//System.out.println(o.get_lexema());
+System.out.println(d3.toString());
+System.out.println(isreal);
+System.out.println(isentero);
+System.out.println(isstring);
+error = false;
+isentero = false;
+isreal = false;
+isstring = false;
 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("DECLARE4",477, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-6)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }

@@ -1868,9 +1868,11 @@ non terminal SELECT1,SELECT2,SELECT3,SELECT4,SELECT5,SELECT6,SELECT7,SELECT8,SEL
     DECLARE1 ::= DECLARE Arroba Identificador:o DECLARE2 DATATYPE:e DECLARE3:d3 DECLARE4 {:
 String[] data = e.toString().split(" ");
 //Metodo agregar
-if(data[1] == "0" && data[2] == "0"){
+//"0".equals(data[1]) && "0".equals(data[2])
+//!"0".equals(data[1]) && "0".equals(data[2])
+if(data[1].equals("0") && data[2].equals("0")){
         Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),false,Integer.parseInt(data[2]),false);
-}else if(data[1] != "0" && data[2] == "0"){
+}else if(!data[1].equals("0") && data[2].equals("0")){
         Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),true,Integer.parseInt(data[2]),false);
 }else{
         Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),true,Integer.parseInt(data[2]),true);
@@ -1895,7 +1897,30 @@ isstring = false;
 RESULT = o;:}
                 | /* VACIO */ {:RESULT = "";:}
                 ;
-    DECLARE4 ::= Coma Arroba Identificador:o DECLARE2 DATATYPE:e DECLARE3 DECLARE4 
+    DECLARE4 ::= Coma Arroba Identificador:o DECLARE2 DATATYPE:e DECLARE3:d3 DECLARE4 {:
+String[] data = e.toString().split(" ");
+//Metodo agregar
+//"0".equals(data[1]) && "0".equals(data[2])
+//!"0".equals(data[1]) && "0".equals(data[2])
+if(data[1].equals("0") && data[2].equals("0")){
+        Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),false,Integer.parseInt(data[2]),false);
+}else if(!data[1].equals("0") && data[2].equals("0")){
+        Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),true,Integer.parseInt(data[2]),false);
+}else{
+        Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),true,Integer.parseInt(data[2]),true);
+}
+
+//Metodo asignar
+//System.out.println(o.get_lexema());
+System.out.println(d3.toString());
+System.out.println(isreal);
+System.out.println(isentero);
+System.out.println(isstring);
+error = false;
+isentero = false;
+isreal = false;
+isstring = false;
+:}
                 |
                 ;
 
