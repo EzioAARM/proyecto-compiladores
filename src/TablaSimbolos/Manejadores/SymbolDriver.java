@@ -209,4 +209,15 @@ public class SymbolDriver extends DriverContainer {
         }
     }
     
+    public boolean truncarTabla(String nombre) {
+        int idDb = Ambitos.get(getAmbito(pilaAmbitos.peek())).getId();
+        if (estructuraServidor.get(getDatabase(idDb)).existeTabla(nombre)) {
+            agregarLog("La tabla " + nombre + " se trunco con exito");
+            return false;
+        } else {
+            agregarLog("La tabla " + nombre + " no existe");
+            return true;
+        }
+    }
+    
 }
