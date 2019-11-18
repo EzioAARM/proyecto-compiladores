@@ -2802,68 +2802,69 @@ public class parser extends java_cup.runtime.lr_parser {
     "\155\353\157\351\001\002\000\004\u015b\ufc97\001\002\000" +
     "\006\330\ufc9a\u0155\ufc9a\001\002\000\006\330\ufcb4\u0155\ufcb4" +
     "\001\002\000\006\002\ufff6\073\ufff6\001\002\000\004\u0142" +
-    "\u07b7\001\002\000\004\u014d\u07b8\001\002\000\014\u013d\255" +
-    "\u013e\264\u0142\045\u015a\260\u015e\263\001\002\000\006\330" +
-    "\ufbd1\u0155\ufbd1\001\002\000\004\073\u07bb\001\002\000\006" +
-    "\330\164\u0155\165\001\002\000\026\002\ufffc\003\020\006" +
-    "\016\015\012\057\024\077\005\100\025\232\014\251\010" +
-    "\261\022\001\002\000\004\002\000\001\002\000\024\002" +
-    "\ufff5\006\016\057\024\073\ufff5\077\005\100\025\232\014" +
-    "\251\010\261\022\001\002\000\006\002\ufff8\073\ufff8\001" +
-    "\002\000\004\u0142\045\001\002\000\010\272\u07c3\330\ufea5" +
-    "\u0155\ufea5\001\002\000\006\330\164\u0155\165\001\002\000" +
-    "\004\u015a\u07c4\001\002\000\004\u0178\u07c5\001\002\000\004" +
-    "\u015a\u07c6\001\002\000\004\u013d\u07c8\001\002\000\006\330" +
-    "\ufea6\u0155\ufea6\001\002\000\010\244\u07c9\u013d\u07cb\u0156\u07ca" +
-    "\001\002\000\004\u013d\u07c8\001\002\000\004\u013d\u07c8\001" +
-    "\002\000\006\330\ufea1\u0155\ufea1\001\002\000\006\330\ufea4" +
-    "\u0155\ufea4\001\002\000\006\330\ufea3\u0155\ufea3\001\002\000" +
-    "\006\330\ufea2\u0155\ufea2\001\002\000\026\002\ufea7\006\ufea7" +
-    "\057\ufea7\073\ufea7\077\ufea7\100\ufea7\232\ufea7\251\ufea7\261" +
-    "\ufea7\330\ufea7\001\002\000\046\002\ufc89\006\ufc89\057\ufc89" +
-    "\060\ufc89\073\ufc89\077\ufc89\100\ufc89\152\ufc89\232\ufc89\251" +
-    "\ufc89\261\ufc89\u013d\ufc89\u013e\ufc89\u013f\ufc89\u0140\ufc89\u0155\u07e3" +
-    "\u0156\ufc89\u015e\ufc89\001\002\000\044\002\ufc82\006\ufc82\057" +
-    "\ufc82\060\u07d7\073\ufc82\077\ufc82\100\ufc82\152\207\232\ufc82" +
-    "\251\ufc82\261\ufc82\u013d\210\u013e\206\u013f\205\u0140\211\u0156" +
-    "\ufc82\u015e\u07d8\001\002\000\004\u0142\u07d3\001\002\000\044" +
-    "\002\ufc87\006\ufc87\057\ufc87\060\ufc87\073\ufc87\077\ufc87\100" +
-    "\ufc87\152\ufc87\232\ufc87\251\ufc87\261\ufc87\u013d\ufc87\u013e\ufc87" +
-    "\u013f\ufc87\u0140\ufc87\u0156\ufc87\u015e\ufc87\001\002\000\026\002" +
-    "\ufc7e\006\ufc7e\057\ufc7e\073\ufc7e\077\ufc7e\100\ufc7e\232\ufc7e" +
-    "\251\ufc7e\261\ufc7e\u0156\u07de\001\002\000\024\002\ufc8d\006" +
-    "\ufc8d\057\ufc8d\073\ufc8d\077\ufc8d\100\ufc8d\232\ufc8d\251\ufc8d" +
-    "\261\ufc8d\001\002\000\026\002\ufc84\006\ufc84\057\ufc84\073" +
-    "\ufc84\077\ufc84\100\ufc84\232\ufc84\251\ufc84\261\ufc84\u0156\ufc84" +
-    "\001\002\000\026\002\ufc83\006\ufc83\057\ufc83\073\ufc83\077" +
-    "\ufc83\100\ufc83\232\ufc83\251\ufc83\261\ufc83\u0156\ufc83\001\002" +
-    "\000\004\u0142\u07d9\001\002\000\004\u014d\u07da\001\002\000" +
-    "\016\060\u07db\152\207\u013d\210\u013e\206\u013f\205\u0140\211" +
-    "\001\002\000\026\002\ufc80\006\ufc80\057\ufc80\073\ufc80\077" +
-    "\ufc80\100\ufc80\232\ufc80\251\ufc80\261\ufc80\u0156\ufc80\001\002" +
-    "\000\026\002\ufc81\006\ufc81\057\ufc81\073\ufc81\077\ufc81\100" +
-    "\ufc81\232\ufc81\251\ufc81\261\ufc81\u0156\ufc81\001\002\000\026" +
-    "\002\ufc7e\006\ufc7e\057\ufc7e\073\ufc7e\077\ufc7e\100\ufc7e\232" +
-    "\ufc7e\251\ufc7e\261\ufc7e\u0156\u07de\001\002\000\044\002\ufc82" +
-    "\006\ufc82\057\ufc82\060\u07d7\073\ufc82\077\ufc82\100\ufc82\152" +
-    "\207\232\ufc82\251\ufc82\261\ufc82\u013d\210\u013e\206\u013f\205" +
-    "\u0140\211\u0156\ufc82\u015e\u07d8\001\002\000\024\002\ufc86\006" +
-    "\ufc86\057\ufc86\073\ufc86\077\ufc86\100\ufc86\232\ufc86\251\ufc86" +
-    "\261\ufc86\001\002\000\024\002\ufc7f\006\ufc7f\057\ufc7f\073" +
-    "\ufc7f\077\ufc7f\100\ufc7f\232\ufc7f\251\ufc7f\261\ufc7f\001\002" +
-    "\000\024\002\ufc85\006\ufc85\057\ufc85\073\ufc85\077\ufc85\100" +
-    "\ufc85\232\ufc85\251\ufc85\261\ufc85\001\002\000\044\002\ufc88" +
-    "\006\ufc88\057\ufc88\060\ufc88\073\ufc88\077\ufc88\100\ufc88\152" +
-    "\ufc88\232\ufc88\251\ufc88\261\ufc88\u013d\ufc88\u013e\ufc88\u013f\ufc88" +
-    "\u0140\ufc88\u0156\ufc88\u015e\ufc88\001\002\000\004\u013d\u07e4\001" +
-    "\002\000\044\002\ufc8a\006\ufc8a\057\ufc8a\060\ufc8a\073\ufc8a" +
-    "\077\ufc8a\100\ufc8a\152\ufc8a\232\ufc8a\251\ufc8a\261\ufc8a\u013d" +
-    "\ufc8a\u013e\ufc8a\u013f\ufc8a\u0140\ufc8a\u0156\ufc8a\u015e\ufc8a\001\002" +
-    "\000\024\002\ufff5\006\016\057\024\073\ufff5\077\005\100" +
-    "\025\232\014\251\010\261\022\001\002\000\006\002\ufff7" +
-    "\073\ufff7\001\002\000\024\002\ufff5\006\016\057\024\073" +
-    "\ufff5\077\005\100\025\232\014\251\010\261\022\001\002" +
-    "\000\006\002\ufff9\073\ufff9\001\002" });
+    "\u07b7\001\002\000\004\u014d\u07b8\001\002\000\014\u013d\070" +
+    "\u013e\071\u0140\072\u015a\067\u015e\073\001\002\000\016\330" +
+    "\ufbd1\u0143\100\u0144\077\u0145\102\u0146\076\u0155\ufbd1\001\002" +
+    "\000\004\073\u07bb\001\002\000\006\330\164\u0155\165\001" +
+    "\002\000\026\002\ufffc\003\020\006\016\015\012\057\024" +
+    "\077\005\100\025\232\014\251\010\261\022\001\002\000" +
+    "\004\002\000\001\002\000\024\002\ufff5\006\016\057\024" +
+    "\073\ufff5\077\005\100\025\232\014\251\010\261\022\001" +
+    "\002\000\006\002\ufff8\073\ufff8\001\002\000\004\u0142\045" +
+    "\001\002\000\010\272\u07c3\330\ufea5\u0155\ufea5\001\002\000" +
+    "\006\330\164\u0155\165\001\002\000\004\u015a\u07c4\001\002" +
+    "\000\004\u0178\u07c5\001\002\000\004\u015a\u07c6\001\002\000" +
+    "\004\u013d\u07c8\001\002\000\006\330\ufea6\u0155\ufea6\001\002" +
+    "\000\010\244\u07c9\u013d\u07cb\u0156\u07ca\001\002\000\004\u013d" +
+    "\u07c8\001\002\000\004\u013d\u07c8\001\002\000\006\330\ufea1" +
+    "\u0155\ufea1\001\002\000\006\330\ufea4\u0155\ufea4\001\002\000" +
+    "\006\330\ufea3\u0155\ufea3\001\002\000\006\330\ufea2\u0155\ufea2" +
+    "\001\002\000\026\002\ufea7\006\ufea7\057\ufea7\073\ufea7\077" +
+    "\ufea7\100\ufea7\232\ufea7\251\ufea7\261\ufea7\330\ufea7\001\002" +
+    "\000\046\002\ufc89\006\ufc89\057\ufc89\060\ufc89\073\ufc89\077" +
+    "\ufc89\100\ufc89\152\ufc89\232\ufc89\251\ufc89\261\ufc89\u013d\ufc89" +
+    "\u013e\ufc89\u013f\ufc89\u0140\ufc89\u0155\u07e3\u0156\ufc89\u015e\ufc89\001" +
+    "\002\000\044\002\ufc82\006\ufc82\057\ufc82\060\u07d7\073\ufc82" +
+    "\077\ufc82\100\ufc82\152\207\232\ufc82\251\ufc82\261\ufc82\u013d" +
+    "\210\u013e\206\u013f\205\u0140\211\u0156\ufc82\u015e\u07d8\001\002" +
+    "\000\004\u0142\u07d3\001\002\000\044\002\ufc87\006\ufc87\057" +
+    "\ufc87\060\ufc87\073\ufc87\077\ufc87\100\ufc87\152\ufc87\232\ufc87" +
+    "\251\ufc87\261\ufc87\u013d\ufc87\u013e\ufc87\u013f\ufc87\u0140\ufc87\u0156" +
+    "\ufc87\u015e\ufc87\001\002\000\026\002\ufc7e\006\ufc7e\057\ufc7e" +
+    "\073\ufc7e\077\ufc7e\100\ufc7e\232\ufc7e\251\ufc7e\261\ufc7e\u0156" +
+    "\u07de\001\002\000\024\002\ufc8d\006\ufc8d\057\ufc8d\073\ufc8d" +
+    "\077\ufc8d\100\ufc8d\232\ufc8d\251\ufc8d\261\ufc8d\001\002\000" +
+    "\026\002\ufc84\006\ufc84\057\ufc84\073\ufc84\077\ufc84\100\ufc84" +
+    "\232\ufc84\251\ufc84\261\ufc84\u0156\ufc84\001\002\000\026\002" +
+    "\ufc83\006\ufc83\057\ufc83\073\ufc83\077\ufc83\100\ufc83\232\ufc83" +
+    "\251\ufc83\261\ufc83\u0156\ufc83\001\002\000\004\u0142\u07d9\001" +
+    "\002\000\004\u014d\u07da\001\002\000\016\060\u07db\152\207" +
+    "\u013d\210\u013e\206\u013f\205\u0140\211\001\002\000\026\002" +
+    "\ufc80\006\ufc80\057\ufc80\073\ufc80\077\ufc80\100\ufc80\232\ufc80" +
+    "\251\ufc80\261\ufc80\u0156\ufc80\001\002\000\026\002\ufc81\006" +
+    "\ufc81\057\ufc81\073\ufc81\077\ufc81\100\ufc81\232\ufc81\251\ufc81" +
+    "\261\ufc81\u0156\ufc81\001\002\000\026\002\ufc7e\006\ufc7e\057" +
+    "\ufc7e\073\ufc7e\077\ufc7e\100\ufc7e\232\ufc7e\251\ufc7e\261\ufc7e" +
+    "\u0156\u07de\001\002\000\044\002\ufc82\006\ufc82\057\ufc82\060" +
+    "\u07d7\073\ufc82\077\ufc82\100\ufc82\152\207\232\ufc82\251\ufc82" +
+    "\261\ufc82\u013d\210\u013e\206\u013f\205\u0140\211\u0156\ufc82\u015e" +
+    "\u07d8\001\002\000\024\002\ufc86\006\ufc86\057\ufc86\073\ufc86" +
+    "\077\ufc86\100\ufc86\232\ufc86\251\ufc86\261\ufc86\001\002\000" +
+    "\024\002\ufc7f\006\ufc7f\057\ufc7f\073\ufc7f\077\ufc7f\100\ufc7f" +
+    "\232\ufc7f\251\ufc7f\261\ufc7f\001\002\000\024\002\ufc85\006" +
+    "\ufc85\057\ufc85\073\ufc85\077\ufc85\100\ufc85\232\ufc85\251\ufc85" +
+    "\261\ufc85\001\002\000\044\002\ufc88\006\ufc88\057\ufc88\060" +
+    "\ufc88\073\ufc88\077\ufc88\100\ufc88\152\ufc88\232\ufc88\251\ufc88" +
+    "\261\ufc88\u013d\ufc88\u013e\ufc88\u013f\ufc88\u0140\ufc88\u0156\ufc88\u015e" +
+    "\ufc88\001\002\000\004\u013d\u07e4\001\002\000\044\002\ufc8a" +
+    "\006\ufc8a\057\ufc8a\060\ufc8a\073\ufc8a\077\ufc8a\100\ufc8a\152" +
+    "\ufc8a\232\ufc8a\251\ufc8a\261\ufc8a\u013d\ufc8a\u013e\ufc8a\u013f\ufc8a" +
+    "\u0140\ufc8a\u0156\ufc8a\u015e\ufc8a\001\002\000\024\002\ufff5\006" +
+    "\016\057\024\073\ufff5\077\005\100\025\232\014\251\010" +
+    "\261\022\001\002\000\006\002\ufff7\073\ufff7\001\002\000" +
+    "\024\002\ufff5\006\016\057\024\073\ufff5\077\005\100\025" +
+    "\232\014\251\010\261\022\001\002\000\006\002\ufff9\073" +
+    "\ufff9\001\002" });
 
   /** Access to parse-action table. */
   public short[][] action_table() {return _action_table;}
@@ -3692,31 +3693,30 @@ public class parser extends java_cup.runtime.lr_parser {
     "\001\001\000\002\001\001\000\004\266\u07af\001\001\000" +
     "\002\001\001\000\004\266\u07b1\001\001\000\002\001\001" +
     "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
-    "\002\001\001\000\002\001\001\000\012\002\u07b8\004\261" +
-    "\006\260\007\256\001\001\000\002\001\001\000\002\001" +
-    "\001\000\004\302\u07bb\001\001\000\024\213\016\215\020" +
-    "\277\u07bc\300\012\307\003\310\010\313\005\355\014\356" +
-    "\006\001\001\000\002\001\001\000\022\213\016\215\020" +
-    "\300\u07be\307\003\310\010\313\005\355\014\356\006\001" +
-    "\001\000\002\001\001\000\004\007\u07c0\001\001\000\004" +
-    "\214\u07c1\001\001\000\004\302\u07ce\001\001\000\002\001" +
-    "\001\000\002\001\001\000\002\001\001\000\004\326\u07c6" +
-    "\001\001\000\002\001\001\000\004\327\u07cb\001\001\000" +
-    "\004\326\u07cd\001\001\000\004\326\u07cc\001\001\000\002" +
+    "\002\001\001\000\002\001\001\000\004\u01de\u07b8\001\001" +
+    "\000\002\001\001\000\002\001\001\000\004\302\u07bb\001" +
+    "\001\000\024\213\016\215\020\277\u07bc\300\012\307\003" +
+    "\310\010\313\005\355\014\356\006\001\001\000\002\001" +
+    "\001\000\022\213\016\215\020\300\u07be\307\003\310\010" +
+    "\313\005\355\014\356\006\001\001\000\002\001\001\000" +
+    "\004\007\u07c0\001\001\000\004\214\u07c1\001\001\000\004" +
+    "\302\u07ce\001\001\000\002\001\001\000\002\001\001\000" +
+    "\002\001\001\000\004\326\u07c6\001\001\000\002\001\001" +
+    "\000\004\327\u07cb\001\001\000\004\326\u07cd\001\001\000" +
+    "\004\326\u07cc\001\001\000\002\001\001\000\002\001\001" +
+    "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
+    "\004\357\u07e1\001\001\000\010\042\u07d5\361\u07d4\362\u07d3" +
+    "\001\001\000\002\001\001\000\002\001\001\000\004\u018b" +
+    "\u07e0\001\001\000\002\001\001\000\002\001\001\000\002" +
+    "\001\001\000\002\001\001\000\002\001\001\000\006\042" +
+    "\u07db\363\u07dc\001\001\000\002\001\001\000\002\001\001" +
+    "\000\004\u018b\u07de\001\001\000\010\042\u07d5\361\u07df\362" +
+    "\u07d3\001\001\000\002\001\001\000\002\001\001\000\002" +
     "\001\001\000\002\001\001\000\002\001\001\000\002\001" +
-    "\001\000\002\001\001\000\004\357\u07e1\001\001\000\010" +
-    "\042\u07d5\361\u07d4\362\u07d3\001\001\000\002\001\001\000" +
-    "\002\001\001\000\004\u018b\u07e0\001\001\000\002\001\001" +
-    "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
-    "\002\001\001\000\006\042\u07db\363\u07dc\001\001\000\002" +
-    "\001\001\000\002\001\001\000\004\u018b\u07de\001\001\000" +
-    "\010\042\u07d5\361\u07df\362\u07d3\001\001\000\002\001\001" +
-    "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
-    "\002\001\001\000\002\001\001\000\022\213\016\215\020" +
-    "\300\u07e5\307\003\310\010\313\005\355\014\356\006\001" +
-    "\001\000\002\001\001\000\022\213\016\215\020\300\u07e7" +
-    "\307\003\310\010\313\005\355\014\356\006\001\001\000" +
-    "\002\001\001" });
+    "\001\000\022\213\016\215\020\300\u07e5\307\003\310\010" +
+    "\313\005\355\014\356\006\001\001\000\002\001\001\000" +
+    "\022\213\016\215\020\300\u07e7\307\003\310\010\313\005" +
+    "\355\014\356\006\001\001\000\002\001\001" });
 
   /** Access to <code>reduce_goto</code> table. */
   public short[][] reduce_table() {return _reduce_table;}
@@ -4139,10 +4139,10 @@ class CUP$parser$actions {
 		
 varActual = Manejador.getVariable(o.get_lexema());
 if(varActual.asignado){
-    if(varActual.tipoDato == "smallint" || varActual.tipoDato == "int" || varActual.tipoDato == "integer"){
+    if(varActual.tipoDato.equals("SMALLINT") || varActual.tipoDato.equals("INT") || varActual.tipoDato.equals("INTEGER")){
         isentero = true;
         RESULT = varActual.valor;
-    }else if(varActual.tipoDato == "float" ||varActual.tipoDato == "real" || varActual.tipoDato == "numeric" || varActual.tipoDato == "decimal"){
+    }else if(varActual.tipoDato.equals("FLOAT") ||varActual.tipoDato.equals("REAL") || varActual.tipoDato.equals("NUMERIC") || varActual.tipoDato.equals("DECIMAL")){
         isreal = true;
         RESULT = varActual.valor;
     }else{
@@ -4151,6 +4151,7 @@ if(varActual.asignado){
     }
 }else{
     error = true;
+    RESULT = "";
 }
                   
               CUP$parser$result = parser.getSymbolFactory().newSymbol("EXPSENCILLA",476, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
@@ -7206,6 +7207,7 @@ if(d5.equals("")){
     String prueba = o.toString();
     String[] nombre = prueba.split("\\.");
      int i = nombre.length;
+     Manejador.truncarTabla(nombre[i-1]);
     //funcion buscar, parametro nombre[i-1];
     System.out.println(prueba);
                                                                    
@@ -13787,12 +13789,26 @@ if(data[1].equals("0") && data[2].equals("0")){
         Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),true,Integer.parseInt(data[2]),true);
 }
 
+if((data[0].equals("SMALLINT") || data[0].equals("INT") || data[0].equals("INTEGER")) && isentero){
+        varActual = Manejador.getVariable(o.get_lexema());
+        varActual.valor = Integer.parseInt(d3.toString());
+        Manejador.setVariable(varActual);
+}else if((data[0].equals("FLOAT") || data[0].equals("DECIMAL") || data[0].equals("NUMERIC") || data[0].equals("REAL")) && isreal){
+        varActual = Manejador.getVariable(o.get_lexema());
+        varActual.valor = Float.parseFloat(d3.toString());
+        Manejador.setVariable(varActual);
+}else if((data[0].equals("VARCHAR") || data[0].equals("CHAR")) && isstring){
+        varActual = Manejador.getVariable(o.get_lexema());
+        varActual.valor = d3.toString();
+        Manejador.setVariable(varActual);
+}else if(d3.toString().equals("")){
+        //hace nada
+}else{
+        System.out.println("Error en la linea: " + o.getFila() +" columna: " + o.get_columnaFinal() +" el valor: " + d3.toString() + " no coincide con el tipo: " + data[0] + ", el argumento es invalido.");
+}
 //Metodo asignar
 //System.out.println(o.get_lexema());
 System.out.println(d3.toString());
-System.out.println(isreal);
-System.out.println(isentero);
-System.out.println(isstring);
 error = false;
 isentero = false;
 isreal = false;
@@ -13868,12 +13884,27 @@ if(data[1].equals("0") && data[2].equals("0")){
         Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),true,Integer.parseInt(data[2]),true);
 }
 
+
+if((data[0].equals("SMALLINT") || data[0].equals("INT") || data[0].equals("INTEGER")) && isentero){
+        varActual = Manejador.getVariable(o.get_lexema());
+        varActual.valor = Integer.parseInt(d3.toString());
+        Manejador.setVariable(varActual);
+}else if((data[0].equals("FLOAT") || data[0].equals("DECIMAL") || data[0].equals("NUMERIC") || data[0].equals("REAL")) && isreal){
+        varActual = Manejador.getVariable(o.get_lexema());
+        varActual.valor = Float.parseFloat(d3.toString());
+        Manejador.setVariable(varActual);
+}else if((data[0].equals("VARCHAR") || data[0].equals("CHAR")) && isstring){
+        varActual = Manejador.getVariable(o.get_lexema());
+        varActual.valor = d3.toString();
+        Manejador.setVariable(varActual);
+}else if(d3.toString().equals("")){
+        //hace nada
+}else{
+        System.out.println("Error en la linea: " + o.getFila() +" columna: " + o.get_columnaFinal() +" el valor: " + d3.toString() + " no coincide con el tipo: " + data[0] + ", el argumento es invalido.");
+}
 //Metodo asignar
 //System.out.println(o.get_lexema());
 System.out.println(d3.toString());
-System.out.println(isreal);
-System.out.println(isentero);
-System.out.println(isstring);
 error = false;
 isentero = false;
 isreal = false;
@@ -13893,10 +13924,40 @@ isstring = false;
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 1072: // SET1 ::= SET Arroba Identificador Igual SEXP 
+          case 1072: // SET1 ::= SET Arroba Identificador Igual EXPSENCILLA 
             {
               Object RESULT =null;
-
+		int oleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
+		int oright = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).right;
+		MyToken o = (MyToken)((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
+		int d3left = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
+		int d3right = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
+		Object d3 = (Object)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
+		
+        varActual = Manejador.getVariable(o.get_lexema());
+        String tipo = varActual.tipoDato;
+if((tipo.equals("SMALLINT") || tipo.equals("INT") || tipo.equals("INTEGER")) && isentero){
+        varActual = Manejador.getVariable(o.get_lexema());
+        varActual.valor = Integer.parseInt(d3.toString());
+        Manejador.setVariable(varActual);
+}else if((tipo.equals("FLOAT") || tipo.equals("DECIMAL") || tipo.equals("NUMERIC") || tipo.equals("REAL")) && isreal){
+        varActual = Manejador.getVariable(o.get_lexema());
+        varActual.valor = Float.parseFloat(d3.toString());
+        Manejador.setVariable(varActual);
+}else if((tipo.equals("VARCHAR") || tipo.equals("CHAR")) && isstring){
+        varActual = Manejador.getVariable(o.get_lexema());
+        varActual.valor = d3.toString();
+        Manejador.setVariable(varActual);
+}else if(d3.toString().equals("")){
+        //hace nada
+}else{
+        System.out.println("Error en la linea: " + o.getFila() +" columna: " + o.get_columnaFinal() +" el valor: " + d3.toString() + " no coincide con el tipo: " + tipo + ", el argumento es invalido.");
+}
+error = false;
+isentero = false;
+isreal = false;
+isstring = false;
+    
               CUP$parser$result = parser.getSymbolFactory().newSymbol("SET1",201, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-4)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;

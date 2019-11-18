@@ -136,10 +136,10 @@ start with INICIALB;
                   | Arroba Identificador:o {:
 varActual = Manejador.getVariable(o.get_lexema());
 if(varActual.asignado){
-    if(varActual.tipoDato == "smallint" || varActual.tipoDato == "int" || varActual.tipoDato == "integer"){
+    if(varActual.tipoDato.equals("SMALLINT") || varActual.tipoDato.equals("INT") || varActual.tipoDato.equals("INTEGER")){
         isentero = true;
         RESULT = varActual.valor;
-    }else if(varActual.tipoDato == "float" ||varActual.tipoDato == "real" || varActual.tipoDato == "numeric" || varActual.tipoDato == "decimal"){
+    }else if(varActual.tipoDato.equals("FLOAT") ||varActual.tipoDato.equals("REAL") || varActual.tipoDato.equals("NUMERIC") || varActual.tipoDato.equals("DECIMAL")){
         isreal = true;
         RESULT = varActual.valor;
     }else{
@@ -148,6 +148,7 @@ if(varActual.asignado){
     }
 }else{
     error = true;
+    RESULT = "";
 }
                   :};
 
@@ -658,6 +659,7 @@ if(d5.equals("")){
     String prueba = o.toString();
     String[] nombre = prueba.split("\\.");
      int i = nombre.length;
+     Manejador.truncarTabla(nombre[i-1]);
     //funcion buscar, parametro nombre[i-1];
     System.out.println(prueba);
                                                                    :}
@@ -1878,12 +1880,26 @@ if(data[1].equals("0") && data[2].equals("0")){
         Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),true,Integer.parseInt(data[2]),true);
 }
 
+if((data[0].equals("SMALLINT") || data[0].equals("INT") || data[0].equals("INTEGER")) && isentero){
+        varActual = Manejador.getVariable(o.get_lexema());
+        varActual.valor = Integer.parseInt(d3.toString());
+        Manejador.setVariable(varActual);
+}else if((data[0].equals("FLOAT") || data[0].equals("DECIMAL") || data[0].equals("NUMERIC") || data[0].equals("REAL")) && isreal){
+        varActual = Manejador.getVariable(o.get_lexema());
+        varActual.valor = Float.parseFloat(d3.toString());
+        Manejador.setVariable(varActual);
+}else if((data[0].equals("VARCHAR") || data[0].equals("CHAR")) && isstring){
+        varActual = Manejador.getVariable(o.get_lexema());
+        varActual.valor = d3.toString();
+        Manejador.setVariable(varActual);
+}else if(d3.toString().equals("")){
+        //hace nada
+}else{
+        System.out.println("Error en la linea: " + o.getFila() +" columna: " + o.get_columnaFinal() +" el valor: " + d3.toString() + " no coincide con el tipo: " + data[0] + ", el argumento es invalido.");
+}
 //Metodo asignar
 //System.out.println(o.get_lexema());
 System.out.println(d3.toString());
-System.out.println(isreal);
-System.out.println(isentero);
-System.out.println(isstring);
 error = false;
 isentero = false;
 isreal = false;
@@ -1910,12 +1926,27 @@ if(data[1].equals("0") && data[2].equals("0")){
         Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),true,Integer.parseInt(data[2]),true);
 }
 
+
+if((data[0].equals("SMALLINT") || data[0].equals("INT") || data[0].equals("INTEGER")) && isentero){
+        varActual = Manejador.getVariable(o.get_lexema());
+        varActual.valor = Integer.parseInt(d3.toString());
+        Manejador.setVariable(varActual);
+}else if((data[0].equals("FLOAT") || data[0].equals("DECIMAL") || data[0].equals("NUMERIC") || data[0].equals("REAL")) && isreal){
+        varActual = Manejador.getVariable(o.get_lexema());
+        varActual.valor = Float.parseFloat(d3.toString());
+        Manejador.setVariable(varActual);
+}else if((data[0].equals("VARCHAR") || data[0].equals("CHAR")) && isstring){
+        varActual = Manejador.getVariable(o.get_lexema());
+        varActual.valor = d3.toString();
+        Manejador.setVariable(varActual);
+}else if(d3.toString().equals("")){
+        //hace nada
+}else{
+        System.out.println("Error en la linea: " + o.getFila() +" columna: " + o.get_columnaFinal() +" el valor: " + d3.toString() + " no coincide con el tipo: " + data[0] + ", el argumento es invalido.");
+}
 //Metodo asignar
 //System.out.println(o.get_lexema());
 System.out.println(d3.toString());
-System.out.println(isreal);
-System.out.println(isentero);
-System.out.println(isstring);
 error = false;
 isentero = false;
 isreal = false;
@@ -1924,7 +1955,31 @@ isstring = false;
                 |
                 ;
 
-    SET1 ::= SET Arroba Identificador Igual SEXP ;
+    SET1 ::= SET Arroba Identificador:o Igual EXPSENCILLA:d3 {:
+        varActual = Manejador.getVariable(o.get_lexema());
+        String tipo = varActual.tipoDato;
+if((tipo.equals("SMALLINT") || tipo.equals("INT") || tipo.equals("INTEGER")) && isentero){
+        varActual = Manejador.getVariable(o.get_lexema());
+        varActual.valor = Integer.parseInt(d3.toString());
+        Manejador.setVariable(varActual);
+}else if((tipo.equals("FLOAT") || tipo.equals("DECIMAL") || tipo.equals("NUMERIC") || tipo.equals("REAL")) && isreal){
+        varActual = Manejador.getVariable(o.get_lexema());
+        varActual.valor = Float.parseFloat(d3.toString());
+        Manejador.setVariable(varActual);
+}else if((tipo.equals("VARCHAR") || tipo.equals("CHAR")) && isstring){
+        varActual = Manejador.getVariable(o.get_lexema());
+        varActual.valor = d3.toString();
+        Manejador.setVariable(varActual);
+}else if(d3.toString().equals("")){
+        //hace nada
+}else{
+        System.out.println("Error en la linea: " + o.getFila() +" columna: " + o.get_columnaFinal() +" el valor: " + d3.toString() + " no coincide con el tipo: " + tipo + ", el argumento es invalido.");
+}
+error = false;
+isentero = false;
+isreal = false;
+isstring = false;
+    :};
 
     /*
 non terminal GSP,GSP1
