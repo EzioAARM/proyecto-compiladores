@@ -24,8 +24,9 @@ public class Variable<T> extends Objeto {
         tipoDato = tipo;
     }
     
-    public Variable(int id, String nombre, int param1, boolean hayParam1, int param2, boolean hayParam2) {
+    public Variable(int id, String nombre, String tipo, int param1, boolean hayParam1, int param2, boolean hayParam2) {
         super(id, nombre);
+        tipoDato = tipo;
         Max = param1;
         Dec = param2;
         hayMax = hayParam1;
