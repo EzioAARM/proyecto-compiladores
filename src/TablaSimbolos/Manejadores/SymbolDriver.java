@@ -272,7 +272,7 @@ public class SymbolDriver extends DriverContainer {
     }
     
     public boolean commitTransaction(String nombre) {
-        if (TransaccionActiva != -1) {
+        if (TransaccionActiva == -1) {
             agregarLog("No hay transaccion para hacer commit");
             return true;
         } else {
@@ -282,7 +282,7 @@ public class SymbolDriver extends DriverContainer {
                 int ambitoPos = getAmbito(pilaAmbitos.peek());
                 int posTran = Ambitos.get(ambitoPos).getTransaction(TransaccionActiva);
                 int checkpoint = Ambitos.get(ambitoPos).Transacciones.get(posTran).getCheckpoint(nombre);
-                if (checkpoint != -1) {
+                if (checkpoint == -1) {
                     if (Ambitos.get(ambitoPos).Transacciones.get(posTran).getNombre().equals(nombre)) {
                         TransaccionActiva = -1;
                         agregarLog("Se realizo commit a la transaccion " + nombre);
