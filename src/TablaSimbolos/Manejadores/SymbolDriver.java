@@ -261,7 +261,7 @@ public class SymbolDriver extends DriverContainer {
     }
     
     public boolean commitTransaction() {
-        if (TransaccionActiva != -1) {
+        if (TransaccionActiva == -1) {
             agregarLog("No hay transaccion para hacer commit");
             return true;
         } else {
