@@ -15,18 +15,20 @@ import java.util.List;
 public class Checkpoint {
     
     private String Nombre;
-    public List<Objeto> Contenido;
+    private int Id;
+    public String statusSaved;
     
-    public Checkpoint(String nombre) {
+    public Checkpoint(int id, String nombre) {
         Nombre = nombre;
-        Contenido = new ArrayList();
+        Id = id;
+        statusSaved = "activa";
+    }
+    
+    public int getId() {
+        return Id;
     }
     
     public String getNombre() {
         return Nombre;
-    }
-    
-    public void addObjeto(Objeto query) {
-        Contenido.add(query);
     }
 }

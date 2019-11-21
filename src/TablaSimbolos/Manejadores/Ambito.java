@@ -45,22 +45,22 @@ public class Ambito {
         Seccion de transacciones
     */
     
-    public Transaction getTransaction(int id) {
+    public int getTransaction(int id) {
         for (int i = 0; i < Transacciones.size(); i++) {
             if (Transacciones.get(i).getId() == id) {
-                return Transacciones.get(i);
+                return i;
             }
         }
-        return null;
+        return -1;
     }
     
-    public Transaction getTransaction(String nombre) {
+    public int getTransaction(String nombre) {
         for (int i = 0; i < Transacciones.size(); i++) {
             if (Transacciones.get(i).getNombre().equals(nombre)) {
-                return Transacciones.get(i);
+                return i;
             }
         }
-        return null;
+        return -1;
     }
     
     public Transaction getLastTransaction() {

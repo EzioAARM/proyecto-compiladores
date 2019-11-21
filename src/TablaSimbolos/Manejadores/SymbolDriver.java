@@ -227,4 +227,127 @@ public class SymbolDriver extends DriverContainer {
         }
     }
     
+    public boolean crearTransaccion(String nombre) {
+        if (TransaccionActiva != -1) {
+            agregarLog("Ya existe una transaccion, intente usando checkpoints");
+            return true;
+        } else {
+            id++;
+            Ambitos.get(getDatabase(pilaAmbitos.peek())).Transacciones.add(new Transaction(id, nombre));
+            TransaccionActiva = id;
+            agregarLog("La transaccion se inicio");
+            return false;
+        }
+    }
+    
+    public boolean addCheckpoint(String nombre) {
+        if (TransaccionActiva != -1) {
+            int ambitoPos = getAmbito(pilaAmbitos.peek());
+            int posTran = Ambitos.get(ambitoPos).getTransaction(TransaccionActiva);
+            int checkpoint = Ambitos.get(ambitoPos).Transacciones.get(posTran).getCheckpoint(nombre);
+            if (checkpoint == -1) {
+                id++;
+                Ambitos.get(ambitoPos).Transacciones.get(posTran).SavePoints.add(new Checkpoint(id, nombre));
+                agregarLog("El checkpoint se agrego a la transaccion con id " + TransaccionActiva);
+                return false;
+            } else {
+                agregarLog("El checkpoint con el nombre" + nombre + " ya existe, intente con otro nombre");
+                return true;
+            }
+        } else {
+            agregarLog("No hay una transaccion activa, intente usando BEGIN TRANSACTION [transaction_name]");
+            return true;
+        }
+    }
+    
+    public boolean commitTransaction() {
+        if (TransaccionActiva != -1) {
+            agregarLog("No hay transaccion para hacer commit");
+            return true;
+        } else {
+            TransaccionActiva = -1;
+            agregarLog("Se guardaron los cambios de la transaccion");
+            return false;
+        }
+    }
+    
+    public boolean commitTransaction(String nombre) {
+        if (TransaccionActiva != -1) {
+            agregarLog("No hay transaccion para hacer commit");
+            return true;
+        } else {
+            if (nombre.equals("")) {
+                return commitTransaction();
+            } else {
+                int ambitoPos = getAmbito(pilaAmbitos.peek());
+                int posTran = Ambitos.get(ambitoPos).getTransaction(TransaccionActiva);
+                int checkpoint = Ambitos.get(ambitoPos).Transacciones.get(posTran).getCheckpoint(nombre);
+                if (checkpoint == -1) {
+                    if (Ambitos.get(ambitoPos).Transacciones.get(posTran).getNombre().equals(nombre)) {
+                        TransaccionActiva = -1;
+                        agregarLog("Se realizo commit a la transaccion " + nombre);
+                        return false;
+                    } else {
+                        agregarLog("El checkpoint al que desea hacer commit no existe");
+                        return true;
+                    }
+                } else {
+                    if (!Ambitos.get(ambitoPos).Transacciones.get(posTran).obtenerStatus(nombre).equals("activa")) {
+                        agregarLog("La transaccion ya fue terminada o cancelada");
+                        return true;
+                    } else {
+                        Ambitos.get(ambitoPos).Transacciones.get(posTran).cambiarStatus(nombre, "commited");
+                        agregarLog("Se hizo commit al checkpoint " + nombre);
+                        return false;
+                    }
+                }
+            }
+        }
+    }
+    
+    public boolean rollbackTransaction() {
+        if (TransaccionActiva != -1) {
+            agregarLog("No hay transaccion para hacer rollback");
+            return true;
+        } else {
+            TransaccionActiva = -1;
+            agregarLog("Se revirtieron los cambios de la transaccion");
+            return false;
+        }
+    }
+    
+    public boolean rollbackTransaction(String nombre) {
+        if (TransaccionActiva != -1) {
+            agregarLog("No hay transaccion para hacer commit");
+            return true;
+        } else {
+            if (nombre.equals("")) {
+                return rollbackTransaction();
+            } else {
+                int ambitoPos = getAmbito(pilaAmbitos.peek());
+                int posTran = Ambitos.get(ambitoPos).getTransaction(TransaccionActiva);
+                int checkpoint = Ambitos.get(ambitoPos).Transacciones.get(posTran).getCheckpoint(nombre);
+                if (checkpoint == -1) {
+                    if (Ambitos.get(ambitoPos).Transacciones.get(posTran).getNombre().equals(nombre)) {
+                        TransaccionActiva = -1;
+                        agregarLog("Se realizo rollback a la transaccion " + nombre);
+                        return false;
+                    } else {
+                        agregarLog("El checkpoint al que desea hacer rollback no existe");
+                        return true;
+                    }
+                } else {
+                    if (!Ambitos.get(ambitoPos).Transacciones.get(posTran).obtenerStatus(nombre).equals("activa")) {
+                        agregarLog("La transaccion ya fue terminada o cancelada");
+                        return true;
+                    } else {
+                        Ambitos.get(ambitoPos).Transacciones.get(posTran).cambiarStatus(nombre, "cancelada");
+                        agregarLog("Se hizo rollback al checkpoint " + nombre);
+                        return false;
+                    }
+                }
+            }
+        }
+    }
+    
 }

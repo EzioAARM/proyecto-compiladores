@@ -18,6 +18,9 @@ public class DriverContainer {
     List<Database> estructuraServidor = new ArrayList();
     
     Stack<Integer> pilaAmbitos = new Stack();
+    
+    int TransaccionActiva = -1;
+    
     int id = 0;
     
     List<Ambito> Ambitos = new ArrayList();
