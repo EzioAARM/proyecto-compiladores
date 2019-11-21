@@ -233,7 +233,8 @@ public class SymbolDriver extends DriverContainer {
             return true;
         } else {
             id++;
-            Ambitos.get(getDatabase(pilaAmbitos.peek())).Transacciones.add(new Transaction(id, nombre));
+            
+            Ambitos.get(getAmbito(pilaAmbitos.peek())).Transacciones.add(new Transaction(id, nombre));
             TransaccionActiva = id;
             agregarLog("La transaccion se inicio");
             return false;
