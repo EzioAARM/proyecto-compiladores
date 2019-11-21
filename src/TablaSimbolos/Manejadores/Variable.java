@@ -33,4 +33,9 @@ public class Variable<T> extends Objeto {
         hayDec = hayParam2;
     }
     
+    @Override
+    public String toString() {
+        return "/t" + this.getId() + ", " + this.getNombre() + ", " + this.tipoDato + ", " + this.Max + ", " + this.Dec + ", " + valor.toString();
+    }
+    
 }

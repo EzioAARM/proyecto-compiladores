@@ -3870,7 +3870,7 @@ public class parser extends java_cup.runtime.lr_parser {
     {
  
     try {
-        //SymbolDriver Manejador = new SymbolDriver();
+        MiniSql.Manejador = new SymbolDriver();
         BufferedReader buffered = new BufferedReader(new FileReader(MiniSql.ubicacionArchivo));
         analizadorFlex = new Lexemas(buffered);
     } catch (IOException ex) {
@@ -3909,7 +3909,7 @@ public void report_error(String message, Object info) {
     m.append(" : "+message);
     System.err.println(m);
 }
-public SymbolDriver Manejador = new SymbolDriver();
+
 public boolean isentero;
 public boolean isreal;
 public boolean isstring;
@@ -4136,7 +4136,7 @@ class CUP$parser$actions {
 		int oright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		MyToken o = (MyToken)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		
-    Manejador.agregarAmbito(o.get_lexema(),"database");
+    MiniSql.Manejador.agregarAmbito(o.get_lexema(),"database");
 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("USE1",197, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
@@ -4347,7 +4347,7 @@ class CUP$parser$actions {
 		int oright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		MyToken o = (MyToken)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		
-varActual = Manejador.getVariable(o.get_lexema());
+varActual = MiniSql.Manejador.getVariable(o.get_lexema());
 if(varActual.asignado){
     if(varActual.tipoDato.equals("SMALLINT") || varActual.tipoDato.equals("INT") || varActual.tipoDato.equals("INTEGER")){
         isentero = true;
@@ -4375,7 +4375,7 @@ if(varActual.asignado){
 		int b2left = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).left;
 		int b2right = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).right;
 		Object b2 = (Object)((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-1)).value;
-		String res = b2.toString(); Manejador.crearTransaccion(res);
+		String res = b2.toString(); MiniSql.Manejador.crearTransaccion(res);
               CUP$parser$result = parser.getSymbolFactory().newSymbol("BEGINTRAN",202, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-3)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -4417,7 +4417,7 @@ if(varActual.asignado){
 		int oleft = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
 		int oright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		MyToken o = (MyToken)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
-		varActual = Manejador.getVariable(o.get_lexema()); 
+		varActual = MiniSql.Manejador.getVariable(o.get_lexema()); 
                                         if(varActual.asignado){
                                                 RESULT = varActual.valor;
                                         }else{
@@ -4446,9 +4446,9 @@ if(varActual.asignado){
 		Object b2 = (Object)((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-1)).value;
 		String res = b2.toString();
                                                                 if(res.equals("")){
-                                                                        Manejador.commitTransaction();
+                                                                        MiniSql.Manejador.commitTransaction();
                                                                 }else{
-                                                                        Manejador.commitTransaction(res);
+                                                                        MiniSql.Manejador.commitTransaction(res);
                                                                 }
     
               CUP$parser$result = parser.getSymbolFactory().newSymbol("COMMITTRAN",205, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-3)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
@@ -4509,9 +4509,9 @@ if(varActual.asignado){
 		Object b2 = (Object)((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-1)).value;
 		String res = b2.toString();
                                                                 if(res.equals("")){
-                                                                        Manejador.rollbackTransaction();
+                                                                        MiniSql.Manejador.rollbackTransaction();
                                                                 }else{
-                                                                        Manejador.rollbackTransaction(res);
+                                                                        MiniSql.Manejador.rollbackTransaction(res);
                                                                 }
     
               CUP$parser$result = parser.getSymbolFactory().newSymbol("ROLLBACKTRAN",208, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-3)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
@@ -4525,7 +4525,7 @@ if(varActual.asignado){
 		int s1left = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).left;
 		int s1right = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).right;
 		Object s1 = (Object)((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-1)).value;
-		String res = s1.toString(); Manejador.addCheckpoint(res);
+		String res = s1.toString(); MiniSql.Manejador.addCheckpoint(res);
               CUP$parser$result = parser.getSymbolFactory().newSymbol("SAVETRAN",209, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-3)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -4549,7 +4549,7 @@ if(varActual.asignado){
 		int oleft = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
 		int oright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		MyToken o = (MyToken)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
-		varActual = Manejador.getVariable(o.get_lexema()); 
+		varActual = MiniSql.Manejador.getVariable(o.get_lexema()); 
                                         if(varActual.asignado){
                                                 RESULT = varActual.valor;
                                         }else{
@@ -7465,7 +7465,7 @@ if(d5.equals("")){
     String prueba = o.toString();
     String[] nombre = prueba.split("\\.");
      int i = nombre.length;
-     Manejador.truncarTabla(nombre[i-1]);
+     MiniSql.Manejador.truncarTabla(nombre[i-1]);
     //funcion buscar, parametro nombre[i-1];
     
                                                                    
@@ -14040,25 +14040,25 @@ String[] data = e.toString().split(" ");
 //"0".equals(data[1]) && "0".equals(data[2])
 //!"0".equals(data[1]) && "0".equals(data[2])
 if(data[1].equals("0") && data[2].equals("0")){
-        Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),false,Integer.parseInt(data[2]),false);
+        MiniSql.Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),false,Integer.parseInt(data[2]),false);
 }else if(!data[1].equals("0") && data[2].equals("0")){
-        Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),true,Integer.parseInt(data[2]),false);
+        MiniSql.Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),true,Integer.parseInt(data[2]),false);
 }else{
-        Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),true,Integer.parseInt(data[2]),true);
+        MiniSql.Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),true,Integer.parseInt(data[2]),true);
 }
 
 if((data[0].equals("SMALLINT") || data[0].equals("INT") || data[0].equals("INTEGER")) && isentero){
-        varActual = Manejador.getVariable(o.get_lexema());
+        varActual = MiniSql.Manejador.getVariable(o.get_lexema());
         varActual.valor = Integer.parseInt(d3.toString());
-        Manejador.setVariable(varActual);
+        MiniSql.Manejador.setVariable(varActual);
 }else if((data[0].equals("FLOAT") || data[0].equals("DECIMAL") || data[0].equals("NUMERIC") || data[0].equals("REAL")) && isreal){
-        varActual = Manejador.getVariable(o.get_lexema());
+        varActual = MiniSql.Manejador.getVariable(o.get_lexema());
         varActual.valor = Float.parseFloat(d3.toString());
-        Manejador.setVariable(varActual);
+        MiniSql.Manejador.setVariable(varActual);
 }else if((data[0].equals("VARCHAR") || data[0].equals("CHAR")) && isstring){
-        varActual = Manejador.getVariable(o.get_lexema());
+        varActual = MiniSql.Manejador.getVariable(o.get_lexema());
         varActual.valor = d3.toString();
-        Manejador.setVariable(varActual);
+        MiniSql.Manejador.setVariable(varActual);
 }else if(d3.toString().equals("")){
         //hace nada
 }else{
@@ -14134,26 +14134,26 @@ String[] data = e.toString().split(" ");
 //"0".equals(data[1]) && "0".equals(data[2])
 //!"0".equals(data[1]) && "0".equals(data[2])
 if(data[1].equals("0") && data[2].equals("0")){
-        Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),false,Integer.parseInt(data[2]),false);
+        MiniSql.Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),false,Integer.parseInt(data[2]),false);
 }else if(!data[1].equals("0") && data[2].equals("0")){
-        Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),true,Integer.parseInt(data[2]),false);
+        MiniSql.Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),true,Integer.parseInt(data[2]),false);
 }else{
-        Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),true,Integer.parseInt(data[2]),true);
+        MiniSql.Manejador.definirVariable(o.get_lexema(),data[0],Integer.parseInt(data[1]),true,Integer.parseInt(data[2]),true);
 }
 
 
 if((data[0].equals("SMALLINT") || data[0].equals("INT") || data[0].equals("INTEGER")) && isentero){
-        varActual = Manejador.getVariable(o.get_lexema());
+        varActual = MiniSql.Manejador.getVariable(o.get_lexema());
         varActual.valor = Integer.parseInt(d3.toString());
-        Manejador.setVariable(varActual);
+        MiniSql.Manejador.setVariable(varActual);
 }else if((data[0].equals("FLOAT") || data[0].equals("DECIMAL") || data[0].equals("NUMERIC") || data[0].equals("REAL")) && isreal){
-        varActual = Manejador.getVariable(o.get_lexema());
+        varActual = MiniSql.Manejador.getVariable(o.get_lexema());
         varActual.valor = Float.parseFloat(d3.toString());
-        Manejador.setVariable(varActual);
+        MiniSql.Manejador.setVariable(varActual);
 }else if((data[0].equals("VARCHAR") || data[0].equals("CHAR")) && isstring){
-        varActual = Manejador.getVariable(o.get_lexema());
+        varActual = MiniSql.Manejador.getVariable(o.get_lexema());
         varActual.valor = d3.toString();
-        Manejador.setVariable(varActual);
+        MiniSql.Manejador.setVariable(varActual);
 }else if(d3.toString().equals("")){
         //hace nada
 }else{
@@ -14190,20 +14190,20 @@ isstring = false;
 		int d3right = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		Object d3 = (Object)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		
-        varActual = Manejador.getVariable(o.get_lexema());
+        varActual = MiniSql.Manejador.getVariable(o.get_lexema());
         String tipo = varActual.tipoDato;
 if((tipo.equals("SMALLINT") || tipo.equals("INT") || tipo.equals("INTEGER")) && isentero){
-        varActual = Manejador.getVariable(o.get_lexema());
+        varActual = MiniSql.Manejador.getVariable(o.get_lexema());
         varActual.valor = Integer.parseInt(d3.toString());
-        Manejador.setVariable(varActual);
+        MiniSql.Manejador.setVariable(varActual);
 }else if((tipo.equals("FLOAT") || tipo.equals("DECIMAL") || tipo.equals("NUMERIC") || tipo.equals("REAL")) && isreal){
-        varActual = Manejador.getVariable(o.get_lexema());
+        varActual = MiniSql.Manejador.getVariable(o.get_lexema());
         varActual.valor = Float.parseFloat(d3.toString());
-        Manejador.setVariable(varActual);
+        MiniSql.Manejador.setVariable(varActual);
 }else if((tipo.equals("VARCHAR") || tipo.equals("CHAR")) && isstring){
-        varActual = Manejador.getVariable(o.get_lexema());
+        varActual = MiniSql.Manejador.getVariable(o.get_lexema());
         varActual.valor = d3.toString();
-        Manejador.setVariable(varActual);
+        MiniSql.Manejador.setVariable(varActual);
 }else if(d3.toString().equals("")){
         //hace nada
 }else{

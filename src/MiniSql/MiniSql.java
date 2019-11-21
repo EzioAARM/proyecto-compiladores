@@ -5,6 +5,7 @@
  */
 package MiniSql;
 
+import TablaSimbolos.Manejadores.SymbolDriver;
 import java.io.File;
 
 /**
@@ -12,6 +13,8 @@ import java.io.File;
  * @author axel
  */
 public class MiniSql {
+    
+    public static SymbolDriver Manejador = null;
     
     public static File ubicacionArchivo;
     

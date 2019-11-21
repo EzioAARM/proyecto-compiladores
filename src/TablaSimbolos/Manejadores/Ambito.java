@@ -98,4 +98,18 @@ public class Ambito {
         return Ambitos.size();
     }
     
+    @Override
+    public String toString() {
+        String ambitoString = Id + ", " + Nombre + ", " + Nivel;
+        String variablesString = "/t ID | NOMBRE | TIPO | TAMAÑO MAXIMO | SEED";
+        for (int i = 0; i < Variables.size(); i++) {
+            variablesString += "/n" + Variables.get(i).toString() + "/n";
+        }
+        String transaccionesString = "/t ID | NOMBRE /n";
+        for (int i = 0; i < Transacciones.size(); i++) {
+            transaccionesString += "/t" + Transacciones.get(i).toString() + "/n";
+        }
+        return ambitoString + "/n Variables" + variablesString + "/n Transacciones" + transaccionesString;
+    }
+    
 }

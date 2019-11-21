@@ -5,6 +5,9 @@
  */
 package TablaSimbolos.Manejadores;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -27,11 +30,15 @@ public class SymbolDriver extends DriverContainer {
         id++;
         estructuraServidor.add(new Database(id, "master"));
         agregarAmbito("master", "database");
+        
         id++;
         estructuraServidor.add(new Database(id, "dbTest"));
         int dbPos = getDatabase(id);
         id++;
         estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "tablaPrueba"));
+        id++;
+        int tbPos = estructuraServidor.get(dbPos).getTabla("tablaPrueba");
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "columna1"));
         
     }
     
@@ -347,6 +354,26 @@ public class SymbolDriver extends DriverContainer {
                     }
                 }
             }
+        }
+    }
+    
+    @Override
+    public String toString() {
+        String ambitosString = "ID | NOMBRE | NIVEL /n";
+        for (int i = 0; i < Ambitos.size(); i++) {
+            ambitosString += Ambitos.get(i).toString() + "/n";
+        }
+        return ambitosString;
+    }
+    
+    public void escribirArchivo(String archivo) {
+        try {
+            FileWriter archivoSalida = new FileWriter("C://" + archivo);
+            PrintWriter pw = new PrintWriter(archivoSalida);
+            pw.write(this.toString());
+            pw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
     

@@ -31,4 +31,9 @@ public class Checkpoint {
     public String getNombre() {
         return Nombre;
     }
+    
+    @Override
+    public String toString() {
+        return "/t" + this.Id + ", " + this.Nombre + ", " + statusSaved;
+    }
 }
