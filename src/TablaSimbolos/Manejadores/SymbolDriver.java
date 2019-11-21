@@ -317,7 +317,7 @@ public class SymbolDriver extends DriverContainer {
     }
     
     public boolean rollbackTransaction(String nombre) {
-        if (TransaccionActiva != -1) {
+        if (TransaccionActiva == -1) {
             agregarLog("No hay transaccion para hacer commit");
             return true;
         } else {
