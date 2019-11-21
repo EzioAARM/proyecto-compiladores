@@ -28,9 +28,7 @@ public class Ambito {
         Nombre = nombre;
         Nivel = nivel;
         Variables = new ArrayList();
-        if (tipoAmbito.equals("use")) {
-            Transacciones = new ArrayList();
-        }
+        Transacciones = new ArrayList();
     }
     
     public String getNombre() {
