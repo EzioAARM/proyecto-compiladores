@@ -2211,8 +2211,9 @@ reservadasQUERY_STORE = (QUERY_STORE)
         
     }
 }
+
+
 <YYINITIAL> {comentarioSimple} {
-    
 }
 <COMENTARIOMULTI> {
     ([*])+[/] {
