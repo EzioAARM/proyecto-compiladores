@@ -341,6 +341,7 @@ public class SymbolDriver extends DriverContainer {
                         agregarLog("La transaccion ya fue terminada o cancelada");
                         return true;
                     } else {
+                        TransaccionActiva = -1;
                         Ambitos.get(ambitoPos).Transacciones.get(posTran).cambiarStatus(nombre, "cancelada");
                         agregarLog("Se hizo rollback al checkpoint " + nombre);
                         return false;
