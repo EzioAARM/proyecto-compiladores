@@ -157,6 +157,13 @@ public class SymbolDriver extends DriverContainer {
         
         id++;
         estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "Clinica"));
+        id++;
+        tbPos = estructuraServidor.get(dbPos).getTabla("Clinica");
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "Codigo"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "Nombre"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "Direccion"));
         
         id++;
         estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "Consulta"));
@@ -173,6 +180,16 @@ public class SymbolDriver extends DriverContainer {
         estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "NumeroPruebasEspecificas"));
         id++;
         estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "PrecioOperaciones"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "PrecioVacunas"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "PrecioPruebasEspecificas"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "CodigoPaciente"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "NombreVeterinario"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "FECHA"));
         
         id++;
         estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "Diagnostico"));
