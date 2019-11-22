@@ -35,7 +35,7 @@ public class Variable<T> extends Objeto {
     
     @Override
     public String toString() {
-        return "/t" + this.getId() + ", " + this.getNombre() + ", " + this.tipoDato + ", " + this.Max + ", " + this.Dec + ", " + valor.toString();
+        return "\t" + this.getId() + ", " + this.getNombre() + ", " + this.tipoDato + ", " + this.Max + ", " + this.Dec + ", " + valor;
     }
     
 }

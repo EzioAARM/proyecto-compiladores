@@ -38,8 +38,162 @@ public class SymbolDriver extends DriverContainer {
         estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "tablaPrueba"));
         id++;
         int tbPos = estructuraServidor.get(dbPos).getTabla("tablaPrueba");
-        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "columna1"));
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "columna1")); 
         
+        id++;
+        estructuraServidor.add(new Database(id, "Motociclismo"));
+        dbPos = getDatabase(id);
+        
+        id++; 
+        estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "Carrera"));
+        id++;
+        tbPos = estructuraServidor.get(dbPos).getTabla("Carrera");
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id,"NombreGP"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id,"Año"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id,"FechaHoraInicio"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id,"NumVueltas"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id,"NombreCircuito"));
+        
+
+        id++;
+        estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "Circuito"));
+        id++;
+        tbPos = estructuraServidor.get(dbPos).getTabla("Circuito");
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "Nombre"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "Pais"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "Tipo"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "Longitud"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "Diseñador"));
+        
+        id++;
+        estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "CONSULTAS_SQL"));
+        id++;
+        tbPos = estructuraServidor.get(dbPos).getTabla("CONSULTAS_SQL");
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "ID_CONSULTA"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "CONSULTA"));
+           
+        id++;
+        estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "Escuderia"));
+        id++;
+        tbPos = estructuraServidor.get(dbPos).getTabla("Escuderia");
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "Nombre"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "Manager"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "FabricanteMotor"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "Sede"));
+       
+        
+        id++;
+        estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "Piloto"));
+        id++;
+        tbPos = estructuraServidor.get(dbPos).getTabla("Piloto");
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "Codigo"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "Nombre"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "Nacionalidad"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "FechaNacimiento"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "CarreraDebut"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "NombreEscuderia"));
+        
+        id++;
+        estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "Resultado"));
+        id++;
+        tbPos = estructuraServidor.get(dbPos).getTabla("Resultado");
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "NombreGP"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "A"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "CodPiloto"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "Puesto"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "DistanciaGanador"));
+        
+  
+        
+        id++;
+        estructuraServidor.add(new Database(id, "Veterinaria"));
+        dbPos = getDatabase(id);
+        id++;
+        estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "CalendarioVacunacion"));
+        id++;
+        tbPos = estructuraServidor.get(dbPos).getTabla("CalendarioVacunacion");
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "Fecha"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "Enfermedad"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "CodigoPaciente"));
+        
+        id++;
+        estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "Cliente"));
+        
+        id++;
+        estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "Clinica"));
+        
+        id++;
+        estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "Consulta"));
+        
+        id++;
+        estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "Diagnostico"));
+        
+        id++;
+        estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "Factura"));
+        
+        id++;
+        estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "HistorialMedico"));
+        
+        id++;
+        estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "Laboratorio"));
+        
+        id++;
+        estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "Medicina"));
+        
+        id++;
+        estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "OperacionQuirurgica"));
+        
+        id++;
+        estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "Paciente"));
+        
+        id++;
+        estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "Producto"));
+        
+        id++;
+        estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "Proveedor"));
+        
+        id++;
+        estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "SuministraFarmacia"));
+        
+        id++;
+        estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "SuministraTienda"));
+        
+        id++;
+        estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "Tratamiento"));
+        
+        id++;
+        estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "VentaFarmacia"));
+        
+        id++;
+        estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "VentaTienda"));
+        
+        id++;
+        estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "Veterinario"));
+                
+        escribirArchivo("Antes");
     }
     
     public void guardarDatatype(String nombre) {
@@ -359,16 +513,20 @@ public class SymbolDriver extends DriverContainer {
     
     @Override
     public String toString() {
-        String ambitosString = "ID | NOMBRE | NIVEL /n";
-        for (int i = 0; i < Ambitos.size(); i++) {
-            ambitosString += Ambitos.get(i).toString() + "/n";
+        String estructuraString = "ID | NOMBRE";
+        for (int i = 0; i < estructuraServidor.size(); i++) {
+            estructuraString += estructuraServidor.get(i).toString() + "\n";
         }
-        return ambitosString;
+        String ambitosString = "ID | NOMBRE | NIVEL \n";
+        for (int i = 0; i < Ambitos.size(); i++) {
+            ambitosString += Ambitos.get(i).toString() + "\n";
+        }
+        return estructuraString + ", " + ambitosString;
     }
     
     public void escribirArchivo(String archivo) {
         try {
-            FileWriter archivoSalida = new FileWriter("C://" + archivo);
+            FileWriter archivoSalida = new FileWriter("C:\\Users\\David\\Documents\\SalidaCompis\\" + archivo + ".txt");
             PrintWriter pw = new PrintWriter(archivoSalida);
             pw.write(this.toString());
             pw.close();

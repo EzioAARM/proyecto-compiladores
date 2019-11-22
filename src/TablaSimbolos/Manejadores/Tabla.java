@@ -39,4 +39,13 @@ public class Tabla extends Objeto {
         return -1;
     }
     
+    @Override
+    public String toString() {
+        String columnasString = "\t ID | NOMBRE \n";
+        for (int i = 0; i < columnas.size(); i++) {
+            columnasString += "\t" + columnas.get(i).toString();
+        }
+        return this.getId() + ", " + this.getNombre() + "\n" + columnasString;
+    }
+    
 }

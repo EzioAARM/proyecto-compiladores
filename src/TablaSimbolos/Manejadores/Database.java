@@ -58,4 +58,13 @@ public class Database extends Objeto {
         }
         return -1;
     }
+    
+    @Override
+    public String toString() {
+        String tablasString = "\t ID | NOMBRE \n";
+        for (int i = 0; i < tablas.size(); i++) {
+            tablasString += "\t" + tablas.get(i).toString() + "\n";
+        }
+        return this.getId() + ", " + this.getNombre() + "\n" + tablasString;
+    }
 }

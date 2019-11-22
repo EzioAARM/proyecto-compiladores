@@ -101,15 +101,15 @@ public class Ambito {
     @Override
     public String toString() {
         String ambitoString = Id + ", " + Nombre + ", " + Nivel;
-        String variablesString = "/t ID | NOMBRE | TIPO | TAMAÑO MAXIMO | SEED";
+        String variablesString = "\t ID | NOMBRE | TIPO | TAMAÑO MAXIMO | SEED \n";
         for (int i = 0; i < Variables.size(); i++) {
-            variablesString += "/n" + Variables.get(i).toString() + "/n";
+            variablesString += "\n" + Variables.get(i).toString() + "\n";
         }
-        String transaccionesString = "/t ID | NOMBRE /n";
+        String transaccionesString = "\t ID | NOMBRE \n";
         for (int i = 0; i < Transacciones.size(); i++) {
-            transaccionesString += "/t" + Transacciones.get(i).toString() + "/n";
+            transaccionesString += "\t" + Transacciones.get(i).toString() + "\n";
         }
-        return ambitoString + "/n Variables" + variablesString + "/n Transacciones" + transaccionesString;
+        return ambitoString + "\n" + variablesString + "\n" + transaccionesString;
     }
     
 }

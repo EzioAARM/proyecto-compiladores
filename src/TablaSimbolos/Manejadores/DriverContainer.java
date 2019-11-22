@@ -20,15 +20,15 @@ import java.util.Stack;
  */
 public class DriverContainer {
     
-    List<Database> estructuraServidor = new ArrayList();
+    public List<Database> estructuraServidor = new ArrayList();
     
-    Stack<Integer> pilaAmbitos = new Stack();
+    public Stack<Integer> pilaAmbitos = new Stack();
     
-    int TransaccionActiva = -1;
+    public int TransaccionActiva = -1;
     
-    int id = 0;
+    public int id = 0;
     
-    List<Ambito> Ambitos = new ArrayList();
+    public List<Ambito> Ambitos = new ArrayList();
     
     protected int getAmbito(String nombre) {
         for (int i = 0; i < Ambitos.size(); i++) {

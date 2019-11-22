@@ -34,6 +34,6 @@ public class Checkpoint {
     
     @Override
     public String toString() {
-        return "/t" + this.Id + ", " + this.Nombre + ", " + statusSaved;
+        return "\t" + this.Id + ", " + this.Nombre + ", " + statusSaved;
     }
 }

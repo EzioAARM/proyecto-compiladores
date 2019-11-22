@@ -15,4 +15,9 @@ public class Columna extends Objeto {
         super(id, nombre);
     }
     
+    @Override
+    public String toString() {
+        return this.getId() + ", " + this.getNombre();
+    }
+    
 }
