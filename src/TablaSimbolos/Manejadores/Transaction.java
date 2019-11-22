@@ -79,7 +79,7 @@ public class Transaction {
     @Override
     public String toString() {
         String stringTransaccion = this.Id + ", " + this.Nombre;
-        String checkpoints = "\t ID | NOMBRE | ESTADO \n";
+        String checkpoints = "\t ID CHECKPOINT | NOMBRE CHECKPOINT | ESTADO CHECKPOINT \n";
         for (int i = 0; i < SavePoints.size(); i++) {
             checkpoints += "\t" + SavePoints.get(i).toString() + "\n";
         }

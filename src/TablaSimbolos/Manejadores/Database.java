@@ -61,7 +61,7 @@ public class Database extends Objeto {
     
     @Override
     public String toString() {
-        String tablasString = "\t ID | NOMBRE \n";
+        String tablasString = "\t ID TABLA | NOMBRE TABLA \n";
         for (int i = 0; i < tablas.size(); i++) {
             tablasString += "\t" + tablas.get(i).toString() + "\n";
         }

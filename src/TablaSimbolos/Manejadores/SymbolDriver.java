@@ -513,15 +513,15 @@ public class SymbolDriver extends DriverContainer {
     
     @Override
     public String toString() {
-        String estructuraString = "ID | NOMBRE";
+        String estructuraString = "ID DATABASE | NOMBRE DATABASE";
         for (int i = 0; i < estructuraServidor.size(); i++) {
             estructuraString += estructuraServidor.get(i).toString() + "\n";
         }
-        String ambitosString = "ID | NOMBRE | NIVEL \n";
+        String ambitosString = "ID AMBITO | NOMBRE AMBITO | NIVEL PROFUNDIDAD \n";
         for (int i = 0; i < Ambitos.size(); i++) {
             ambitosString += Ambitos.get(i).toString() + "\n";
         }
-        return estructuraString + ", " + ambitosString;
+        return estructuraString + " " + ambitosString;
     }
     
     public void escribirArchivo(String archivo) {
