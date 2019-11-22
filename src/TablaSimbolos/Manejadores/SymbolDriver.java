@@ -141,12 +141,38 @@ public class SymbolDriver extends DriverContainer {
         
         id++;
         estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "Cliente"));
+        id++;
+        tbPos = estructuraServidor.get(dbPos).getTabla("Cliente");
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "DPI"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "NIT"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "Nombre"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "Numero"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "Direccion"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "Correo"));
         
         id++;
         estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "Clinica"));
         
         id++;
         estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "Consulta"));
+        id++;
+        tbPos = estructuraServidor.get(dbPos).getTabla("Consulta");
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "Sala"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "PrecioFijo"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "NumeroOperaciones"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "NumeroVacunas"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "NumeroPruebasEspecificas"));
+        id++;
+        estructuraServidor.get(dbPos).tablas.get(tbPos).columnas.add(new Columna(id, "PrecioOperaciones"));
         
         id++;
         estructuraServidor.get(dbPos).tablas.add(new Tabla(id, "Diagnostico"));
